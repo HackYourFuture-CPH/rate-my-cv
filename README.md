@@ -3,7 +3,7 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Boilerplate for Final projects
+<h3 align="center">Rate my cv
 </h3>
 
 ---
@@ -11,8 +11,6 @@
 ## 📝 Table of Contents
 
 - [About](#about)
-  - [Setting up the boilerplate](/setting-up-instructions.md)
-  - [Plan the project](/planning.md)
 - [Project's Calendar](#-projects-calendar)
 - [Class Daily Agenda](#-class-daily-agenda-)
 - [The Customer](#-the-customer)
