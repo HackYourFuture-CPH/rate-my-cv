@@ -3,35 +3,59 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Rate my cv
+<<<<<<< HEAD
+
+# <h3 align="center">Rate my cv
+
+<h3 align="center">Boilerplate for Final projects
+>>>>>>> up/master
 </h3>
 
 ---
 
 ## 📝 Table of Contents
 
-- [About](#about)
-- [Project's Calendar](#-projects-calendar)
-- [Class Daily Agenda](#-class-daily-agenda-)
-- [The Customer](#-the-customer)
-  - [Business Glossary](/BusinessGlossary.md)
-  - [Database Model Diagram](#️-database-model-diagram)
-- [Process](#-process-)
-  - [Working with code](#-working-with-code)
-  - [Code best practices](#-code-best-practices)
-  - [Working with GIT](/working-with-git.md)
-  - [Working with Heroku and Deployment](/deployment.md)
-  - [Working Knex and migrations](/knex-and-migrations.md)
-  - [Working with API Documentation - Swagger](#working-with-api-documentation---swagger)
-  - [Working with Storybook](#working-with-storybook)
-  - [Working with AWS - Amazon Services](#working-with-aws---amazon-services)
-  - [Testing](#testing)
-  - [Making authenticated requests through firebase](#making-authenticated-requests-through-firebase)
-- [Getting Started](#getting-started)
-  - [Installations](/installations.md) - [Code linting](#code-linting)
-- [Getting the certificate](/certificate.md)
-- [Authors](#authors)
-- [License](#license)
+- [<h3 align="center">Rate my cv](#h3-aligncenterrate-my-cv)
+  - [📝 Table of Contents](#-table-of-contents)
+  - [🧐 About <a name = "about"></a>](#-about-)
+  - [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
+  - [📅 Project's Calendar](#-projects-calendar)
+  - [👩🏻‍💼💡👨🏽‍💼 The Customer](#-the-customer)
+      - [💼 Business Glossary](#-business-glossary)
+      - [🗄️ Database Model Diagram](#️-database-model-diagram)
+      - [🖼 Mockup](#-mockup)
+      - [🖼 Features](#-features)
+  - [📈 Process 📉📈](#-process-)
+    - [💻 Working with code](#-working-with-code)
+    - [🧱 Guidelines for building components](#-guidelines-for-building-components)
+      - [A note about React Hooks](#a-note-about-react-hooks)
+      - [Proptypes](#proptypes)
+      - [Using Storybook](#using-storybook)
+      - [How to create a new story](#how-to-create-a-new-story)
+        - [Adding knobs (optional)](#adding-knobs-optional)
+      - [Breaking down components](#breaking-down-components)
+      - [Coding guidelines for components](#coding-guidelines-for-components)
+    - [🎨 Theming and global styling](#-theming-and-global-styling)
+    - [🧱 Component styling](#-component-styling)
+    - [📤 📥 Inline CSS vs Stylesheets](#--inline-css-vs-stylesheets)
+    - [👍🏽 Code best practices](#-code-best-practices)
+    - [<img width=20px height=20px src="/git-logo.png" alt="GitHub logo"></a> Working with GIT](#a-working-with-git)
+    - [<img width=15px height=30px src="/heroku-logo.svg" alt="Heroku logo"></a> Working with Heroku and Deployment](#a-working-with-heroku-and-deployment)
+    - [<img width=59x height=20px src="/knex-logo.png"  alt="Knex logo"></a> Working with Knex and Migrations](#a-working-with-knex-and-migrations)
+    - [<img width=25px height=25x src="/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger](#a-working-with-api-documentation---swagger)
+    - [<img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook](#a-working-with-storybook)
+    - [<img width=30px height=30x src="/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services](#aa-working-with-aws---amazon-services)
+    - [Testing](#testing)
+    - [Making authenticated requests through firebase (useFetch hook)](#making-authenticated-requests-through-firebase-usefetch-hook)
+      - [What is it?](#what-is-it)
+      - [Usage](#usage)
+  - [🏁 Getting Started](#-getting-started)
+      - [💾 Installations](#-installations)
+        - [Errors](#errors)
+      - [Code linting](#code-linting)
+  - [📜 Getting the HackYourFuture certificate](#-getting-the-hackyourfuture-certificate)
+  - [👨🏾‍💻 Authors](#-authors)
+  - [📝 License](#-license)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -56,8 +80,8 @@ Staging website: https://rate-my-cv-staging.herokuapp.com/
 
 _Class Dates_
 
-- Week 1 —> 17-Jan-2021 
-  - Intro week 
+- Week 1 —> 17-Jan-2021
+  - Intro week
   - Intro to the FP and working in the final project
 
 Graduation Wednesday 7th of March
@@ -156,7 +180,7 @@ Some components may have "knobs" which are UI controls that allows you to intera
 
 #### How to create a new story
 
-Checko out this video: https://www.youtube.com/watch?v=jjH1cKGkt3o
+Checkout this video: https://www.youtube.com/watch?v=jjH1cKGkt3o
 
 The most basic way to create a story for your component is to put this code in your the stories file for your component (my-component.stories.js):
 
