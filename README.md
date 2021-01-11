@@ -18,14 +18,15 @@
   - [Database Model Diagram](#️-database-model-diagram)
 - [Process](#-process-)
   - [Working with code](#-working-with-code)
-  - [Guidelines for building components](#-guidelines-for-building-components)
   - [Code best practices](#-code-best-practices)
   - [Working with GIT](/working-with-git.md)
   - [Working with Heroku and Deployment](/deployment.md)
   - [Working Knex and migrations](/knex-and-migrations.md)
   - [Working with API Documentation - Swagger](#working-with-api-documentation---swagger)
   - [Working with Storybook](#working-with-storybook)
-  - [Working with AWS - Amazon Services](#working-with-aws---amazon-services) - [Testing](#testing)
+  - [Working with AWS - Amazon Services](#working-with-aws---amazon-services)
+  - [Testing](#testing)
+  - [Making authenticated requests through firebase](#making-authenticated-requests-through-firebase)
 - [Getting Started](#getting-started)
   - [Installations](/installations.md) - [Code linting](#code-linting)
 - [Getting the certificate](/certificate.md)
@@ -34,18 +35,11 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is a boilerplate and set-up instructions for the Final Project.
+This repository is for Class15 Final Project - Rate my cv
 
-To setup the boilerplate for a New Final project you MUST read this first [HERE](/setting-up-instructions.md)
+Production website: https://rate-my-cv-production.herokuapp.com/
 
-After the previous steps, you have new repository ready but you need plan the project,
-check [HERE](/planning.md) before you go more down.
-
-🚨Delete the About Topic from you new repository README.MD file  
-🚨Delete the instructions files:
-
-- [Setting up Instructions](/setting-up-instructions.md)
-- [Planning](/planning.md)
+Staging website: https://rate-my-cv-staging.herokuapp.com/
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -60,22 +54,17 @@ check [HERE](/planning.md) before you go more down.
 
 ## 📅 Project's Calendar
 
-_Add the dates for the project and study groups_
-_Class Dates_  
-_Study groups dates_
+_Class Dates_
 
-## 🕛 Class Daily Agenda 🕓
+- Week 1 —> 17-Jan-2021 
+  - Intro week 
+  - Intro to the FP and working in the final project
 
-_Add the Class schedule for the project_
-
-- 12:00 - 13:30 - ...
-- 13:30 - 14:00 - ...
-- 14:00 - 14:30 - Lunch
-- 14:30 - 16:00 - ...
+Graduation Wednesday 7th of March
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
-_Add here information about the customer/partner_
+HackYourFuture
 
 #### 💼 Business Glossary
 
@@ -84,9 +73,17 @@ _Add here information about the Business Glossary_
 
 #### 🗄️ Database Model Diagram
 
-_Add here the DB Model Diagram_ - Use https://dbdiagram.io/
+Check the DB Model Diagram [here](https://dbdiagram.io/d/5ffc249780d742080a35cb4a)
 
 - [How to make changes on the diagram](/diagram.md)
+
+#### 🖼 Mockup
+
+Check the mockup [here](https://www.figma.com/file/0ST4EGb45fiNtMqFl4WgBc/Review-Resume)
+
+#### 🖼 Features
+
+Go to the project board [here](https://github.com/orgs/HackYourFuture-CPH/projects/2/)
 
 ## 📈 Process 📉📈
 
@@ -158,6 +155,8 @@ The storybook application will become available on [http://localhost:3007](http:
 Some components may have "knobs" which are UI controls that allows you to interactively play with the props of a given component. It is up to the author of the component to set up knobs.
 
 #### How to create a new story
+
+Checko out this video: https://www.youtube.com/watch?v=jjH1cKGkt3o
 
 The most basic way to create a story for your component is to put this code in your the stories file for your component (my-component.stories.js):
 
@@ -308,6 +307,43 @@ To run the tests when you change a test file, run:
 
 `npm run test:watch`
 
+### Making authenticated requests through firebase (useFetch hook)
+
+#### What is it?
+
+We created a small hook wrapper the `fetch` API to abstract away the authorization headers.
+
+It also has some other bells and whistles to make data fetching simpler such as:
+
+- loading state
+- error state
+
+#### Usage
+
+Let's say I have a component which needs to fetch some data, this is how you could use it.
+
+```javascript
+function App() {
+  const { response, loading, error } = useFetch(
+    '[SOME URL HERE TO AN API ENDPOINT]'
+    {} // here you can pass other options just like usual with the fetch API
+  );
+  const renderLoading = () => loading && <p>Loading...</p>;
+  const renderError = () => error && <p>Something went wrong...</p>;
+  const renderData = () => response && <p>{response.title}</p>;
+  return (
+    <div className="App">
+      <h1>I want to loading some data</h1>
+      {renderLoading()}
+      {renderError()}
+      {renderData()}
+    </div>
+  );
+}
+```
+
+checkout the hook code here: [useFetch](src/client/hooks/useFetch.js)
+
 ## 🏁 Getting Started
 
 First clone the repo on your local machine using a terminal or a git client.
@@ -330,14 +366,7 @@ In Visual Studio code, go to file -> Preferences -> settings -> Search for `pret
 
 ## 👨🏾‍💻 Authors
 
-- [**Shanawaz Islam**](https://github.com/h09shais)
-
-### Other contributions
-
 - [**Benjamin Hughes**](https://github.com/benna100)
-- [**Zaki Wasik**](https://github.com/zkwsk/)
-- [**Filip Malek**](https://github.com/REX500)
-- [**Daniel Fernandes**](https://github.com/dpfernandes)
 
 ## 📝 License
 
