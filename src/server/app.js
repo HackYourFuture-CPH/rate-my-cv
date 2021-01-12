@@ -7,12 +7,10 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const HttpError = require('./api/lib/utils/http-error');
 
 const buildPath = path.join(__dirname, '../../dist');
 
 const apiRouter = require('./api/routes/api-router');
-const { authenticate } = require('./middleware/auth');
 
 require('./config/db');
 
@@ -21,8 +19,6 @@ admin.initializeApp(); // Might need to add service key env.
 const app = express();
 
 app.use(express.static(buildPath));
-
-app.use(authenticate);
 
 app.locals.ENV = process.env.NODE_ENV;
 app.locals.ENV_DEVELOPMENT = process.env.NODE_ENV === 'development';
@@ -44,19 +40,8 @@ app.use(cors());
 
 app.use(process.env.API_PATH, apiRouter);
 
-app.use((err, req, res) => {
-  if (err instanceof HttpError) {
-    res.status(err.httpStatus);
-    if (err.body) {
-      return res.json(err.body);
-    }
-    return res.send({ error: err.message });
-  }
-  res.sendStatus(500);
-});
-
 app.use('/api/', function(req, res) {
-  res.status(404).send("Sorry can't find that!");
+  res.status(404).send({ error: `The URL /api${req.url} does not exist` });
 });
 
 // If "/api" is called, redirect to the API documentation.
