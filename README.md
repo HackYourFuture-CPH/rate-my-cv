@@ -74,8 +74,30 @@ Staging website: https://rate-my-cv-staging.herokuapp.com/
 _Class Dates_
 
 - Week 1 —> 17-Jan-2021
-  - Intro week
-  - Intro to the FP and working in the final project
+  - Intro to Rate-my-cv
+    - Main features
+    - Who is it for?
+  - Working in the final project
+    - What is expected from you?
+      - In my eyes you are web developers now!
+        - In the start that can be a bit tough cause i expect a lot from you
+      - Proactive
+        - Fix things yourself (to a certain degree)
+        - If you see something that could be improved then improve it!
+      - No more teacing topics (you figure out how things work yourself)
+        - Or maybe someone from the class studies a topic and teaches the rest of the class 
+    - How will the classes be run?
+    - It is okay to make mistakes. But you have to learn from them
+    - Reviewing each others PR's
+    - There are lost of tasks not related to coding
+      - Creating good PR's
+      - Updating your story
+      - Figuring out what your story is about
+      - 
+  - Practicalities
+    - You will be surprised how little time you will be writing code
+  - Communication
+    - Very important
 
 Graduation Wednesday 7th of March
 
