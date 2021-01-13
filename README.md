@@ -97,6 +97,7 @@ _Class Dates_
       - Testing
   - Practicalities
     - You will be surprised how little time you will be writing code
+    - Small PR's!!!!!!!111!!11!!!!!!!!!!!!!
   - Communication
     - Very important
 
