@@ -1,11 +1,12 @@
 ---
-
 name: Feature request
 about: User story for project
 title: ''
 labels: User story
 assignees: ''
----## User story
+---
+
+## User story
 
 **Who:** **As a** _<type of user>_
 
