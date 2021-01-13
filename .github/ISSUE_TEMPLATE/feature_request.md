@@ -1,25 +1,20 @@
 ---
 name: Feature request
-about: User story for project
+about: Suggest an idea for this project
 title: ''
-labels: User story
+labels: ''
 assignees: ''
----## User story
 
-**Who:** **As a** _<type of user>_
+---
 
-**What:** **I want to** _<perform some task>_
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-**Why:** **so that we can** _<achieve some goal>_
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
 
-## Acceptance criteria
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
 
-**Given** _<user context>_ (example: "as an authenticated user")
-
-**When** _<some action is performed>_ (exmaple: "send a message")
-
-**Then** _<some out outcome(s) should occur>_ (example: "I can read and reply to the message")
-
-## Implementation details
-
-- [You define them here based on the above]
+**Additional context**
+Add any other context or screenshots about the feature request here.
