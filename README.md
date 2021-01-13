@@ -3,59 +3,52 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<<<<<<< HEAD
-
-# <h3 align="center">Rate my cv
-
-<h3 align="center">Boilerplate for Final projects
->>>>>>> up/master
-</h3>
+<h3 align="center">Rate my cv</h3>
 
 ---
 
 ## 📝 Table of Contents
 
-- [<h3 align="center">Rate my cv](#h3-aligncenterrate-my-cv)
-  - [📝 Table of Contents](#-table-of-contents)
-  - [🧐 About <a name = "about"></a>](#-about-)
-  - [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
-  - [📅 Project's Calendar](#-projects-calendar)
-  - [👩🏻‍💼💡👨🏽‍💼 The Customer](#-the-customer)
-      - [💼 Business Glossary](#-business-glossary)
-      - [🗄️ Database Model Diagram](#️-database-model-diagram)
-      - [🖼 Mockup](#-mockup)
-      - [🖼 Features](#-features)
-  - [📈 Process 📉📈](#-process-)
-    - [💻 Working with code](#-working-with-code)
-    - [🧱 Guidelines for building components](#-guidelines-for-building-components)
-      - [A note about React Hooks](#a-note-about-react-hooks)
-      - [Proptypes](#proptypes)
-      - [Using Storybook](#using-storybook)
-      - [How to create a new story](#how-to-create-a-new-story)
-        - [Adding knobs (optional)](#adding-knobs-optional)
-      - [Breaking down components](#breaking-down-components)
-      - [Coding guidelines for components](#coding-guidelines-for-components)
-    - [🎨 Theming and global styling](#-theming-and-global-styling)
-    - [🧱 Component styling](#-component-styling)
-    - [📤 📥 Inline CSS vs Stylesheets](#--inline-css-vs-stylesheets)
-    - [👍🏽 Code best practices](#-code-best-practices)
-    - [<img width=20px height=20px src="/git-logo.png" alt="GitHub logo"></a> Working with GIT](#a-working-with-git)
-    - [<img width=15px height=30px src="/heroku-logo.svg" alt="Heroku logo"></a> Working with Heroku and Deployment](#a-working-with-heroku-and-deployment)
-    - [<img width=59x height=20px src="/knex-logo.png"  alt="Knex logo"></a> Working with Knex and Migrations](#a-working-with-knex-and-migrations)
-    - [<img width=25px height=25x src="/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger](#a-working-with-api-documentation---swagger)
-    - [<img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook](#a-working-with-storybook)
-    - [<img width=30px height=30x src="/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services](#aa-working-with-aws---amazon-services)
-    - [Testing](#testing)
-    - [Making authenticated requests through firebase (useFetch hook)](#making-authenticated-requests-through-firebase-usefetch-hook)
-      - [What is it?](#what-is-it)
-      - [Usage](#usage)
-  - [🏁 Getting Started](#-getting-started)
-      - [💾 Installations](#-installations)
-        - [Errors](#errors)
-      - [Code linting](#code-linting)
-  - [📜 Getting the HackYourFuture certificate](#-getting-the-hackyourfuture-certificate)
-  - [👨🏾‍💻 Authors](#-authors)
-  - [📝 License](#-license)
+- [📝 Table of Contents](#-table-of-contents)
+- [🧐 About <a name = "about"></a>](#-about-)
+- [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
+- [📅 Project's Calendar](#-projects-calendar)
+- [👩🏻‍💼💡👨🏽‍💼 The Customer](#-the-customer)
+    - [💼 Business Glossary](#-business-glossary)
+    - [🗄️ Database Model Diagram](#️-database-model-diagram)
+    - [🖼 Mockup](#-mockup)
+    - [🖼 Features](#-features)
+- [📈 Process 📉📈](#-process-)
+  - [💻 Working with code](#-working-with-code)
+  - [🧱 Guidelines for building components](#-guidelines-for-building-components)
+    - [A note about React Hooks](#a-note-about-react-hooks)
+    - [Proptypes](#proptypes)
+    - [Using Storybook](#using-storybook)
+    - [How to create a new story](#how-to-create-a-new-story)
+      - [Adding knobs (optional)](#adding-knobs-optional)
+    - [Breaking down components](#breaking-down-components)
+    - [Coding guidelines for components](#coding-guidelines-for-components)
+  - [🎨 Theming and global styling](#-theming-and-global-styling)
+  - [🧱 Component styling](#-component-styling)
+  - [📤 📥 Inline CSS vs Stylesheets](#--inline-css-vs-stylesheets)
+  - [👍🏽 Code best practices](#-code-best-practices)
+  - [<img width=20px height=20px src="/git-logo.png" alt="GitHub logo"></a> Working with GIT](#a-working-with-git)
+  - [<img width=15px height=30px src="/heroku-logo.svg" alt="Heroku logo"></a> Working with Heroku and Deployment](#a-working-with-heroku-and-deployment)
+  - [<img width=59x height=20px src="/knex-logo.png"  alt="Knex logo"></a> Working with Knex and Migrations](#a-working-with-knex-and-migrations)
+  - [<img width=25px height=25x src="/swagger-logo.png"  alt="Swagger logo"></a> Working with API Documentation - Swagger](#a-working-with-api-documentation---swagger)
+  - [<img width=20px height=20x src="/storybook.svg"  alt="Storybook logo"></a> Working with Storybook](#a-working-with-storybook)
+  - [<img width=30px height=30x src="/aws.svg"  alt="AWS S3 logo"></a><img width=30px height=30x src="/s3.png"  alt="AWS S3 logo"></a> Working with AWS - Amazon Services](#aa-working-with-aws---amazon-services)
+  - [Testing](#testing)
+  - [Making authenticated requests through firebase (useFetch hook)](#making-authenticated-requests-through-firebase-usefetch-hook)
+    - [What is it?](#what-is-it)
+    - [Usage](#usage)
+- [🏁 Getting Started](#-getting-started)
+    - [💾 Installations](#-installations)
+      - [Errors](#errors)
+    - [Code linting](#code-linting)
+- [📜 Getting the HackYourFuture certificate](#-getting-the-hackyourfuture-certificate)
+- [👨🏾‍💻 Authors](#-authors)
+- [📝 License](#-license)
 
 ## 🧐 About <a name = "about"></a>
 
