@@ -100,6 +100,7 @@ _Class Dates_
     - Small PR's!!!!!!!111!!11!!!!!!!!!!!!!
   - Communication
     - Very important
+  - Getting the certificate: https://github.com/HackYourFuture-CPH/chattie/blob/develop/certificate.md
 
 Graduation Wednesday 7th of March
 
