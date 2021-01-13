@@ -93,7 +93,7 @@ _Class Dates_
       - Creating good PR's
       - Updating your story
       - Figuring out what your story is about
-      - 
+      - Linking issues with PR's
   - Practicalities
     - You will be surprised how little time you will be writing code
   - Communication
