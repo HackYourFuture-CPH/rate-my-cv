@@ -94,6 +94,7 @@ _Class Dates_
       - Updating your story
       - Figuring out what your story is about
       - Linking issues with PR's
+      - Testing
   - Practicalities
     - You will be surprised how little time you will be writing code
   - Communication
