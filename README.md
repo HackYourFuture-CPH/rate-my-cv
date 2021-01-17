@@ -86,6 +86,7 @@ _Class Dates_
         - If you see something that could be improved then improve it!
       - No more teacing topics (you figure out how things work yourself)
         - Or maybe someone from the class studies a topic and teaches the rest of the class 
+      - Work together
     - How will the classes be run?
     - It is okay to make mistakes. But you have to learn from them
     - Reviewing each others PR's
