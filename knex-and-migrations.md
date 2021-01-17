@@ -7,6 +7,8 @@
 
 ## ✈️ Working with migrations
 
+Checkout this video by Zaki Wasik: https://www.youtube.com/watch?v=id34_al68x8
+
 Migrations are there to help manage your database when you are working in a
 team. The goal of a migration is to take your database from one place (state) to
 another. So it is bit like travelling. Traveling in time even?
