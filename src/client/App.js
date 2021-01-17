@@ -10,12 +10,14 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
+import Test from './components/Test/test.js';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
     <Router>
+      <Test exact path="/test" />
       <Header isAuthenticated={isAuthenticated} />
       <Switch>
         <Route exact path="/">
