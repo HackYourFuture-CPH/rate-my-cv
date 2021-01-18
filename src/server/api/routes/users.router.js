@@ -24,7 +24,7 @@ const usersController = require('../controllers/users.controller');
  */
 router.get('/', (req, res, next) => {
   usersController
-    .getModules()
+    .getUsers()
     .then((result) => res.json(result))
     .catch(next);
 });
