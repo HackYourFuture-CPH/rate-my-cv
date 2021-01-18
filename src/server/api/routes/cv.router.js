@@ -24,7 +24,7 @@ const cvController = require('../controllers/cv.controller');
  */
 router.get('/', (req, res, next) => {
   cvController
-    .get()
+    .getCV()
     .then((result) => res.json(result))
     .catch(next);
 });
