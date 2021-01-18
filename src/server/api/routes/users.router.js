@@ -12,9 +12,9 @@ const usersController = require('../controllers/users.controller');
  * @swagger
  * /modules:
  *  get:
- *    summary: Get all modules
+ *    summary: Get all users
  *    description:
- *      Will return all modules.
+ *      Will return all users.
  *    produces: application/json
  *    responses:
  *      200:
@@ -33,9 +33,9 @@ router.get('/', (req, res, next) => {
  * @swagger
  * /modules/{ID}:
  *  get:
- *    summary: Get module by ID
+ *    summary: Get user by ID
  *    description:
- *      Will return single module with a matching ID.
+ *      Will return single user with a matching ID.
  *    produces: application/json
  *    parameters:
  *     - in: path
@@ -62,14 +62,14 @@ router.get('/:id', (req, res, next) => {
  * @swagger
  * /modules:
  *  post:
- *    summary: Create a module
+ *    summary: Create a user
  *    description:
- *      Will create a module.
+ *      Will create a user.
  *    produces: application/json
  *    parameters:
  *      - in: body
- *        name: module
- *        description: The module to create.
+ *        name: user
+ *        description: The module to create a user.
  *        schema:
  *          type: object
  *          required:
@@ -90,7 +90,7 @@ router.get('/:id', (req, res, next) => {
  *              type: string
  *    responses:
  *      201:
- *        description: Module created
+ *        description: user created
  *      5XX:
  *        description: Unexpected error.
  */
