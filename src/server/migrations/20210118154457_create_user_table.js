@@ -1,15 +1,15 @@
 exports.up = function(knex) {
   return knex.schema.createTable('user', function(table) {
     table.increments();
-    table.string('first_name').notNullable();
-    table.string('last_name').notNullable();
+    table.string('full_name').notNullable();
+    table.string('position');
+    table.string('linkedin');
+    table.string('github');
+    table.string('website');
+    table.string('profile_image_url');
     table
-      .string('email')
-      .unique()
-      .notNullable();
-    table
-      .string('phone_number')
-      .unique()
+      .datetime('created_date')
+      .defaultTo(knex.fn.now())
       .notNullable();
   });
 };

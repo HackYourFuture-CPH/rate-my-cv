@@ -6,22 +6,19 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('user').insert([
         {
-          first_name: 'ember',
-          last_name: 'blooming',
-          email: 'test1@gmail.com',
-          phone_number: '12345678',
+          full_name: 'ember blooming',
+          position: 'student',
+          linkedin: 'https://www.linkedin.com/in/ember-blooming-a0b5311b6/',
+          github: 'https://github.com/ember-b-Moss',
+          website: 'https://ember-b-moss.github.io/',
+          profile_image_url:
+            'https://avatars3.githubusercontent.com/u/66334642?s=460&u=39441cc9beec59d355d4233695034ca020604f58&v=4',
         },
         {
-          first_name: 'John',
-          last_name: 'Doe',
-          email: 'test2@gmail.com',
-          phone_number: '87654321',
+          full_name: 'John Doe',
         },
         {
-          first_name: 'Stephanie',
-          last_name: 'Knowitall',
-          email: 'test3@gmail.com',
-          phone_number: '88888888',
+          full_name: 'Stephanie Knowitall',
         },
       ]);
     });
