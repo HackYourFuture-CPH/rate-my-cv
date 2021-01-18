@@ -3,17 +3,14 @@ exports.up = function(knex) {
     table.increments();
     table.string('first_name').notNullable();
     table.string('last_name').notNullable();
-    table.string('email').notNullable();
-    table.string('phone_number').notNullable();
     table
-      .datetime('created_at')
-      .defaultTo(knex.fn.now())
+      .string('email')
+      .unique()
       .notNullable();
     table
-      .datetime('updated_at')
-      .defaultTo(knex.fn.now())
+      .string('phone_number')
+      .unique()
       .notNullable();
-    table.datetime('deleted_at');
   });
 };
 
