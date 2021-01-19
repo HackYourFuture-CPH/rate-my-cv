@@ -73,20 +73,24 @@ router.get('/:id', (req, res, next) => {
  *        schema:
  *          type: object
  *          required:
- *            - title
- *            - startDate
- *            - endDate
- *             - classId
+ *            - fullname
+ *            - position
+ *            - linkedin
+ *            - github
+ *            - website
+ *            - profile_image_url
  *          properties:
- *            title:
+ *            fullname:
  *              type: string
- *            startDate:
+ *            position:
  *              type: string
- *              format: date-time
- *            endDate:
+ *            linkedin:
  *              type: string
- *              format: date-time
- *            classId:
+ *            github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profile_image_url:
  *              type: string
  *    responses:
  *      201:
