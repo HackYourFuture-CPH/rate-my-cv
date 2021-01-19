@@ -73,14 +73,14 @@ router.get('/:id', (req, res, next) => {
  *        schema:
  *          type: object
  *          required:
- *            - fullname
+ *            - full_name
  *            - position
  *            - linkedin
  *            - github
  *            - website
  *            - profile_image_url
  *          properties:
- *            fullname:
+ *            full_name:
  *              type: string
  *            position:
  *              type: string

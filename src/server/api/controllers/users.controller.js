@@ -47,7 +47,7 @@ const deleteUser = async (usersId) => {
 
 const createUser = async (body) => {
   await knex('users').insert({
-    fullname: body.fullname,
+    full_name: body.full_name,
     position: body.position,
     linkedin: body.linkedin,
     github: body.github,
