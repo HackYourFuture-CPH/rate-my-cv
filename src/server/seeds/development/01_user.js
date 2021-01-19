@@ -15,10 +15,24 @@ exports.seed = function(knex) {
             'https://avatars3.githubusercontent.com/u/66334642?s=460&u=39441cc9beec59d355d4233695034ca020604f58&v=4',
         },
         {
-          full_name: 'John Doe',
+          full_name: 'Stephanie Hicks',
+          position: 'Integrated Client Manager',
+          linkedin: 'https://www.linkedin.com/in/stephanie-hansen-b3898240/',
+          github: 'https://github.com/stephaniehicks',
+          website: 'https://www.stephaniehicks.com/',
+          profile_image_url:
+            'https://expertphotography.com/wp-content/uploads/2020/08/social-media-profiel-photo-venice.jpg',
         },
         {
-          full_name: 'Stephanie Knowitall',
+          full_name: 'Jonathan Andersen',
+          profile_image_url:
+            'https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg',
+        },
+        {
+          full_name: 'Stephanie Mendrala',
+          linkedin: 'https://www.linkedin.com/in/stephanie-mendrala-b11755ab/',
+          profile_image_url:
+            'https://expertphotography.com/wp-content/uploads/2018/04/photography-lighting-facts-distance.jpg',
         },
       ]);
     });
