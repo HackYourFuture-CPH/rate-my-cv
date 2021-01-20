@@ -12,9 +12,9 @@ const usersController = require('../controllers/users.controller');
  * @swagger
  * /modules:
  *  get:
- *    summary: Get all modules
+ *    summary: Get all users
  *    description:
- *      Will return all modules.
+ *      Will return all users.
  *    produces: application/json
  *    responses:
  *      200:
@@ -33,9 +33,9 @@ router.get('/', (req, res, next) => {
  * @swagger
  * /modules/{ID}:
  *  get:
- *    summary: Get module by ID
+ *    summary: Get user by ID
  *    description:
- *      Will return single module with a matching ID.
+ *      Will return single user with a matching ID.
  *    produces: application/json
  *    parameters:
  *     - in: path
@@ -43,8 +43,7 @@ router.get('/', (req, res, next) => {
  *       schema:
  *         type: integer
  *         required: true
- *         description: The ID of the module to get
- *
+ *         description: The ID of the user to get
  *    responses:
  *      200:
  *        description: Successful request
@@ -54,6 +53,135 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   usersController
     .getUsersById(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  delete:
+ *    summary: Delete a user
+ *    description:
+ *      Will delete a user with a given ID.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the user to delete.
+ *    responses:
+ *      200:
+ *        description: User deleted
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.delete('/:id', (req, res) => {
+  usersController
+    .deleteUser(req.params.id, req)
+    .then((result) => {
+      // If result is equal to 0, then that means the user id does not exist
+      if (result === 0) {
+        res.status(404).send('The user ID you provided does not exist.');
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
+});
+
+/**
+ * @swagger
+ * /modules:
+ *  post:
+ *    summary: Create a user
+ *    description:
+ *      Will create a user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: body
+ *        name: user
+ *        description: The module to create user.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - full_name
+ *            - position
+ *            - linkedin
+ *            - github
+ *            - website
+ *            - profile_image_url
+ *          properties:
+ *            full_name:
+ *              type: string
+ *            position:
+ *              type: string
+ *            linkedin:
+ *              type: string
+ *            github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profile_image_url:
+ *              type: string
+ *    responses:
+ *      201:
+ *        description: User created
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.post('/', (req, res) => {
+  usersController
+    .createUser(req.body)
+    .then((result) => res.json(result))
+    .catch((error) => {
+      console.log(error);
+
+      res
+        .status(400)
+        .send('Bad request')
+        .end();
+    });
+});
+
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  patch:
+ *    summary: Create/edit a user
+ *    description:
+ *      Will create/edit a user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the module to patch.
+ *      - in: body
+ *        name: user
+ *        description: The module to create or edit user.
+ *        schema:
+ *          type: object
+ *          properties:
+ *            full_name:
+ *              type: string
+ *            position:
+ *              type: string
+ *            linkedin:
+ *              type: string
+ *            github:
+ *              type: string
+ *            website:
+ *              type:string
+ *            profile_image_url:
+ *              type: string
+ *    responses:
+ *      200:
+ *        description: User was patched
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res, next) => {
+  usersController
+    .editUser(req.params.id, req.body)
     .then((result) => res.json(result))
     .catch(next);
 });

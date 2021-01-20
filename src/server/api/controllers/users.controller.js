@@ -7,7 +7,7 @@ const moment = require('moment-timezone');
 
 const getUsers = async () => {
   try {
-    return await knex('users').select('users.id', 'users.title');
+    return await knex('users').select('users.id', 'users.full_name');
   } catch (error) {
     return error.message;
   }
@@ -16,7 +16,7 @@ const getUsers = async () => {
 const getUsersById = async (id) => {
   try {
     const users = await knex('users')
-      .select('users.id as id', 'title')
+      .select('users.id as id', 'full_name')
       .where({ id });
     if (users.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
@@ -31,11 +31,12 @@ const editUser = async (userId, updatedUser) => {
   return knex('users')
     .where({ id: userId })
     .update({
-      title: updatedUser.title,
-      startDate: moment(updatedUser.startDate).format(),
-      endDate: moment(updatedUser.endDate).format(),
-      classId: updatedUser.classId,
-      updatedAt: moment().format(),
+      full_name: updatedUser.full_name,
+      position: updatedUser.position,
+      linkedin: updatedUser.linkedin,
+      github: updatedUser.github,
+      website: updatedUser.website,
+      profile_image_url: updatedUser.profile_image_url,
     });
 };
 
@@ -47,10 +48,12 @@ const deleteUser = async (usersId) => {
 
 const createUser = async (body) => {
   await knex('users').insert({
-    title: body.title,
-    startDate: moment(body.startDate).format(),
-    endDate: moment(body.endDate).format(),
-    classId: body.classId,
+    fullname: body.fullname,
+    position: body.position,
+    linkedin: body.linkedin,
+    github: body.github,
+    website: body.website,
+    profile_image_url: body.profile_image_url,
   });
 
   return {
