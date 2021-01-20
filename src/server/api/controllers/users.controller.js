@@ -5,26 +5,16 @@ const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 const moment = require('moment-timezone');
 
-const getUsers = async () => {
-  try {
-    return await knex('users').select('users.id', 'users.title');
-  } catch (error) {
-    return error.message;
-  }
-};
+const getUsers = () => knex('users').select('*');
 
 const getUsersById = async (id) => {
-  try {
-    const users = await knex('users')
-      .select('users.id as id', 'title')
-      .where({ id });
-    if (users.length === 0) {
-      throw new Error(`incorrect entry with the id of ${id}`, 404);
-    }
-    return users;
-  } catch (error) {
-    return error.message;
+  const users = await knex('users')
+    .select('*')
+    .where({ id });
+  if (users.length !== 1) {
+    throw new Error(`incorrect entry with the id of ${id}`, 404);
   }
+  return users[0];
 };
 
 const editUser = async (userId, updatedUser) => {
@@ -47,7 +37,7 @@ const deleteUser = async (usersId) => {
 
 const createUser = async (body) => {
   await knex('users').insert({
-    title: body.title,
+    full_name: body.full_name,
     startDate: moment(body.startDate).format(),
     endDate: moment(body.endDate).format(),
     classId: body.classId,

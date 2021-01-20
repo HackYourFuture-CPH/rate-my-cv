@@ -2,6 +2,7 @@ module.exports = {
   extends: ['./node_modules/poetic/config/eslint/eslint-config.js'],
   // Add custom rules here
   rules: {
+    camelcase: 'off',
     'arrow-parens': 'off',
     quotes: 'off',
     'no-unexpected-multiline': 'off',
@@ -10,7 +11,7 @@ module.exports = {
     'react/prefer-stateless-function': 'warn',
     'react/prop-types': 'warn',
     'import/prefer-default-export': 'off',
-    '@typescript-eslint/camelcase': 'warn',
+    '@typescript-eslint/camelcase': 'off',
     'func-names': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'no-restricted-globals': 'off',
