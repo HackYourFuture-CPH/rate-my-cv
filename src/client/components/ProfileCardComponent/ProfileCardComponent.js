@@ -15,33 +15,45 @@ export const ProfileCardComponent = ({
   github,
 }) => {
   return (
-    <div className="ProfileCardWhole">
-      <div className="profileCardTop">
+    <div className="profile-card-whole">
+      <div className="top">
         <div className="circle">
           <img src={profile_image_url || unknownUser} alt="Portrait of user" />
         </div>
-        <h2>{full_name}</h2>
-        <p>{position}</p>
+        <h2 className="user-full-name">{full_name}</h2>
+        <p className="user-position">{position}</p>
       </div>
 
       <hr />
-      <div className="ProfileCardSocialLinks">
+      <div className="profile-card-social-links">
         {linkedin && (
-          <div className="socialLink">
-            <img src={iconLinkedin} className="socialIcon" alt="icon" />
-            <a href={`https://www.linkedin.com/in/${linkedin}`}>{linkedin}</a>
+          <div className="social-link">
+            <img src={iconLinkedin} className="social-icon" alt="icon" />
+            <a
+              href={`https://www.linkedin.com/in/${linkedin}`}
+              className="social-link-text"
+            >
+              {linkedin}
+            </a>
           </div>
         )}
         {github && (
-          <div className="socialLink">
-            <img src={iconGithub} className="socialIcon" alt="icon" />
-            <a href={`https://github.com/${github}`}>{github}</a>
+          <div className="social-link">
+            <img src={iconGithub} className="social-icon" alt="icon" />
+            <a
+              href={`https://github.com/${github}`}
+              className="social-link-text"
+            >
+              {github}
+            </a>
           </div>
         )}
         {website && (
-          <div className="socialLink">
-            <img src={iconWebsite} className="socialIcon" alt="icon" />
-            <a href={`${website}`}>website</a>
+          <div className="social-link">
+            <img src={iconWebsite} className="social-icon" alt="icon" />
+            <a href={`${website}`} className="social-link-text">
+              website
+            </a>
           </div>
         )}
       </div>

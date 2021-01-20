@@ -1,11 +1,11 @@
-.ProfileCardWhole {
+.profile-card-whole {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   width: 30%;
   justify-content: center;
 }
 
-.profileCardTop {
+.top {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,13 +23,13 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
 }
 
-.circle > img {
+.circle>img {
   display: inline;
   margin: 0 auto;
   max-width: 150px;
 }
 
-.ProfileCardSocialLinks {
+.profile-card-social-links {
   display: flex;
   flex-direction: column;
   padding: 1em 2em 2em 2em;
@@ -39,49 +39,49 @@ hr {
   border: solid 1px #ebebeb;
 }
 
-a {
+.social-link-text {
   line-height: 2.5em;
   text-decoration: none;
   font-size: 14px;
   color: #000000;
 }
 
-p {
+.user-position {
   margin-top: 0;
   color: #818181;
   font-size: 14px;
 }
 
-h2 {
+.user-full-name {
   margin-bottom: 0.5em;
   font-weight: bold;
   font-size: 24px;
 }
 
-.socialLink {
+.social-link {
   display: flex;
   align-items: center;
 }
 
-.socialIcon {
+.social-icon {
   width: 23px;
   margin-right: 1em;
 }
 
 @media screen and (max-width: 750px) {
-  .ProfileCardSocialLinks {
+  .profile-card-social-links {
     display: flex;
     flex-direction: column;
     padding: 1em 2em 2em 2em;
   }
-  .circle > img {
+  .circle>img {
     max-width: 100px;
   }
   .circle {
     max-width: 100px;
     max-height: 100px;
   }
-  .ProfileCardWhole {
+  .profile-card-whole {
     width: 70%;
   }
 }
