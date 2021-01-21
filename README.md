@@ -105,6 +105,7 @@ _Class Dates_
   - Getting the certificate: https://github.com/HackYourFuture-CPH/chattie/blob/develop/certificate.md
 - Week 2 —> 24-Jan-2021
   - Overview of project (where is develop)
+  - Version 1.0 should be everybodies focus
   - Talk about the checklist (linking story in PR, updating story in project board, checking files changed, testing etc)
   - Remember the focus. One story at a time.
   - How to remove something from files changed
