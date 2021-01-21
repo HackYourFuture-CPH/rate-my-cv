@@ -31,11 +31,12 @@ const editUser = async (userId, updatedUser) => {
   return knex('users')
     .where({ id: userId })
     .update({
-      title: updatedUser.title,
-      startDate: moment(updatedUser.startDate).format(),
-      endDate: moment(updatedUser.endDate).format(),
-      classId: updatedUser.classId,
-      updatedAt: moment().format(),
+      full_name: updatedUser.full_name,
+      position: updatedUser.position,
+      linkedin: updatedUser.linkedin,
+      github: updatedUser.github,
+      website: updatedUser.website,
+      profile_image_url: updatedUser.profile_image_url,
     });
 };
 

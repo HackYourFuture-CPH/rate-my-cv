@@ -58,4 +58,48 @@ router.get('/:id', (req, res, next) => {
     .catch(next);
 });
 
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  patch:
+ *    summary: Create a users
+ *    description:
+ *      Will create a users.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the users to patch.
+ *      - in: body
+ *        name: module
+ *        description: The users to create.
+ *        schema:
+ *          type: object
+ *          properties:
+ *            full_name:
+ *              type: string
+ *            position:
+ *              type: string
+ *              linkedin:
+ *              type: string
+ *             github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profile_image_url:
+ *              type: string
+ *    responses:
+ *      200:
+ *        description: Module was patched
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res, next) => {
+  userController
+    .editUser(req.params.id, req.body)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+
 module.exports = router;
