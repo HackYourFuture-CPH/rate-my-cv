@@ -107,7 +107,7 @@ _Class Dates_
   - Overview of project (where is develop)
   - Version 1.0 should be everybodies focus
   - Talk about the checklist (linking story in PR, updating story in project board, checking files changed, testing etc)
-  - Remember the focus. One story at a time.
+  - Remember the focus. One story at a time. And the responsibility what do i need to worry about and what do i not need to worry about
   - How to remove something from files changed
 - Week 3 —> 31-Jan-2021
 - Week 4 —> 7-Feb-2021
