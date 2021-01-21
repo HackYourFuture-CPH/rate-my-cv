@@ -14,10 +14,10 @@
 - [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
 - [📅 Project's Calendar](#-projects-calendar)
 - [👩🏻‍💼💡👨🏽‍💼 The Customer](#-the-customer)
-    - [💼 Business Glossary](#-business-glossary)
-    - [🗄️ Database Model Diagram](#️-database-model-diagram)
-    - [🖼 Mockup](#-mockup)
-    - [🖼 Features](#-features)
+  - [💼 Business Glossary](#-business-glossary)
+  - [🗄️ Database Model Diagram](#️-database-model-diagram)
+  - [🖼 Mockup](#-mockup)
+  - [🖼 Features](#-features)
 - [📈 Process 📉📈](#-process-)
   - [💻 Working with code](#-working-with-code)
   - [🧱 Guidelines for building components](#-guidelines-for-building-components)
@@ -43,9 +43,9 @@
     - [What is it?](#what-is-it)
     - [Usage](#usage)
 - [🏁 Getting Started](#-getting-started)
-    - [💾 Installations](#-installations)
-      - [Errors](#errors)
-    - [Code linting](#code-linting)
+  - [💾 Installations](#-installations)
+    - [Errors](#errors)
+  - [Code linting](#code-linting)
 - [📜 Getting the HackYourFuture certificate](#-getting-the-hackyourfuture-certificate)
 - [👨🏾‍💻 Authors](#-authors)
 - [📝 License](#-license)
@@ -85,7 +85,7 @@ _Class Dates_
         - Fix things yourself (to a certain degree)
         - If you see something that could be improved then improve it!
       - No more teacing topics (you figure out how things work yourself)
-        - Or maybe someone from the class studies a topic and teaches the rest of the class 
+        - Or maybe someone from the class studies a topic and teaches the rest of the class
       - Work together
   - How will the classes be run?
   - It is okay to make mistakes. But you have to learn from them
@@ -114,7 +114,7 @@ _Class Dates_
 - Week 5 —> 14-Feb-2021
 - Week 6 —> 21-Feb-2021
 - Week 7 —> 28-Feb-2021
-Graduation Wednesday 3rd of March
+  Graduation Wednesday 3rd of March
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
@@ -127,7 +127,7 @@ _Add here information about the Business Glossary_
 
 #### 🗄️ Database Model Diagram
 
-Check the DB Model Diagram [here](https://dbdiagram.io/d/5ffc249780d742080a35cb4a)
+Check the DB Model Diagram [here](https://dbdiagram.io/d/6009d76480d742080a375e16)
 
 - [How to make changes on the diagram](/diagram.md)
 
