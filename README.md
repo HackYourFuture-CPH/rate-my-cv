@@ -103,8 +103,18 @@ _Class Dates_
   - Communication
     - Very important
   - Getting the certificate: https://github.com/HackYourFuture-CPH/chattie/blob/develop/certificate.md
-
-Graduation Wednesday 7th of March
+- Week 2 —> 24-Jan-2021
+  - Overview of project (where is develop)
+  - Version 1.0 should be everybodies focus
+  - Talk about the checklist (linking story in PR, updating story in project board, checking files changed, testing etc)
+  - Remember the focus. One story at a time.
+  - How to remove something from files changed
+- Week 3 —> 31-Jan-2021
+- Week 4 —> 7-Feb-2021
+- Week 5 —> 14-Feb-2021
+- Week 6 —> 21-Feb-2021
+- Week 7 —> 28-Feb-2021
+Graduation Wednesday 3rd of March
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
