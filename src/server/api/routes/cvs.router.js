@@ -165,4 +165,42 @@ router.delete('/:id', (req, res) => {
     .catch((error) => console.log(error));
 });
 
-module.exports = router;
+
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  patch:
+ *    summary: Create or edit a cv
+ *    description:
+ *      Will create a Cv.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the Cv to patch.
+ *      - in: body
+ *        name: Cv
+ *        description: The Cv to create.
+ *        schema:
+ *          type: object
+ *          properties:
+ *            title:
+ *              type: string
+ *            description:
+ *              type: string
+ *              file_url:
+ *              type: string
+ *  responses:
+ *      200:
+ *        description: Cv was patched
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res, next) => {
+  CvController
+    .editCv(req.params.id, req.body)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+module.exports = router;   

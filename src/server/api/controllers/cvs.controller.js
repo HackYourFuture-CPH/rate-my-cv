@@ -52,6 +52,18 @@ const createCv = async (body) => {
   };
 };
 
+const editCv = async (CvId, updatedCv) => {
+  return knex('Cv')
+    .where({ id: CvId })
+    .update({
+      title: updatedCv.title,
+      description: updatedCv.description,
+      file_url: updatedCv.file_url,
+     fk_user_id: updatedCv.fkuser_id,
+     created_date: moment(body.created_date).format(),
+    });
+};
+
 module.exports = {
   getCvs,
   getCvById,
@@ -59,3 +71,5 @@ module.exports = {
   createCv,
   editCv,
 };
+
+
