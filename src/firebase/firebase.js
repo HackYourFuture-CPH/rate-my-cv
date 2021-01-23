@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyCpbszBgq7uc-FjOgm_356uJseg9ESQ30g',
   authDomain: 'rate-my-cv-e7feb.firebaseapp.com',
   projectId: 'rate-my-cv-e7feb',
