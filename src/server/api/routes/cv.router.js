@@ -6,11 +6,11 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 
 // controllers
-const cvController = require('../controllers/cv.controller');
+const cvController = require('../controllers/cvs.controller');
 
 router.get('/', (req, res, next) => {
   cvController
-    .getCv()
+    .getCv(req.params.title, req.params.limit)
     .then((result) => res.json(result))
     .catch(next);
 });
