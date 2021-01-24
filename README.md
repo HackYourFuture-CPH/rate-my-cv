@@ -103,8 +103,27 @@ _Class Dates_
   - Communication
     - Very important
   - Getting the certificate: https://github.com/HackYourFuture-CPH/chattie/blob/develop/certificate.md
-
-Graduation Wednesday 7th of March
+- Week 2 —> 24-Jan-2021
+  - Overview of project (where is develop)
+  - Version 1.0 should be everybodies focus
+    - The different milestones: https://github.com/HackYourFuture-CPH/rate-my-cv/milestones
+  - Talk about the checklist (linking story in PR, updating story in project board, checking files changed, testing etc)
+  - Remember the focus. One story at a time. And the responsibility what do i need to worry about and what do i not need to worry about
+  - How to remove something from files changed
+    - If you want to remove whole file: `git checkout origin/master src/index.js`, then `add`, `commit` and `push` the change
+    - If you want to remove specific line either change it back to the original or maybe try [this](https://stackoverflow.com/questions/6963129/is-it-possible-to-git-checkout-a-single-line-instead-of-the-entire-file)
+  - Get latest changes into your branch:
+    - Using an example of a branch called `user-login` with no files changes (remember to do `git status` and add changes to your branch before doing the changes below)
+    - First checkout develop: `git checkout develop`
+    - Then pull the latest changes on develop: `git pull`
+    - Then checkout the branch you were working in: `git checkout user-login`
+    - Then merge the latest changes from `develop` into your branch: `git merge develop`
+- Week 3 —> 31-Jan-2021
+- Week 4 —> 7-Feb-2021
+- Week 5 —> 14-Feb-2021
+- Week 6 —> 21-Feb-2021
+- Week 7 —> 28-Feb-2021
+Graduation Wednesday 3rd of March
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
@@ -124,6 +143,8 @@ Check the DB Model Diagram [here](https://dbdiagram.io/d/5ffc249780d742080a35cb4
 #### 🖼 Mockup
 
 Check the mockup [here](https://www.figma.com/file/0ST4EGb45fiNtMqFl4WgBc/Review-Resume)
+
+Design style guide here: https://github.com/ghofranebenhmaid/review-resume/
 
 #### 🖼 Features
 
