@@ -23,7 +23,7 @@ const cvsController = require('../controllers/cvs.controller');
  */
 router.get('/', (req, res, next) => {
   cvsController
-    .getCvs()
+    .getCv(req.query.title.toLowerCase(), req.query.limit)
     .then((result) => res.json(result))
     .catch(next);
 });

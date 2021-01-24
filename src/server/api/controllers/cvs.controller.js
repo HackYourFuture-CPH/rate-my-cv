@@ -4,9 +4,21 @@ const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 const moment = require('moment-timezone');
 
-const getCvs = async () => {
+const getCvs = async (title, limit) => {
   try {
-    return await knex('cv').select('cv.id', 'cv.title');
+    if (title) {
+      return await knex('cv')
+        .select('cv.id', 'cv.title')
+        .where({ title });
+    } else if (limit) {
+      return await knex('cv')
+        .select('cv.id', 'cv.title')
+        .limit({ limit });
+    } else
+      return await knex('cv')
+        .select('cv.id', 'cv.title')
+        .orderBy('cv.title')
+        .orderBy('created_date', 'desc');
   } catch (error) {
     return error.message;
   }
