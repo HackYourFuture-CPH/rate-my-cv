@@ -109,6 +109,8 @@ _Class Dates_
   - Talk about the checklist (linking story in PR, updating story in project board, checking files changed, testing etc)
   - Remember the focus. One story at a time. And the responsibility what do i need to worry about and what do i not need to worry about
   - How to remove something from files changed
+    - If you want to remove whole file: `git checkout origin/master src/index.js`, then `add`, `commit` and `push` the change
+    - If you want to remove specific line either change it back to the original or maybe try [this](https://stackoverflow.com/questions/6963129/is-it-possible-to-git-checkout-a-single-line-instead-of-the-entire-file)
 - Week 3 —> 31-Jan-2021
 - Week 4 —> 7-Feb-2021
 - Week 5 —> 14-Feb-2021
