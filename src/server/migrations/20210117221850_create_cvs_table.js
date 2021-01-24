@@ -1,6 +1,6 @@
 // migration for the cv table
 exports.up = function(knex) {
-  return knex.schema.createTable('cv', (table) => {
+  return knex.schema.createTable('cvs', (table) => {
     table.increments();
     table.string('title').notNullable();
     table
@@ -11,5 +11,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('cv');
+  return knex.schema.dropTable('cvs');
 };

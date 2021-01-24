@@ -1,10 +1,10 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('cv')
+  return knex('cvs')
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex('cv').insert([
+      return knex('cvs').insert([
         {
           id: 1,
           title: 'FrontEnd Developer',
