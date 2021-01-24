@@ -7,17 +7,17 @@ const moment = require('moment-timezone');
 const getCvs = async (title, limit) => {
   try {
     if (title) {
-      return await knex('cv')
-        .select('cv.id', 'cv.title')
+      return await knex('cvs')
+        .select('cvs.id', 'cvs.title')
         .where({ title });
     } else if (limit) {
-      return await knex('cv')
-        .select('cv.id', 'cv.title')
+      return await knex('cvs')
+        .select('cvs.id', 'cvs.title')
         .limit({ limit });
     } else
-      return await knex('cv')
-        .select('cv.id', 'cv.title')
-        .orderBy('cv.title')
+      return await knex('cvs')
+        .select('cvs.id', 'cvs.title')
+        .orderBy('cvs.title')
         .orderBy('created_date', 'desc');
   } catch (error) {
     return error.message;
@@ -26,8 +26,8 @@ const getCvs = async (title, limit) => {
 
 const getCvById = async (id) => {
   try {
-    const cvs = await knex('cv')
-      .select('cv.id as id', 'title')
+    const cvs = await knex('cvs')
+      .select('cvs.id as id', 'title')
       .where({ id });
     if (cvs.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
@@ -38,9 +38,9 @@ const getCvById = async (id) => {
   }
 };
 
-const editCv = async (cvId, updatedCv) => {
-  return knex('cv')
-    .where({ id: cvId })
+const editCv = async (cvsId, updatedCv) => {
+  return knex('cvs')
+    .where({ id: cvsId })
     .update({
       title: updatedCv.title,
       createdAt: moment(updatedCv.createdAt).format(),
@@ -48,13 +48,13 @@ const editCv = async (cvId, updatedCv) => {
 };
 
 const deleteCv = async (cvId) => {
-  return knex('cv')
+  return knex('cvs')
     .where({ id: cvId })
     .del();
 };
 
 const createCv = async (body) => {
-  await knex('cv').insert({
+  await knex('cvs').insert({
     title: body.title,
     createdAt: moment(body.createdAt).format(),
   });
