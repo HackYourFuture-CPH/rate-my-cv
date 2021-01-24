@@ -24,7 +24,7 @@ exports.seed = function(knex) {
           id: 3,
           title: 'Fullstack Engineer',
           description: 'Skilled Fullstack developer with creative mind',
-          file_url: 'https://zety.com/blog/auditor-resume-example',
+          file_url: 'https://zety.com/blog/accounting-clerk-resume-example',
           fk_user_id: 3,
         },
       ]);
