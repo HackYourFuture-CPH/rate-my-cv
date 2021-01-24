@@ -1,7 +1,6 @@
 import React from 'react';
-import ErrorLogo from '../../assets/images/portraits/404.png';
+import ErrorLogo from '../../assets/images/404.png';
 import './notFoundPage.style.css';
-import Text from '../../components/Text/Text.component';
 
 export default function NotFoundPage() {
   return (
@@ -14,12 +13,11 @@ export default function NotFoundPage() {
           <div className="text">
             <div className="number-404">404</div>
             <div className="text-container">
-              <Text
-                header="Page not found"
-                description={
-                  "The page you are looking for does't exist or another error occurred."
-                }
-              />
+              <h2>Page not found</h2>
+              <p>
+                The page you are looking for does&rsquo;t exist or another error
+                occurred.
+              </p>
             </div>
           </div>
         </div>
