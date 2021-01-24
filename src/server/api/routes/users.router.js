@@ -23,7 +23,6 @@ const usersController = require('../controllers/users.controller');
  *        description: Unexpected error.
  */
 router.get('/', (req, res, next) => {
-  console.log('test');
   usersController
     .getUsers()
     .then((result) => res.json(result))
