@@ -12,9 +12,9 @@ const usersController = require('../controllers/users.controller');
  * @swagger
  * /modules:
  *  get:
- *    summary: Get all modules
+ *    summary: Get all users
  *    description:
- *      Will return all modules.
+ *      Will return all users.
  *    produces: application/json
  *    responses:
  *      200:
@@ -33,9 +33,9 @@ router.get('/', (req, res, next) => {
  * @swagger
  * /modules/{ID}:
  *  get:
- *    summary: Get module by ID
+ *    summary: Get user by ID
  *    description:
- *      Will return single module with a matching ID.
+ *      Will return single user with a matching ID.
  *    produces: application/json
  *    parameters:
  *     - in: path
@@ -56,6 +56,60 @@ router.get('/:id', (req, res, next) => {
     .getUsersById(req.params.id)
     .then((result) => res.json(result))
     .catch(next);
+});
+
+/**
+ * @swagger
+ * /modules:
+ *  post:
+ *    summary: Create a user
+ *    description:
+ *      Will create a user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: body
+ *        name: user
+ *        description: The module to create a user.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - full_name
+ *            - position
+ *            - linkedin
+ *            - github
+ *            - website
+ *            - profile_image_url
+ *          properties:
+ *            full_name:
+ *              type: string
+ *            position:
+ *              type: string
+ *            linkedin:
+ *              type: string
+ *            github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profile_image_url:
+ *              type: string
+ *    responses:
+ *      201:
+ *        description: user created
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.post('/', (req, res) => {
+  usersController
+    .createUser(req.body)
+    .then((result) => res.json(result))
+    .catch((error) => {
+      console.log(error);
+
+      res
+        .status(400)
+        .send('Bad request')
+        .end();
+    });
 });
 
 module.exports = router;
