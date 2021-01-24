@@ -16,9 +16,9 @@ const getCvs = async (title, limit) => {
         .limit({ limit });
     } else
       return await knex('cvs')
-        .select('cvs.id', 'cvs.title')
+        .select('cvs.id', 'cvs.title', 'cvs.file_url', 'cvs.createdAt')
         .orderBy('cvs.title')
-        .orderBy('created_date', 'desc');
+        .orderBy('createdAt', 'desc');
   } catch (error) {
     return error.message;
   }
