@@ -26,6 +26,6 @@ function FileUploader(cv) {
   );
 }
 
-const fileUrl = await FileUploader(cv);
+const fileUrl = await FileUploader();
 
 export default fileUrl;
