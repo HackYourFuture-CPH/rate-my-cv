@@ -155,6 +155,7 @@ router.delete('/:id', (req, res) => {
   cvsController
     .deleteModule(req.params.id, req)
     .then((result) => {
+      console.log(result);
       // If result is equal to 0, then that means the cv id does not exist
       if (result === 0) {
         res.status(404).send('The cv ID you provided does not exist.');
