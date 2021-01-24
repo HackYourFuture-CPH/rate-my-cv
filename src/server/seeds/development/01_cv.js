@@ -9,21 +9,22 @@ exports.seed = function(knex) {
           id: 1,
           title: 'FrontEnd Developer',
           description: 'Frontend developer with 3 years experience',
-          file_url: 'url',
+          file_url: 'https://zety.com/blog/banking-resume-example',
           fk_user_id: 1,
         },
         {
           id: 2,
           title: 'Project Manager',
           description: 'Ambitious Project manager with handson experience',
-          file_url: 'url',
+          file_url:
+            'https://www.wozber.com/en-gb/cv-examples/front-end-developer-cv-example',
           fk_user_id: 2,
         },
         {
           id: 3,
           title: 'Fullstack Engineer',
           description: 'Skilled Fullstack developer with creative mind',
-          file_url: 'url',
+          file_url: 'https://zety.com/blog/auditor-resume-example',
           fk_user_id: 3,
         },
       ]);
