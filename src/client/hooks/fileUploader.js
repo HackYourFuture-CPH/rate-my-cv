@@ -1,6 +1,6 @@
 import { storage } from '../firebase/configure';
 
-export function FileUploader(cv) {
+function FileUploader(cv) {
   cv.preventDefault();
 
   const uploadTask = storage.ref(`/CVs/${cv.name}`).put(cv);
@@ -25,3 +25,7 @@ export function FileUploader(cv) {
     },
   );
 }
+
+const fileUrl = await FileUploader(cv);
+
+export default fileUrl;
