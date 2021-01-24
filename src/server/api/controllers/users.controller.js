@@ -3,11 +3,10 @@ Can be deleted as soon as the first real controller is added. */
 
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
-const moment = require('moment-timezone');
 
 const getUsers = async () => {
   try {
-    return await knex('users').select('users.id', 'users.title');
+    return await knex('users').select('*');
   } catch (error) {
     return error.message;
   }
@@ -15,13 +14,13 @@ const getUsers = async () => {
 
 const getUsersById = async (id) => {
   try {
-    const users = await knex('users')
-      .select('users.id as id', 'title')
+    const user = await knex('users')
+      .select('*')
       .where({ id });
-    if (users.length === 0) {
+    if (user.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
     }
-    return users;
+    return user;
   } catch (error) {
     return error.message;
   }
@@ -31,28 +30,33 @@ const editUser = async (userId, updatedUser) => {
   return knex('users')
     .where({ id: userId })
     .update({
-      title: updatedUser.title,
-      startDate: moment(updatedUser.startDate).format(),
-      endDate: moment(updatedUser.endDate).format(),
-      classId: updatedUser.classId,
-      updatedAt: moment().format(),
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      full_name: updatedUser.full_name,
+      position: updatedUser.position,
+      linkedin: updatedUser.linkedin,
+      github: updatedUser.github,
+      website: updatedUser.website,
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      profile_image_url: updatedUser.profile_image_url,
     });
 };
 
-const deleteUser = async (usersId) => {
+const deleteUser = async (userId) => {
   return knex('users')
-    .where({ id: usersId })
+    .where({ id: userId })
     .del();
 };
 
-const createUser = async (body) => {
+const createUser = async (newUser) => {
   await knex('users').insert({
-    full_name: body.full_name,
-    position: body.position,
-    linkedin: body.linkedin,
-    github: body.github,
-    website: body.website,
-    profile_image_url: body.profile_image_url,
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    full_name: newUser.full_name,
+    position: newUser.position,
+    linkedin: newUser.linkedin,
+    github: newUser.github,
+    website: newUser.website,
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    profile_image_url: newUser.profile_image_url,
   });
 
   return {
