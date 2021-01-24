@@ -137,6 +137,8 @@ Check the DB Model Diagram [here](https://dbdiagram.io/d/5ffc249780d742080a35cb4
 
 Check the mockup [here](https://www.figma.com/file/0ST4EGb45fiNtMqFl4WgBc/Review-Resume)
 
+Design style guide here: https://github.com/ghofranebenhmaid/review-resume/
+
 #### 🖼 Features
 
 Go to the project board [here](https://github.com/orgs/HackYourFuture-CPH/projects/2/)
