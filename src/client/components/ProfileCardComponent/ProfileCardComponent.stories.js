@@ -8,8 +8,8 @@ export default { title: 'Profile Card Component' };
 
 export const Component = () => (
   <ProfileCardComponent
-    profile_image_url={woman}
-    full_name="Stephanie Hicks"
+    profileImageUrl={woman}
+    fullName="Stephanie Hicks"
     position="Student"
     linkedin="arianavalentinamendez/"
     website="https://www.google.com/"
@@ -17,10 +17,10 @@ export const Component = () => (
   />
 );
 
-export const Component_two = () => (
+export const ComponentTwo = () => (
   <ProfileCardComponent
-    profile_image_url={man}
-    full_name="Jonathan Andersen"
+    profileImageUrl={man}
+    fullName="Jonathan Andersen"
     position="Web developer"
     linkedin="arianavalentinamendez/"
     website=""
@@ -28,17 +28,17 @@ export const Component_two = () => (
   />
 );
 
-export const Component_three = () => (
+export const ComponentThree = () => (
   <ProfileCardComponent
-    profile_image_url={womanthree}
-    full_name="Stephanie Mendrala"
+    profileImageUrl={womanthree}
+    fullName="Stephanie Mendrala"
     position="Scientist"
   />
 );
 
-export const Component_four = () => (
+export const ComponentFour = () => (
   <ProfileCardComponent
-    full_name="Valentina Méndez"
+    fullName="Valentina Méndez"
     position="Web developer"
     linkedin="arianavalentinamendez/"
     website="https://www.google.com/"

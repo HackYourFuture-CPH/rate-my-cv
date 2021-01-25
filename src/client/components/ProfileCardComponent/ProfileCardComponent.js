@@ -7,8 +7,8 @@ import iconGithub from '../../assets/images/icons/github.svg';
 import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
 
 export const ProfileCardComponent = ({
-  profile_image_url,
-  full_name,
+  profileImageUrl,
+  fullName,
   position,
   linkedin,
   website,
@@ -18,9 +18,9 @@ export const ProfileCardComponent = ({
     <div className="profile-card-whole">
       <div className="top">
         <div className="circle">
-          <img src={profile_image_url || unknownUser} alt="Portrait of user" />
+          <img src={profileImageUrl || unknownUser} alt="Portrait of user" />
         </div>
-        <h2 className="user-full-name">{full_name}</h2>
+        <h2 className="user-full-name">{fullName}</h2>
         <p className="user-position">{position}</p>
       </div>
 
@@ -28,7 +28,11 @@ export const ProfileCardComponent = ({
       <div className="profile-card-social-links">
         {linkedin && (
           <div className="social-link">
-            <img src={iconLinkedin} className="social-icon" alt="icon" />
+            <img
+              src={iconLinkedin}
+              className="social-icon"
+              alt="Social media icon"
+            />
             <a
               href={`https://www.linkedin.com/in/${linkedin}`}
               className="social-link-text"
@@ -39,7 +43,11 @@ export const ProfileCardComponent = ({
         )}
         {github && (
           <div className="social-link">
-            <img src={iconGithub} className="social-icon" alt="icon" />
+            <img
+              src={iconGithub}
+              className="social-icon"
+              alt="Social media icon"
+            />
             <a
               href={`https://github.com/${github}`}
               className="social-link-text"
@@ -62,8 +70,8 @@ export const ProfileCardComponent = ({
 };
 
 ProfileCardComponent.propTypes = {
-  profile_image_url: PropTypes.string.isRequired,
-  full_name: PropTypes.string.isRequired,
+  profileImageUrl: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
   linkedin: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
