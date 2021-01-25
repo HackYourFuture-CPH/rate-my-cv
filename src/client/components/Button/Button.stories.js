@@ -10,6 +10,6 @@ export const Primary = () => {
   return <Button buttonName = {text("Label", "Primary")} backgroundColor = {color("backgroundColor", "orange")}  />;
 };
 export const Secondary = () => {
-  return <Button buttonName = {text("Label", "Secondary")} backgroundColor = {color("backgroundColor", "white")}  />;
+  return <Button buttonName = {text("Label", "Secondary")} backgroundColor = {color("backgroundColor", "blue")}  />;
 };
 
