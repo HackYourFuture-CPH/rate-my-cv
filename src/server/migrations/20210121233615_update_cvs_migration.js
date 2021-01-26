@@ -19,7 +19,7 @@ exports.down = function(knex) {
   return knex.schema.table('cvs', (table) => {
     table.dropColumn('description');
     table.dropColumn('file_url');
-    table.dropColumn('fk_user_id');
+    table.dropForeign('fk_user_id');
     table.dropColumn('fk_user_id');
     table.dropColumn('updatedAt');
     table.dropColumn('deletedAt');
