@@ -128,9 +128,16 @@ router.post('/', (req, res) => {
  */
 router.patch('/:id', (req, res, next) => {
   cvsController
-    .editModule(req.params.id, req.body)
-    .then((result) => res.json(result))
-    .catch(next);
+    .editCv(req.params.id, req.body)
+    .then((result) => {
+      // If result is equal to 0, then that means the cvs id does not exist
+      if (result === 0) {
+        res.status(400).send(`CVS ID '${req.params.id}' does not exist.`);
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
 });
 
 /**

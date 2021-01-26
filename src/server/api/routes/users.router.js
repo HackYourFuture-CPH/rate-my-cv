@@ -60,6 +60,50 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
+ * /cvs/{ID}:
+ *  patch:
+ *    summary: edit users
+ *    description:
+ *      Will create a new user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the user to patch.
+ *      - in: body
+ *        name: patch users
+ *        description: The user to create.
+ *        schema:
+ *          type: object
+ *          properties:
+ *            title:
+ *              type: string
+ *
+ *    responses:
+ *      200:
+ *        description: user was patched
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res, next) => {
+  usersController
+    .editUser(req.params.id, req.body)
+    .then((result) => {
+      // If result is equal to 0, then that means the user id does not exist
+      if (result === 0) {
+        res.status(400).send(`User ID '${req.params.id}' does not exist.`);
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
+});
+
+
+
+
+/**
+ * @swagger
  * /modules:
  *  post:
  *    summary: Create a user
