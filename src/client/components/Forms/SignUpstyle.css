@@ -64,13 +64,21 @@ h3 {
 }
 
 @media screen and (max-width: 750px) {
+  form {
+    background: color 0;
+    height: 600px;
+    width: 350px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 0px;
+  }
   .btn-Linkedin {
-    margin-left: 10px;
+    margin-left: 5px;
     font-style: normal;
     font-size: 14px;
     line-height: 20px;
     height: 40px;
-    width: 200px;
+    width: 150px;
     background-color: #007bff;
   }
   h2,
@@ -88,7 +96,9 @@ h3 {
     background-color: #da532c;
   }
   .label-checkbox {
-    display: flex;
-    flex: wrap;
+    font-size: 9px;
+    text-justify: left;
+    margin-left: 10px;
+    margin-right: 80px;
   }
 }
