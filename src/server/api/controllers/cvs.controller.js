@@ -31,8 +31,12 @@ const editCv = async (cvId, updatedCv) => {
     .where({ id: cvId })
     .update({
       title: updatedCv.title,
-      createdAt: moment(updatedCv.createdAt).format(),   
-    });
+      createdAt: moment(updatedCv.createdAt).format(),
+      description: updatedCv.description,
+      file_url: updatedCv.file_url,
+      updatedAt: moment().format(),
+      deletedAt: moment().format(),  
+ });
 };
 
 

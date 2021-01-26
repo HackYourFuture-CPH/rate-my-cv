@@ -110,10 +110,10 @@ router.post('/', (req, res) => {
  *    parameters:
  *      - in: path
  *        name: ID
- *        description: ID of the module to patch.
+ *        description: ID of the cv to patch.
  *      - in: body
  *        name: module
- *        description: The module to create.
+ *        description: The cv to create.
  *        schema:
  *          type: object
  *          properties:
@@ -134,7 +134,7 @@ router.patch('/:id', (req, res, next) => {
       if (result === 0) {
         res.status(400).send(`CVS ID '${req.params.id}' does not exist.`);
       } else {
-        res.json({ success: true });
+        res.json({ success: true });  
       }
     })
     .catch((error) => console.log(error));
