@@ -137,7 +137,6 @@ export default function SignUp({ onSubmit }) {
         </label>{' '}
         <br></br>
         <br></br>
-        <br></br>
         <button className="btn-account" type="submit">
           Create Account
         </button>
