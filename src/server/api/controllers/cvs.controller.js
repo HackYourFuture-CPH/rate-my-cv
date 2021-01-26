@@ -8,15 +8,15 @@ const getCvs = async (title, limit) => {
   try {
     if (title) {
       return await knex('cvs')
-        .select('cvs.id', 'cvs.title')
-        .where({ title });
+        .select('*')
+        .where('title', 'like', `%${title}%`);
     } else if (limit) {
       return await knex('cvs')
-        .select('cvs.id', 'cvs.title')
+        .select('*')
         .limit({ limit });
     } else
       return await knex('cvs')
-        .select('cvs.id', 'cvs.title', 'cvs.file_url', 'cvs.createdAt')
+        .select('*')
         .orderBy('cvs.title')
         .orderBy('createdAt', 'desc');
   } catch (error) {
