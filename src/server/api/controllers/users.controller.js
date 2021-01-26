@@ -37,7 +37,7 @@ const editUser = async (userId, updatedUser) => {
       github: updatedUser.github,
       website: updatedUser.website,
       profile_image_url: updatedUser.profile_image_url,
-      created_date: moment(updatedUser.created_date).format(),
+      created_date: moment(updatedUser.created_date).format(),  
  });
 };
 
