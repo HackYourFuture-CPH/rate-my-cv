@@ -10,7 +10,7 @@ export default function SignUp({ onSubmit }) {
   const handlePasswordConfirmInput = (e) => setPasswordConfirm(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, password, passwordConfirm });
+    onSubmit({ email, password, passwordConfirm, fullName: 'Jane Doe' });
   };
   return (
     <form onSubmit={handleSubmit}>
