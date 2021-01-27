@@ -10,7 +10,16 @@ const getDoesPasswordsMatch = ({ password, passwordConfirm }) =>
 export default function SignUpContainer() {
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const onSubmit = async ({ email, password, passwordConfirm }) => {
+  const onSubmit = async ({
+    email,
+    password,
+    passwordConfirm,
+    fullName,
+    position,
+    linkedin,
+    github,
+    website,
+  }) => {
     setIsLoading(true);
     const doesPasswordsMatch = getDoesPasswordsMatch({
       password,
@@ -21,9 +30,26 @@ export default function SignUpContainer() {
       alert("Passwords doesn't match");
       return;
     }
-    const isSignedUp = await signUp({ email, password });
+    const firebaseUser = await signUp({ email, password });
+    if (firebaseUser) {
+      await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firebaseToken: firebaseUser.user.uid,
+          fullName,
+          position,
+          linkedin,
+          github,
+          website,
+        }),
+      });
+      setIsSuccessful(true);
+    }
+
     setIsLoading(false);
-    if (isSignedUp) setIsSuccessful(true);
   };
   if (isLoading) return <Loader />;
   if (isSuccessful) return <UserCreationSuccess />;

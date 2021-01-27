@@ -60,7 +60,7 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /modules:
+ * /users:
  *  post:
  *    summary: Create a user
  *    description:
@@ -73,14 +73,10 @@ router.get('/:id', (req, res, next) => {
  *        schema:
  *          type: object
  *          required:
- *            - full_name
- *            - position
- *            - linkedin
- *            - github
- *            - website
- *            - profile_image_url
+ *            - fullName
+ *            - firebaseToken
  *          properties:
- *            full_name:
+ *            fullName:
  *              type: string
  *            position:
  *              type: string
@@ -90,7 +86,9 @@ router.get('/:id', (req, res, next) => {
  *              type: string
  *            website:
  *              type: string
- *            profile_image_url:
+ *            profileImageUrl:
+ *              type: string
+ *            firebaseToken:
  *              type: string
  *    responses:
  *      201:
