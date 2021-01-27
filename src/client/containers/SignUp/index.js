@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { signUp } from '../../firebase/auth';
-import UserCreationSuccess from '../../components/Success/UserCreationSuccess';
 import SignUp from '../../components/Forms/SignUp';
 import Loader from '../../components/Loader';
+import { useHistory } from 'react-router-dom';
 
 const getDoesPasswordsMatch = ({ password, passwordConfirm }) =>
   password === passwordConfirm;
 
 export default function SignUpContainer() {
-  const [isSuccessful, setIsSuccessful] = useState(false);
+  const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
   const onSubmit = async ({
     email,
@@ -46,12 +46,10 @@ export default function SignUpContainer() {
           website,
         }),
       });
-      setIsSuccessful(true);
+      setIsLoading(false);
+      history.push('/profile');
     }
-
-    setIsLoading(false);
   };
   if (isLoading) return <Loader />;
-  if (isSuccessful) return <UserCreationSuccess />;
   return <SignUp onSubmit={onSubmit} />;
 }
