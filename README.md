@@ -119,6 +119,7 @@ _Class Dates_
     - Then checkout the branch you were working in: `git checkout user-login`
     - Then merge the latest changes from `develop` into your branch: `git merge develop`
 - Week 3 —> 31-Jan-2021
+  - Be respoctful of mentors time! Try figure it out yourself first (i definitely know you do that) If that is not working, reach out to a classmate, then maybe the support channels. Then if you still cannot figure it out the reach out to mentors
 - Week 4 —> 7-Feb-2021
 - Week 5 —> 14-Feb-2021
 - Week 6 —> 21-Feb-2021
