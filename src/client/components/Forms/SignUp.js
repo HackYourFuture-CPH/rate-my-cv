@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import iconGithub from '../../assets/images/icons/github.svg';
 import './SignUpstyle.css';
+import Button from '../Button/Button';
 
 export default function SignUp({ onSubmit }) {
   const [name, setName] = useState('');
@@ -33,12 +34,18 @@ export default function SignUp({ onSubmit }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h2> Signup to Review Resume </h2>
-        <button className="btn-Linkedin">Signup with LinkedIn</button>{' '}
+        {/* <button className="btn-Linkedin">Signup with LinkedIn</button>{' '} */}
+        <div className="btn-Linkedin">
+          <Button
+            buttonName={'Signup With Linkedin'}
+            backgroundColor={('backgroundColor', ' #0676f2')}
+          ></Button>{' '}
+        </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <img src={iconGithub}></img> <br></br>
         <h3>&nbsp; Or &nbsp;</h3>
         <label htmlFor="Name">
-          Name <br></br>
+          Name
           <input
             type="text"
             name="Name"
@@ -47,17 +54,6 @@ export default function SignUp({ onSubmit }) {
             onChange={handleNameInput}
             required
           />
-        </label>
-        <label htmlFor="UserName">
-          UserName
-          <input
-            type="text"
-            name="UserName"
-            placeholder=""
-            value={userName}
-            onChange={handleUserNameInput}
-            required
-          />{' '}
         </label>
         <label htmlFor="position">
           Position{' '}
