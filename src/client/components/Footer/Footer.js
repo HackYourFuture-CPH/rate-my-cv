@@ -12,9 +12,9 @@ export default function Footer() {
     <div className="footer">
         <p>©  HYF Copenhagen</p>
     <ul>
-        <a href="https://www.linkedin.com/"> <img src={iconLinkedin}></img></a>
-        <a href="https://www.github.com/"><img  src={iconGithub}></img></a>  
-        <a href="https://www.hackyourfuture.dk/"><img src={iconWebsite}></img></a>      
+        <a href="https://www.linkedin.com/"> <img src={iconLinkedin} alt="Social media icon linkedin" /></a>
+        <a href="https://www.github.com/"><img  src={iconGithub} alt="Social media icon github" /></a>  
+        <a href="https://www.hackyourfuture.dk/"><img src={iconWebsite} alt="Social media icon hackyourfutre" /></a>      
     </ul>
      
     </div>
