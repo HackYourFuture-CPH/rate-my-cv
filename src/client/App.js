@@ -35,7 +35,7 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
-      <Footer></Footer>
+       <Footer />
     </Router>
   );
 }
