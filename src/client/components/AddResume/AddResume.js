@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDom from 'react-dom';
-import Button from './../Button/Button';
+import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 
@@ -26,14 +26,14 @@ const[uploadFile,setUploadaFile] =useState('');
                 <div className = "upload-box">
                     <label>Select A file</label><br/>
                     <input type='text' value={uploadFile} onChange={(e)=> setUploadaFile(e.target.value)}/>
-                    <Button buttonName={'Browse'} backgroundColor = {("backgroundColor", "black")} color = {('color', 'white')} border = {('border','1px solid black')}/><br/>
+                    <Button buttonName='Browse' backgroundColor = {("backgroundColor", "black")} /><br/>
                 </div>
             </div>
             <div className = "reset-uplod-btns">
-                    <span className = 'reset-btn'><Button buttonName={'Reset'} backgroundColor = {("backgroundColor", "white")} /></span>
-                    <span className = 'upload-btn'><Button buttonName={'Upload'} backgroundColor = {("backgroundColor", "#0388fc")} /></span><br/><br/>
+                    <span className = 'reset-btn'><Button buttonName='Reset' backgroundColor = {("backgroundColor", "white")} /></span>
+                    <span className = 'upload-btn'><Button buttonName='Upload' backgroundColor = {("backgroundColor", "#0388fc")} /></span><br/><br/>
                 <div className = "add-btn">
-                    <Button buttonName={'Add resume'} backgroundColor = {("backgroundColor", "rgb(233, 86, 29)")} />
+                    <Button buttonName='Add resume' backgroundColor = {("backgroundColor", "rgb(233, 86, 29)")} />
                 </div>
             </div>
         </div>    
