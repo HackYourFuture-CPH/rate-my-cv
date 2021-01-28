@@ -25,7 +25,7 @@ export default function SignUp({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== passwordConfirm) {
-      return setValidation('******Your password does not match*****');
+      return setValidation('**Your password does not match**');
     }
     setValidation('');
     onSubmit({ email, password, passwordConfirm });
@@ -35,15 +35,22 @@ export default function SignUp({ onSubmit }) {
       <form onSubmit={handleSubmit}>
         <h2> Signup to Review Resume </h2>
         {/* <button className="btn-Linkedin">Signup with LinkedIn</button>{' '} */}
-        <div className="btn-Linkedin">
+        <div className="button-forms">
           <Button
             buttonName={'Signup With Linkedin'}
             backgroundColor={('backgroundColor', ' #0676f2')}
           ></Button>{' '}
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src={iconGithub}></img> <br></br>
-        <h3>&nbsp; Or &nbsp;</h3>
+          <div className="space">
+            <div className="github-container">
+              <img className="github-logo" src={iconGithub}></img>{' '}
+            </div>
+          </div>
+        </div>{' '}
+        <br></br>
+        <h3>
+          {' '}
+          <span className="or">Or</span>
+        </h3>
         <label htmlFor="Name">
           Name
           <input
@@ -87,6 +94,7 @@ export default function SignUp({ onSubmit }) {
             placeholder="LinkedIn profile link"
             value={linkedin}
             onChange={handleLinkedinInput}
+            required
           />
         </label>
         <br></br>
@@ -98,6 +106,7 @@ export default function SignUp({ onSubmit }) {
             placeholder="Github profile link"
             value={github}
             onChange={handleGithubInput}
+            required
           />
         </label>
         <br></br>
@@ -135,10 +144,10 @@ export default function SignUp({ onSubmit }) {
           Privacy,Policy and our default Notification Settings
         </label>{' '}
         <br></br>
-        <br></br>
-        <button className="btn-account" type="submit">
-          Create Account
-        </button>
+        <Button
+          buttonName={('Label', 'Create Account')}
+          backgroundColor={('backgroundColor', '#da532c')}
+        />
         <div className="validation">{validation}</div>
       </form>
     </div>

@@ -1,4 +1,4 @@
-.btn-Linkedin {
+/* .btn-Linkedin {
   margin-left: 180px;
   font-style: normal;
   font-size: 12px;
@@ -7,8 +7,8 @@
   width: 200px;
   color: white;
   background-color: #0676f2;
-}
-.btn-account {
+} */
+/* .btn-account {
   margin-left: 200px;
   font-style: normal;
   font-weight: bold;
@@ -17,6 +17,26 @@
   height: 50px;
   width: 200px;
   background-color: #da532c;
+} */
+.github-logo {
+  width: 40px;
+}
+.button-forms {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.github-container {
+  padding: 0.3em;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  margin: 5px;
+}
+.space {
+  margin-left: 80px;
+}
+.or {
+  color: #9a9a9a;
 }
 
 input[type='email'],
@@ -35,7 +55,7 @@ input[type='url'] {
 form {
   background: color 0;
   height: 600px;
-  width: 600px;
+  width: 400px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
@@ -44,25 +64,22 @@ form {
   padding: 0px;
 }
 label {
-  font-family: Georgia, Times, serif;
   font-size: 14px;
 
   margin-top: 10px;
   margin-left: 5px;
   text-align: right;
+  font-weight: bold;
 }
 
 input[type='checkbox'] {
   text-decoration: none;
   font-size: 8px;
 }
-h2,
+
 h3 {
-  text-align: center;
-}
-h3 {
-  border-left: 270px solid hsl(240, 15%, 92%);
-  border-right: 300px solid #e6e5ee;
+  border-left: 190px solid hsl(240, 15%, 92%);
+  border-right: 120px solid #e6e5ee;
   line-height: 1px;
   color: #a17272;
   margin-top: 40px;
@@ -71,6 +88,9 @@ h3 {
 .label-checkbox {
   display: flex;
   font-size: 10px;
+  justify-content: left;
+  text-align: left;
+  font-weight: normal;
 }
 .validation {
   width: 700px;
@@ -84,22 +104,21 @@ h3 {
 
 @media screen and (max-width: 750px) {
   form {
-    background: color 0;
-    height: 600px;
-    width: 350px;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-top: 0px;
+    width: 90%;
   }
-  .btn-Linkedin {
-    margin-left: 5px;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 20px;
-    height: 40px;
-    width: 150px;
-    background-color: #007bff;
+  input[type='email'],
+  input[type='text'],
+  input[type='password'],
+  input[type='url'] {
+    width: 90%;
+    padding: 10px 22px;
+    margin: 10px 0px;
+    box-sizing: border-box;
+    border: 2px solid #f8f0f4;
+    display: inline-block;
+    background-color: rgba(63, 58, 58, 0.075);
   }
+
   h2,
   h3 {
     text-align: left;
@@ -119,5 +138,18 @@ h3 {
     text-justify: left;
     margin-left: 10px;
     margin-right: 80px;
+  }
+  .validation {
+    width: max-content;
+    border: 0px solid rgb(250, 252, 250);
+    padding: 80px;
+    margin: 10px;
+    text-align: center;
+    color: red;
+    font-style: normal;
+    margin-top: -250px;
+  }
+  .space {
+    margin-left: 5px;
   }
 }
