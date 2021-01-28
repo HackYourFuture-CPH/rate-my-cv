@@ -1,0 +1,26 @@
+.cv-loader {
+  background-color: #6236FF;
+  color: white;
+  padding-top: 20px;
+  font-size: 30px;
+  height: 160px;
+  text-align: center;
+}
+
+.cv-btn button {
+  color: white;
+  border-radius: 6px;
+}
+.search-button {
+  margin-left: 130px;
+  margin-top: -8px;
+  margin-right: 130px;  
+}
+
+@media(max-width: 450px){
+  .cv-btn button{
+    font-size: 10px;
+  } 
+}
+
+  
