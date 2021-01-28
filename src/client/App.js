@@ -10,6 +10,7 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
+import NotFoundPage from './containers/NotFound/notFoundPage.component';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -31,6 +32,7 @@ function App() {
         >
           <Profile />
         </AuthenticatedRoute>
+        <Route path="*" component={NotFoundPage} />
       </Switch>
     </Router>
   );
