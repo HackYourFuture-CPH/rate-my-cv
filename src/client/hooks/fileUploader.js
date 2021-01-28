@@ -1,31 +1,34 @@
+import { useState, useEffect } from 'react';
 import { storage } from '../firebase/configure';
 
-function FileUploader(cv) {
-  cv.preventDefault();
+export const useStorage = (file) => {
+  const [progress, setProgress] = useState(0);
+  const [error, setError] = useState(null);
+  const [url, setUrl] = useState(null);
 
-  const uploadTask = storage.ref(`/CVs/${cv.name}`).put(cv);
-  uploadTask.on(
-    'state_changed',
-    (snapShot) => {
-      console.log(snapShot);
-    },
-    (err) => {
-      console.log(err);
-    },
-    () => {
-      // gets the functions from storage refences the image storage in firebase by the children
-      // gets the download url then sets the image from firebase as the value for the imgUrl key:
-      storage
-        .ref('CVs')
-        .child(cv.name)
-        .getDownloadURL()
-        .then((cvUrl) => {
-          return cvUrl;
-        });
-    },
-  );
-}
+  useEffect(() => {
+    if (file) {
+      const storageRef = storage.ref(`/CVs/${file.name}`);
+      storageRef.put(file).on(
+        'state_changed',
+        (snap) => {
+          // upload progress
+          const percentage = Math.round(
+            (snap.bytesTransferred / snap.totalBytes) * 100,
+          );
+          setProgress(percentage);
+        },
+        (err) => {
+          setError(err);
+        },
+        async () => {
+          const downloadUrl = await storageRef.getDownloadURL();
+          // save the url to local state
+          setUrl(downloadUrl);
+        },
+      );
+    }
+  }, [file]);
 
-const fileUrl = await FileUploader();
-
-export default fileUrl;
+  return { progress, url, error };
+};
