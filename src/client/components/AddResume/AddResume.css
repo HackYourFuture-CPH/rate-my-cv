@@ -1,0 +1,95 @@
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+.popup-form{
+    padding: 20px;
+    border: 1px solid rgb(218, 214, 214);
+    border-radius: 10px;
+    height: 500px;
+    width: 700px;
+}
+.closeicon{
+    height: 15px;
+    width: 15px;
+    float: right;
+}
+h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top:0px;
+}
+
+.title-box{
+    padding-bottom: 10px;
+}
+.title-box input{
+    height: 40px;
+}
+.description-box{
+    padding-bottom: 10px;
+}
+.description-box textarea{
+    margin-top:5px;
+    width: 100%;
+    background-color: rgb(238, 232, 232);
+    border: 1px solid rgb(238, 232, 232);
+    border-radius: 5px;
+    height: 120px;
+}
+.upload-box{
+    padding-bottom: 10px;
+}
+.upload-box input{
+    width: 85%;
+    height:40px;
+}
+.upload-box button{
+    width: 15%;
+   height: 40px;
+   padding: 0px;
+}
+
+label{
+    font-weight: bold;
+}
+input{
+    margin-top:5px;
+    width: 100%;
+    background-color: rgb(238, 232, 232);
+    border: 1px solid rgb(238, 232, 232);
+    border-radius: 5px;
+}
+
+.reset-uplod-btns button{
+    height: 30px;
+    width: 100px;
+    margin:4px;
+   padding: 0px;  
+}
+
+.reset-uplod-btns .reset-btn button{
+    color:#0388fc;
+    border:1px solid #0388fc;
+}
+
+.reset-uplod-btns .upload-btn button{
+    color: white;
+    border:#0388fc;
+}
+
+.add-btn button{
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    float: right;
+    border-bottom: -20px;
+    color: white;
+    border: rgb(233, 86, 29);
+}
