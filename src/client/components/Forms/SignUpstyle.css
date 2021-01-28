@@ -1,11 +1,12 @@
 .btn-Linkedin {
   margin-left: 180px;
   font-style: normal;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   height: 40px;
   width: 200px;
-  background-color: #007bff;
+  color: white;
+  background-color: #0676f2;
 }
 .btn-account {
   margin-left: 200px;
@@ -18,15 +19,25 @@
   background-color: #da532c;
 }
 
-input[type='text'],
 input[type='email'],
-input[type='password'] {
+input[type='password'],
+input[type='url'] {
   width: 100%;
   padding: 10px 22px;
   margin: 10px 0px;
   box-sizing: border-box;
   border: 2px solid #f8f0f4;
   display: inline-block;
+  background-color: rgba(63, 58, 58, 0.075);
+}
+input[type='text'] {
+  width: 44%;
+  padding: 10px 22px;
+  margin: 5px 0px;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 2px solid #f8f0f4;
+
   background-color: rgba(63, 58, 58, 0.075);
 }
 
@@ -42,9 +53,9 @@ form {
   padding: 0px;
 }
 label {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 18px;
-  color: #333;
+  font-family: Georgia, Times, serif;
+  font-size: 14px;
+
   margin-top: 10px;
   margin-left: 5px;
   text-align: right;
@@ -58,9 +69,26 @@ h2,
 h3 {
   text-align: center;
 }
+h3 {
+  border-left: 270px solid hsl(240, 15%, 92%);
+  border-right: 300px solid #e6e5ee;
+  line-height: 1px;
+  color: #a17272;
+  margin-top: 40px;
+}
+
 .label-checkbox {
   display: flex;
   font-size: 10px;
+}
+.validation {
+  width: 700px;
+  border: 0px solid rgb(250, 252, 250);
+  padding: 80px;
+  margin: 10px;
+  text-align: center;
+  color: red;
+  margin-top: -250px;
 }
 
 @media screen and (max-width: 750px) {

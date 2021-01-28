@@ -12,6 +12,7 @@ export default function SignUp({ onSubmit }) {
   const [github, setGithub] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [validation, setValidation] = useState('');
   const handleEmailInput = (e) => setEmail(e.target.value);
   const handleNameInput = (e) => setName(e.target.value);
   const handleUserNameInput = (e) => setUserName(e.target.value);
@@ -22,6 +23,10 @@ export default function SignUp({ onSubmit }) {
   const handlePasswordConfirmInput = (e) => setPasswordConfirm(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== passwordConfirm) {
+      return setValidation('******Your password does not match*****');
+    }
+    setValidation('');
     onSubmit({ email, password, passwordConfirm });
   };
   return (
@@ -31,21 +36,20 @@ export default function SignUp({ onSubmit }) {
         <button className="btn-Linkedin">Signup with LinkedIn</button>{' '}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <img src={iconGithub}></img> <br></br>
-        <h3> ---------------- Or-----------------</h3>
+        <h3>&nbsp; Or &nbsp;</h3>
         <label htmlFor="Name">
-          Name{' '}
+          Name <br></br>
           <input
             type="text"
-            name="name"
+            name="Name"
             placeholder=""
             value={name}
             onChange={handleNameInput}
             required
           />
-        </label>{' '}
-        <br></br>
+        </label>
         <label htmlFor="UserName">
-          UserName{' '}
+          UserName
           <input
             type="text"
             name="UserName"
@@ -53,13 +57,12 @@ export default function SignUp({ onSubmit }) {
             value={userName}
             onChange={handleUserNameInput}
             required
-          />
+          />{' '}
         </label>
-        <br></br>
         <label htmlFor="position">
           Position{' '}
           <input
-            type="text"
+            type="password"
             name="position"
             placeholder=""
             value={position}
@@ -83,24 +86,22 @@ export default function SignUp({ onSubmit }) {
         <label htmlFor="linkedin">
           LinkedIn{' '}
           <input
-            type="text"
+            type="url"
             name="linkedin"
             placeholder="LinkedIn profile link"
             value={linkedin}
             onChange={handleLinkedinInput}
-            required
           />
         </label>
         <br></br>
         <label htmlFor="github">
           Github{' '}
           <input
-            type="text"
+            type="url"
             name="github"
             placeholder="Github profile link"
             value={github}
             onChange={handleGithubInput}
-            required
           />
         </label>
         <br></br>
@@ -112,6 +113,8 @@ export default function SignUp({ onSubmit }) {
             placeholder=""
             value={password}
             onChange={handlePasswordInput}
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             required
           />
         </label>{' '}
@@ -124,7 +127,7 @@ export default function SignUp({ onSubmit }) {
             placeholder="Write your password again"
             value={passwordConfirm}
             onChange={handlePasswordConfirmInput}
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             required
           />
@@ -140,6 +143,7 @@ export default function SignUp({ onSubmit }) {
         <button className="btn-account" type="submit">
           Create Account
         </button>
+        <div className="validation">{validation}</div>
       </form>
     </div>
   );
