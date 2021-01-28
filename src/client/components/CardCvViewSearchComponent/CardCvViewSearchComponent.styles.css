@@ -1,0 +1,80 @@
+.card-cv-whole {
+  max-width: 300px;
+  background: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  height: 210px;
+  display: flex;
+  padding: 1.5em;
+  flex-direction: column;
+}
+
+.card-cv-top {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  margin-bottom: 1em;
+  align-items: flex-start
+}
+
+.profile-picture {
+  margin-right: 1em;
+}
+
+.user-photo {
+  display: inline;
+  margin: 0 auto;
+  width: 40px;
+  justify-content: flex-start;
+}
+
+.circle-mask {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.user-info {
+  align-items: flex-start
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.user-position {
+  font-size: 12px;
+  color: #818181;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.card-cv-middle {
+  margin-top: 0.5em;
+  align-items: flex-start
+}
+
+.file-url {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.created-date {
+  font-size: 10px;
+  color: #9A9A9A;
+  margin-top: 1px;
+}
+
+.card-cv-bottom {
+  display: flex;
+  justify-content: flex-end;
+}
