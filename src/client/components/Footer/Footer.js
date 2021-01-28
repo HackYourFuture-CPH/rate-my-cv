@@ -16,7 +16,7 @@ export default function Footer() {
         <a href="https://www.github.com/"><img  src={iconGithub} alt="Social media icon github" /></a>  
         <a href="https://www.hackyourfuture.dk/"><img src={iconWebsite} alt="Social media icon hackyourfutre" /></a>      
     </ul>
-        
+          
     </div>
   );
 }
