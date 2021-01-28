@@ -19,7 +19,7 @@ function App() {
     <Router>  
       <Header isAuthenticated={isAuthenticated} />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/">     
           <Home />
         </Route>
         <SignIn exact path="/sign-in" />

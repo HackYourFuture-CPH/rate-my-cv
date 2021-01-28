@@ -6,9 +6,9 @@ import iconWebsite from '../../assets/images/icons/website.svg';
 
 
   
-export default function Footer() {       
+export default function Footer() {           
      
-  return (
+  return (  
     <div className="footer">
         <p>©  HYF Copenhagen</p>
     <ul>
