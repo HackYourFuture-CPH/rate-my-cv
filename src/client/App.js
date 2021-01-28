@@ -10,12 +10,13 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
+import Footer from './components/Footer/footer.js';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
-    <Router>
+    <Router>  
       <Header isAuthenticated={isAuthenticated} />
       <Switch>
         <Route exact path="/">
@@ -27,11 +28,12 @@ function App() {
         <AuthenticatedRoute
           exact
           path="/profile"
-          isAuthenticated={isAuthenticated}
-        >
+          isAuthenticated={isAuthenticated}>
           <Profile />
-        </AuthenticatedRoute>
+          </AuthenticatedRoute>
+        
       </Switch>
+      <Footer></Footer>
     </Router>
   );
 }
