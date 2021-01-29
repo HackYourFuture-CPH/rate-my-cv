@@ -29,7 +29,7 @@ function App() {
         <AuthenticatedRoute
           exact
           path="/profile"
-          isAuthenticated={isAuthenticated}
+          isAuthenticated={isAuthenticated}  
         >
           <Profile />
         </AuthenticatedRoute>

@@ -4,4 +4,4 @@ import  Footer  from './Footer';
 
 export default { title: 'Footer component' };
 
-export const footer = () => <Footer />;       
+export const footer = () => <Footer />;          
