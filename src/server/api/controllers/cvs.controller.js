@@ -10,7 +10,8 @@ const getCvs = async (title, limit) => {
       return await knex('cvs')
         .select('*')
         .where('title', 'like', `%${title}%`);
-    } else if (limit) {
+    }
+    if (limit) {
       return await knex('cvs')
         .select('*')
         .limit({ limit });
