@@ -1,7 +1,7 @@
-/* TODO: This is just an example file to illustrate API routing and
-documentation. Can be deleted when the first real route is added. */
 const express = require('express');
+
 const router = express.Router({ mergeParams: true });
+
 // controllers
 const usersController = require('../controllers/users.controller');
 
@@ -46,6 +46,5 @@ router.patch('/:id', (req, res ) => {
     })
     .catch((error) => console.log(error));
 });
-
 
 module.exports = router;
