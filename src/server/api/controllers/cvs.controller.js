@@ -14,11 +14,11 @@ const getCvs = async (title, limit) => {
       return await knex('cvs')
         .select('*')
         .limit({ limit });
-    } else
-      return await knex('cvs')
-        .select('*')
-        .orderBy('cvs.title')
-        .orderBy('createdAt', 'desc');
+    }
+    return await knex('cvs')
+      .select('*')
+      .orderBy('cvs.title')
+      .orderBy('createdAt', 'desc');
   } catch (error) {
     return error.message;
   }
