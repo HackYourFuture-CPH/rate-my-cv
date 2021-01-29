@@ -3,7 +3,7 @@ import './Footer.css';
 import iconLinkedin from '../../assets/images/icons/linkedin.svg';
 import iconGithub from '../../assets/images/icons/github.svg';
 import iconWebsite from '../../assets/images/icons/website.svg';   
-import PropTypes from 'prop-types'; 
+ 
 
 
   
@@ -22,6 +22,3 @@ export default function Footer() {
   );
 }
 
-Footer.propTypes = {
-    isAuthenticated: PropTypes.bool.isRequired,
-  };
