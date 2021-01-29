@@ -12,24 +12,24 @@ const[uploadFile,setUploadaFile] =useState('');
     return ReactDom.createPortal ((
         <div className = "popup">
             <div className = "popup-form">
-                <img className="closeicon" src= {close} alt='closeIcon'/>
+                <img className="close-icon" src= {close} alt='close Icon'/>
                 <h3>Upload new CV</h3>
             <div className='form'>
-                <div className = "title-box">
+                <div className = "title">
                     <label>Add Title</label><br/>
                     <input type='text' value={title} onChange={(e)=> setTitle(e.target.value)}/><br/>
                 </div>
-                <div className = "description-box">
+                <div className = "description">
                     <label>Description</label><br/>
                     <textarea type='text' value={description} onChange={(e)=> setDescription(e.target.value)}/><br/>
                 </div>
-                <div className = "upload-box">
+                <div className = "upload">
                     <label>Select A file</label><br/>
                     <input type='text' value={uploadFile} onChange={(e)=> setUploadaFile(e.target.value)}/>
                     <Button buttonName='Browse' backgroundColor = {("backgroundColor", "black")} /><br/>
                 </div>
             </div>
-            <div className = "reset-uplod-btns">
+            <div className = "reset-upload-btns">
                     <span className = 'reset-btn'><Button buttonName='Reset' backgroundColor = {("backgroundColor", "white")} /></span>
                     <span className = 'upload-btn'><Button buttonName='Upload' backgroundColor = {("backgroundColor", "#0388fc")} /></span><br/><br/>
                 <div className = "add-btn">
@@ -38,7 +38,7 @@ const[uploadFile,setUploadaFile] =useState('');
             </div>
         </div>    
     </div>
-    ), document.getElementById('portal')
+    ), document.querySelector('#portal')
     )
 }
 

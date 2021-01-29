@@ -13,7 +13,7 @@
     height: 500px;
     width: 700px;
 }
-.closeicon{
+.close-icon{
     height: 15px;
     width: 15px;
     float: right;
@@ -26,16 +26,16 @@ h3{
     margin-top:0px;
 }
 
-.title-box{
+.title{
     padding-bottom: 10px;
 }
-.title-box input{
+.title input{
     height: 40px;
 }
-.description-box{
+.description{
     padding-bottom: 10px;
 }
-.description-box textarea{
+.description textarea{
     margin-top:5px;
     width: 100%;
     background-color: rgb(238, 232, 232);
@@ -43,14 +43,14 @@ h3{
     border-radius: 5px;
     height: 120px;
 }
-.upload-box{
+.upload{
     padding-bottom: 10px;
 }
-.upload-box input{
+.upload input{
     width: 85%;
     height:40px;
 }
-.upload-box button{
+.upload button{
     width: 15%;
    height: 40px;
    padding: 0px;
@@ -69,19 +69,19 @@ input{
     border-radius: 5px;
 }
 
-.reset-uplod-btns button{
+.reset-upload-btns button{
     height: 30px;
     width: 100px;
     margin:4px;
    padding: 0px;  
 }
 
-.reset-uplod-btns .reset-btn button{
+.reset-upload-btns .reset-btn button{
     color:#0388fc;
     border:1px solid #0388fc;
 }
 
-.reset-uplod-btns .upload-btn button{
+.reset-upload-btns .upload-btn button{
     color: white;
     border:#0388fc;
 }
