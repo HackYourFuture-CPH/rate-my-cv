@@ -15,3 +15,6 @@ Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
   style: PropTypes.string,
 };
+Button.defaultProps = {
+  style: {},
+};
