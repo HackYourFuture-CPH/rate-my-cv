@@ -29,7 +29,7 @@ const usersController = require('../controllers/users.controller');
  *    responses:
  *      200:
  *        description: user was patched
- *      5XX:
+ *      400:
  *        description: Unexpected error.
  */
 router.patch('/:id', (req, res, next) => {
@@ -41,7 +41,7 @@ router.patch('/:id', (req, res, next) => {
         res.status(400).send(`User ID '${req.params.id}' does not exist.`);
       } else {
         res.json({ success: true });
-        res.json({ success: true });  
+         
       }
     })
     .catch((error) => console.log(error));

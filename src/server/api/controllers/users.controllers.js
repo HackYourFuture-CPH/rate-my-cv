@@ -18,7 +18,7 @@ const editUser = async (userId, updatedUser) => {
       created_date: moment(updatedUser.created_date).format(),
       created_date: moment(updatedUser.created_date).format(),  
  });
-};
+};  
 
 
 module.exports = {
