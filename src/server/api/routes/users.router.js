@@ -32,7 +32,7 @@ const usersController = require('../controllers/users.controller');
  *      400:
  *        description: Unexpected error.
  */
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id', (req, res ) => {
   usersController
     .editUser(req.params.id, req.body)
     .then((result) => {
