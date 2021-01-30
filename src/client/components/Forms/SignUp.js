@@ -38,7 +38,7 @@ export default function SignUp({ onSubmit }) {
         <div className="button-forms">
           <Button
             buttonName={'Signup With Linkedin'}
-            backgroundColor={('backgroundColor', ' #0676f2')}
+            style={{ backgroundColor: ' #0676f2' }}
           ></Button>{' '}
           <div className="space">
             <div className="github-container">
@@ -146,7 +146,7 @@ export default function SignUp({ onSubmit }) {
         <br></br>
         <Button
           buttonName={('Label', 'Create Account')}
-          backgroundColor={('backgroundColor', '#da532c')}
+          style={{ backgroundColor: '#da532c' }}
         />
         <div className="validation">{validation}</div>
       </form>
