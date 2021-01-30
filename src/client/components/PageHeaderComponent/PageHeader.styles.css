@@ -21,6 +21,11 @@
   .cv-btn button{
     font-size: 10px;
   } 
+  .search-button {
+    margin-left: 60px;
+    margin-top: -8px;
+    margin-right: 20px;  
+  }
 }
 
   
