@@ -6,7 +6,6 @@ import Button from '../Button/Button';
 
 export default function SignUp({ onSubmit }) {
   const [name, setName] = useState('');
-  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [position, setPosition] = useState('');
   const [linkedin, setLinkedin] = useState('');
@@ -16,7 +15,7 @@ export default function SignUp({ onSubmit }) {
   const [validation, setValidation] = useState('');
   const handleEmailInput = (e) => setEmail(e.target.value);
   const handleNameInput = (e) => setName(e.target.value);
-  const handleUserNameInput = (e) => setUserName(e.target.value);
+
   const handlePositionInput = (e) => setPosition(e.target.value);
   const handleLinkedinInput = (e) => setLinkedin(e.target.value);
   const handleGithubInput = (e) => setGithub(e.target.value);
@@ -65,7 +64,7 @@ export default function SignUp({ onSubmit }) {
         <label htmlFor="position">
           Position{' '}
           <input
-            type="password"
+            type="text"
             name="position"
             placeholder=""
             value={position}
@@ -119,7 +118,7 @@ export default function SignUp({ onSubmit }) {
             value={password}
             onChange={handlePasswordInput}
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
             required
           />
         </label>{' '}
@@ -133,7 +132,7 @@ export default function SignUp({ onSubmit }) {
             value={passwordConfirm}
             onChange={handlePasswordConfirmInput}
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
             required
           />
         </label>
@@ -141,13 +140,16 @@ export default function SignUp({ onSubmit }) {
         <label className="label-checkbox">
           <input type="checkbox" id="check" disabled=""></input>
           Create an account means you're okey with our Terms of Service,
-          Privacy,Policy and our default Notification Settings
+          Privacy, Policy and our default Notification Settings
         </label>{' '}
         <br></br>
-        <Button
-          buttonName={('Label', 'Create Account')}
+        {/*   <Button
+          buttonName={'Create Account'}
           style={{ backgroundColor: '#da532c' }}
-        />
+        /> */}
+        <button className="btn-account" type="submit">
+          Create Account
+        </button>
         <div className="validation">{validation}</div>
       </form>
     </div>

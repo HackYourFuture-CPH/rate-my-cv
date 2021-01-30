@@ -8,18 +8,18 @@
   color: white;
   background-color: #0676f2;
 } */
-/* .btn-account {
-  margin-left: 200px;
+.btn-account {
+  margin-left: 5px;
   font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
+  color: white;
+  font-size: normal;
   line-height: 20px;
-  height: 50px;
-  width: 200px;
+  height: 40px;
+  width: 180px;
   background-color: #da532c;
-} */
+}
 .github-logo {
-  width: 40px;
+  width: 30px;
 }
 .button-forms {
   display: flex;
@@ -79,7 +79,7 @@ input[type='checkbox'] {
 
 h3 {
   border-left: 190px solid hsl(240, 15%, 92%);
-  border-right: 120px solid #e6e5ee;
+  border-right: 190px solid #e6e5ee;
   line-height: 1px;
   color: #a17272;
   margin-top: 40px;
