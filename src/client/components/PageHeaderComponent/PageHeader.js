@@ -8,8 +8,8 @@ export default function PageHeader() {
     <div>
       <div className="cv-loader">
         <div>Uploaded Resume</div>        
-          <div className = "cv-btn">
-            <Button buttonName={'Upload New Cv'} backgroundColor = {("backgroundColor", "black")} />
+          <div className = "cv-button">
+            <Button buttonName="Upload New Cv" style = {{ backgroundColor: 'black', color: "white" }}/>
           </div>
         </div>
       <div className="search-button">
