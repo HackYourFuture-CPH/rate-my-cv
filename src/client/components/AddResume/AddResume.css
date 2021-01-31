@@ -56,6 +56,7 @@ h3{
    padding: 0px;
    border:1px solid black;
    color: white;
+   background-color: black;
 }
 
 label{
@@ -79,11 +80,13 @@ input{
 .reset-upload-btns .reset-btn button{
     color:#0388fc;
     border:1px solid #0388fc;
+    background-color: white;
 }
 
 .reset-upload-btns .upload-btn button{
     color: white;
     border:#0388fc;
+    background-color:#0388fc;
 }
 
 .add-btn button{
@@ -94,4 +97,5 @@ input{
     border-bottom: -20px;
     color: white;
     border: rgb(233, 86, 29);
+    background-color:rgb(233, 86, 29);
 }

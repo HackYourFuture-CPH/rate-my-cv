@@ -26,14 +26,14 @@ const[uploadFile,setUploadaFile] =useState('');
                 <div className = "upload">
                     <label>Select A file</label><br/>
                     <input type='text' value={uploadFile} onChange={(e)=> setUploadaFile(e.target.value)}/>
-                    <Button buttonName='Browse' backgroundColor = {("backgroundColor", "black")} /><br/>
+                    <Button buttonName='Browse'/><br/>
                 </div>
             </div>
             <div className = "reset-upload-btns">
-                    <span className = 'reset-btn'><Button buttonName='Reset' backgroundColor = {("backgroundColor", "white")} /></span>
-                    <span className = 'upload-btn'><Button buttonName='Upload' backgroundColor = {("backgroundColor", "#0388fc")} /></span><br/><br/>
+                    <span className = 'reset-btn'><Button buttonName='Reset'/></span>
+                    <span className = 'upload-btn'><Button buttonName='Upload'/></span><br/><br/>
                 <div className = "add-btn">
-                    <Button buttonName='Add resume' backgroundColor = {("backgroundColor", "rgb(233, 86, 29)")} />
+                    <Button buttonName='Add resume'/>
                 </div>
             </div>
         </div>    
