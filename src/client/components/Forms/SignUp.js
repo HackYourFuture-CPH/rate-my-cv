@@ -43,18 +43,12 @@ export default function SignUp({ onSubmit }) {
           ></Button>
           <div className="space">
             <div className="github-container">
-              <img
-                className="github-logo"
-                src={iconGithub}
-                alt="github icon"
-              ></img>
+              <img className="github-logo" src={iconGithub} alt="github icon" />
             </div>
           </div>
         </div>
-        <br></br>
-        <h3>
-          <span className="or">Or</span>
-        </h3>
+        <br />
+        <h3 className="or"> Or</h3>
         <label htmlFor="Name">
           Name
           <input
@@ -77,7 +71,7 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br></br>
+        <br />
         <label htmlFor="email">
           Email
           <input
@@ -122,7 +116,7 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br></br>
+        <br />
         <label htmlFor="password">
           Password
           <input
@@ -136,7 +130,7 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br></br>
+        <br />
         <label htmlFor="password">
           Password-confirm
           <input
@@ -153,10 +147,10 @@ export default function SignUp({ onSubmit }) {
 
         <label className="label-checkbox">
           <input type="checkbox" id="check" disabled=""></input>
-          Create an account means you're okey with our Terms of Service,
-          Privacy, Policy and our default Notification Settings
+          Create an account means you're ok with our Terms of Service, Privacy,
+          Policy and our default Notification Settings
         </label>
-        <br></br>
+        <br />
 
         <Button
           buttonName="Create Account"
