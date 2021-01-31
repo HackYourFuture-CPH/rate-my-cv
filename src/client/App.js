@@ -10,13 +10,14 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
+import { signOut } from '../../firebase/auth';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
     <Router>
-      <Header isAuthenticated={isAuthenticated} />
+      <Header isAuthenticated={isAuthenticated} signOut={signOut} />
       <Switch>
         <Route exact path="/">
           <Home />
