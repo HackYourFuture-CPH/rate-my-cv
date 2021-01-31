@@ -110,4 +110,36 @@ router.post('/', (req, res) => {
     });
 });
 
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  delete:
+ *    summary: Delete a user
+ *    description:
+ *      Will delete a user with a given ID.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the User to delete.
+ *    responses:
+ *      200:
+ *        description: User deleted
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.delete('/:id', (req, res) => {
+  usersController
+    .deleteUser(req.params.id, req)
+    .then((result) => {
+      // If result is equal to 0, then that means the module id does not exist
+      if (result === 0) {
+        res.status(404).send('The user ID you provided does not exist.');
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
+});
+
 module.exports = router;
