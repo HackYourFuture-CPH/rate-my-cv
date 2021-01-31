@@ -6,6 +6,6 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema.table('users', function(table) {
-    table.dropColumn('firebase_token').notNullable();
+    table.dropColumn('firebase_token');
   });
 };
