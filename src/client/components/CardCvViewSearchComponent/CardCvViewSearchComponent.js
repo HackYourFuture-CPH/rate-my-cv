@@ -8,26 +8,12 @@ export const CardCvViewSearchComponent = ({
   profileImageUrl,
   fullName,
   position,
+  cvTitle,
   fileUrl,
   createdDate,
 }) => {
   const parsedDate = (date) =>
     new Date(date).toLocaleDateString('en-GB', { timeZone: 'UTC' });
-
-  /**
-   * Returns a name for a file using the first two elements
-   * in the name of a user without spaces
-   */
-  const setNameOfFile = (name, url) => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    if (url) {
-      return `${name
-        .split(' ')
-        .slice(0, 2)
-        .reduce(reducer)}-CV.pdf`;
-    }
-    return 'no-file';
-  };
 
   return (
     <div className="card-cv-whole">
@@ -47,7 +33,7 @@ export const CardCvViewSearchComponent = ({
         </div>
       </div>
       <div className="card-cv-middle">
-        <p className="file-url">{setNameOfFile(fullName, fileUrl)}</p>
+        <p className="cv-title">{cvTitle}</p>
         <p className="created-date">{parsedDate(createdDate)}</p>
       </div>
       <div className="card-cv-bottom">
@@ -55,6 +41,7 @@ export const CardCvViewSearchComponent = ({
           <Button
             buttonName={('Label', 'See resume')}
             backgroundColor={('backgroundColor', '#0676F2')}
+            className="button-view-search"
           />
         </a>
       </div>
@@ -66,6 +53,7 @@ CardCvViewSearchComponent.propTypes = {
   profileImageUrl: PropTypes.string.isRequired,
   fullName: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
+  cvTitle: PropTypes.string.isRequired,
   fileUrl: PropTypes.string.isRequired,
   createdDate: PropTypes.string.isRequired,
 };

@@ -10,6 +10,7 @@ export const CardCVTest = () => (
     profileImageUrl={man}
     fullName="Jonathan Andersen"
     position="Web developer"
+    cvTitle="FrontEnd Developer developer developer"
     fileUrl="https://zety.com/blog/banking-resume-example"
     createdDate="Wed Jan 27 2021 12:42:41 GMT+0100 (Central European Standard Time)"
   />
@@ -20,6 +21,7 @@ export const CardCVTestTwo = () => (
     profileImageUrl=""
     fullName="Ariana Valentina Méndez Jiménez"
     position="Web developer"
+    cvTitle="Fullstack Developer"
     fileUrl="https://zety.com/blog/banking-resume-example"
     createdDate="Wed Jan 27 2021 12:42:41 GMT+0100 (Central European Standard Time)"
   />
@@ -30,6 +32,7 @@ export const CardCVTestThree = () => (
     profileImageUrl={woman}
     fullName="Stephanie Mendrala"
     position="Scientist"
+    cvTitle="Project Manager"
     fileUrl="https://zety.com/blog/banking-resume-example"
     createdDate="Wed Jan 27 2021 12:42:41 GMT+0100 (Central European Standard Time)"
   />

@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   align-content: flex-start;
-  margin-bottom: 1em;
-  align-items: flex-start
+  align-items: flex-start;
+  height: 60em;
 }
 
 .profile-picture {
@@ -60,12 +60,14 @@
   align-items: flex-start
 }
 
-.file-url {
+.cv-title {
   font-weight: bold;
   font-size: 20px;
   color: black;
   margin-top: 0;
   margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .created-date {
@@ -77,4 +79,8 @@
 .card-cv-bottom {
   display: flex;
   justify-content: flex-end;
+}
+
+.button {
+  padding: 11px 30px
 }
