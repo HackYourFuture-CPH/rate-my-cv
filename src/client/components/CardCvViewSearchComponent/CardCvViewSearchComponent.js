@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
 import './CardCvViewSearchComponent.styles.css';
-import { Button } from '../Button/Button';
+import Button from '../Button/Button';
 
 export const CardCvViewSearchComponent = ({
   profileImageUrl,
