@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import iconGithub from '../../assets/images/icons/github.svg';
-import './SignUpstyle.css';
+import './SignUp.style.css';
 import Button from '../Button/Button';
 
 export default function SignUp({ onSubmit }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [position, setPosition] = useState('');
+  const [image, setImage] = useState('');
   const [linkedin, setLinkedin] = useState('');
   const [github, setGithub] = useState('');
   const [password, setPassword] = useState('');
@@ -17,6 +18,7 @@ export default function SignUp({ onSubmit }) {
   const handleNameInput = (e) => setName(e.target.value);
 
   const handlePositionInput = (e) => setPosition(e.target.value);
+  const handleImageInput = (e) => setImage(e.target.value);
   const handleLinkedinInput = (e) => setLinkedin(e.target.value);
   const handleGithubInput = (e) => setGithub(e.target.value);
   const handlePasswordInput = (e) => setPassword(e.target.value);
@@ -36,18 +38,21 @@ export default function SignUp({ onSubmit }) {
         {/* <button className="btn-Linkedin">Signup with LinkedIn</button>{' '} */}
         <div className="button-forms">
           <Button
-            buttonName={'Signup With Linkedin'}
+            buttonName="Signup With Linkedin"
             style={{ backgroundColor: ' #0676f2' }}
-          ></Button>{' '}
+          ></Button>
           <div className="space">
             <div className="github-container">
-              <img className="github-logo" src={iconGithub}></img>{' '}
+              <img
+                className="github-logo"
+                src={iconGithub}
+                alt="github icon"
+              ></img>
             </div>
           </div>
-        </div>{' '}
+        </div>
         <br></br>
         <h3>
-          {' '}
           <span className="or">Or</span>
         </h3>
         <label htmlFor="Name">
@@ -62,7 +67,7 @@ export default function SignUp({ onSubmit }) {
           />
         </label>
         <label htmlFor="position">
-          Position{' '}
+          Position
           <input
             type="text"
             name="position"
@@ -74,7 +79,7 @@ export default function SignUp({ onSubmit }) {
         </label>
         <br></br>
         <label htmlFor="email">
-          Email{' '}
+          Email
           <input
             type="email"
             name="email"
@@ -83,10 +88,20 @@ export default function SignUp({ onSubmit }) {
             onChange={handleEmailInput}
             required
           />
-        </label>{' '}
-        <br></br>
+        </label>
+        <label htmlFor="img">
+          Profile Picture
+          <input
+            type="url"
+            name="img"
+            placeholder="profile image link"
+            value={image}
+            onChange={handleImageInput}
+            required
+          />
+        </label>
         <label htmlFor="linkedin">
-          LinkedIn{' '}
+          LinkedIn
           <input
             type="url"
             name="linkedin"
@@ -96,9 +111,8 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br></br>
         <label htmlFor="github">
-          Github{' '}
+          Github
           <input
             type="url"
             name="github"
@@ -110,7 +124,7 @@ export default function SignUp({ onSubmit }) {
         </label>
         <br></br>
         <label htmlFor="password">
-          Password{' '}
+          Password
           <input
             type="password"
             name="password"
@@ -121,10 +135,10 @@ export default function SignUp({ onSubmit }) {
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
             required
           />
-        </label>{' '}
+        </label>
         <br></br>
         <label htmlFor="password">
-          Password-confirm{' '}
+          Password-confirm
           <input
             type="password"
             name="password"
@@ -136,20 +150,20 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br></br>
+
         <label className="label-checkbox">
           <input type="checkbox" id="check" disabled=""></input>
           Create an account means you're okey with our Terms of Service,
           Privacy, Policy and our default Notification Settings
-        </label>{' '}
+        </label>
         <br></br>
-        {/*   <Button
-          buttonName={'Create Account'}
+
+        <Button
+          buttonName="Create Account"
           style={{ backgroundColor: '#da532c' }}
-        /> */}
-        <button className="btn-account" type="submit">
-          Create Account
-        </button>
+          type={'submit'} //  type can be change according to button component
+        />
+
         <div className="validation">{validation}</div>
       </form>
     </div>
