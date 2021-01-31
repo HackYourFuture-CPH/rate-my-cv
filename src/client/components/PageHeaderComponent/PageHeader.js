@@ -8,7 +8,7 @@ export default function PageHeader() {
     <div>
       <div className="cv-loader">
         <div>Uploaded Resume</div>        
-          <div className = "cv-btn">
+          <div className = "cv-button">
             <Button buttonName={'Upload New Cv'} backgroundColor = {("backgroundColor", "black")} />
           </div>
         </div>
