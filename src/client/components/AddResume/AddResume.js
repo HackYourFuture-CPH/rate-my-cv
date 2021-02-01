@@ -16,19 +16,25 @@ const[uploadFile,setUploadaFile] =useState('');
                 <h3>Upload new CV</h3>
             <div className='form'>
                 <div className = "title">
-                    <label>Add Title</label><br/>
-                    <input type='text' value={title} onChange={(e)=> setTitle(e.target.value)}/><br/>
+                    <label>Add Title</label>
+                    <div>
+                    <input type='text' value={title} onChange={(e)=> setTitle(e.target.value)}/>
+                    </div>
                 </div>
                 <div className = "description">
-                    <label>Description</label><br/>
-                    <textarea type='text' value={description} onChange={(e)=> setDescription(e.target.value)}/><br/>
+                    <label>Description</label>
+                    <div>
+                    <textarea type='text' value={description} onChange={(e)=> setDescription(e.target.value)}/>
+                    </div>
                 </div>
                 <div className = "upload">
                     <label>Select a file 
                     <span className = "support-text"> * File supported DOC,DOCX,PDF,RTF,TXT, 5MB Max</span>
-                    </label><br/>
+                    </label>
+                    <div>
                     <input type='text' value={uploadFile} onChange={(e)=> setUploadaFile(e.target.value)}/>
-                    <Button buttonName='Browse'/><br/><br/>
+                    <Button buttonName='Browse'/>
+                    </div>
                 </div>
             </div>
                 <div className = "add-btn">
