@@ -24,17 +24,15 @@ const[uploadFile,setUploadaFile] =useState('');
                     <textarea type='text' value={description} onChange={(e)=> setDescription(e.target.value)}/><br/>
                 </div>
                 <div className = "upload">
-                    <label>Select A file</label><br/>
+                    <label>Select a file 
+                    <span className = "support-text"> * File supported DOC,DOCX,PDF,RTF,TXT, 5MB Max</span>
+                    </label><br/>
                     <input type='text' value={uploadFile} onChange={(e)=> setUploadaFile(e.target.value)}/>
-                    <Button buttonName='Browse'/><br/>
+                    <Button buttonName='Browse'/><br/><br/>
                 </div>
             </div>
-            <div className = "reset-upload-btns">
-                    <span className = 'reset-btn'><Button buttonName='Reset'/></span>
-                    <span className = 'upload-btn'><Button buttonName='Upload'/></span><br/><br/>
                 <div className = "add-btn">
                     <Button buttonName='Add resume'/>
-                </div>
             </div>
         </div>    
     </div>
