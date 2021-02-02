@@ -17,8 +17,7 @@ function App() {
   if (isLoading) return <Loader />;
   return (
     <Router>
-      {/* signOut={signOut} */}
-      <Header  />
+      <Header isAuthenticated={isAuthenticated}  />
       <Switch>
         <Route exact path="/">
           <Home />
