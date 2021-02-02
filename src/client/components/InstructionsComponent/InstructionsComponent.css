@@ -1,0 +1,43 @@
+.container{
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    
+}
+.all-images{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    justify-content: space-around;
+    width: fit-content;
+    margin-top: 30px;
+    padding: 50px;
+    
+    
+}
+.image{
+    width:100px;
+    text-align:center;
+    display:block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    justify-content: space-around;
+
+
+}
+.image p{
+    font-size: 8px;
+    padding: 2px;
+    
+ }
+
+.image img{
+    width: 50px;
+    height: 50px;
+}
+  h2{
+    text-align: center;
+}
