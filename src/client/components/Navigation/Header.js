@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import UserIcon from '../../assets/images/icons/user-icon.png'
 // import { signOut } from '../../firebase/auth';
 
-export default function Header({ isAuthenticated = false }) {
+export default function Header() {
  
     return (
       <div className="header">
@@ -31,6 +30,4 @@ export default function Header({ isAuthenticated = false }) {
             );
           }
 
-Header.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-};
+

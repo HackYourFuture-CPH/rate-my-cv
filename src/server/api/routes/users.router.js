@@ -60,7 +60,7 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /modules:
+ * /users:
  *  post:
  *    summary: Create a user
  *    description:
@@ -73,14 +73,10 @@ router.get('/:id', (req, res, next) => {
  *        schema:
  *          type: object
  *          required:
- *            - full_name
- *            - position
- *            - linkedin
- *            - github
- *            - website
- *            - profile_image_url
+ *            - fullName
+ *            - firebaseToken
  *          properties:
- *            full_name:
+ *            fullName:
  *              type: string
  *            position:
  *              type: string
@@ -90,7 +86,9 @@ router.get('/:id', (req, res, next) => {
  *              type: string
  *            website:
  *              type: string
- *            profile_image_url:
+ *            profileImageUrl:
+ *              type: string
+ *            firebaseToken:
  *              type: string
  *    responses:
  *      201:
@@ -110,6 +108,38 @@ router.post('/', (req, res) => {
         .send('Bad request')
         .end();
     });
+});
+
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  delete:
+ *    summary: Delete a user
+ *    description:
+ *      Will delete a user with a given ID.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the User to delete.
+ *    responses:
+ *      200:
+ *        description: User deleted
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.delete('/:id', (req, res) => {
+  usersController
+    .deleteUser(req.params.id, req)
+    .then((result) => {
+      // If result is equal to 0, then that means the module id does not exist
+      if (result === 0) {
+        res.status(404).send('The user ID you provided does not exist.');
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;
