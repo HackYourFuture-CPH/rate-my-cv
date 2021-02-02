@@ -11,9 +11,6 @@ export const CardCvViewSearchComponent = ({
   fileUrl,
   createdDate,
 }) => {
-  const parsedDate = (date) =>
-    new Date(date).toLocaleDateString('en-GB', { timeZone: 'UTC' });
-
   return (
     <div className="card-cv-whole">
       <div className="card-cv-top">
@@ -27,20 +24,20 @@ export const CardCvViewSearchComponent = ({
           </div>
         </div>
         <div className="user-info">
-          <p className="user-name">{fullName}</p>
-          <p className="user-position">{position}</p>
+          <div className="user-name">{fullName}</div>
+          <div className="user-position">{position}</div>
         </div>
       </div>
       <div className="card-cv-middle">
-        <p className="cv-title">{cvTitle}</p>
-        <p className="created-date">{parsedDate(createdDate)}</p>
+        <div className="cv-title">{cvTitle}</div>
+        <div className="created-date">{createdDate.toLocaleDateString()}</div>
       </div>
       <div className="card-cv-bottom">
         <a
           href={fileUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="link-see-resume"
+          className="button button-blue"
         >
           See resume
         </a>
@@ -55,5 +52,5 @@ CardCvViewSearchComponent.propTypes = {
   position: PropTypes.string.isRequired,
   cvTitle: PropTypes.string.isRequired,
   fileUrl: PropTypes.string.isRequired,
-  createdDate: PropTypes.string.isRequired,
+  createdDate: PropTypes.instanceOf(Date).isRequired,
 };
