@@ -10,8 +10,8 @@
     padding: 20px;
     border: 1px solid rgb(218, 214, 214);
     border-radius: 10px;
-    height: 500px;
-    width: 700px;
+    height: 450px;
+    width: 650px;
 }
 .close-icon{
     height: 15px;
@@ -48,15 +48,21 @@ h3{
 }
 .upload input{
     width: 85%;
-    height:40px;
+    height:35px;
 }
 .upload button{
     width: 15%;
-   height: 40px;
+   height: 35px;
    padding: 0px;
    border:1px solid black;
    color: white;
    background-color: black;
+}
+.upload .support-text{
+    font-size: x-small;
+    color: rgb(170, 164, 164);
+    font-weight: normal;
+    padding-left:10px ;
 }
 
 label{
@@ -70,31 +76,13 @@ input{
     border-radius: 5px;
 }
 
-.reset-upload-btns button{
-    height: 30px;
-    width: 100px;
-    margin:4px;
-   padding: 0px;  
-}
-
-.reset-upload-btns .reset-btn button{
-    color:#0388fc;
-    border:1px solid #0388fc;
-    background-color: white;
-}
-
-.reset-upload-btns .upload-btn button{
-    color: white;
-    border:#0388fc;
-    background-color:#0388fc;
-}
 
 .add-btn button{
     height: 30px;
     width: 150px;
-    border-radius: 5px;
     float: right;
-    border-bottom: -20px;
+    margin-top:15px;
+    padding: 0px;
     color: white;
     border: rgb(233, 86, 29);
     background-color:rgb(233, 86, 29);
