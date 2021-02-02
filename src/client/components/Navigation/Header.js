@@ -1,72 +1,69 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ProfileLogo from '../../assets/images/icons/icon-profile.png';
 import './Header.css';
+import UserIcon from '../../assets/images/icons/user-icon.png'
 // import { signOut } from '../../firebase/auth';
 
 export default function Header({ isAuthenticated = false, signOut }) {
   const username = 'Ali Eh';
   const [showSubMenu, setShowSubMenu] = useState(false);
 
-  if (!isAuthenticated) {
+  if (isAuthenticated) { 
     return (
-      <nav className="navigation">
-        <ul className="nav-elements">
-          <li className="review-resume">
-            <Link to="/" className="review">
-              Review<span className="resume">Resume</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/sign-in" className="login-link">
-              Login
-            </Link>
-          </li>
-          <li className='icon'>
-            <img src={ProfileLogo} alt="profile icon" />
-          </li>
-        </ul>
-      </nav>
-    );
-  }
+    <div className="header">
+    <div className="home-link">
+    <Link to="/" className="no-design">
+        <span className="review">Review</span><span className="resume">Resume</span>
+      </Link>
+    </div>
+    <ul className="right-section">
+        <li className="user-name">Ali Eheeee</li>
+        <li className="menu">
+            <form>
+                <input type="submit" className="icon" value="" style={{ backgroundImage: `url(${UserIcon})` }}/>
+              </form>
+              <div className="drop-down">
+                <div className='triangle'> </div>
+                <div className="nav-position_color">  
+                    <ul className="subnav">
+                  <li>
+                    <Link to="/profile" className="white-design"><span>Edit profile</span></Link>
+                  </li>
+                  <li>
+                    <Link to="/sign-in" className="white-design"><span>Sign out</span></Link>
+                  </li>
+                    </ul>
+                </div>
+                </div>
+        </li>
+    </ul>
+    </div>
+     );
+    }
     return (
-      <nav className="navigation">
-        <ul className="nav-elements">
-          <li className="review-resume">
-            <Link to="/" className="review">
-              Review<span className="resume">Resume</span>
+      <div className="header">
+          <div className="home-link">
+          <Link to="/" className="no-design">
+              <span className="review">Review</span><span className="resume">Resume</span>
             </Link>
-          </li>
-          <li className="login-link">{username}</li>
-          <li  className='icon'>
-            <button className='button-icon'>
-              <img
-                src={ProfileLogo}
-                alt="profile icon"
-                onClick={() => setShowSubMenu(true)}
-              />
-            </button>
-            {showSubMenu ? (
-              <>
-              <div className='triangle'> </div>
-              <ul className="subnav link-style">
-                {/* <li className='triangle'> </li> */}
-                <li>
-                  <Link to="/profile" className='link-style'><span>Edit profile</span></Link>
-                </li>
-                <li>
-                  <Link to="/sign-in"className='link-style'><span>Sign out</span></Link>
-                </li>
-              </ul>
-              </>
-            ) : null}
-          </li>
-        </ul>
-      </nav>
-    );
-  }
-
+          </div>
+          <ul className="right-section">
+              <li className="user-name">
+                {/* className="login-link */}
+                    <Link to="/sign-in" className="black-design">
+                    Login
+                 </Link>
+              </li>
+              <li className="menu">
+                  <form>
+                      <input type="submit" className="login-link" value="" style={{ backgroundImage: `url(${UserIcon})` }}/>
+                    </form>
+              </li>
+          </ul>
+          </div>
+            );
+          }
 
 Header.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,

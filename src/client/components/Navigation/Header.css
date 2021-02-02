@@ -1,133 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
 
-.navigation {
-  background-color: white;
-  border: 1px solid black;
+
+/* Here is the authorize section styling */
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
+
+  background-color: white;
 }
-.nav-elements {
-  list-style-type: none;
+
+.icon {
+  /* background: url(PngItem_2560200.png) no-repeat; */
+  background-size: 20px;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  padding: 0;
+}
+/* login- unautorized section */
+.login-link {
+  background-size: 20px;
+  background-color: white;
+  /* cursor: pointer; */
+  width: 20px;
+  height:20px;
+  border: none;
+  padding: 0;
+}
+.right-section {
   display: flex;
-  justify-content: space-between;
+  flex-flow: row nowrap;
   align-items: center;
+  list-style-type: none;
+  margin-right: 7%;
 }
-/* li {
-  display: inline;
-} */
+
+.home-link {
+  margin-left: 7%;
+}
+.no-design {
+  text-decoration: none;
+}
+.user-name {
+  margin-right: 15%;
+  white-space: nowrap;
+  font-size: 14px;
+}
 
 .review {
-  text-decoration: none;
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.6rem;
   line-height: 28px;
 }
 .resume {
   font-weight: normal;
   font-family: 'Jost';
+  font-size: 1.6rem;
+  line-height: 28px;
 }
 
-.review-resume {
-  position: absolute;
-  width: 164px;
-  height: 28px;
-  left: 100px;
-  top: 20px;
+.drop-down {
+  display: none;
+  /* margin-top: 7px;*/
 }
-.login-link {
-  position: absolute;
-  width: 45px;
-  height: 21px;
-  left: 1262px;
-  /* top: 15px; */
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  text-decoration: none;
-  color: #000;
-  white-space: nowrap;
-}
-.icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 1318px;
-  top: 25px;
-  /* border: 1px solid #000000; */
-  box-sizing: border-box;
+.menu:hover .drop-down {
+  display: block;
 }
 
-/*button*/
-.button-icon {
-  background: white;
-  box-shadow: 0px 0px 0px transparent;
-  border: 0px transparent;
-  text-shadow: 0px 0px 0px transparent;
-  padding: 1px;
-}
-
-.button-icon:hover {
-  background: white;
-  box-shadow: 0px 0px 0px transparent;
-  box-shadow: none !important;
-  /* border: 0px solid transparent; */
-  border: 0px transparent;
-  text-shadow: 0px 0px 0px transparent;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 0;
-}
-.button-icon:focus {
-  outline: none !important;
-  background-color: white;
-  border-radius: 50%;
-}
-.subnav li {
-  padding: 8px 0 8px 10px;
-  border-bottom: 1px solid #555;
-  line-height: 1;
-  font-size: 92%;
-  background-color: violet;
-}
-.subnav ul {
-  width: 100px;
-  border: 1px solid red;
-  background-color: violet;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
-  width: 240px; 
-  /* position: absolute; */
-  /* position: absolute; */
-  /* width: 140px;
-  height: 93px;
-  left: 1259px;
-  top: 53px; */
-}
-.link-style {
-  text-decoration: none;
-  color: #ffffff;
-  white-space: nowrap;
-  list-style-type: none;
-  background-color: rgb(82, 168, 33);
-  width: 140px;
-  height: 93px;
-}
 .triangle {
-  position: fixed   ;
-  width: 13.33px;
-  height: 13.54px;
-  left: 1322.57px;
-  top: 53px;
-
-  background: rgb(56, 33, 168);
+  background: #000000;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   transform: rotate(45deg);
-  z-index: 1;
+
+  position: absolute;
+  width: 13.33px;
+  height: 13.54px;
+  top: 55px;
+  right: 7%;
+}
+
+.nav-position_color {
+  width: 140px;
+
+  border-radius: 5px;
+  background-color: #000000;
+  position: absolute;
+  right: 27px;
+  top: 62px;
+}
+
+.subnav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-top: 20px;
+  top: 55px;
+}
+
+.white-design {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 92%;
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+.subnav li {
+  padding-bottom: 20px;
+  padding-left: 33px;
+  width: 130px;
+  list-style-type: none;
+  font-size: 92%;
+  white-space: nowrap;
+}
+.black-design {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 18px;
+  font-weight: normal;
+  color: #000000;
+  white-space: nowrap;
 }
