@@ -113,7 +113,7 @@ router.post('/', (req, res) => {
  * @swagger
  * /users/{ID}:
  *  patch:
- *    summary: Create a user
+ *    summary: Edit a user
  *    description:
  *      Will create a user.
  *    produces: application/json
@@ -126,20 +126,27 @@ router.post('/', (req, res) => {
  *        description: The user to update.
  *        schema:
  *          type: object
+ *          required:
+ *            - fullName
+ *            - firebaseToken
  *          properties:
- *            title:
+ *            fullName:
  *              type: string
- *            startDate:
+ *            position:
  *              type: string
- *              format: date-time
- *            endDate:
+ *            linkedin:
  *              type: string
- *              format: date-time
- *            classId:
+ *            github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profileImageUrl:
+ *              type: string
+ *            firebaseToken:
  *              type: string
  *    responses:
  *      200:
- *        description: Module was patched
+ *        description: user was patched
  *      5XX:
  *        description: Unexpected error.
  */
