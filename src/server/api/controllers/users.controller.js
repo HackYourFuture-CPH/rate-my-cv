@@ -3,7 +3,9 @@ Can be deleted as soon as the first real controller is added. */
 
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
+
 const moment = require('moment-timezone');
+
 const getUsers = async () => {
   try {
     return await knex('users').select('*');
