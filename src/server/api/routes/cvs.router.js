@@ -92,10 +92,7 @@ router.post('/', (req, res) => {
     .catch((error) => {
       console.log(error);
 
-      res
-        .status(400)
-        .send('Bad request')
-        .end();
+      res.status(400).send('Bad request').end();
     });
 });
 
@@ -147,13 +144,13 @@ router.patch('/:id', (req, res, next) => {
  *        description: ID of the cv to delete.
  *    responses:
  *      200:
- *        description:  CV deleted
+ *        description:  CV is deleted
  *      5XX:
  *        description: Unexpected error.
  */
 router.delete('/:id', (req, res) => {
   cvsController
-    .deleteModule(req.params.id, req)
+    .deleteCv(req.params.id, req)
     .then((result) => {
       // If result is equal to 0, then that means the cv id does not exist
       if (result === 0) {
