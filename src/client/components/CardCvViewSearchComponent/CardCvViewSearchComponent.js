@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
 import './CardCvViewSearchComponent.styles.css';
-import Button from '../Button/Button';
 
 export const CardCvViewSearchComponent = ({
   profileImageUrl,
@@ -37,12 +36,13 @@ export const CardCvViewSearchComponent = ({
         <p className="created-date">{parsedDate(createdDate)}</p>
       </div>
       <div className="card-cv-bottom">
-        <a href={fileUrl} target="_blank" rel="noopener noreferrer">
-          <Button
-            buttonName={('Label', 'See resume')}
-            backgroundColor={('backgroundColor', '#0676F2')}
-            className="button-view-search"
-          />
+        <a
+          href={fileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-see-resume"
+        >
+          See resume
         </a>
       </div>
     </div>
