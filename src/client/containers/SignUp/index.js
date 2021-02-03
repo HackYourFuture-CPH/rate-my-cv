@@ -19,6 +19,7 @@ export default function SignUpContainer() {
     linkedin,
     github,
     website,
+    profileImageUrl,
   }) => {
     setIsLoading(true);
     const doesPasswordsMatch = getDoesPasswordsMatch({
@@ -44,6 +45,7 @@ export default function SignUpContainer() {
           linkedin,
           github,
           website,
+          profileImageUrl,
         }),
       });
       setIsLoading(false);
