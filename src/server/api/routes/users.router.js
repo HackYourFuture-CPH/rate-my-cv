@@ -109,6 +109,60 @@ router.post('/', (req, res) => {
         .end();
     });
 });
+/**
+ * @swagger
+ * /users/{ID}:
+ *  patch:
+ *    summary: Edit a user
+ *    description:
+ *      Will create a user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the user to patch.
+ *      - in: body
+ *        name: users
+ *        description: The user to update.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - fullName
+ *            - firebaseToken
+ *          properties:
+ *            fullName:
+ *              type: string
+ *            position:
+ *              type: string
+ *            linkedin:
+ *              type: string
+ *            github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profileImageUrl:
+ *              type: string
+ *            firebaseToken:
+ *              type: string
+ *    responses:
+ *      200:
+ *        description: user was patched
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res) => {
+  usersController
+    .editUser(req.params.id, req.body)
+    .then((result) => {
+      // If result is equal to 0, then that means the user id does not exist
+      if (result === 0) {
+        res.status(400).send(`User ID '${req.params.id}' does not exist.`);
+      } else {
+        res.json({ success: true });
+        }
+    })
+    .catch((error) => console.log(error));
+});
 
 /**
  * @swagger
