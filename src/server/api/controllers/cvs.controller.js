@@ -54,10 +54,12 @@ const deleteCv = async (cvId) => {
     .del();
 };
 
-const createCv = async (body) => {
-  await knex('cv').insert({
+const createCvs = async (body) => {
+  await knex('cvs').insert({
     title: body.title,
-    createdAt: moment(body.createdAt).format(),
+    description: body.description,
+    file_url: body.file_url,
+    fk_user_id: body.fk_user_id,
   });
 
   return {
@@ -69,6 +71,6 @@ module.exports = {
   getCvs,
   getCvById,
   deleteCv,
-  createCv,
+  createCvs,
   editCv,
 };
