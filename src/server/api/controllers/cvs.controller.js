@@ -1,7 +1,9 @@
 /*  This is the controller for cvs */
 
 const knex = require('../../config/db');
+
 const Error = require('../lib/utils/http-error');
+
 const moment = require('moment-timezone');
 
 const getCvs = async (title, limit) => {
@@ -40,11 +42,15 @@ const getCvById = async (id) => {
 };
 
 const editCv = async (cvId, updatedCv) => {
-  return knex('cv')
+  return knex('cvs')
     .where({ id: cvId })
     .update({
       title: updatedCv.title,
       createdAt: moment(updatedCv.createdAt).format(),
+      description: updatedCv.description,
+      file_url: updatedCv.file_url,
+      updatedAt: moment().format(),
+      deletedAt: moment().format(),
     });
 };
 
