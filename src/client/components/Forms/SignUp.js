@@ -14,9 +14,9 @@ export default function SignUp({ onSubmit }) {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [validation, setValidation] = useState('');
+
   const handleEmailInput = (e) => setEmail(e.target.value);
   const handleNameInput = (e) => setName(e.target.value);
-
   const handlePositionInput = (e) => setPosition(e.target.value);
   const handleImageInput = (e) => setImage(e.target.value);
   const handleLinkedinInput = (e) => setLinkedin(e.target.value);
@@ -33,14 +33,14 @@ export default function SignUp({ onSubmit }) {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <h2> Signup to Review Resume </h2>
-        {/* <button className="btn-Linkedin">Signup with LinkedIn</button>{' '} */}
+
         <div className="button-forms">
           <Button
             buttonName="Signup With Linkedin"
-            style={{ backgroundColor: ' #0676f2' }}
-          ></Button>
+            style={{ backgroundColor: '#0676f2' }}
+          />
           <div className="space">
             <div className="github-container">
               <img className="github-logo" src={iconGithub} alt="github icon" />
@@ -49,9 +49,11 @@ export default function SignUp({ onSubmit }) {
         </div>
         <br />
         <h3 className="or"> Or</h3>
-        <label htmlFor="Name">
+
+        <label className="label" htmlFor="Name">
           Name
           <input
+            className="input"
             type="text"
             name="Name"
             placeholder=""
@@ -60,9 +62,10 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <label htmlFor="position">
+        <label className="label" htmlFor="position">
           Position
           <input
+            className="input"
             type="text"
             name="position"
             placeholder=""
@@ -72,9 +75,10 @@ export default function SignUp({ onSubmit }) {
           />
         </label>
         <br />
-        <label htmlFor="email">
+        <label className="label" htmlFor="email">
           Email
           <input
+            className="input"
             type="email"
             name="email"
             placeholder=""
@@ -83,9 +87,10 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <label htmlFor="img">
+        <label className="label" htmlFor="img">
           Profile Picture
           <input
+            className="input"
             type="url"
             name="img"
             placeholder="profile image link"
@@ -94,9 +99,10 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <label htmlFor="linkedin">
+        <label className="label" htmlFor="linkedin">
           LinkedIn
           <input
+            className="input"
             type="url"
             name="linkedin"
             placeholder="LinkedIn profile link"
@@ -105,9 +111,10 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <label htmlFor="github">
+        <label className="label" htmlFor="github">
           Github
           <input
+            className="input"
             type="url"
             name="github"
             placeholder="Github profile link"
@@ -117,9 +124,10 @@ export default function SignUp({ onSubmit }) {
           />
         </label>
         <br />
-        <label htmlFor="password">
+        <label className="label" htmlFor="password">
           Password
           <input
+            className="input"
             type="password"
             name="password"
             placeholder=""
@@ -131,9 +139,10 @@ export default function SignUp({ onSubmit }) {
           />
         </label>
         <br />
-        <label htmlFor="password">
+        <label className="label" htmlFor="password">
           Password-confirm
           <input
+            className="input"
             type="password"
             name="password"
             placeholder="Write your password again"
@@ -146,7 +155,7 @@ export default function SignUp({ onSubmit }) {
         </label>
 
         <label className="label-checkbox">
-          <input type="checkbox" id="check" disabled=""></input>
+          <input className="input-checkbox" type="checkbox" id="check" />
           Create an account means you're ok with our Terms of Service, Privacy,
           Policy and our default Notification Settings
         </label>
@@ -155,7 +164,7 @@ export default function SignUp({ onSubmit }) {
         <Button
           buttonName="Create Account"
           style={{ backgroundColor: '#da532c' }}
-          type={'submit'} //  type can be change according to button component
+          type="submit" //  type can be change according to button component
         />
 
         <div className="validation">{validation}</div>
