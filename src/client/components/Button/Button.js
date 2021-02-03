@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.styles.css';
 
-const Button = ({ buttonName, style, type, onClick }) => {
-  const button = type;
+const Button = ({ buttonName, style, onClick, type }) => {
   return (
-    <button className="button" type={button} style={style} onClick={onClick}>
+    /* eslint-disable react/button-has-type */
+    <button className="button" type={type} style={style} onClick={onClick}>
       {buttonName}
     </button>
+    /* eslint-enable react/button-has-type */
   );
 };
 export default Button;
