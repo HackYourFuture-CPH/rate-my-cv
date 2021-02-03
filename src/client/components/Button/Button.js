@@ -16,7 +16,9 @@ Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
   style: PropTypes.string,
   type: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 Button.defaultProps = {
   style: {},
+  onClick: () => null,
 };
