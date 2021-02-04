@@ -34,7 +34,7 @@ export default function SignUp({ onSubmit }) {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-        <h2> Signup to Review Resume </h2>
+        <h2>Signup to Review Resume</h2>
 
         <div className="button-forms">
           <Button
@@ -48,15 +48,14 @@ export default function SignUp({ onSubmit }) {
           </div>
         </div>
         <br />
-        <h3 className="or"> Or</h3>
+        <h3 className="or">Or</h3>
 
         <label className="label" htmlFor="Name">
-          Name
+          FullName
           <input
             className="input"
             type="text"
             name="Name"
-            placeholder=""
             value={name}
             onChange={handleNameInput}
             required
@@ -68,7 +67,6 @@ export default function SignUp({ onSubmit }) {
             className="input"
             type="text"
             name="position"
-            placeholder=""
             value={position}
             onChange={handlePositionInput}
             required
@@ -81,19 +79,18 @@ export default function SignUp({ onSubmit }) {
             className="input"
             type="email"
             name="email"
-            placeholder=""
             value={email}
             onChange={handleEmailInput}
             required
           />
         </label>
         <label className="label" htmlFor="img">
-          Profile Picture
+          Profile-image
           <input
             className="input"
             type="url"
             name="img"
-            placeholder="profile image link"
+            placeholder="profile image URL"
             value={image}
             onChange={handleImageInput}
             required
@@ -140,7 +137,7 @@ export default function SignUp({ onSubmit }) {
         </label>
         <br />
         <label className="label" htmlFor="password">
-          Password-confirm
+          Password-conformation
           <input
             className="input"
             type="password"
