@@ -150,7 +150,7 @@ router.patch('/:id', (req, res, next) => {
  */
 router.delete('/:id', (req, res) => {
   cvsController
-    .deleteCv(req.params.id, req)
+    .deleteCvs(req.params.id, req)
     .then((result) => {
       // If result is equal to 0, then that means the cv id does not exist
       if (result === 0) {

@@ -42,7 +42,7 @@ const editCv = async (cvId, updatedCv) => {
     });
 };
 
-const deleteCv = async (cvsId) => {
+const deleteCvs = async (cvsId) => {
   return knex('cvs').where({ id: cvsId }).del();
 };
 
@@ -60,7 +60,7 @@ const createCv = async (body) => {
 module.exports = {
   getCvs,
   getCvById,
-  deleteCv,
+  deleteCvs,
   createCv,
   editCv,
 };
