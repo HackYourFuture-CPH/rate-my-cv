@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import UserIcon from '../../assets/images/icons/user-icon.png'
-// import { signOut } from '../../firebase/auth';
 
 export default function Header({ isAuthenticated = false, username}) {
 
@@ -48,7 +47,6 @@ export default function Header({ isAuthenticated = false, username}) {
           </div>
           <ul className="right-section">
               <li className="user-name">
-                {/* className="login-link */}
                     <Link to="/sign-in" className="black-design">
                     Login
                  </Link>
