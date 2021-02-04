@@ -17,7 +17,7 @@ function App() {
   if (isLoading) return <Loader />;
   return (
     <Router>
-      <Header isAuthenticated={isAuthenticated}  />
+      <Header isAuthenticated={isAuthenticated} username="Ali Ehsan" />
       <Switch>
         <Route exact path="/">
           <Home />

@@ -12,6 +12,6 @@ export const Guest = () => (
 
 export const AuthorizedUser = () => (
   <Router>
-    <Header isAuthenticated={true} />
+    <Header isAuthenticated={true} username='Ali Ehsan' />
   </Router>
 );

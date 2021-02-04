@@ -5,8 +5,7 @@ import './Header.css';
 import UserIcon from '../../assets/images/icons/user-icon.png'
 // import { signOut } from '../../firebase/auth';
 
-export default function Header({ isAuthenticated = false}) {
-  const username = 'Ali Ehaaa';
+export default function Header({ isAuthenticated = false, username}) {
 
   if (isAuthenticated) { 
     return (
@@ -66,4 +65,8 @@ export default function Header({ isAuthenticated = false}) {
 
 Header.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
+  username:PropTypes.string
 };
+Header.defaultProps={
+  username:''
+}
