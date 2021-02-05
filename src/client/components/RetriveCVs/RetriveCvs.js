@@ -14,8 +14,12 @@ function RetriveCvs() {
     <div>
       {cvs?.map((item) => (
         <div>
+          {item.profile_image_url}
+          {item.full_name}
+          {item.position}
           {item.title}
-          {item.description}
+          {item.file_url}
+          {item.created_date}
         </div>
       ))}
     </div>
