@@ -1,5 +1,5 @@
 function Validation(values) {
-  let errors = {};
+  const errors = {};
   if (!values.email) {
     errors.email = 'Email is required';
   } else if (
