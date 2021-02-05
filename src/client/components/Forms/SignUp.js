@@ -29,7 +29,16 @@ export default function SignUp({ onSubmit }) {
       return setValidation('**Your password does not match**');
     }
     setValidation('');
-    onSubmit({ email, password, passwordConfirm });
+    onSubmit({
+      email,
+      password,
+      passwordConfirm,
+      name,
+      position,
+      image,
+      linkedin,
+      github,
+    });
   };
   return (
     <div>
