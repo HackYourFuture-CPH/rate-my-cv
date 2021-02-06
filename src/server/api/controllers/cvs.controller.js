@@ -3,20 +3,18 @@
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 const moment = require('moment-timezone');
+const { faUserSecret } = require('@fortawesome/free-solid-svg-icons');
 
 const getCvs = async (title, limit) => {
   try {
     if (title) {
-      return await knex('cvs')
-        .select('*')
-        .where('title', 'like', `%${title}%`);
+      return await knex('cvs').select('*').where('title', 'like', `%${title}%`);
     }
     if (limit) {
-      return await knex('cvs')
-        .select('*')
-        .limit({ limit });
+      return await knex('cvs').select('*').limit({ limit });
     }
     return await knex('cvs')
+      .join('users', 'users.id', '=', 'cvs.id')
       .select('*')
       .orderBy('cvs.title')
       .orderBy('createdAt', 'desc');
@@ -27,9 +25,7 @@ const getCvs = async (title, limit) => {
 
 const getCvById = async (id) => {
   try {
-    const cvs = await knex('cvs')
-      .select('cvs.id as id', 'title')
-      .where({ id });
+    const cvs = await knex('cvs').select('cvs.id as id', 'title').where({ id });
     if (cvs.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
     }
@@ -49,9 +45,7 @@ const editCv = async (cvId, updatedCv) => {
 };
 
 const deleteCv = async (cvId) => {
-  return knex('cv')
-    .where({ id: cvId })
-    .del();
+  return knex('cv').where({ id: cvId }).del();
 };
 
 const createCv = async (body) => {
