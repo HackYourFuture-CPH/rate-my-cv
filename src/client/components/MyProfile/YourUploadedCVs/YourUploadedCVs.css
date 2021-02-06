@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 59vw;
-  left: 36vw;
-  top: 28vh;
 }
 
 .header-your-uploaded-cv {
@@ -82,4 +80,38 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+}
+
+.mobile-version-cv-star-holder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .your-uploaded-cvs {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding-top: 5vh;
+  }
+  .header-your-uploaded-cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 13px;
+  }
+  .upload-cv-botton button {
+    width: 60vw;
+  }
+  .your-uploaded-cvs li {
+    justify-content: center;
+    grid-template-columns: 40vw 40vw;
+    height: 20vh;
+  }
+  .see-review button,
+  .download button {
+    width: 40vw;
+  }
 }
