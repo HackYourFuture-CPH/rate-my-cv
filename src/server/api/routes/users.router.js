@@ -60,7 +60,7 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /modules:
+ * /users:
  *  post:
  *    summary: Create a user
  *    description:
@@ -73,14 +73,10 @@ router.get('/:id', (req, res, next) => {
  *        schema:
  *          type: object
  *          required:
- *            - full_name
- *            - position
- *            - linkedin
- *            - github
- *            - website
- *            - profile_image_url
+ *            - fullName
+ *            - firebaseToken
  *          properties:
- *            full_name:
+ *            fullName:
  *              type: string
  *            position:
  *              type: string
@@ -90,7 +86,9 @@ router.get('/:id', (req, res, next) => {
  *              type: string
  *            website:
  *              type: string
- *            profile_image_url:
+ *            profileImageUrl:
+ *              type: string
+ *            firebaseToken:
  *              type: string
  *    responses:
  *      201:
@@ -110,6 +108,92 @@ router.post('/', (req, res) => {
         .send('Bad request')
         .end();
     });
+});
+/**
+ * @swagger
+ * /users/{ID}:
+ *  patch:
+ *    summary: Edit a user
+ *    description:
+ *      Will create a user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the user to patch.
+ *      - in: body
+ *        name: users
+ *        description: The user to update.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - fullName
+ *            - firebaseToken
+ *          properties:
+ *            fullName:
+ *              type: string
+ *            position:
+ *              type: string
+ *            linkedin:
+ *              type: string
+ *            github:
+ *              type: string
+ *            website:
+ *              type: string
+ *            profileImageUrl:
+ *              type: string
+ *            firebaseToken:
+ *              type: string
+ *    responses:
+ *      200:
+ *        description: user was patched
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res) => {
+  usersController
+    .editUser(req.params.id, req.body)
+    .then((result) => {
+      // If result is equal to 0, then that means the user id does not exist
+      if (result === 0) {
+        res.status(400).send(`User ID '${req.params.id}' does not exist.`);
+      } else {
+        res.json({ success: true });
+        }
+    })
+    .catch((error) => console.log(error));
+});
+
+/**
+ * @swagger
+ * /modules/{ID}:
+ *  delete:
+ *    summary: Delete a user
+ *    description:
+ *      Will delete a user with a given ID.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the User to delete.
+ *    responses:
+ *      200:
+ *        description: User deleted
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.delete('/:id', (req, res) => {
+  usersController
+    .deleteUser(req.params.id, req)
+    .then((result) => {
+      // If result is equal to 0, then that means the module id does not exist
+      if (result === 0) {
+        res.status(404).send('The user ID you provided does not exist.');
+      } else {
+        res.json({ success: true });
+      }
+    })
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;

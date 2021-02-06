@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
@@ -10,6 +9,8 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
+import NotFoundPage from './containers/NotFound/notFoundPage.component';
+import Footer from './components/Footer/Footer.js';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -31,7 +32,9 @@ function App() {
         >
           <Profile />
         </AuthenticatedRoute>
+        <Route path="*" component={NotFoundPage} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
