@@ -1,5 +1,6 @@
 import React from 'react';
-import './YourUploadedCVs.css';
+import './ratingStars.css';
+import PropTypes from 'prop-types';
 
 export function Star({ averageRatingInPercent }) {
   return (
@@ -12,3 +13,7 @@ export function Star({ averageRatingInPercent }) {
     </div>
   );
 }
+
+Star.propTypes = {
+  averageRatingInPercent: PropTypes.string.isRequired,
+};

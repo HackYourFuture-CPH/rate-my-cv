@@ -1,42 +1,53 @@
 import React from 'react';
-import './YourUploadedCVs.css';
-import { RatingStars } from './RatingStars';
+import './yourUploadedCVs.css';
+import { RatingStars } from '../../RatingStars/RatingStars';
 import { CVList } from './CVList';
 import Button from '../../Button/Button';
+import PropTypes from 'prop-types';
 
 export function YourUploadedCVs({ CVsList }) {
   return (
-    <section className="YourUploadedCVs">
-      <div className="header-yourUploadedCV">
+    <section className="your-uploaded-cvs">
+      <div className="header-your-uploaded-cv">
         <span>
           <h2>Your Uploaded CVs</h2>
         </span>
-        <div className="uploadCVBtn">
-          <Button buttonName="Upload new CV" backgroundColor="black" />
+        <div className="upload-cv-botton">
+          <Button
+            buttonName="Upload new CV"
+            style={{ backgroundColor: 'black' }}
+          />
         </div>
       </div>{' '}
       {/* CVsList is an array comes as a resault of fetching API GET CVs  */}
-      <div className="CVlistHolder">
+      <ul>
         {CVsList.map((cv, i) => {
           return i < 3 ? (
-            <ul key={cv.id}>
+            <li>
               <CVList title={cv.title} date={cv.created_date} />
               <RatingStars averageStars={(cv.averageStars * 100) / 5} />
-              {/* COMMENT 1: averageStars comes form as a resault of fetching on API PUT AVG on the stars in the table  */}
-              {/* review WHERE the id=cv.id to table CV */}
-              {/* COMMENT 2: averageStars should be a number between 0 to 5 */}
               <div className="download">
-                <Button buttonName="Download" backgroundColor="#FFFFFF" />
+                <Button
+                  buttonName="Download"
+                  style={{ backgroundColor: '#FFFFFF', color: '#f25b06' }}
+                />
               </div>
-              <div className="seeReview">
-                <Button buttonName="See reviews" backgroundColor="#F25B06" />
+              <div className="see-review">
+                <Button
+                  buttonName="See reviews"
+                  style={{ backgroundColor: '#F25B06', color: '#FFFFFF' }}
+                />
               </div>
-            </ul>
+            </li>
           ) : (
             ''
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 }
+
+YourUploadedCVs.propTypes = {
+  CVsList: PropTypes.string.isRequired,
+};

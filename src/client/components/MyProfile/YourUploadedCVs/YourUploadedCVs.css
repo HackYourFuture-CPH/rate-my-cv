@@ -1,49 +1,48 @@
-.YourUploadedCVs {
+.your-uploaded-cvs {
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-right: 7vw;
-  width:56vw;
+  width: 59vw;
   left: 36vw;
   top: 28vh;
-  
 }
 
-.header-yourUploadedCV{
-
+.header-your-uploaded-cv {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%; 
-  padding-bottom: 27px; 
+  width: 100%;
+  padding-bottom: 13px;
 }
 
-
-.YourUploadedCVs ul {
+.your-uploaded-cvs li {
   list-style-type: none;
   display: grid;
-  grid-template-columns: auto auto 149px 149px;
-  gap:7px;
-  align-items: center;
+  grid-template-columns: auto 15vw 12vw 12vw;
+  gap: 7px;
+  align-items: baseline;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   height: 60px;
-  margin: 0 0 14px 0;
-  padding-right: 30px;
-  background-color: #FFFFFF;
+  margin: 14px 0 14px 0;
+  padding: 12px 30px 0 30px;
+  background-color: #ffffff;
 }
-
-.YourUploadedCVs h2 {
+.your-uploaded-cvs ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.your-uploaded-cvs h2 {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   color: #000000;
-  margin-top:0;
+  margin-top: 0;
 }
 
-.cvTitle {
+.cv-title {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -52,7 +51,7 @@
   color: #000000;
 }
 
-.cvDate {
+.cv-date {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -61,59 +60,24 @@
   color: #9a9a9a;
 }
 
-.ratings {
-  position: relative;
-  vertical-align: middle;
-  display: inline-block;
-  color: #d4d4d4;
-  overflow: hidden;
-}
-
-.full-stars {
-  position: absolute;
-  left: 0;
-  top: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #f1c644;
-}
-
-.empty-stars:before,
-.full-stars:before {
-  content: '★';
-  font-size: 15px;
-}
-
 body {
   background: #fafafa;
 }
 
-.download button{
+.see-review button,
+.download button {
   border: 1px solid #f25b06;
   box-sizing: border-box;
-  color: #f25b06;
   border-radius: 5px;
-  width: 149px;
+  width: 12vw;
   height: 38px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   font-size: 14px;
 }
 
-.seeReview button{
-border-radius: 5px;
-  width: 149px;
+.upload-cv-botton button {
+  width: 17vw;
   height: 38px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-}
-
-.uploadCVBtn button{
-  width:219px;
-  height:38px;
   display: flex;
   justify-content: center;
   align-items: center;

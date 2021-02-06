@@ -1,11 +1,17 @@
 import React from 'react';
-import './YourUploadedCVs.css';
+import './yourUploadedCVs.css';
+import PropTypes from 'prop-types';
 
 export function CVList({ title, date }) {
   return (
-    <li>
-      <div className="cvTitle">{title}</div>
-      <div className="cvDate">{date}</div>
-    </li>
+    <div className="title-holder-your-cv-uploader">
+      <div className="cv-title">{title}</div>
+      <div className="cv-date">{date}</div>
+    </div>
   );
 }
+
+CVList.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
