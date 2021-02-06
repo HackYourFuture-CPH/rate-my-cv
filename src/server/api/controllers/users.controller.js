@@ -4,6 +4,8 @@ Can be deleted as soon as the first real controller is added. */
 const knex = require('../../config/db');
 const Error = require('../lib/utils/http-error');
 
+const moment = require('moment-timezone');
+
 const getUsers = async () => {
   try {
     return await knex('users').select('*');
@@ -31,13 +33,14 @@ const editUser = async (userId, updatedUser) => {
     .where({ id: userId })
     .update({
       // eslint-disable-next-line @typescript-eslint/camelcase
-      full_name: updatedUser.full_name,
+      full_name: updatedUser.fullName,
       position: updatedUser.position,
       linkedin: updatedUser.linkedin,
       github: updatedUser.github,
       website: updatedUser.website,
       // eslint-disable-next-line @typescript-eslint/camelcase
-      profile_image_url: updatedUser.profile_image_url,
+      profile_image_url: updatedUser.profileImageUrl,
+      created_date: moment().format(),
     });
 };
 
@@ -50,13 +53,15 @@ const deleteUser = async (userId) => {
 const createUser = async (newUser) => {
   await knex('users').insert({
     // eslint-disable-next-line @typescript-eslint/camelcase
-    full_name: newUser.full_name,
+    full_name: newUser.fullName,
     position: newUser.position,
     linkedin: newUser.linkedin,
     github: newUser.github,
     website: newUser.website,
     // eslint-disable-next-line @typescript-eslint/camelcase
-    profile_image_url: newUser.profile_image_url,
+    profile_image_url: newUser.profileImageUrl,
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    firebase_token: newUser.firebaseToken,
   });
 
   return {
