@@ -106,7 +106,7 @@ router.post('/', (req, res) => {
  *    
  *    summary: Edit a cv
  *    description:
- *      Will create a user.
+ *      Will edit a cv.
  *    produces: application/json
  *    parameters:
  *      - in: path
@@ -127,6 +127,7 @@ router.post('/', (req, res) => {
  *                format: date-time
  *            file_url:
  *                type: string
+ *            fk_user_id: string
  *            updatedAt:
  *                format: date-time
  *            deletedAt:

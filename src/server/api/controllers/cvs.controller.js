@@ -30,7 +30,7 @@ const getCvs = async (title, limit) => {
 const getCvById = async (id) => {
   try {
     const cvs = await knex('cvs')
-      .select('cvs.id as id', 'title')
+      .select('cvs.id as id', 'title', 'createdAt', 'description', 'file_url', 'fk_user_id', 'updatedAt', 'deletedAt')
       .where({ id });
     if (cvs.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
