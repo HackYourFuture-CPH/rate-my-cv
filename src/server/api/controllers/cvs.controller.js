@@ -30,7 +30,7 @@ const getCvs = async (title, limit) => {
 const getCvById = async (id) => {
   try {
     const cvs = await knex('cvs')
-      .select('cvs.id as id', 'title', 'createdAt', 'description', 'file_url', 'fk_user_id', 'updatedAt', 'deletedAt')
+      .select('cvs.id as id', 'title',)
       .where({ id });
     if (cvs.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
@@ -41,18 +41,7 @@ const getCvById = async (id) => {
   }
 };
 
-const editCv = async (cvId, updatedCv) => {
-  return knex('cvs')
-    .where({ id: cvId })
-    .update({
-      title: updatedCv.title,
-      createdAt: moment(updatedCv.createdAt).format(),
-      description: updatedCv.description,
-      file_url: updatedCv.file_url,
-      updatedAt: moment().format(),
-      deletedAt: moment().format(),
-    });
-};
+
 
 const deleteCv = async (cvId) => {
   return knex('cv')
