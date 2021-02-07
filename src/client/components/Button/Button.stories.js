@@ -18,6 +18,10 @@ export const Primary = () => {
     <Button
       buttonName={text('Label', 'Primary')}
       style={object('Style', style)}
+      type="submit"
+      onClick={() => {
+        ('clicked');
+      }}
     />
   );
 };
@@ -33,6 +37,10 @@ export const Secondary = () => {
     <Button
       buttonName={text('Label', 'Secondary')}
       style={object('Style', style)}
+      type="submit"
+      onClick={() => {
+        ('clicked');
+      }}
     />
   );
 };
