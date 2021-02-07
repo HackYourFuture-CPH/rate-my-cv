@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
@@ -17,7 +16,10 @@ function App() {
   if (isLoading) return <Loader />;
   return (
     <Router>
-      <Header isAuthenticated={isAuthenticated} username="Ali Ehsan" />
+      {location.pathname === '/sign-in' ||
+      location.pathname === '/sign-up' ? null : (
+        <Header isAuthenticated={true} username="William Henry Gates" />
+      )}
       <Switch>
         <Route exact path="/">
           <Home />
