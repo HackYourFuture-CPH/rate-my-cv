@@ -19,7 +19,7 @@ function App() {
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header isAuthenticated={true} username="William Henry Gates" />
+        <Header isAuthenticated={isAuthenticated} username="William Henry Gates" />
       )}
       <Switch>
         <Route exact path="/">
