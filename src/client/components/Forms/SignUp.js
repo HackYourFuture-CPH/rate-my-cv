@@ -5,14 +5,15 @@ import './SignUp.style.css';
 import Button from '../Button/Button';
 
 export default function SignUp({ onSubmit }) {
-  const [name, setName] = useState('');
+  const [fullName, setfullName] = useState('');
   const [email, setEmail] = useState('');
   const [position, setPosition] = useState('');
-  const [image, setImage] = useState('');
+  const [profileImageUrl, setProfileImageUrl] = useState('');
   const [linkedin, setLinkedin] = useState('');
   const [github, setGithub] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [website, setWebsite] = useState('');
   const [validation, setValidation] = useState('');
 
   const handleEmailInput = (e) => setEmail(e.target.value);
@@ -23,6 +24,7 @@ export default function SignUp({ onSubmit }) {
   const handleGithubInput = (e) => setGithub(e.target.value);
   const handlePasswordInput = (e) => setPassword(e.target.value);
   const handlePasswordConfirmInput = (e) => setPasswordConfirm(e.target.value);
+  const handleWebsiteInput = (e) => setWebsite(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== passwordConfirm) {
@@ -33,11 +35,12 @@ export default function SignUp({ onSubmit }) {
       email,
       password,
       passwordConfirm,
-      name,
+      fullName,
       position,
-      image,
+      profileImageUrl,
       linkedin,
       github,
+      website,
     });
   };
   return (
@@ -65,7 +68,7 @@ export default function SignUp({ onSubmit }) {
             className="input"
             type="text"
             name="Name"
-            value={name}
+            value={fullName}
             onChange={handleNameInput}
             required
           />
@@ -94,19 +97,19 @@ export default function SignUp({ onSubmit }) {
           />
         </label>
         <label className="label" htmlFor="img">
-          Profile-image
+          Profile Picture
           <input
             className="input"
             type="url"
             name="img"
             placeholder="profile image URL"
-            value={image}
+            value={profileImageUrl}
             onChange={handleImageInput}
             required
           />
         </label>
         <label className="label" htmlFor="linkedin">
-          LinkedIn
+          LinkedIn Profile
           <input
             className="input"
             type="url"
@@ -118,7 +121,7 @@ export default function SignUp({ onSubmit }) {
           />
         </label>
         <label className="label" htmlFor="github">
-          Github
+          Github Account
           <input
             className="input"
             type="url"
@@ -129,7 +132,20 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br />
+
+        <label className="label" htmlFor="website">
+          Website
+          <input
+            className="input"
+            type="url"
+            name="website"
+            placeholder="website URL"
+            value={website}
+            onChange={handleWebsiteInput}
+            required
+          />
+        </label>
+
         <label className="label" htmlFor="password">
           Password
           <input
@@ -144,9 +160,9 @@ export default function SignUp({ onSubmit }) {
             required
           />
         </label>
-        <br />
+
         <label className="label" htmlFor="password">
-          Password-conformation
+          Retype-Password
           <input
             className="input"
             type="password"
