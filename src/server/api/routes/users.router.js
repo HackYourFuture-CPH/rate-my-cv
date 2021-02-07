@@ -159,7 +159,7 @@ router.patch('/:id', (req, res) => {
         res.status(400).send(`User ID '${req.params.id}' does not exist.`);
       } else {
         res.json({ success: true });
-      }
+        }
     })
     .catch((error) => console.log(error));
 });

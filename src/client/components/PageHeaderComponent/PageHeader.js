@@ -7,14 +7,11 @@ export default function PageHeader() {
   return (
     <div>
       <div className="cv-loader">
-        <div>Uploaded Resume</div>
-        <div className="cv-button">
-          <Button
-            buttonName="Upload New Cv"
-            style={{ backgroundColor: 'black', color: 'white' }}
-          />
+        <div>Uploaded Resume</div>        
+          <div className = "cv-button">
+            <Button buttonName="Upload New Cv" style = {{ backgroundColor: 'black', color: "white" }}/>
+          </div>
         </div>
-      </div>
       <div className="search-button">
         <Search />
       </div>
