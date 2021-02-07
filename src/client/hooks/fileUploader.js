@@ -22,9 +22,9 @@ export const useStorage = (file) => {
           setError(err);
         },
         async () => {
-          const downloadUrl = await storageRef.getDownloadURL();
+          const downloadedUrl = await storageRef.getDownloadURL();
           // save the url to local state
-          setUrl(downloadUrl);
+          setUrl(downloadedUrl);
         },
       );
     }
