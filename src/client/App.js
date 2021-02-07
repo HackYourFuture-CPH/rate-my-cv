@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
@@ -12,6 +11,7 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import RetriveCvs from './components/RetriveCVs/RetriveCvs';
+import Footer from './components/Footer/Footer.js';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -36,6 +36,7 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
