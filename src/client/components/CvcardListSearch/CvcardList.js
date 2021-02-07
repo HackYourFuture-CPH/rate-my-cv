@@ -1,21 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './CvcardList.styles.css';
+import './CvcardList.styles.css';
 import { CardCvViewSearchComponent } from '../CardCvViewSearchComponent/CardCvViewSearchComponent';
 
-export function CvcardList({ title }) {
+export function CvcardList({ title, data }) {
   return (
     <div className="card-list">
       <h2>{title}</h2>
-      <div>
-        <CardCvViewSearchComponent
-          profileImageUrl="woman"
-          fullName="Marie"
-          position="Manager"
-          cvTitle="Administration Manager"
-          fileUrl="https://www.w3schools.com"
-          createdDate="new Date()"
-        />
+      <div className="cards">
+        {data.map((card) => (
+          <div>
+            <CardCvViewSearchComponent
+              profileImageUrl={card.profileImageUrl}
+              fullName={card.fullName}
+              position={card.position}
+              cvTitle={card.cvTitle}
+              fileUrl={card.fileUrl}
+              createdDate={card.createdDate}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -23,4 +27,5 @@ export function CvcardList({ title }) {
 
 CvcardList.propTypes = {
   title: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
