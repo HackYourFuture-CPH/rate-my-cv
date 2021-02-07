@@ -136,24 +136,24 @@ router.patch('/:id', (req, res, next) => {
 /**
  * @swagger
  * /cvs/{ID}:
- *  delete:
- *    summary: Delete a cv
+ *  Delete:
+ *    summary: Delete a certain CV.
  *    description:
  *      Will delete a cv with a given ID.
  *    produces: application/json
  *    parameters:
  *      - in: path
  *        name: ID
- *        description: ID of the cv to delete.
+ *        description: ID of the CV to be deleted.
  *    responses:
  *      200:
- *        description:  CV deleted
+ *        description:  CV is finally deleted
  *      5XX:
  *        description: Unexpected error.
  */
 router.delete('/:id', (req, res) => {
   cvsController
-    .deleteModule(req.params.id, req)
+    .deleteCvs(req.params.id, req)
     .then((result) => {
       // If result is equal to 0, then that means the cv id does not exist
       if (result === 0) {
