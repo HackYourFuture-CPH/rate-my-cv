@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CardCvViewSearchComponent } from '../CardCvViewSearchComponent/CardCvViewSearchComponent';
 
 function RetriveCvs() {
   const [cvs, setCvs] = useState([]);
@@ -14,6 +15,17 @@ function RetriveCvs() {
     <div>
       {cvs?.map((item) => (
         <div>
+          <CardCvViewSearchComponent
+            profileImageUrl={item.profile_image_url}
+            fullName={item.full_name}
+            position={item.position}
+            cvTitle={item.title}
+            fileUrl={item.file_url}
+            createdDate={item.created_date}
+          />{' '}
+        </div>
+
+        /*<div>
           {item.profile_image_url} <br />
           {item.full_name}
           <br />
@@ -24,8 +36,8 @@ function RetriveCvs() {
           {item.file_url}
           <br />
           {item.created_date}
-          <br />
-        </div>
+          <br /> 
+        </div>*/
       ))}
     </div>
   );
