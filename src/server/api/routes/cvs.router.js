@@ -87,7 +87,7 @@ router.get('/:id', (req, res, next) => {
  */
 router.post('/', (req, res) => {
   cvsController
-    .createCv(req.body)
+    .createCvs(req.body)
     .then((result) => res.json(result))
     .catch((error) => {
       console.log(error);
