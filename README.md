@@ -126,6 +126,9 @@ _Class Dates_
   - Really good to see how you are working as a team! It makes me super happy and proud!
   
 - Week 4 —> 7-Feb-2021
+  - Knex Migrations && Seeding
+  - PR Flow
+  - Milestones
 - Week 5 —> 14-Feb-2021
 - Week 6 —> 21-Feb-2021
 - Week 7 —> 28-Feb-2021
