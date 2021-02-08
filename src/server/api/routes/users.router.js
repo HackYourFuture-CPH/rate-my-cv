@@ -10,7 +10,7 @@ const usersController = require('../controllers/users.controller');
 
 /**
  * @swagger
- * /modules:
+ * /users:
  *  get:
  *    summary: Get all users
  *    description:
@@ -31,7 +31,7 @@ router.get('/', (req, res, next) => {
 
 /**
  * @swagger
- * /modules/{ID}:
+ * /users/{ID}:
  *  get:
  *    summary: Get user by ID
  *    description:
@@ -166,7 +166,7 @@ router.patch('/:id', (req, res) => {
 
 /**
  * @swagger
- * /modules/{ID}:
+ * /users/{ID}:
  *  delete:
  *    summary: Delete a user
  *    description:
