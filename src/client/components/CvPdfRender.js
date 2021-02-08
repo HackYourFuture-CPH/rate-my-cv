@@ -13,7 +13,7 @@ export default function CvPdfRender() {
             const src = `https://docs.google.com/viewer?url=${specificCv.file_url}&embedded=true`;
             setCvPdfFile(src)
         })()
-     },[])
+     },[id])
 
     return (
         <div>
