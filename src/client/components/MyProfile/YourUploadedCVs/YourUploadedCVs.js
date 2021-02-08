@@ -18,7 +18,7 @@ export function YourUploadedCVs({ CVsList }) {
             style={{ backgroundColor: 'black' }}
           />
         </div>
-      </div>{' '}
+      </div>
       {/* CVsList is an array comes as a resault of fetching API GET CVs  */}
       <ul>
         {CVsList.map((cv, i) => {

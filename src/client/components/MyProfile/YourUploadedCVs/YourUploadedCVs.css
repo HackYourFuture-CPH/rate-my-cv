@@ -1,3 +1,5 @@
+/* body background color should be defined */
+
 .your-uploaded-cvs {
   display: flex;
   flex-direction: column;
@@ -58,9 +60,6 @@
   color: #9a9a9a;
 }
 
-body {
-  background: #fafafa;
-}
 
 .see-review button,
 .download button {

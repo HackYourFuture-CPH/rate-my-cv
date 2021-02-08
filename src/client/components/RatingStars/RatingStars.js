@@ -18,7 +18,7 @@ export function RatingStars({ averageStars }) {
       {stars.map((x, i) => {
         return i < filledStar ? (
           <div style={{ marginLeft: '8px' }}>
-            <Star averageRatingInPercent="100%" />{' '}
+            <Star averageRatingInPercent="100%" />
           </div>
         ) : (
           <div style={{ marginLeft: '8px' }}>
