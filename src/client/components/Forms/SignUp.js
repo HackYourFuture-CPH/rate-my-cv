@@ -60,7 +60,7 @@ export default function SignUp({ onSubmit }) {
       <br />
       <h3 className="or">Or</h3>
       <label className="label" htmlFor="Name">
-        FullName:
+        Full name:
         <input
           className="input"
           type="text"
@@ -94,7 +94,7 @@ export default function SignUp({ onSubmit }) {
         />
       </label>
       <label className="label" htmlFor="img">
-        Profile Picture:
+        Profile picture:
         <input
           className="input"
           type="url"
@@ -106,7 +106,7 @@ export default function SignUp({ onSubmit }) {
         />
       </label>
       <label className="label" htmlFor="linkedin">
-        LinkedIn Profile:
+        LinkedIn profile:
         <input
           className="input"
           type="url"
@@ -118,7 +118,7 @@ export default function SignUp({ onSubmit }) {
         />
       </label>
       <label className="label" htmlFor="github">
-        Github Account:
+        Github user:
         <input
           className="input"
           type="url"
