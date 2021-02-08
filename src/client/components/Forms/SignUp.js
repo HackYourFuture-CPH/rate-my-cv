@@ -166,7 +166,7 @@ export default function SignUp({ onSubmit }) {
           <input
             className="input"
             type="password"
-            name="password"
+            name="password-confirmation"
             placeholder="Write your password again"
             value={passwordConfirm}
             onChange={handlePasswordConfirmInput}
