@@ -1,0 +1,123 @@
+.github-logo {
+  width: 30px;
+}
+.button-forms {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.github-container {
+  padding: 0.3em;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  margin: 5px;
+}
+.space {
+  margin-left: 80px;
+}
+.or {
+  color: #9a9a9a;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 22px;
+  margin: 10px 0px;
+  box-sizing: border-box;
+  border: 2px solid #f8f0f4;
+  display: inline-block;
+  background-color: rgba(63, 58, 58, 0.075);
+}
+
+.form {
+  height: 600px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 0px;
+}
+.label {
+  font-size: 14px;
+
+  margin-top: 10px;
+  margin-left: 5px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.input-checkbox {
+  text-decoration: none;
+  font-size: 8px;
+}
+
+h3 {
+  border-left: 190px solid hsl(240, 15%, 92%);
+  border-right: 190px solid #e6e5ee;
+  line-height: 1px;
+  color: #a17272;
+  margin-top: 40px;
+}
+
+.label-checkbox {
+  display: flex;
+  font-size: 10px;
+  justify-content: left;
+  text-align: left;
+  font-weight: normal;
+}
+.validation {
+  width: 700px;
+  border: 0px solid rgb(250, 252, 250);
+  padding: 80px;
+  margin: 10px;
+  text-align: center;
+  color: red;
+  margin-top: -250px;
+}
+
+@media screen and (max-width: 750px) {
+  .form {
+    width: 100%;
+  }
+  .input {
+    width: 100%;
+    padding: 10px 22px;
+    margin: 10px 0px;
+    box-sizing: border-box;
+    border: 2px solid #f8f0f4;
+    display: inline-block;
+    background-color: rgba(63, 58, 58, 0.075);
+  }
+
+  .label-checkbox {
+    font-size: 9px;
+    text-justify: left;
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+  .validation {
+    width: max-content;
+    border: 0px solid rgb(250, 252, 250);
+    padding: 80px;
+    margin: 10px;
+    text-align: center;
+    color: red;
+    font-style: normal;
+    margin-top: -250px;
+  }
+  .space {
+    margin-left: 5px;
+  }
+
+  h3 {
+    border-left: 160px solid hsl(240, 15%, 92%);
+    border-right: 170px solid #e6e5ee;
+    line-height: 1px;
+    color: #a17272;
+    margin-top: 40px;
+    text-align: left;
+  }
+}
