@@ -172,8 +172,8 @@ export default function SignUp({ onSubmit }) {
       </label>
       <label className="label-checkbox">
         <input className="input-checkbox" type="checkbox" id="check" />
-        Create an account means you're ok with our Terms of Service, Privacy,
-        Policy and our default Notification Settings
+        By signing up you agree to the Terms of Service, Privacy Policy and the
+        default notifications settings
       </label>
       <br />
 
