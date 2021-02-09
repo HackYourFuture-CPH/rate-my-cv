@@ -1,5 +1,5 @@
 import React from 'react';
-import './yourUploadedCVs.css';
+import './YourUploadedCVs.css';
 import { RatingStars } from '../../RatingStars/RatingStars';
 import { CVList } from './CVList';
 import Button from '../../Button/Button';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './yourUploadedCVs.css';
+import './YourUploadedCVs.css';
 import PropTypes from 'prop-types';
 
 export function CVList({ title, date }) {
