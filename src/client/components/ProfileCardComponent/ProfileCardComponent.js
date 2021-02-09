@@ -4,7 +4,7 @@ import './ProfileCardComponent.styles.css';
 import iconLinkedin from '../../assets/images/icons/linkedin.svg';
 import iconWebsite from '../../assets/images/icons/website.svg';
 import iconGithub from '../../assets/images/icons/github.svg';
-import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
+import unknownUser from '../../assets/images/portraits/unknown-black.png';
 
 export const ProfileCardComponent = ({
   profileImageUrl,
