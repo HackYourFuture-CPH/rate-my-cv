@@ -10,7 +10,7 @@ export const Component = () => (
   buttonStyle={{ backgroundColor: 'blue', fontWeight: 'bold' }}/>
 );
 export const Component2 = () => (
-  <ReviewEditorComponent  fullName="Jonathan Andersen"
-  />
+  <ReviewEditorComponent  fullName="Jonathan Andersen"placeHolderText="Enter to send. Shift + Enter to add new line."
+  buttonStyle={{ backgroundColor: 'blue', fontWeight: 'bold' }}/>
 );
 

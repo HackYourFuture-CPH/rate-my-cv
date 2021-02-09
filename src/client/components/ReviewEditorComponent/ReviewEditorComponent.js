@@ -17,8 +17,6 @@ export default function ReviewEditorComponent({
   };
   return (
     <div className="container">
-      {/* style={{border:'1px solid black'
-    }} */}
       <div className="top-part">
         <div className="profile-picture">
           <div className="circle-mask">
@@ -35,7 +33,6 @@ export default function ReviewEditorComponent({
       </div>
       <div className="input-part">
         <textarea value={inputValue} placeholder={placeHolderText} onChange={onChange}/>
-           
       </div>
       <div className="button-part">
         <Button
