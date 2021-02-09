@@ -1,0 +1,34 @@
+.container-sign-up {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 5em 0 2em;
+}
+
+.img-sign-up {
+  padding-top: 2em;
+}
+
+.review {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: xxx-large;
+}
+
+.resume {
+  font-family: 'Jost';
+  font-size: xxx-large;
+}
+
+.text {
+  padding: 1em 0;
+  font-size: x-large;
+  font-weight: 300;
+}
+
+.text-sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+}
