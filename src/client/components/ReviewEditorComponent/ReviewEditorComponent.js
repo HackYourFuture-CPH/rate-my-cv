@@ -38,7 +38,6 @@ export default function ReviewEditorComponent({
         <Button
           buttonName="Send review"
           style={buttonStyle}
-          // style={buttonStyle}
           type="submit"
           onClick={() => {
             ('clicked');
