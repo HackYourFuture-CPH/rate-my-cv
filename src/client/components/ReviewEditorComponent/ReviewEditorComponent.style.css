@@ -1,23 +1,22 @@
 .container {
-  max-width: 300px;
+  max-width: 598px;
   background: white;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
   display: flex;
   padding: 1.5em;
   flex-direction: column;
 }
-
 .top-part {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   height: 4em;
-  border: 1px solid black;
+  flex-direction: row;
 }
-
 .profile-picture {
   margin-right: 1em;
-  border: 1px solid black;
+  display: inline;
+  /* margin: 0 auto; */
+  width: 40px;
+  justify-content: flex-start;
 }
 .circle-mask {
   width: 40px;
@@ -48,19 +47,22 @@
   min-height: 1em;
   max-height: 2.5em;
 }
-
 .input-part {
   margin-top: 0.5em;
-  align-items: flex-start;
-  height: 120px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
 }
+.input-part textarea {
+  border-radius: 5px;
+  border: 1px solid #9A9A9A;
+  align-items: flex-end;
+  height: 120px;
+  /* margin: auto; */
+  min-width: 570px;
+ }
 .button-part {
   display: flex;
   justify-content: flex-end;
   margin-top: 0.5em;
 }
-/* .button-blue {
-    padding: 11px 20px;
-    background: #0676F2;
-    font-weight: bold;
-  } */

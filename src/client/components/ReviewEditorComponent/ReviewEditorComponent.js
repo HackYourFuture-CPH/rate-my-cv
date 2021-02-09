@@ -1,22 +1,24 @@
-import React from 'react';
+import React ,{useState}  from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
- import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
-// /assets/images/portraits/unknown-black.jpg
-//     "heroku-postbuild": "npm run db:setup"
+import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
+import './ReviewEditorComponent.style.css';
 
 export default function ReviewEditorComponent({
   avatarUrl,
   fullName,
   inputText,
-  // placeHolderText,
-  // buttonStyle,
+  placeHolderText,
+  buttonStyle,
 }) {
-  // const [inputValue,setInputValue] = useState()
-  console.log('url',avatarUrl);
+  const [inputValue,setInputValue] = useState()
+  // const onChange = (event) => {
+  //   setInputValue((event.target.value))
+  // };
   return (
-    <div className="container" style={{border:'1px solid black'
-    }}>
+    <div className="container">
+      {/* style={{border:'1px solid black'
+    }} */}
       <div className="top-part">
         <div className="profile-picture">
           <div className="circle-mask">
@@ -32,12 +34,15 @@ export default function ReviewEditorComponent({
         </div>
       </div>
       <div className="input-part">
-        <input type="text" placeholder='hello'/>
+        <textarea value={inputValue} placeholder={placeHolderText} />
+        {/* 
+        onChange={onChange} */}
+     
       </div>
       <div className="button-part">
         <Button
           buttonName="Send review"
-           style={{ backgroundColor: 'blue'}}
+          style={{ backgroundColor: 'blue', fontWeight: 'bold' }}
           // style={buttonStyle}
           type="submit"
           onClick={() => {
@@ -49,18 +54,18 @@ export default function ReviewEditorComponent({
   );
 }
 
-
 ReviewEditorComponent.propTypes = {
-  avatarUrl: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string,
   fullName: PropTypes.string.isRequired,
   inputText: PropTypes.string,
-  placeHolderText:PropTypes.string
+  placeHolderText: PropTypes.string,
   //buttonStyle:PropTypes.string
 };
 
 ReviewEditorComponent.defaultProps = {
-    inputText:{},
-    placeHolderText: {}
-    // 'Enter to send. Shift + Enter to add new line.',
-    //buttonStyle: {}
-  };
+  avatarUrl: {},
+  inputText: {},
+  placeHolderText: {},
+  // 'Enter to send. Shift + Enter to add new line.',
+  //buttonStyle: {}
+};

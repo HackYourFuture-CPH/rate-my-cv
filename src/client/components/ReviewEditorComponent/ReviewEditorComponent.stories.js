@@ -5,9 +5,14 @@ import womanthree from '../../assets/images/portraits/woman3.jpg';
 export default { title: 'review' };
 
 export const Component = () => (
-  <ReviewEditorComponent avatarUrl={womanthree}     fullName="Jonathan Andersen"
+  <ReviewEditorComponent avatarUrl={womanthree}     fullName="Jonathan Andersen" placeHolderText="Enter to send. Shift + Enter to add new line."
   />
 );
+export const Component2 = () => (
+  <ReviewEditorComponent  fullName="Jonathan Andersen"
+  />
+);
+
 
 // export default { title: 'Sample Component' };
 
