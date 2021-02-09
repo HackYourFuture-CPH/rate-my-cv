@@ -35,7 +35,7 @@ export default function SignUp({ onSubmit }) {
       email,
       password,
       passwordConfirm,
-      fullName: 'Jane Doe',
+      fullName,
       position,
       profileImageUrl,
       linkedin,
