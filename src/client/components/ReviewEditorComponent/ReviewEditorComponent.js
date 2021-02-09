@@ -7,9 +7,9 @@ import './ReviewEditorComponent.style.css';
 export default function ReviewEditorComponent({
   avatarUrl,
   fullName,
-  inputText,
   placeHolderText,
   buttonStyle,
+  returnTextState
 }) {
   const [inputValue, setInputValue] = useState();
   const onChange = (event) => {
@@ -44,7 +44,8 @@ export default function ReviewEditorComponent({
           style={buttonStyle}
           type="submit"
           onClick={() => {
-            ('clicked');
+            // ('clicked');
+            returnTextState(inputValue)
           }}
         />
       </div>
@@ -54,12 +55,13 @@ export default function ReviewEditorComponent({
 ReviewEditorComponent.propTypes = {
   avatarUrl: PropTypes.string,
   fullName: PropTypes.string.isRequired,
-  inputText: PropTypes.string,
+  returnTextState: PropTypes.func,
   placeHolderText: PropTypes.string,
   buttonStyle: PropTypes.string,
 };
 ReviewEditorComponent.defaultProps = {
   avatarUrl: {},
-  inputText: {},
+  returnTextState: {},
   placeHolderText: {},
-};
+  buttonStyle:{ backgroundColor: 'blue', fontWeight: 'bold' }
+}
