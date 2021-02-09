@@ -1,7 +1,7 @@
-import React ,{useState}  from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
-import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
+import unknownUser from '../../assets/images/portraits/unknown-black.png';
 import './ReviewEditorComponent.style.css';
 
 export default function ReviewEditorComponent({
@@ -11,9 +11,9 @@ export default function ReviewEditorComponent({
   placeHolderText,
   buttonStyle,
 }) {
-  const [inputValue,setInputValue] = useState()
+  const [inputValue, setInputValue] = useState();
   const onChange = (event) => {
-    setInputValue((event.target.value))
+    setInputValue(event.target.value);
   };
   return (
     <div className="container">
@@ -32,7 +32,11 @@ export default function ReviewEditorComponent({
         </div>
       </div>
       <div className="input-part">
-        <textarea value={inputValue} placeholder={placeHolderText} onChange={onChange}/>
+        <textarea
+          value={inputValue}
+          placeholder={placeHolderText}
+          onChange={onChange}
+        />
       </div>
       <div className="button-part">
         <Button
@@ -47,18 +51,15 @@ export default function ReviewEditorComponent({
     </div>
   );
 }
-
 ReviewEditorComponent.propTypes = {
   avatarUrl: PropTypes.string,
   fullName: PropTypes.string.isRequired,
   inputText: PropTypes.string,
   placeHolderText: PropTypes.string,
-  buttonStyle:PropTypes.string
+  buttonStyle: PropTypes.string,
 };
-
 ReviewEditorComponent.defaultProps = {
   avatarUrl: {},
   inputText: {},
   placeHolderText: {},
-
 };

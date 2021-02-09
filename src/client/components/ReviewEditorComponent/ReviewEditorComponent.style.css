@@ -14,7 +14,6 @@
 .profile-picture {
   margin-right: 1em;
   display: inline;
-  /* margin: 0 auto; */
   width: 40px;
   justify-content: flex-start;
 }
@@ -55,12 +54,11 @@
 }
 .input-part textarea {
   border-radius: 5px;
-  border: 1px solid #9A9A9A;
+  border: 1px solid #9a9a9a;
   align-items: flex-end;
   height: 120px;
-  /* margin: auto; */
-  min-width: 570px;
- }
+  min-width: 550px;
+}
 .button-part {
   display: flex;
   justify-content: flex-end;
