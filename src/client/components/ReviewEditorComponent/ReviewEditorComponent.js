@@ -12,9 +12,9 @@ export default function ReviewEditorComponent({
   buttonStyle,
 }) {
   const [inputValue,setInputValue] = useState()
-  // const onChange = (event) => {
-  //   setInputValue((event.target.value))
-  // };
+  const onChange = (event) => {
+    setInputValue((event.target.value))
+  };
   return (
     <div className="container">
       {/* style={{border:'1px solid black'
@@ -34,15 +34,13 @@ export default function ReviewEditorComponent({
         </div>
       </div>
       <div className="input-part">
-        <textarea value={inputValue} placeholder={placeHolderText} />
-        {/* 
-        onChange={onChange} */}
-     
+        <textarea value={inputValue} placeholder={placeHolderText} onChange={onChange}/>
+           
       </div>
       <div className="button-part">
         <Button
           buttonName="Send review"
-          style={{ backgroundColor: 'blue', fontWeight: 'bold' }}
+          style={buttonStyle}
           // style={buttonStyle}
           type="submit"
           onClick={() => {
