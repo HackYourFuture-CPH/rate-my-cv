@@ -46,4 +46,3 @@ const[uploadFile,setUploadaFile] =useState('');
     )
 }
 
-
