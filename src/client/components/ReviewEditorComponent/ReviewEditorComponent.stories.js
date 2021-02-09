@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line import/no-named-as-default
 import ReviewEditorComponent from './ReviewEditorComponent';
 import womanthree from '../../assets/images/portraits/woman3.jpg';
 
@@ -13,7 +14,3 @@ export const Component2 = () => (
   />
 );
 
-
-// export default { title: 'Sample Component' };
-
-// export const Component = () => <SampleComponent title="Test title" />;

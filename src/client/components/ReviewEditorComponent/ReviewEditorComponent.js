@@ -57,13 +57,12 @@ ReviewEditorComponent.propTypes = {
   fullName: PropTypes.string.isRequired,
   inputText: PropTypes.string,
   placeHolderText: PropTypes.string,
-  //buttonStyle:PropTypes.string
+  buttonStyle:PropTypes.string
 };
 
 ReviewEditorComponent.defaultProps = {
   avatarUrl: {},
   inputText: {},
   placeHolderText: {},
-  // 'Enter to send. Shift + Enter to add new line.',
-  //buttonStyle: {}
+
 };
