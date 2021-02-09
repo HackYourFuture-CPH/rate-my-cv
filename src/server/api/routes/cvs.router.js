@@ -87,7 +87,7 @@ router.get('/:id', (req, res, next) => {
  */
 router.post('/', (req, res) => {
   cvsController
-    .createCv(req.body)
+    .createCvs(req.body)
     .then((result) => res.json(result))
     .catch((error) => {
       console.log(error);
@@ -103,57 +103,77 @@ router.post('/', (req, res) => {
  * @swagger
  * /cvs/{ID}:
  *  patch:
- *    summary: Create a cv
+ *    
+ *    summary: Edit a cv
  *    description:
- *      Will create a cv.
+ *      Will edit a cv.
  *    produces: application/json
  *    parameters:
  *      - in: path
  *        name: ID
- *        description: ID of the module to patch.
+ *        description: ID of the cv to patch.
  *      - in: body
- *        name: module
- *        description: The module to create.
+ *        name: cvs
+ *        description: The cv to update.
  *        schema:
  *          type: object
- *          properties:
+ *          required:
+ *            - title
+ *            - firebaseToken
+ *        properties:
  *            title:
- *              type: string
- *
+ *                type: string
+ *            createdAt:
+ *                format: date-time
+ *            file_url:
+ *                type: string
+ *            fk_user_id: string
+ *            updatedAt:
+ *                format: date-time
+ *            deletedAt:
+ *                format: date-time
+ *           
  *    responses:
  *      200:
- *        description: CV was patched
+ *       description: cv was patched
  *      5XX:
  *        description: Unexpected error.
  */
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id', (req, res) => {
   cvsController
-    .editModule(req.params.id, req.body)
-    .then((result) => res.json(result))
-    .catch(next);
+    .editCv(req.params.id, req.body)
+    .then((result) => {
+      // If result is equal to 0, then that means the cvs id does not exist
+      if (result === 0) {
+        res.status(400).send(`CVS ID '${req.params.id}' does not exist.`);
+      } else {
+        res.json({ success: true });
+       }
+    })
+    .catch((error) => console.log(error));
 });
 
 /**
  * @swagger
  * /cvs/{ID}:
- *  delete:
- *    summary: Delete a cv
+ *  Delete:
+ *    summary: Delete a certain CV.
  *    description:
  *      Will delete a cv with a given ID.
  *    produces: application/json
  *    parameters:
  *      - in: path
  *        name: ID
- *        description: ID of the cv to delete.
+ *        description: ID of the CV to be deleted.
  *    responses:
  *      200:
- *        description:  CV deleted
+ *        description:  CV is finally deleted
  *      5XX:
  *        description: Unexpected error.
  */
 router.delete('/:id', (req, res) => {
   cvsController
-    .deleteModule(req.params.id, req)
+    .deleteCvs(req.params.id, req)
     .then((result) => {
       // If result is equal to 0, then that means the cv id does not exist
       if (result === 0) {

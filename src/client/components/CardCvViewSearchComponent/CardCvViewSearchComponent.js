@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
+import unknownUser from '../../assets/images/portraits/unknown-black.png';
 import './CardCvViewSearchComponent.styles.css';
 
 export const CardCvViewSearchComponent = ({
@@ -30,7 +30,7 @@ export const CardCvViewSearchComponent = ({
       </div>
       <div className="card-cv-middle">
         <div className="cv-title">{cvTitle}</div>
-        <div className="created-date">{createdDate.toLocaleDateString()}</div>
+        <div className="created-date">{createdDate}</div>
       </div>
       <div className="card-cv-bottom">
         <a

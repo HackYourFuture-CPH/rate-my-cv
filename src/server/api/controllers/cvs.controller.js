@@ -1,7 +1,9 @@
 /*  This is the controller for cvs */
 
 const knex = require('../../config/db');
+
 const Error = require('../lib/utils/http-error');
+
 const moment = require('moment-timezone');
 
 const getCvs = async (title, limit) => {
@@ -28,7 +30,7 @@ const getCvs = async (title, limit) => {
 const getCvById = async (id) => {
   try {
     const cvs = await knex('cvs')
-      .select('cvs.id as id', 'title')
+      .select('cvs.id as id', 'title','createdAt', 'description', 'file_url', 'fk_user_id', 'updatedAt', 'deletedAt')
       .where({ id });
     if (cvs.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
@@ -38,26 +40,31 @@ const getCvById = async (id) => {
     return error.message;
   }
 };
-
 const editCv = async (cvId, updatedCv) => {
-  return knex('cv')
+  return knex('cvs')
     .where({ id: cvId })
     .update({
       title: updatedCv.title,
       createdAt: moment(updatedCv.createdAt).format(),
+      description: updatedCv.description,
+      file_url: updatedCv.file_url,
+      updatedAt: moment().format(),
+      deletedAt: moment().format(),
     });
 };
 
-const deleteCv = async (cvId) => {
-  return knex('cv')
+const deleteCvs = async (cvId) => {
+  return knex('cvs')
     .where({ id: cvId })
     .del();
 };
 
-const createCv = async (body) => {
-  await knex('cv').insert({
+const createCvs = async (body) => {
+  await knex('cvs').insert({
     title: body.title,
-    createdAt: moment(body.createdAt).format(),
+    description: body.description,
+    file_url: body.file_url,
+    fk_user_id: body.fk_user_id,
   });
 
   return {
@@ -68,7 +75,7 @@ const createCv = async (body) => {
 module.exports = {
   getCvs,
   getCvById,
-  deleteCv,
-  createCv,
+  deleteCvs,
+  createCvs,
   editCv,
 };

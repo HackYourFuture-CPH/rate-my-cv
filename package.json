@@ -16,6 +16,7 @@
     "db:clean": "cd ./src/server/ && knex migrate:rollback",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
+    "build-storybook": "build-storybook --no-dll -s public -c ./src/client/.storybook --quiet",
     "test": "jest",
     "test:watch": "jest --watch",
     "code:check": "npm run code:lint && npm run code:format -- --check",
@@ -23,7 +24,8 @@
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
     "code:format": "prettier \"./src/**/**.{js,jsx,ts,tsx}\"",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "knex": "knex --cwd ./src/server"
+    "knex": "knex --cwd ./src/server",
+    "heroku-postbuild": "npm run db:setup" 
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
