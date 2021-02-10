@@ -11,11 +11,14 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
+import TitleDesc from './components/Title/TitleDesc'
+
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
+    <div>
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
@@ -40,8 +43,12 @@ function App() {
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
         <Footer />
-      )}
-    </Router>
+        )}
+       </Router>
+       <TitleDesc title="Here goes the title" description="Here goes the description" />
+      </div>
+   
+    
   );
 }
 
