@@ -3,6 +3,9 @@ import { signUp } from '../../firebase/auth';
 import SignUp from '../../components/Forms/SignUp';
 import Loader from '../../components/Loader';
 import { useHistory } from 'react-router-dom';
+import { SignUpSignInLeft } from '../../components/SignUpSignInLeft/SignUpSignInLeft';
+import signUpImg from '../../assets/images/sign-up.png';
+import './SignUp.css';
 
 const getDoesPasswordsMatch = ({ password, passwordConfirm }) =>
   password === passwordConfirm;
@@ -53,5 +56,17 @@ export default function SignUpContainer() {
     }
   };
   if (isLoading) return <Loader />;
-  return <SignUp onSubmit={onSubmit} />;
+  return (
+    <div className="sign-up-container">
+      <div className="sign-up-left">
+        <SignUpSignInLeft
+          image={signUpImg}
+          style={{ backgroundColor: '#F1C644' }}
+        />
+      </div>
+      <div className="sign-up-right">
+        <SignUp onSubmit={onSubmit} />
+      </div>
+    </div>
+  );
 }

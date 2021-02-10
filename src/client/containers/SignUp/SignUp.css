@@ -1,0 +1,27 @@
+.sign-up-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sign-up-left {
+  flex: 1 1 auto;
+}
+
+.sign-up-right {
+  flex: 1 1 auto;
+}
+
+nav {
+  display: none;
+}
+
+div.footer {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .sign-up-container {
+    flex-direction: column;
+  }
+}
