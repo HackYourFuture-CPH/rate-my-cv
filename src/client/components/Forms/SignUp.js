@@ -1,13 +1,12 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
-import { useForm } from '../LoginForm/useForm';
-//import iconGithub from '../../assets/images/icons/github.svg';
-//import './Signup.style.css';
-//import Button from '../Button/Button';
-//import SignUpForm from './SignUpForm';
-import validate from './SignUpValidation';
+import useForm from '../LoginForm/useForm';
+import iconGithub from '../../assets/images/icons/github.svg';
+import './Signup.style.css';
+import Button from '../Button/Button';
+import validate from '../LoginForm/Validation';
 
-export default function SignUp() {
+export default function SignUp({ onSubmit }) {
   const { handleChange, handleSubmit, values, errors } = useForm(
     validate,
     onSubmit,
@@ -51,21 +50,20 @@ export default function SignUp() {
           required
         />
       </label>
-      <div>
-        <label className="label" htmlFor="email">
-          Email:
-          <input
-            className="input"
-            type="email"
-            name="email"
-            placeholder="Write your email"
-            value={values.email}
-            onChange={handleChange}
-            required
-          />
-          {errors.email && <p>{errors.email}</p>}
-        </label>
-      </div>
+      <label className="label" htmlFor="email">
+        Email:
+        <input
+          className="input"
+          type="email"
+          name="email"
+          placeholder="Write your email"
+          value={values.email}
+          onChange={handleChange}
+          required
+        />
+        {errors.email && <p className="validation">{errors.email}</p>}
+      </label>
+      {/* validation class display the text in red colour. */}
       <label className="label" htmlFor="profileImageUrl">
         Profile picture:
         <input
@@ -102,7 +100,6 @@ export default function SignUp() {
           required
         />
       </label>
-
       <label className="label" htmlFor="website">
         Website:
         <input
@@ -115,7 +112,7 @@ export default function SignUp() {
           required
         />
       </label>
-      <label htmlFor="password">
+      <label htmlFor="password" validate>
         Password:
         <input
           className="input"
@@ -128,28 +125,30 @@ export default function SignUp() {
           title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
           required
         />
+        {errors.password && <p className="validation">{errors.password}</p>}
       </label>
-      <div>
-        <label htmlFor="passwordConfirm">
-          Password - confirm:
-          <input
-            className="input"
-            type="password"
-            name="passwordConfirm"
-            placeholder="Write your password again"
-            value={values.passwordConfirm}
-            onChange={handleChange}
-          />
-          {errors.passwordConfirm && <p>{errors.password}</p>}
-        </label>
-      </div>
+      <label htmlFor="passwordConfirm">
+        Password - confirm:
+        <input
+          className="input"
+          type="password"
+          name="passwordConfirm"
+          placeholder="Write your password again"
+          value={values.passwordConfirm}
+          onChange={handleChange}
+          required
+        />
+        {errors.passwordConfirm && (
+          <p className="validation">{errors.passwordConfirm}</p>
+        )}
+      </label>
+      <br />
       <label className="label-checkbox">
         <input className="input-checkbox" type="checkbox" id="check" />
         By signing up you agree to the Terms of Service, Privacy Policy and the
         default notifications settings
       </label>
       <br />
-
       <Button
         buttonName="Create Account"
         type="submit"
@@ -158,7 +157,3 @@ export default function SignUp() {
     </form>
   );
 }
-
-/* SignUp.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-}; */

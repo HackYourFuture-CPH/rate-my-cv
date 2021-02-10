@@ -1,8 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function useForm(validate) {
-  const [values, setValues] = useState({ email: '', password: '' });
+export default function useForm(validate, onSubmit) {
+  const [values, setValues] = useState({
+    fullName: '',
+    position: '',
+    profileImageUrl: '',
+    linkedin: '',
+    github: '',
+    website: '',
+    email: '',
+    password: '',
+    passwordConfirm: '',
+  });
   const [errors, setErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,7 +26,13 @@ function useForm(validate) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
+    onSubmit(values);
   };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmit) {
+      callback();
+    }
+  }, [errors]);
 
   return {
     handleChange,
@@ -24,5 +41,3 @@ function useForm(validate) {
     errors,
   };
 }
-
-export default useForm;

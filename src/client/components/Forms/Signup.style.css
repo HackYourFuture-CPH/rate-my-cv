@@ -69,13 +69,9 @@ h3 {
   font-weight: normal;
 }
 .validation {
-  width: 700px;
-  border: 0px solid rgb(250, 252, 250);
-  padding: 80px;
-  margin: 10px;
   text-align: center;
   color: red;
-  margin-top: -250px;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 750px) {
