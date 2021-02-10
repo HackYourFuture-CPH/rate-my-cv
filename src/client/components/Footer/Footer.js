@@ -10,7 +10,6 @@ export default function Footer() {
       <p>© HYF Copenhagen</p>
       <ul>
         <a href="https://www.linkedin.com/school/hackyourfuture-copenhagen/">
-          {' '}
           <img src={iconLinkedin} alt="Social media icon linkedin" />
         </a>
         <a href="https://github.com/hackyourfuture-cph">
