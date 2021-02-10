@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.heading-login {
+  width: 400px;
+}
+
+.button-image {
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.button-image button {
+  width: 300px;
+}
+
+.login-form p {
+  color: red;
+}
+.partition h3 {
+  overflow: hidden;
+  text-align: center;
+}
+.partition 
+h3:before,
+h3:after {
+  background-color: rgb(223, 215, 215);
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+.partition h3:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.partition h3:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.github-logo {
+  display: block;
+  border: 1px solid gray;
+  background-color: rgb(241, 241, 241);
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.partition {
+  color: lightgray;
+  font-weight: lighter;
+  font-style: normal;
+}
+
+.login-form {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 400px;
+}
+.input-label {
+  color: #333;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 400px;
+  padding: 10px 22px;
+  margin: 10px 0px;
+  box-sizing: border-box;
+  border: 2px solid #f8f0f4;
+  display: inline-block;
+  background-color: rgba(63, 58, 58, 0.075);
+}
+
+.signin-btn {
+  padding: 5px;
+}
+.signin-btn button {
+  padding: 10px;
+  width: 150px;
+}
+.text-pwd {
+  float: right;
+  color: rgb(170, 166, 166);
+  font-size: small;
+}

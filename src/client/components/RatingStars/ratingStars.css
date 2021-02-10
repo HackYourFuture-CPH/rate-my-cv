@@ -1,0 +1,22 @@
+.full-stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f1c644;
+}
+
+.empty-stars:before,
+.full-stars:before {
+  content: '★';
+  font-size: 15px;
+}
+
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #d4d4d4;
+  overflow: hidden;
+}
