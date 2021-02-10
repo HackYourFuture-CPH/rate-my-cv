@@ -1,50 +1,20 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import iconGithub from '../../assets/images/icons/github.svg';
-import './Signup.style.css';
-import Button from '../Button/Button';
+import React from 'react';
+//import PropTypes from 'prop-types';
+import { useForm } from '../LoginForm/useForm';
+//import iconGithub from '../../assets/images/icons/github.svg';
+//import './Signup.style.css';
+//import Button from '../Button/Button';
+//import SignUpForm from './SignUpForm';
+import validate from './SignUpValidation';
 
-export default function SignUp({ onSubmit }) {
-  const [email, setEmail] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [position, setPosition] = useState('');
-  const [profileImageUrl, setProfileImageUrl] = useState('');
-  const [linkedin, setLinkedin] = useState('');
-  const [github, setGithub] = useState('');
-  const [website, setWebsite] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [validation, setValidation] = useState('');
+export default function SignUp() {
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    validate,
+    onSubmit,
+  );
 
-  const handleEmailInput = (e) => setEmail(e.target.value);
-  const handlePasswordInput = (e) => setPassword(e.target.value);
-  const handlePasswordConfirmInput = (e) => setPasswordConfirm(e.target.value);
-  const handleFullNameInput = (e) => setFullName(e.target.value);
-  const handlePositionInput = (e) => setPosition(e.target.value);
-  const handleProfileImageUrlInput = (e) => setProfileImageUrl(e.target.value);
-  const handleLinkedinInput = (e) => setLinkedin(e.target.value);
-  const handleGithubInput = (e) => setGithub(e.target.value);
-  const handleWebsiteInput = (e) => setWebsite(e.target.value);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password !== passwordConfirm) {
-      return setValidation('**Your password does not match**');
-    }
-    setValidation('');
-    onSubmit({
-      email,
-      password,
-      passwordConfirm,
-      fullName,
-      position,
-      profileImageUrl,
-      linkedin,
-      github,
-      website,
-    });
-  };
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit} noValidate>
       <h2>Signup to Review Resume</h2>
       <div className="button-forms">
         <Button
@@ -59,14 +29,14 @@ export default function SignUp({ onSubmit }) {
       </div>
       <br />
       <h3 className="or">Or</h3>
-      <label className="label" htmlFor="Name">
+      <label className="label" htmlFor="fullName">
         Full name:
         <input
           className="input"
           type="text"
-          name="Name"
-          value={fullName}
-          onChange={handleFullNameInput}
+          name="fullName"
+          value={values.fullName}
+          onChange={handleChange}
           required
         />
       </label>
@@ -76,32 +46,35 @@ export default function SignUp({ onSubmit }) {
           className="input"
           type="text"
           name="position"
-          value={position}
-          onChange={handlePositionInput}
+          value={values.position}
+          onChange={handleChange}
           required
         />
       </label>
-      <label className="label" htmlFor="email">
-        Email:
-        <input
-          className="input"
-          type="email"
-          name="email"
-          placeholder="Write your email"
-          value={email}
-          onChange={handleEmailInput}
-          required
-        />
-      </label>
-      <label className="label" htmlFor="img">
+      <div>
+        <label className="label" htmlFor="email">
+          Email:
+          <input
+            className="input"
+            type="email"
+            name="email"
+            placeholder="Write your email"
+            value={values.email}
+            onChange={handleChange}
+            required
+          />
+          {errors.email && <p>{errors.email}</p>}
+        </label>
+      </div>
+      <label className="label" htmlFor="profileImageUrl">
         Profile picture:
         <input
           className="input"
           type="url"
-          name="img"
+          name="profileImageUrl"
           placeholder="profile image URL"
-          value={profileImageUrl}
-          onChange={handleProfileImageUrlInput}
+          value={values.profileImageUrl}
+          onChange={handleChange}
           required
         />
       </label>
@@ -112,8 +85,8 @@ export default function SignUp({ onSubmit }) {
           type="url"
           name="linkedin"
           placeholder="LinkedIn profile link"
-          value={linkedin}
-          onChange={handleLinkedinInput}
+          value={values.linkedin}
+          onChange={handleChange}
           required
         />
       </label>
@@ -124,8 +97,8 @@ export default function SignUp({ onSubmit }) {
           type="url"
           name="github"
           placeholder="Github profile link"
-          value={github}
-          onChange={handleGithubInput}
+          value={values.github}
+          onChange={handleChange}
           required
         />
       </label>
@@ -137,8 +110,8 @@ export default function SignUp({ onSubmit }) {
           type="url"
           name="website"
           placeholder="website URL"
-          value={website}
-          onChange={handleWebsiteInput}
+          value={values.website}
+          onChange={handleChange}
           required
         />
       </label>
@@ -149,27 +122,27 @@ export default function SignUp({ onSubmit }) {
           type="password"
           name="password"
           placeholder="Write your password"
-          value={password}
-          onChange={handlePasswordInput}
+          value={values.password}
+          onChange={handleChange}
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
           title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
           required
         />
       </label>
-      <label htmlFor="password">
-        Password - confirm:
-        <input
-          className="input"
-          type="password"
-          name="password"
-          placeholder="Write your password again"
-          value={passwordConfirm}
-          onChange={handlePasswordConfirmInput}
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-          title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
-          required
-        />
-      </label>
+      <div>
+        <label htmlFor="passwordConfirm">
+          Password - confirm:
+          <input
+            className="input"
+            type="password"
+            name="passwordConfirm"
+            placeholder="Write your password again"
+            value={values.passwordConfirm}
+            onChange={handleChange}
+          />
+          {errors.passwordConfirm && <p>{errors.password}</p>}
+        </label>
+      </div>
       <label className="label-checkbox">
         <input className="input-checkbox" type="checkbox" id="check" />
         By signing up you agree to the Terms of Service, Privacy Policy and the
@@ -179,14 +152,13 @@ export default function SignUp({ onSubmit }) {
 
       <Button
         buttonName="Create Account"
-        style={{ backgroundColor: '#da532c' }}
         type="submit"
+        style={{ backgroundColor: '#da532c' }}
       />
-      <div className="validation">{validation}</div>
     </form>
   );
 }
 
-SignUp.propTypes = {
+/* SignUp.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-};
+}; */
