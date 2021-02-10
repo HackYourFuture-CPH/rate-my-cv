@@ -14,13 +14,14 @@ export default function ReviewEditorComponent({
   const onChange = (event) => {
     setInputValue(event.target.value);
   };
+
   return (
     <div className="container">
       <div className="top-part">
         <div className="profile-picture">
           <div className="circle-mask">
             <img
-              src={avatarUrl || unknownUser}
+              src={avatarUrl}
               alt="Portrait of user"
               className="user-photo"
             />
@@ -43,7 +44,7 @@ export default function ReviewEditorComponent({
           style={buttonStyle}
           type="submit"
           onClick={() =>
-            console.log('Waiting for backend to expose endpoint for reviewing')
+            console.log('Waiting for the backend to expose endpoint for reviewing')
           }
         />
       </div>
@@ -59,7 +60,7 @@ ReviewEditorComponent.propTypes = {
 };
 
 ReviewEditorComponent.defaultProps = {
-  avatarUrl: {},
-  placeHolderText: {},
+  avatarUrl: unknownUser,
+  placeHolderText: "Enter to send. Shift + Enter to add new line.",
   buttonStyle: { backgroundColor: 'blue', fontWeight: 'bold' },
 };
