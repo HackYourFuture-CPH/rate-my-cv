@@ -13,7 +13,7 @@ export default function useForm(validate, onSubmit) {
     passwordConfirm: '',
   });
   const [errors, setErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [isSubmiting, setIsSubmiting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,10 +26,11 @@ export default function useForm(validate, onSubmit) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
+    setIsSubmiting(true);
     onSubmit(values);
   };
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmit) {
+    if (Object.keys(errors).length === 0 && isSubmiting) {
       callback();
     }
   }, [errors]);

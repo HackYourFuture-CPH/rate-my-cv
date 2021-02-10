@@ -49,7 +49,7 @@ export default function SignUp({ onSubmit }) {
           required
         />
       </label>
-      <label className="label" htmlFor="email">
+      <label className="label" htmlFor="email" validate>
         Email:
         <input
           className="input"
@@ -62,7 +62,6 @@ export default function SignUp({ onSubmit }) {
         />
         {errors.email && <p className="validation">{errors.email}</p>}
       </label>
-
       <label className="label" htmlFor="profileImageUrl">
         Profile picture:
         <input
