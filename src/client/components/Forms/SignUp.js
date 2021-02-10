@@ -1,5 +1,6 @@
 import React from 'react';
 import useForm from '../LoginForm/useForm';
+import PropTypes from 'prop-types';
 import iconGithub from '../../assets/images/icons/github.svg';
 import './Signup.style.css';
 import Button from '../Button/Button';
@@ -155,3 +156,6 @@ export default function SignUp({ onSubmit }) {
     </form>
   );
 }
+SignUp.propTypes = {
+  onSubmit: PropTypes.func,
+};
