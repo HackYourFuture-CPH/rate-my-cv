@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import './RegisterButton.style.css';
 
 function RegisterButton() {
-    let history = useHistory();
+    const history = useHistory();
 
     const redirect = () => {
       history.push('/sign-up')
