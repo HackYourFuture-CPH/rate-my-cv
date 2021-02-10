@@ -1,5 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
 import useForm from '../LoginForm/useForm';
 import iconGithub from '../../assets/images/icons/github.svg';
 import './Signup.style.css';
@@ -63,7 +62,7 @@ export default function SignUp({ onSubmit }) {
         />
         {errors.email && <p className="validation">{errors.email}</p>}
       </label>
-      {/* validation class display the text in red colour. */}
+
       <label className="label" htmlFor="profileImageUrl">
         Profile picture:
         <input
