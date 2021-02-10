@@ -10,11 +10,11 @@ export const SignUpSignInLeft = ({ image, style }) => {
           <span className="review">Review</span>
           <span className="resume">Resume</span>
         </div>
-        <div className="text">
+        <div className="description-sign-up">
           Present your best self and help others do the same
         </div>
-        <img src={image} className="img-sign-up" alt="sign-up" />
       </div>
+      <img src={image} className="img-sign-up" alt="sign-up" />
     </div>
   );
 };

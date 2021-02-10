@@ -1,12 +1,14 @@
 .container-sign-up {
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 5em 0 2em;
+  padding: 15vh 1vw 15vh 4vw;
 }
 
 .img-sign-up {
   padding-top: 2em;
+  max-width: 80%;
 }
 
 .review {
@@ -20,9 +22,9 @@
   font-size: xxx-large;
 }
 
-.text {
+.description-sign-up {
   padding: 1em 0;
-  font-size: x-large;
+  font-size: large;
   font-weight: 300;
 }
 
@@ -31,4 +33,33 @@
   flex-direction: column;
   justify-content: center;
   max-width: 90%;
+}
+
+@media screen and (max-width: 1160px) {
+  .container-sign-up {
+    padding: 25vh 1vw 42vh 4vw;
+  }
+  .review, .resume {
+    font-size: xx-large;
+  }
+  .img-sign-up {
+    padding-top: 1em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container-sign-up {
+    padding: 0.5em;
+    align-items: center;
+    flex-direction: inherit;
+  }
+  .review, .resume {
+    font-size: x-large;
+  }
+  .description-sign-up {
+    font-size: medium;
+  }
+  .img-sign-up {
+    max-width: 40%;
+  }
 }
