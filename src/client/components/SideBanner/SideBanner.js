@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SignUpSignInLeft.styles.css';
+import './SideBanner.styles.css';
 
-export const SignUpSignInLeft = ({ image, style }) => {
+export const SideBanner = ({ image, style }) => {
   return (
     <div className="container-sign-up" style={style}>
       <div className="text-sign-up">
@@ -19,7 +19,7 @@ export const SignUpSignInLeft = ({ image, style }) => {
   );
 };
 
-SignUpSignInLeft.propTypes = {
+SideBanner.propTypes = {
   image: PropTypes.string.isRequired,
   style: PropTypes.shape({ backgroundColor: PropTypes.string }).isRequired,
 };
