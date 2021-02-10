@@ -31,7 +31,7 @@ export default function useForm(validate, onSubmit) {
   };
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmiting) {
-      callback();
+      isSubmiting();
     }
   }, [errors]);
 
