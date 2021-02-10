@@ -14,7 +14,7 @@ function RegisterButton() {
           <section className="homepage-slogan">
           <h2>Improve Your Resume To Present Your Best Self</h2>  
           <p>Upload your Resume to get an evaluation</p>
-          <Button buttonName='Browse' style={{ backgroundColor: 'orange' }} onClick={redirect}/>
+          <Button buttonName='Register/Sign Up' style={{ backgroundColor: 'orange' }} onClick={redirect}/>
           </section>
         </div>
     )
