@@ -10,6 +10,17 @@ export default function SignUp({ onSubmit }) {
   const { handleChange, handleSubmit, values, errors } = useForm(
     validate,
     onSubmit,
+    {
+      fullName: '',
+      position: '',
+      profileImageUrl: '',
+      linkedin: '',
+      github: '',
+      website: '',
+      email: '',
+      password: '',
+      passwordConfirm: '',
+    },
   );
 
   return (
@@ -156,6 +167,6 @@ export default function SignUp({ onSubmit }) {
     </form>
   );
 }
-SignUp.propTypes = {
-  onSubmit: PropTypes.func,
+SignUp.defaultProps = {
+  onSubmit: () => null,
 };

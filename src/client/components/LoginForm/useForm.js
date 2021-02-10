@@ -1,17 +1,7 @@
 import { useState, useEffect } from 'react';
 
-export default function useForm(validate, onSubmit) {
-  const [values, setValues] = useState({
-    fullName: '',
-    position: '',
-    profileImageUrl: '',
-    linkedin: '',
-    github: '',
-    website: '',
-    email: '',
-    password: '',
-    passwordConfirm: '',
-  });
+export default function useForm(validate, onSubmit, initialState) {
+  const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [isSubmiting, setIsSubmiting] = useState(false);
 
@@ -33,7 +23,7 @@ export default function useForm(validate, onSubmit) {
     if (Object.keys(errors).length === 0 && isSubmiting) {
       isSubmiting();
     }
-  }, [errors]);
+  }, [errors, isSubmiting]);
 
   return {
     handleChange,
