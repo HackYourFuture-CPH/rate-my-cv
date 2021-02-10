@@ -9,7 +9,7 @@ export default function ReviewEditorComponent({
   fullName,
   placeHolderText,
   buttonStyle,
-  returnTextState
+  returnTextState,
 }) {
   const [inputValue, setInputValue] = useState();
   const onChange = (event) => {
@@ -45,7 +45,9 @@ export default function ReviewEditorComponent({
           type="submit"
           onClick={() => {
             // ('clicked');
-            returnTextState(inputValue)
+            // returnTextState(inputValue)
+            // eslint-disable-next-line no-console
+            console.log('Waiting for backend to expose endpoint for reviewing');
           }}
         />
       </div>
@@ -63,5 +65,5 @@ ReviewEditorComponent.defaultProps = {
   avatarUrl: {},
   returnTextState: {},
   placeHolderText: {},
-  buttonStyle:{ backgroundColor: 'blue', fontWeight: 'bold' }
-}
+  buttonStyle: { backgroundColor: 'blue', fontWeight: 'bold' },
+};
