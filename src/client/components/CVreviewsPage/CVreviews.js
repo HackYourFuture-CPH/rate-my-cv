@@ -6,12 +6,13 @@ export function CVreviews({ uploadedFile }) {
 
   return (
     <iframe
+      title={url.name}
       style={{ width: '50%', height: '700px' }}
       scrolling="yes"
-      src={url + '#toolbar=0'}
+      src={`${url} #toolbar=0`}
       allowTransparency="true"
       allowFullScreen={true}
       frameBorder="no"
-    ></iframe>
+    />
   );
 }
