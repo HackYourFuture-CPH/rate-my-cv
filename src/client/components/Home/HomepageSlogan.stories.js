@@ -1,6 +1,6 @@
 import React from 'react';
-import  RegisterButton  from './RegisterButton';
+import  HomepageSlogan  from './RegisterButton';
 
 export default { title: 'Home Page Slogan' };
 
-export  const Resume = ()=><div><RegisterButton /></div>
+export  const Resume = ()=><div><HomepageSlogan /></div>
