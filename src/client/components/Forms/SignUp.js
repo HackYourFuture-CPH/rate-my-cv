@@ -38,7 +38,10 @@ export default function SignUp({ onSubmit }) {
         </div>
       </div>
       <br />
-      <h3 className="or">Or</h3>
+      <div className="container-line">
+        <hr className="line" />
+        <h3 className="or">Or</h3> <hr className="line" />
+      </div>
       <label className="label" htmlFor="fullName">
         Full name:
         <input
