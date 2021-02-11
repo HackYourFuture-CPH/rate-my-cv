@@ -3,10 +3,11 @@ import { useStorage } from '../../hooks/fileUploader';
 
 export function CVreviews({ uploadedFile }) {
   const { url } = useStorage(uploadedFile);
+  console.log(url);
 
   return (
     <iframe
-      title={url.name}
+      title={url}
       style={{ width: '50%', height: '700px' }}
       scrolling="yes"
       src={`${url} #toolbar=0`}
