@@ -1,5 +1,5 @@
 import React from 'react';
-import  HomepageSlogan  from './RegisterButton';
+import  HomepageSlogan  from './HomepageSlogan';
 
 export default { title: 'Home Page Slogan' };
 
