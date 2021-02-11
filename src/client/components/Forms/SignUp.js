@@ -24,7 +24,7 @@ export default function SignUp({ onSubmit }) {
   );
 
   return (
-    <form className="form" onSubmit={handleSubmit} noValidate>
+    <form className="form" onSubmit={handleSubmit}>
       <h2>Signup to Review Resume</h2>
       <div className="button-forms">
         <Button
