@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import man from '../../assets/images/portraits/man1.jpg';
 import './index.styles.css';
 
 import { ProfileCardComponent } from '../../components/ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../../components/MyProfile/YourUploadedCVs/YourUploadedCVs';
-import TitleCvCard from '../../components/Title/TitleCvCard/TitleCvCard';
+import TitleCvCard from '../../components/MyProfile/TitleCvCard/TitleCvCard';
 
 export default function Profile() {
+  const [cvsList, setCvsList] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  console.log(cvsList);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch('/api/cv');
+        if (result.status !== 200) {
+          console.log(result.status);
+          throw new Error('fail to connect to the Api');
+        }
+        const data = await response.json();
+        console.log('CVslist', CvsList);
+        setCvsList(data);
+      } catch (error) {
+        setErrorMessage((prev) => error.message);
+      }
+    })();
+  }, []);
   return (
     <div className="middle">
       <div className="Left-part">
@@ -33,34 +52,7 @@ export default function Profile() {
         <div className="uploaded-cv">
           {/*                         Your uploaded CVs - #14 */}
           {/* function YourUploadedCVs({ CVsList }) { */}
-          <YourUploadedCVs
-            CVsList={[
-              {
-                id: 3,
-                title: 'Mechanical Engineer',
-                created_date: '2020-10-20',
-                averageStars: 4.5,
-              },
-              {
-                id: 5,
-                title: 'Technical Auditor',
-                created_date: '2021-01-21',
-                averageStars: 3.4,
-              },
-              {
-                id: 9,
-                title: 'ghofranebenhamid-vc-v3',
-                created_date: '2021-03-21',
-                averageStars: 4,
-              },
-              {
-                id: 10,
-                title: 'React Programmer',
-                created_date: '2021-03-25',
-                averageStars: 2.4,
-              },
-            ]}
-          />{' '}
+          <YourUploadedCVs CVsList={cvsList} />{' '}
         </div>
         <div className="sent-reviews">
           {/*                           Sent Reviews - #92 */}
