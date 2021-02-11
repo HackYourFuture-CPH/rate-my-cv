@@ -4,6 +4,7 @@ import iconGithub from '../../assets/images/icons/github.svg';
 import './Signup.style.css';
 import Button from '../Button/Button';
 import validate from '../LoginForm/Validation';
+import PropTypes from 'prop-types';
 
 export default function SignUp({ onSubmit }) {
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -86,12 +87,12 @@ export default function SignUp({ onSubmit }) {
         />
       </label>
       <label className="label" htmlFor="linkedin">
-        LinkedIn profile:
+        LinkedIn user name:
         <input
           className="input"
-          type="url"
+          type="text"
           name="linkedin"
-          placeholder="LinkedIn profile link"
+          placeholder="LinkedIn user name"
           value={values.linkedin}
           onChange={handleChange}
           required
@@ -101,9 +102,9 @@ export default function SignUp({ onSubmit }) {
         Github user:
         <input
           className="input"
-          type="url"
+          type="text"
           name="github"
-          placeholder="Github profile link"
+          placeholder="Github user name"
           value={values.github}
           onChange={handleChange}
           required
@@ -121,8 +122,12 @@ export default function SignUp({ onSubmit }) {
           required
         />
       </label>
-      <label htmlFor="password" validate>
+      <label className="label" htmlFor="password" validate>
         Password:
+        <span className="password-text">
+          Must contain at least 6 characters, including one number, one
+          uppercase letter and a lowercase letter
+        </span>
         <input
           className="input"
           type="password"
@@ -131,12 +136,11 @@ export default function SignUp({ onSubmit }) {
           value={values.password}
           onChange={handleChange}
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-          title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
           required
         />
         {errors.password && <p className="validation">{errors.password}</p>}
       </label>
-      <label htmlFor="passwordConfirm">
+      <label className="label" htmlFor="passwordConfirm">
         Password - confirm:
         <input
           className="input"
@@ -153,7 +157,7 @@ export default function SignUp({ onSubmit }) {
       </label>
       <br />
       <label className="label-checkbox">
-        <input className="input-checkbox" type="checkbox" id="check" />
+        <input type="checkbox" id="check" required />
         By signing up you agree to the Terms of Service, Privacy Policy and the
         default notifications settings
       </label>
@@ -166,6 +170,9 @@ export default function SignUp({ onSubmit }) {
     </form>
   );
 }
+SignUp.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 SignUp.defaultProps = {
   onSubmit: () => null,
 };
