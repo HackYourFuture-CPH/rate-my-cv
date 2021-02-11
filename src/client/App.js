@@ -19,7 +19,10 @@ function App() {
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header isAuthenticated={isAuthenticated} username="William Henry Gates" />
+        <Header
+          isAuthenticated={isAuthenticated}
+          username="William Henry Gates"
+        />
       )}
       <Switch>
         <Route exact path="/">
@@ -37,7 +40,6 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
-      <Profile />
 
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (

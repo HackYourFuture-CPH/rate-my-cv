@@ -1,0 +1,9 @@
+.middle{
+    display: flex;
+}
+.left{
+flex:40%;
+}
+.right{
+flex:60;
+}
