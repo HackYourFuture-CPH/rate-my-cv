@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { CardCvViewSearchComponent } from '../CardCvViewSearchComponent/CardCvViewSearchComponent';
 
-export default function RetriveCvs() {
+export default function RetrieveCvs() {
   const [cvs, setCvs] = useState([]);
   useEffect(() => {
     (async () => {
       const result = await fetch('/api/usercv').then((res) => res.json());
-      console.log(result);
       setCvs(result);
     })();
   }, []);
-  console.log(cvs);
   return (
     <div>
       {cvs.slice(-3).map((item) => (
