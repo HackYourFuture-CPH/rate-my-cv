@@ -2,11 +2,6 @@
 
 const knex = require('../../config/db');
 
-const Error = require('../lib/utils/http-error');
-
-const moment = require('moment-timezone');
-const { request } = require('express');
-
 const getCvsnUsers = async () => {
   try {
     return await knex('cvs')
