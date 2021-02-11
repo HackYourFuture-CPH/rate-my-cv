@@ -1,4 +1,4 @@
-function Validation(values) {
+function validate(values) {
   const errors = {};
   if (!values.email) {
     errors.email = 'Email is required';
@@ -9,15 +9,15 @@ function Validation(values) {
   ) {
     errors.email = 'Email address is invalid';
   }
-
   if (!values.password) {
-    errors.password = 'Password is required';
-  } 
-  else if ('(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{6,}') {
-    errors.password =
-      'Password must contain at least one number and one uppercase letter, and at least 6 characters';
+    errors.password = 'password is required';
   }
+
+  if (values.password !== values.passwordConfirm) {
+    errors.passwordConfirm = 'Password doesnot match';
+  }
+
   return errors;
 }
 
-export default Validation;
+export default validate;
