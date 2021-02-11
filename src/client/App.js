@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
@@ -11,20 +11,33 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
+import { CVreviews } from './components/CVreviewsPage/CVreviews';
+import { AddResume } from './components/AddResume/AddResume';
 
 function App() {
+  const [uploadedFile, setUploadedFile] = useState('');
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header isAuthenticated={isAuthenticated} username="William Henry Gates" />
+        <Header
+          isAuthenticated={isAuthenticated}
+          username="William Henry Gates"
+        />
       )}
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
+        <AddResume
+          uploadedFile={uploadedFile}
+          setUploadedFile={setUploadedFile}
+          exact
+          path="/add-resume"
+        />
+        <CVreviews uploadedFile={uploadedFile} exact path="/cv-reviews" />
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
