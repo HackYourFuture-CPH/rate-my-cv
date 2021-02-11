@@ -1,9 +1,9 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import Button from '../Button/Button';
-import './RegisterButton.style.css';
+import './HomepageSlogan.style.css';
 
-function RegisterButton() {
+function HomepageSlogan() {
     const history = useHistory();
 
     const redirect = () => {
@@ -20,4 +20,4 @@ function RegisterButton() {
     )
 }
 
-export default RegisterButton
+export default HomepageSlogan;
