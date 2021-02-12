@@ -31,7 +31,7 @@ export default function SignUpContainer() {
     });
     if (!doesPasswordsMatch) {
       setIsLoading(false);
-      alert("Passwords doesn't match");
+      alert("Passwords don't match");
       return;
     }
     const firebaseUser = await signUp({ email, password });
@@ -57,12 +57,19 @@ export default function SignUpContainer() {
   };
   if (isLoading) return <Loader />;
   return (
-    <div className="sign-up-container">
-      <div className="sign-up-left">
-        <SideBanner image={signUpImg} style={{ backgroundColor: '#F1C644' }} />
+    <div>
+      <div className="split sign-up-left">
+        <div>
+          <SideBanner
+            image={signUpImg}
+            style={{ backgroundColor: '#F1C644' }}
+          />
+        </div>
       </div>
-      <div className="sign-up-right">
-        <SignUp onSubmit={onSubmit} />
+      <div className="split sign-up-right">
+        <div className="centered">
+          <SignUp onSubmit={onSubmit} className="form-sign-up" />
+        </div>
       </div>
     </div>
   );
