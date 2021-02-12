@@ -7,9 +7,9 @@ import { Slider } from '@material-ui/core'
 
 export default function SearchFilter () {
 
-    let title=["Full Stack","Frontend Developer","Backend Developer"];
-    let datePosted=["Past 24 hours","Past week","Past Month","Any Time"];
-    let minimumEvaluation=["Excellent 5","Very good 4.5","Good 4","Reasonable 3.5","Okay 0"];
+    const title=["Full Stack","Frontend Developer","Backend Developer"];
+    const datePosted=["Past 24 hours","Past week","Past Month","Any Time"];
+    const minimumEvaluation=["Excellent 5","Very good 4.5","Good 4","Reasonable 3.5","Okay 0"];
     
     return (
 
