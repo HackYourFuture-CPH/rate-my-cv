@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {getUserFirebaseToken} from '../../firebase/auth';
 import man from '../../assets/images/portraits/man1.jpg';
 import './index.styles.css';
 
@@ -9,27 +10,67 @@ import TitleCvCard from '../../components/MyProfile/TitleCvCard/TitleCvCard';
 export default function Profile() {
   const [cvsList, setCvsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  console.log(cvsList);
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('/api/cv');
-        if (result.status !== 200) {
-          console.log(result.status);
-          throw new Error('fail to connect to the Api');
-        }
-        const data = await response.json();
-        console.log('CVslist', CvsList);
-        setCvsList(data);
-      } catch (error) {
-        setErrorMessage((prev) => error.message);
-      }
-    })();
-  }, []);
+// here we should get users fullname, position , linkedin,...
+// will be passed to <ProfileCardComponent>
+
+// const userFirebaseToken = await getUserFirebaseToken();
+// if (userFirebaseToken) { 
+//   console.log('firebase',userFirebaseToken);
+  // try{
+  // const response = await fetch('/api/users');
+  // if (response.status !== 200) {
+  //   throw new Error('fail to connect to the Api');
+  // }
+  // const userData = await response.json();
+  // console.log('user',userData);
+  // }
+  // catch(error){
+  //   setErrorMessage((prev) => error.message);
+  // }
+
+
+useEffect(()=>{
+  (async()=>{
+    const userFirebaseToken = await getUserFirebaseToken();
+    if (userFirebaseToken) { 
+      console.log('firebase',userFirebaseToken);
+  }})();
+});
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await fetch('/api/cv');
+  //       if (response.status !== 200) {
+  //         throw new Error('fail to connect to the Api');
+  //       }
+  //       const cvData = await response.json();
+  //       setCvsList(cvData);
+  //     } catch (error) {
+  //       setErrorMessage((prev) => error.message);
+  //     }
+  //   })();
+  // }, [cvsList]);
+// here we should get all cvs for the current use
+// will be passed to <YourUploadedCVs>
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await fetch('/api/cv');
+  //       if (response.status !== 200) {
+  //         throw new Error('fail to connect to the Api');
+  //       }
+  //       const cvData = await response.json();
+  //       setCvsList(cvData);
+  //     } catch (error) {
+  //       setErrorMessage((prev) => error.message);
+  //     }
+  //   })();
+  // }, [cvsList]);
+
   return (
     <div className="middle">
-      <div className="Left-part">
-        {/*                         Profile Card - #12 */}
+      <div className="left-part">
+        {/* Profile Card - #12 */}
         <ProfileCardComponent
           profileImageUrl={man}
           fullName="Jonathan Andersen"
@@ -41,23 +82,17 @@ export default function Profile() {
       </div>
       <div className="right-part">
         <div className="profile-description">
-          {/*                       Profile Title and Description - #88 */}
-          {/* TitleDesc = ({title,description}) */}
-          {/* <TitleDesc
-              title="Your profile"
-              description="Here is the description"
-            /> */}
+          {/* Profile Title and Description - #88 */}
           <TitleCvCard />
         </div>
         <div className="uploaded-cv">
-          {/*                         Your uploaded CVs - #14 */}
-          {/* function YourUploadedCVs({ CVsList }) { */}
+          {/* Your uploaded CVs - #14 */}
           <YourUploadedCVs CVsList={cvsList} />{' '}
         </div>
         <div className="sent-reviews">
-          {/*                           Sent Reviews - #92 */}
+          {/* Sent Reviews - #92 */}
         </div>
       </div>
     </div>
   );
-}
+  } 

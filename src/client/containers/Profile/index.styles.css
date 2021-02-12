@@ -1,9 +1,9 @@
-.middle{
-    display: flex;
+.middle {
+  display: flex;
 }
-.left{
-flex:40%;
+.left-part {
+  flex: 2;
 }
-.right{
-flex:60;
+.right-part {
+  flex: 1;
 }
