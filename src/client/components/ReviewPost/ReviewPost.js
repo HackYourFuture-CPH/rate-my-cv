@@ -4,11 +4,11 @@ import profileImage from '../../assets/images/portraits/man2.jpg';
 import './ReviewPost.styles.css';
 
 export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
-  console.log(date);
+ 
   return (
     <div className="review-section">
       <div className="profile-image">
-        {<img src={profileImageUrl || profileImage} alt="User image" />}
+        <img src={profileImageUrl || profileImage} alt="Userimage" />
       </div>
       <div className="title-text">
         <div className="name-date">
@@ -27,9 +27,12 @@ export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
 ReviewPost.propTypes = {
   profileImageUrl: PropTypes.string,
   name: PropTypes.string,
-  description: PropTypes.strying,
+  description: PropTypes.string,
   date: PropTypes.instanceOf(Date),
 };
 ReviewPost.defaultProps = {
   profileImageUrl: profileImage,
+  name : '',
+  description: '',
+  date: '',
 };
