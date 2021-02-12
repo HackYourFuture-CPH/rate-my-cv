@@ -22,7 +22,7 @@ export default function SearchFilter () {
                          <input type="radio" values={result} name="radiovalues" />
                              <b>{result}</b>
                     </div>
-                                  //Date posted frame
+                                  
                 ))}
             </div>
          <hr/>
@@ -34,7 +34,7 @@ export default function SearchFilter () {
                     <input type="radio" values={result} name="radioposted" />
                         <b>{result}</b>
                  </div>
-                                 //Minimum evaluation frame
+                                 
               ))}
          </div>
         <hr/>
@@ -44,9 +44,9 @@ export default function SearchFilter () {
                 {minimumEvaluation.map(result=>(
                      <div>
                         <input type="radio" values={result} name="radiominimum" />
-                            <b>{result}<img src={star} alt="triangle icon"/></b>
+                            <b>{result}<img src={star} alt="star icon"/></b>
          </div>
-                                  //Number of reviews
+                                  
          ))}</div>
           <hr/>
                 <div className="review"><h5>Number of reviews</h5></div>
