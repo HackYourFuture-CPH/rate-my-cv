@@ -40,7 +40,6 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
-
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
         <Footer />
