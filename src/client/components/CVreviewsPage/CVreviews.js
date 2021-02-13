@@ -3,7 +3,6 @@ import { useStorage } from '../../hooks/fileUploader';
 
 export function CVreviews({ uploadedFile }) {
   const { url } = useStorage(uploadedFile);
-  console.log(url);
 
   return (
     <iframe
