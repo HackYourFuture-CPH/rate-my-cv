@@ -2,7 +2,8 @@ import React from 'react'
 import './SearchFilter.styles.css'
 import triangle from '../../assets/images/icons/triangle.svg'; 
 import star from '../../assets/images/icons/star.svg'; 
-import { Slider } from '@material-ui/core'
+
+
 
 
 export default function SearchFilter () {
@@ -15,7 +16,8 @@ export default function SearchFilter () {
 
     
     <div className="container">
-         <div className="title"><h2>Title <img src={triangle} alt="triangle icon"/></h2></div>
+        <div className="title">
+         <h2>Title <img src={triangle} alt="triangle icon"/></h2></div>
             <div className="input">
                 {title.map(result=>(
                     <div>
@@ -45,13 +47,17 @@ export default function SearchFilter () {
                      <div>
                         <input type="radio" values={result} name="radiominimum" />
                             <b>{result}<img src={star} alt="star icon"/></b>
-         </div>
-                                  
+                   </div>
          ))}</div>
           <hr/>
                 <div className="review"><h5>Number of reviews</h5></div>
-                <div className="range"> <a id="cero">0</a> <a id="hundred"> ≥ 100</a> </div>
-         <Slider  defaultValue={0} className="slider"/>
-    </div>
-    )
-  }
+                     <div className="range"> 
+                         <a id="cero">0</a> 
+                            <a id="hundred"> ≥ 100</a> 
+                    </div>
+                     <div class="slidecontainer">
+                         <input type="range" min="1" max="100" value="0" />
+                    </div>
+                </div>
+             )
+            }

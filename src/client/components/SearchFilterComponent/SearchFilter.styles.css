@@ -7,6 +7,7 @@
     padding: 1rem;
     height: 1002px;
     border-radius: 1.2rem;
+    font-family: roboto;
 }
 .container .title{
     background-color: #ffffff;
@@ -17,7 +18,6 @@
 .container  h2{
     margin-top: 0.7rem;
     margin-left: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -56,7 +56,7 @@ hr{
   margin-left: 1.5rem;
 }
 .container .input b{
-  font-family: roboto;
+  
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -77,7 +77,6 @@ hr{
 .container  h3{
   margin-top: 0.7rem;
   margin-left: 1.5rem;
-  font-family: 'Times New Roman', Times, serif; 
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -111,8 +110,7 @@ hr{
     }
 
     .container .inputDate b{
-     font-family: roboto;
-     font-style: normal;
+     
      font-weight: normal;
      font-size: 15px;
      line-height: 21px;
@@ -132,8 +130,7 @@ hr{
     .container  h4{
      margin-top: 0.7rem;
      margin-left: 1.5rem;
-        font-family: 'Times New Roman', Times, serif;
-        font-style: normal;
+     font-style: normal;
         font-weight: bold;
         font-size: 20px;
         line-height: 21px;
@@ -169,8 +166,6 @@ hr{
         }
 
         .container .inputMinimum b{
-            font-family: roboto;
-            font-style: normal;
             font-weight: normal;
             font-size: 15px;
             line-height: 21px;
@@ -196,7 +191,6 @@ hr{
         .container  h5{
             margin-top: 0.7rem;
             margin-left: 1.5rem;
-            font-family: 'Times New Roman', Times, serif;
             font-style: normal;
             font-weight: bold;
             font-size: 20px;
@@ -211,34 +205,39 @@ hr{
             right: 2.1rem;
             }
             
-            .slider{
-                margin-top: 0rem;
-                background-color: rgb(255, 253, 254);
-                
+            .slidecontainer {
+            width: 370px;
+            background-color: #fdfffd;
+            position: relative;
+            left: 0.9rem;
+            
             }
+
+            .slidecontainer input{
+                width: 360px;
+                
+                }
 
             .range{
                 width: 350px;
-                background-color: #ffffff;
+                background-color: #fcfcfc;
                 display:flex;
                 margin-top: 0.5rem;
             }
 
             .range #cero{
-                background-color: #ffffff;
+                position: relative;
+                left: 0.5rem;
                 padding-left: 0rem;
-                font-family: 'Times New Roman', Times, serif;
-                font-style: normal;
                 font-weight: normal;
                 font-size: 18px;
                 line-height: 21px;
               }
  
             .range #hundred{
-              background-color: #ffffff;
-              padding-left: 18.7rem;
-              font-family: 'Times New Roman', Times, serif;
-              font-style: normal;
+              position: relative;
+              left: 3.7rem;
+              padding-left: 15.7rem;
               font-weight: normal;
               font-size: 18px;
               line-height: 21px;
@@ -260,7 +259,6 @@ hr{
                 .container  h2{
                     margin-top: 0.7rem;
                     margin-left: 1.5rem;
-                    font-family: 'Times New Roman', Times, serif;
                     font-style: normal;
                     font-weight: bold;
                     font-size: 20px;
@@ -270,7 +268,7 @@ hr{
                     height: 40px;
                     background-color: #ffffff;
                     padding-top: 0.5rem;
-                    padding-left: 1rem;
+                    padding-right: 15rem;
                     position: relative;
                     right: 2.1rem;
                     border-style: solid;
@@ -282,8 +280,21 @@ hr{
                    position:relative;
                    bottom: 0rem;
                    width: 10px;
-                   left:7rem;
+                   left:14rem;
                 }
+
+                .range #hundred{
+                    padding-left: 17.7rem;
+                    position:relative;
+                    left:2.1rem;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+                .range #cero{
+                    position:relative;
+                    left:1.1rem;
+                  }
             } 
 
             @media screen and (max-width: 750px) {
