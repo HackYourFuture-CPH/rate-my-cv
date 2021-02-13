@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
@@ -12,17 +12,16 @@ import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
 
+export const handlerUserContext = createContext(null);
 function App() {
+  const [userName, setUserName] = useState('');
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header
-          isAuthenticated={isAuthenticated}
-          username="William Henry Gates"
-        />
+        <Header isAuthenticated={isAuthenticated} username={userName} />
       )}
       <Switch>
         <Route exact path="/">
@@ -36,7 +35,9 @@ function App() {
           path="/profile"
           isAuthenticated={isAuthenticated}
         >
-          <Profile />
+          <handlerUserContext.Provider value={{ setUserName }}>
+            <Profile />
+          </handlerUserContext.Provider>
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>

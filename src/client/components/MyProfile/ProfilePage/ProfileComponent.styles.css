@@ -1,0 +1,16 @@
+.middle {
+  display: flex;
+}
+.left-part {
+  flex: 2;
+  padding-left: 150px;
+}
+.right-part {
+  flex: 1;
+  padding-right: 50px;
+}
+.sent-reviews{
+  border:1px solid orange;
+  width: 100%;
+  height: 100px;
+}
