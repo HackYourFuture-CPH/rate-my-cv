@@ -5,11 +5,12 @@
 }
 .profile-image {
   width: 140px;
-  height: 50px;
+  height: 100px;
 }
 .profile-image img {
   display: inline;
-  width: 50px;
+  width: 100px;
+  height: 100px;
   justify-content: flex-start;
   border-radius: 50%;
 }
@@ -28,4 +29,7 @@
 }
 .date-time {
   color: gray;
+}
+.title-text{
+  margin-left: 25px;
 }
