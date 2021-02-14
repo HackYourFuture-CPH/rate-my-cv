@@ -2,7 +2,7 @@
 
 const knex = require('../../config/db');
 
-const getCvsnUsers = async () => {
+const getUserCvs = async () => {
   try {
     return await knex('cvs')
       .join('users', 'users.id', '=', 'cvs.fk_user_id')
@@ -14,5 +14,5 @@ const getCvsnUsers = async () => {
 };
 
 module.exports = {
-  getCvsnUsers,
+  getUserCvs,
 };

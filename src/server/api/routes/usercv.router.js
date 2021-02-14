@@ -11,9 +11,9 @@ const usercvController = require('../controllers/usercv.controller');
  * @swagger
  * /modules:
  *  get:
- *    summary: Get all cvs and users
+ *    summary: Get 20 user-cvs.
  *    description:
- *      Will return all cvs with their users.
+ *      Will return 20 user-cvs.
  *    produces: application/json
  *    responses:
  *      200:
@@ -23,7 +23,7 @@ const usercvController = require('../controllers/usercv.controller');
  */
 router.get('/', (req, res, next) => {
   usercvController
-    .getCvsnUsers()
+    .getUserCvs()
     .then((result) => res.json(result))
     .catch(next);
 });
