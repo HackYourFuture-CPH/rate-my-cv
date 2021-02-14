@@ -1,0 +1,32 @@
+.homepage{
+  height: 83vh;
+}
+.homepage-slogan{
+  height: 83vh;
+  width: 100vw;
+  text-align: center;
+  align-items: center;
+  color: white;
+  opacity: 75%;
+  padding-top:140px;
+}
+.homepage-slogan h2{
+  font-size: 25px;
+}
+
+.homepage-slogan p{
+  font-size: 20px;
+}
+
+.homepage-slogan button{
+margin-top: 10px;
+}
+
+.homepage-slogan:nth-of-type(1){
+  background-image: url("../../assets/images/portraits/homeimage.png");
+  background-color:  #6236FF;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  background-position: center;
+}
+

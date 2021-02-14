@@ -1,0 +1,110 @@
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background-color: white;
+}
+.icon {
+  background-size: 20px;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  padding: 0;
+}
+.login-link {
+  background-size: 20px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border: none;
+  padding: 0;
+}
+.right-section {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 7%;
+}
+.home-link {
+  margin: 0 7%;
+}
+.no-design {
+  text-decoration: none;
+}
+.user-name {
+  margin-right: 1rem;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Jost';
+}
+.review {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+.resume {
+  font-weight: normal;
+  font-family: 'Jost';
+  font-size: 24px;
+  line-height: 28px;
+}
+.drop-down {
+  display: none;
+}
+.menu:hover .drop-down {
+  display: block;
+}
+.triangle {
+  background: #000000;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  transform: rotate(45deg);
+  position: absolute;
+  width: 13.33px;
+  height: 13.54px;
+  top: 44px;
+  right: 7.2%;
+}
+.nav-position_color {
+  width: 140px;
+  border-radius: 5px;
+  background-color: #000000;
+  position: absolute;
+  right: 3.6%;
+  top: 51px;
+}
+.subnav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-top: 20px;
+  top: 55px;
+}
+.white-design {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+.subnav li {
+  padding-bottom: 20px;
+  padding-left: 33px;
+  width: 130px;
+  list-style-type: none;
+  white-space: nowrap;
+}
+.black-design {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #000000;
+}

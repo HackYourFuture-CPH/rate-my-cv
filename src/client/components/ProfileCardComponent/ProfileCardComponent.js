@@ -4,7 +4,7 @@ import './ProfileCardComponent.styles.css';
 import iconLinkedin from '../../assets/images/icons/linkedin.svg';
 import iconWebsite from '../../assets/images/icons/website.svg';
 import iconGithub from '../../assets/images/icons/github.svg';
-import unknownUser from '../../assets/images/portraits/unknown-black.jpg';
+import unknownUser from '../../assets/images/portraits/unknown-black.png';
 
 export const ProfileCardComponent = ({
   profileImageUrl,
@@ -70,10 +70,17 @@ export const ProfileCardComponent = ({
 };
 
 ProfileCardComponent.propTypes = {
-  profileImageUrl: PropTypes.string.isRequired,
+  profileImageUrl: PropTypes.string,
   fullName: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
-  linkedin: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired,
+  linkedin: PropTypes.string,
+  website: PropTypes.string,
+  github: PropTypes.string,
+};
+
+ProfileCardComponent.defaultProps = {
+  profileImageUrl: unknownUser,
+  linkedin: undefined,
+  website: undefined,
+  github: undefined,
 };
