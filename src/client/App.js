@@ -35,7 +35,7 @@ function App() {
           path="/profile"
           isAuthenticated={isAuthenticated}
         >
-          <handlerUserContext.Provider value={{ setUserName }}>
+          <handlerUserContext.Provider value={{ userName, setUserName }}>
             <Profile />
           </handlerUserContext.Provider>
         </AuthenticatedRoute>

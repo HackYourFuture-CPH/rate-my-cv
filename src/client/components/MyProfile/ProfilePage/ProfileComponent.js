@@ -6,7 +6,7 @@ import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleCvCard from '../TitleCvCard/TitleCvCard';
 
 export default function ProfileComponent() {
-  const { setUserName } = useContext(handlerUserContext);
+  const { userName,setUserName } = useContext(handlerUserContext);
   const [cvsList, setCvsList] = useState([]);
   const [userData, setUserData] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
