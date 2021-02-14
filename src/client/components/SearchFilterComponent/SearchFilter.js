@@ -11,9 +11,8 @@ export default function SearchFilter () {
     const minimumEvaluation=["Excellent 5","Very good 4.5","Good 4","Reasonable 3.5","Okay 0"];
     
     return (
-
-    
-    <div className="container">
+        
+     <div className="container">
         <div className="title">
          <h2>Title <img src={triangle} alt="triangle icon"/></h2></div>
             <div className="input">
