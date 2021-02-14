@@ -225,7 +225,7 @@ hr{
                 margin-top: 0.5rem;
             }
 
-            .range #cero{
+            .range .cero{
                 position: relative;
                 left: 0.5rem;
                 padding-left: 0rem;
@@ -234,7 +234,7 @@ hr{
                 line-height: 21px;
               }
  
-            .range #hundred{
+            .range .hundred{
               position: relative;
               left: 3.7rem;
               padding-left: 15.7rem;
@@ -283,7 +283,7 @@ hr{
                    left:14rem;
                 }
 
-                .range #hundred{
+                .range .hundred{
                     padding-left: 17.7rem;
                     position:relative;
                     left:2.1rem;
@@ -291,7 +291,7 @@ hr{
                     font-size: 18px;
                     line-height: 21px;
                 }
-                .range #cero{
+                .range .cero{
                     position:relative;
                     left:1.1rem;
                   }
@@ -307,9 +307,21 @@ hr{
                     height: 1002px;
                     border-radius: 1.2rem;
                 } 
-            } 
 
                 hr{
-                   width: 18rem;
-                   color: #c9bcbc;
-                 }
+                    width: 18rem;
+                    color: #c9bcbc;
+                  }
+
+                  .range .hundred{
+                    position:relative;
+                    left:1.1rem;
+                   
+                }
+                .range .cero{
+                    position:relative;
+                    left:0.6rem;
+                  }
+            } 
+
+               

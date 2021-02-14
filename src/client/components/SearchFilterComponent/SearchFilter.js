@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './SearchFilter.styles.css'
 import triangle from '../../assets/images/icons/triangle.svg'; 
 import star from '../../assets/images/icons/star.svg'; 
@@ -52,10 +53,10 @@ export default function SearchFilter () {
           <hr/>
                 <div className="review"><h5>Number of reviews</h5></div>
                      <div className="range"> 
-                         <a id="cero">0</a> 
-                            <a id="hundred"> ≥ 100</a> 
+                         <a className="cero">0</a> 
+                            <a className="hundred"> ≥ 100</a> 
                     </div>
-                     <div class="slidecontainer">
+                     <div className="slidecontainer">
                          <input type="range" min="1" max="100" value="0" />
                     </div>
                 </div>
