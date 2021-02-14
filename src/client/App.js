@@ -10,7 +10,7 @@ import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
-import Footer from './components/Footer/Footer.js';
+import SearchFilter from './components/SearchFilterComponent/SearchFilter.js';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -37,10 +37,7 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
-      {location.pathname === '/sign-in' ||
-      location.pathname === '/sign-up' ? null : (
-        <Footer />
-      )}
+      <SearchFilter/>
     </Router>
   );
 }

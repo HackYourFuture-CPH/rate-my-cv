@@ -1,325 +1,315 @@
-
 .container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 387px;
+  padding: 1rem;
+  height: 1002px;
+  border-radius: 1.2rem;
+  font-family: roboto;
+}
+.container .title {
+  background-color: #ffffff;
+  width: 320px;
+  height: 53px;
+  margin-top: 1.5rem;
+}
+.container h2 {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+  color: rgb(0, 0, 0);
+  width: 340px;
+  height: 40px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  right: 2.1rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #c4c4c4;
+}
+
+.container h2 img {
+  position: relative;
+  bottom: 0rem;
+  width: 10px;
+  left: 14rem;
+}
+
+hr {
+  width: 22rem;
+  color: #c9bcbc;
+}
+.container .input {
+  background-color: #ffffff;
+  width: 320px;
+  height: 103px;
+}
+.container .input input {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+}
+.container .input b {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  margin-top: 0.7rem;
+  margin-left: 0.2rem;
+}
+
+/* Date posted */
+
+.container .posted {
+  background-color: #ffffff;
+  width: 320px;
+  height: 53px;
+  margin-top: 0rem;
+}
+.container h3 {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+  color: rgb(0, 0, 0);
+  width: 340px;
+  height: 40px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  right: 2.1rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #c4c4c4;
+}
+.container h3 img {
+  position: relative;
+  bottom: 0rem;
+  width: 10px;
+  left: 10rem;
+}
+.container .inputDate {
+  background-color: #ffffff;
+  width: 320px;
+  height: 123px;
+}
+.container .inputDate input {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+}
+
+.container .inputDate b {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  margin-top: 0.7rem;
+  margin-left: 0.2rem;
+}
+
+/* minimum evaluation */
+
+.container .minimum {
+  background-color: #ffffff;
+  width: 320px;
+  height: 53px;
+  margin-top: 0rem;
+}
+
+.container h4 {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+  color: rgb(0, 0, 0);
+  width: 340px;
+  height: 40px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  right: 2.1rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #c4c4c4;
+}
+
+.container h4 img {
+  position: relative;
+  bottom: 0rem;
+  width: 10px;
+  left: 5rem;
+}
+
+.container .inputMinimum {
+  background-color: #ffffff;
+  width: 320px;
+  height: 163px;
+}
+
+.container .inputMinimum input {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+}
+
+.container .inputMinimum b {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  margin-top: 0.7rem;
+  margin-left: 0.2rem;
+}
+
+.container .inputMinimum b img {
+  position: relative;
+  bottom: 0.1rem;
+  width: 10px;
+  left: 0.2rem;
+}
+/* number of reviews */
+
+.container .review {
+  background-color: #ffffff;
+  width: 320px;
+  height: 53px;
+  margin-top: 1.5rem;
+}
+
+.container h5 {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 21px;
+  color: rgb(0, 0, 0);
+  width: 340px;
+  height: 40px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  right: 2.1rem;
+}
+
+.slidecontainer {
+  width: 370px;
+  background-color: #fdfffd;
+  position: relative;
+  left: 0.9rem;
+}
+
+.slidecontainer input {
+  width: 360px;
+}
+
+.range {
+  width: 350px;
+  background-color: #fcfcfc;
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.range .cero {
+  position: relative;
+  left: 0.5rem;
+  padding-left: 0rem;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.range .hundred {
+  position: relative;
+  left: 3.7rem;
+  padding-left: 15.7rem;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 387px;
+    width: 375px;
     padding: 1rem;
     height: 1002px;
     border-radius: 1.2rem;
-    font-family: roboto;
-}
-.container .title{
-    background-color: #ffffff;
-    width: 320px;
-    height: 53px;
-    margin-top: 1.5rem;
-}
-.container  h2{
+  }
+
+  .container h2 {
     margin-top: 0.7rem;
     margin-left: 1.5rem;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
     line-height: 21px;
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     width: 340px;
     height: 40px;
     background-color: #ffffff;
     padding-top: 0.5rem;
-    padding-left: 2.5rem;
+    padding-right: 15rem;
     position: relative;
     right: 2.1rem;
     border-style: solid;
     border-width: 0.1rem;
-    border-color: #C4C4C4;
-    }
+    border-color: #c4c4c4;
+  }
 
-.container  h2 img{
-   position:relative;
-   bottom: 0rem;
-   width: 10px;
-   left:14rem;
-   }
+  .container h2 img {
+    position: relative;
+    bottom: 0rem;
+    width: 10px;
+    left: 14rem;
+  }
 
-hr{
-   width: 22rem;
-   color: #c9bcbc;
-   }
-.container .input {
-   background-color: #ffffff;
-   width: 320px;
-   height: 103px;
-}
-.container .input input{
-  margin-top: 0.7rem;
-  margin-left: 1.5rem;
-}
-.container .input b{
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 21px;
-  margin-top: 0.7rem;
-  margin-left: 0.2rem;
-  
-}
-
-/* Date posted */
-
-.container .posted{
-  background-color: #ffffff;
-  width: 320px;
-  height: 53px;
-  margin-top: 0rem;
-}
-.container  h3{
-  margin-top: 0.7rem;
-  margin-left: 1.5rem;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
+  .range .hundred {
+    padding-left: 17.7rem;
+    position: relative;
+    left: 2.1rem;
+    font-weight: normal;
+    font-size: 18px;
     line-height: 21px;
-    color:rgb(0, 0, 0);
-    width: 340px;
-    height: 40px;
-    background-color: #ffffff;
-    padding-top: 0.5rem;
-    padding-left: 2.5rem;
+  }
+  .range .cero {
     position: relative;
-    right: 2.1rem;
-    border-style: solid;
-    border-width: 0.1rem;
-    border-color: #C4C4C4;
-    }
-    .container  h3 img{
-     position:relative;
-     bottom: 0rem;
-     width: 10px;
-     left:10rem;
-    }
-    .container .inputDate {
-     background-color: #ffffff;
-     width: 320px;
-     height: 123px;
-    }
-    .container .inputDate input{
-     margin-top: 0.7rem;
-     margin-left: 1.5rem;
-    }
+    left: 1.1rem;
+  }
+}
 
-    .container .inputDate b{
-     
-     font-weight: normal;
-     font-size: 15px;
-     line-height: 21px;
-     margin-top: 0.7rem;
-     margin-left: 0.2rem;
-    }
+@media screen and (max-width: 750px) {
+  .container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    padding: 1rem;
+    height: 1002px;
+    border-radius: 1.2rem;
+  }
 
-    /* minimum evaluation */
+  hr {
+    width: 18rem;
+    color: #c9bcbc;
+  }
 
-    .container .minimum{
-     background-color: #ffffff;
-     width: 320px;
-     height: 53px;
-     margin-top: 0rem;  
-    }
-
-    .container  h4{
-     margin-top: 0.7rem;
-     margin-left: 1.5rem;
-     font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 21px;
-        color:rgb(0, 0, 0);
-        width: 340px;
-        height: 40px;
-        background-color: #ffffff;
-        padding-top: 0.5rem;
-        padding-left: 2.5rem;
-        position: relative;
-        right: 2.1rem;
-        border-style: solid;
-        border-width: 0.1rem;
-        border-color: #C4C4C4;
-        }
-
-        .container  h4 img{
-            position:relative;
-            bottom: 0rem;
-            width: 10px;
-            left:5rem;
-        }
-
-        .container .inputMinimum {
-            background-color: #ffffff;
-            width: 320px;
-            height: 163px;
-        }
-       
-        .container .inputMinimum input{
-            margin-top: 0.7rem;
-            margin-left: 1.5rem;
-        }
-
-        .container .inputMinimum b{
-            font-weight: normal;
-            font-size: 15px;
-            line-height: 21px;
-            margin-top: 0.7rem;
-            margin-left: 0.2rem;
-        }
-
-        .container .inputMinimum b img{
-            position:relative;
-            bottom: 0.1rem;
-            width: 10px;
-            left:0.2rem;
-        }
-        /* number of reviews */
-
-        .container .review{
-            background-color: #ffffff;
-            width: 320px;
-            height: 53px;
-            margin-top: 1.5rem;
-        }
-
-        .container  h5{
-            margin-top: 0.7rem;
-            margin-left: 1.5rem;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 20px;
-            line-height: 21px;
-            color:rgb(0, 0, 0);
-            width: 340px;
-            height: 40px;
-            background-color: #ffffff;
-            padding-top: 0.5rem;
-            padding-left: 2.5rem;
-            position: relative;
-            right: 2.1rem;
-            }
-            
-            .slidecontainer {
-            width: 370px;
-            background-color: #fdfffd;
-            position: relative;
-            left: 0.9rem;
-            
-            }
-
-            .slidecontainer input{
-                width: 360px;
-                
-                }
-
-            .range{
-                width: 350px;
-                background-color: #fcfcfc;
-                display:flex;
-                margin-top: 0.5rem;
-            }
-
-            .range .cero{
-                position: relative;
-                left: 0.5rem;
-                padding-left: 0rem;
-                font-weight: normal;
-                font-size: 18px;
-                line-height: 21px;
-              }
- 
-            .range .hundred{
-              position: relative;
-              left: 3.7rem;
-              padding-left: 15.7rem;
-              font-weight: normal;
-              font-size: 18px;
-              line-height: 21px;
-            }
-
-            @media screen and (max-width: 1200px) {
-                .container {
-                    background-color: #ffffff;
-                    display: flex;
-                    flex-direction: column;
-                    width: 375px;
-                    padding: 1rem;
-                    height: 1002px;
-                    border-radius: 1.2rem; 
-                } 
-
-                
-
-                .container  h2{
-                    margin-top: 0.7rem;
-                    margin-left: 1.5rem;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 20px;
-                    line-height: 21px;
-                    color:rgb(0, 0, 0);
-                    width: 340px;
-                    height: 40px;
-                    background-color: #ffffff;
-                    padding-top: 0.5rem;
-                    padding-right: 15rem;
-                    position: relative;
-                    right: 2.1rem;
-                    border-style: solid;
-                    border-width: 0.1rem;
-                    border-color: #C4C4C4;
-                    }
-                
-                .container  h2 img{
-                   position:relative;
-                   bottom: 0rem;
-                   width: 10px;
-                   left:14rem;
-                }
-
-                .range .hundred{
-                    padding-left: 17.7rem;
-                    position:relative;
-                    left:2.1rem;
-                    font-weight: normal;
-                    font-size: 18px;
-                    line-height: 21px;
-                }
-                .range .cero{
-                    position:relative;
-                    left:1.1rem;
-                  }
-            } 
-
-            @media screen and (max-width: 750px) {
-                .container {
-                    background-color: #ffffff;
-                    display: flex;
-                    flex-direction: column;
-                    width: 360px;
-                    padding: 1rem;
-                    height: 1002px;
-                    border-radius: 1.2rem;
-                } 
-
-                hr{
-                    width: 18rem;
-                    color: #c9bcbc;
-                  }
-
-                  .range .hundred{
-                    position:relative;
-                    left:1.1rem;
-                   
-                }
-                .range .cero{
-                    position:relative;
-                    left:0.6rem;
-                  }
-            } 
-
-               
+  .range .hundred {
+    position: relative;
+    left: 1.1rem;
+  }
+  .range .cero {
+    position: relative;
+    left: 0.6rem;
+  }
+}
