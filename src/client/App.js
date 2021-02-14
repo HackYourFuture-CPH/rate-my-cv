@@ -11,6 +11,7 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
+import RetrivingCvs from './components/RetrivingCvs/RetrivingCvs';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -24,6 +25,7 @@ function App() {
         </Route>
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
+        <RetrivingCvs exact path="/retrivingcvs" />
         <ResetPassword exact path="/reset-password" />
         <AuthenticatedRoute
           exact
