@@ -9,6 +9,7 @@ const cvsRouter = require('./cvs.router');
 
 const usersRouter = require('./users.router');
 
+const usercvRouter = require('./usercv.router');
 
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
@@ -40,5 +41,6 @@ router.use('/cv', cvsRouter);
 
 router.use('/users', usersRouter);
 
+router.use('/usercv', usercvRouter);
 
 module.exports = router;
