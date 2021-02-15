@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
@@ -11,7 +11,6 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
-import { AddResume } from './components/AddResume/AddResume';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
