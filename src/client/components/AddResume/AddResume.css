@@ -1,6 +1,6 @@
 .popup{
     position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 5;
@@ -10,7 +10,7 @@
     padding: 20px;
     border: 1px solid rgb(218, 214, 214);
     border-radius: 10px;
-    height: 450px;
+    height: 500px;
     width: 650px;
 }
 .close-icon{
@@ -97,7 +97,6 @@ label{
     height: 30px;
     width: 150px;
     float: right;
-    margin-top:15px;
     padding: 0px;
     color: white;
     border: rgb(233, 86, 29);

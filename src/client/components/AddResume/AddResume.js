@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import ReactDom from 'react-dom';
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
-import { Link } from 'react-router-dom';
 import { useStorage } from '../../hooks/fileUploader';
 
 export const AddResume = () => {
@@ -15,10 +14,14 @@ export const AddResume = () => {
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/msword',
+    'text/plain',
+    'text/rtf'
   ];
 
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
+
     setUploadedFile(selectedFile);
 
     if (selectedFile) {
@@ -92,14 +95,8 @@ export const AddResume = () => {
           {error && (
             <p style={{ color: 'red', marginRight: '50px' }}>{error}</p>
           )}
-          <div className="add-btn">
-            {uploadedFile ? (
-              <Link to="/cv-reviews">
+          <div className="add-btn"> 
                 <Button buttonName="Add resume" />
-              </Link>
-            ) : (
-              <Button buttonName="Add resume" />
-            )}
           </div>
         </div>
       </div>
