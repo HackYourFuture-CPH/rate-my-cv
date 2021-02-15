@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TitleDesc.styles.css';
-
+ 
 const TitleDesc = ({ title, description }) => {
   return (
     <div className="container">
