@@ -58,7 +58,6 @@
   border: 1px solid #9a9a9a;
   align-items: flex-end;
   height: 120px;
-  /* min-width: 550px; */
   width: 100%;
 }
 .button-part {
@@ -66,10 +65,3 @@
   justify-content: flex-end;
   margin-top: 0.5em;
 }
-/* .button-part button{
-
-} */
-/* .blue-button button{
-  background-color: blue;
-  font-weight: bold;
-} */

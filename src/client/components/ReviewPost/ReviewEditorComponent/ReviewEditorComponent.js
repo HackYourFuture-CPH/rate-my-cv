@@ -8,7 +8,6 @@ export default function ReviewEditorComponent({
   avatarUrl,
   fullName,
   placeHolderText,
-  // buttonStyle,
 }) {
   const [inputValue, setInputValue] = useState();
   const onChange = (event) => {
@@ -43,8 +42,6 @@ export default function ReviewEditorComponent({
         <Button className='blue-button'
           buttonName="Send review"
           style={{ backgroundColor: 'blue', fontWeight: 'bold' }}
-          // style={object('Style', buttonStyle)}
-
           type="submit"
           onClick={() =>
             console.log(
@@ -61,13 +58,9 @@ ReviewEditorComponent.propTypes = {
   avatarUrl: PropTypes.string,
   fullName: PropTypes.string.isRequired,
   placeHolderText: PropTypes.string,
- // buttonStyle: PropTypes.string,
 };
 
 ReviewEditorComponent.defaultProps = {
   avatarUrl: unknownUser,
   placeHolderText: 'Enter to send. Shift + Enter to add new line.',
-  // buttonStyle: { backgroundColor: 'blue', fontWeight: 'bold' },
-  // buttonStyle: {object('Style', backgroundColor: 'blue', fontWeight: 'bold' )},
 };
-// style={object('Style', style)}
