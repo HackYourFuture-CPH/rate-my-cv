@@ -1,50 +1,50 @@
 .popup{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
 }
 
 .popup-form{
-  padding: 20px;
-  border: 1px solid rgb(218, 214, 214);
-  border-radius: 10px;
-  height: 450px;
-  width: 650px;
+    padding: 20px;
+    border: 1px solid rgb(218, 214, 214);
+    border-radius: 10px;
+    height: 450px;
+    width: 650px;
 }
 .close-icon{
-  height: 15px;
-  width: 15px;
-  float: right;
+    height: 15px;
+    width: 15px;
+    float: right;
 }
 .popup-form h3 {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  margin-top:0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top:0px;
 }
 
 .popup .title {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 .title input{
-  height: 40px;
+    height: 40px;
 }
 .description{
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 .description textarea{
-  margin-top:5px;
-  width: 100%;
-  background-color: rgb(238, 232, 232);
-  border: 1px solid rgb(238, 232, 232);
-  border-radius: 5px;
-  height: 120px;
+    margin-top:5px;
+    width: 100%;
+    background-color: rgb(238, 232, 232);
+    border: 1px solid rgb(238, 232, 232);
+    border-radius: 5px;
+    height: 120px;
 }
 .upload{
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 #file-chosen {
   margin-top: 5px;
@@ -75,30 +75,30 @@
   cursor: pointer;
 }
 .upload .support-text{
-  font-size: x-small;
-  color: rgb(170, 164, 164);
-  font-weight: normal;
-  padding-left:10px ;
+    font-size: x-small;
+    color: rgb(170, 164, 164);
+    font-weight: normal;
+    padding-left:10px ;
 }
 
 label{
-  font-weight: bold;
+    font-weight: bold;
 }
 .popup input {
-  margin-top:5px;
-  width: 100%;
-  background-color: rgb(238, 232, 232);
-  border: 1px solid rgb(238, 232, 232);
-  border-radius: 5px;
+    margin-top:5px;
+    width: 100%;
+    background-color: rgb(238, 232, 232);
+    border: 1px solid rgb(238, 232, 232);
+    border-radius: 5px;
 }
 
 .add-btn button{
-  height: 30px;
-  width: 150px;
-  float: right;
-  margin-top: 15px;
-  padding: 0px;
-  color: white;
-  border: rgb(233, 86, 29);
-  background-color: rgb(233, 86, 29);
+    height: 30px;
+    width: 150px;
+    float: right;
+    margin-top: 15px;
+    padding: 0px;
+    color: white;
+    border: rgb(233, 86, 29);
+    background-color: rgb(233, 86, 29);
 }
