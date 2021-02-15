@@ -11,11 +11,9 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
-import { CVreviews } from './components/CVreviewsPage/CVreviews';
 import { AddResume } from './components/AddResume/AddResume';
 
 function App() {
-  const [uploadedFile, setUploadedFile] = useState('');
   const { isAuthenticated, isLoading } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
@@ -31,13 +29,6 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <AddResume
-          uploadedFile={uploadedFile}
-          setUploadedFile={setUploadedFile}
-          exact
-          path="/add-resume"
-        />
-        <CVreviews uploadedFile={uploadedFile} exact path="/cv-reviews" />
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />

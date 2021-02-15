@@ -4,11 +4,13 @@ import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 import { Link } from 'react-router-dom';
+import { useStorage } from '../../hooks/fileUploader';
 
-export const AddResume = ({ uploadedFile, setUploadedFile }) => {
+export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
+  const [uploadedFile, setUploadedFile] = useState('');
 
   const types = [
     'application/pdf',
@@ -29,6 +31,8 @@ export const AddResume = ({ uploadedFile, setUploadedFile }) => {
       }
     }
   };
+
+  useStorage(uploadedFile);
 
   return ReactDom.createPortal(
     <div className="popup">
