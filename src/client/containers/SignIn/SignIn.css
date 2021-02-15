@@ -1,0 +1,63 @@
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.sign-in-left {
+  left: 0;
+  width: 35%;
+  overflow: hidden;
+  background-color: #6236FF;
+}
+
+.sign-in-right {
+  right: 0;
+  width: 65%;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  padding: 5% 25%;
+}
+
+.form-sign-in {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .centered {
+    padding: 5%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .sign-in-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .split {
+    position: unset;
+    overflow-x: initial;
+  }
+  .sign-in-left {
+    width: 100%;
+  }
+  .sign-in-right {
+    width: 90%;
+  }
+  .centered {
+    display: initial;
+  }
+  div.space {
+    margin-left: 2em;
+  }
+}
