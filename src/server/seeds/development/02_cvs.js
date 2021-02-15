@@ -9,7 +9,7 @@ exports.seed = function(knex) {
           'id': '1',
           'title': 'FrontEnd Developer',
           'description': 'Frontend developer with 3 years experience',
-          'file_url': 'https://zety.com/blog/banking-resume-example',
+          'file_url': 'http://www.africau.edu/images/default/sample.pdf',
           'fk_user_id':'1',
         },
         {
@@ -17,14 +17,14 @@ exports.seed = function(knex) {
           'title': 'Project Manager',
           'description': 'Ambitious Project manager with handson experience',
           'file_url':
-            'https://www.wozber.com/en-gb/cv-examples/front-end-developer-cv-example',
+            'https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf',
           'fk_user_id': '2',
         },
         {
           'id': '3',
           'title': 'Fullstack Engineer',
           'description': 'Skilled Fullstack developer with creative mind',
-          'file_url': 'https://zety.com/blog/accounting-clerk-resume-example',
+          'file_url': 'https://www.kdp.org/resources/pdf/careercenter/Compiling_a_Curriculum_Vitae.pdf',
           'fk_user_id': '3',
         },
       ]);

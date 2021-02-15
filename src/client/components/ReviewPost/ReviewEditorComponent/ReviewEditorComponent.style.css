@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+  background: white;
+  display: flex;
+  padding: 1.5em;
+  flex-direction: column;
+}
+.top-part {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 4em;
+}
+.profile-picture {
+  margin-right: 1em;
+  display: inline;
+  width: 40px;
+  justify-content: flex-start;
+}
+.circle-mask {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+}
+.circle > img {
+  display: inline;
+  margin: 0 auto;
+  max-width: 150px;
+}
+.user-photo {
+  display: inline;
+  margin: 0 auto;
+  width: 40px;
+  justify-content: flex-start;
+}
+.user-name {
+  font-weight: bold;
+  font-size: medium;
+ align-items: flex-start;
+}
+.input-part {
+  margin-top: 0.5em;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.input-part textarea {
+  border-radius: 5px;
+  border: 1px solid #9a9a9a;
+  align-items: flex-end;
+  height: 120px;
+  width: 100%;
+}
+.button-part {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5em;
+}

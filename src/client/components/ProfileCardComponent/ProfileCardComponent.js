@@ -70,10 +70,17 @@ export const ProfileCardComponent = ({
 };
 
 ProfileCardComponent.propTypes = {
-  profileImageUrl: PropTypes.string.isRequired,
+  profileImageUrl: PropTypes.string,
   fullName: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
-  linkedin: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired,
+  linkedin: PropTypes.string,
+  website: PropTypes.string,
+  github: PropTypes.string,
+};
+
+ProfileCardComponent.defaultProps = {
+  profileImageUrl: unknownUser,
+  linkedin: undefined,
+  website: undefined,
+  github: undefined,
 };
