@@ -7,7 +7,7 @@ const getUserCvs = async () => {
     return await knex('cvs')
       .join('users', 'users.id', '=', 'cvs.fk_user_id')
       .select('*')
-      .limit(20);
+      .limit(21);
   } catch (error) {
     return error.message;
   }
