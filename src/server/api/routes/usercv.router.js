@@ -11,7 +11,7 @@ const usercvController = require('../controllers/usercv.controller');
  * @swagger
  * /modules:
  *  get:
- *    summary: Get 20 user-cvs.
+ *    summary: Get last 20 user-cvs.
  *    description:
  *      Will return 20 user-cvs.
  *    produces: application/json
