@@ -1,0 +1,36 @@
+.container-reviewer {
+  display: grid;
+  grid-template-columns: 50px auto;
+  font-size: smaller;
+}
+
+.container-reviewer .profile-picture .circle-mask .user-photo {
+  width: 30px;
+}
+
+.container-reviewer .profile-picture .circle-mask {
+  height: 30px;
+  width: 30px;
+}
+
+.reviewer-name-date {
+  display: flex;
+  align-items: center;
+}
+
+.reviewer-name-date span {
+  margin-right: 1em;
+}
+
+div.review-text {
+  padding: 0;
+}
+
+span.reviewer-name {
+  font-weight: bold;
+}
+
+span.review-date {
+  font-size: small;
+  color: #9A9A9A;
+}

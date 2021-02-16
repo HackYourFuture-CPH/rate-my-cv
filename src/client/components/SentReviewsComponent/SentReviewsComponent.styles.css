@@ -1,0 +1,55 @@
+.collection-reviews {
+  display: grid;
+  gap: 10px;
+}
+
+.container-reviewee {
+  display: flex;
+}
+
+.container-reviewee .profile-picture .circle-mask {
+  width: 50px;
+  height: 50px;
+}
+
+.container-reviewee .profile-picture .circle-mask .user-photo {
+  width: 50px;
+}
+
+.reviewee-name-date {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.stars-rating {
+  flex: 3 1 auto;
+}
+
+.button-orange {
+  background-color: #F25B06;
+  height: max-content;
+}
+
+.container-reviewee .content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sent-review {
+  display: grid;
+  grid-template-columns: 50px auto;
+  gap: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  padding: 1em 1.5em;
+}
+
+hr {
+  border: 1px solid #D1D1D1;
+}
+
+.profile-picture {
+  margin-right: 0;
+}
