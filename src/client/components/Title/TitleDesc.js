@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import './TitleDesc.styles.css';
 
 const TitleDesc = ({ title, description }) => {
-  return (
-    <div className="container">
+  return (           
+    <div className="title-desc-container">
       <h1>{title}</h1>
       <p>{description}</p>
     </div>
