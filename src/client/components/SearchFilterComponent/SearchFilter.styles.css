@@ -1,30 +1,23 @@
-.container {
-  background-color: #ffffff;
+.search-filter-container {
   display: flex;
   flex-direction: column;
   width: 387px;
   padding: 1rem;
   height: 1002px;
   border-radius: 1.2rem;
-  font-family: roboto;
 }
-.container .title {
-  background-color: #ffffff;
+.search-filter-container .title {
   width: 320px;
   height: 53px;
   margin-top: 1.5rem;
 }
-.container h2 {
+.search-filter-container h1 {
   margin-top: 0.7rem;
   margin-left: 1.5rem;
-  font-style: normal;
-  font-weight: bold;
   font-size: 20px;
   line-height: 21px;
-  color: rgb(0, 0, 0);
   width: 340px;
   height: 40px;
-  background-color: #ffffff;
   padding-top: 0.5rem;
   padding-left: 2.5rem;
   position: relative;
@@ -34,78 +27,38 @@
   border-color: #c4c4c4;
 }
 
-.container h2 img {
+.search-filter-container h1 #a {
   position: relative;
-  bottom: 0rem;
-  width: 10px;
   left: 14rem;
+  width: 10px;
+}
+.search-filter-container h1 #b {
+  position: relative;
+  left: 10rem;
+  width: 10px;
+}
+.search-filter-container h1 #c {
+  position: relative;
+  left: 5.5rem;
+  width: 10px;
 }
 
 hr {
+  position: relative;
+  margin-top: 2rem;
+  right: 0.9rem;
   width: 22rem;
-  color: #c9bcbc;
+  color: #c4c4c4;
 }
-.container .input {
-  background-color: #ffffff;
+.search-filter-container .input {
   width: 320px;
   height: 103px;
 }
-.container .input input {
+.search-filter-container .input input {
   margin-top: 0.7rem;
   margin-left: 1.5rem;
 }
-.container .input b {
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 21px;
-  margin-top: 0.7rem;
-  margin-left: 0.2rem;
-}
-
-/* Date posted */
-
-.container .posted {
-  background-color: #ffffff;
-  width: 320px;
-  height: 53px;
-  margin-top: 0rem;
-}
-.container h3 {
-  margin-top: 0.7rem;
-  margin-left: 1.5rem;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 21px;
-  color: rgb(0, 0, 0);
-  width: 340px;
-  height: 40px;
-  background-color: #ffffff;
-  padding-top: 0.5rem;
-  padding-left: 2.5rem;
-  position: relative;
-  right: 2.1rem;
-  border-style: solid;
-  border-width: 0.1rem;
-  border-color: #c4c4c4;
-}
-.container h3 img {
-  position: relative;
-  bottom: 0rem;
-  width: 10px;
-  left: 10rem;
-}
-.container .inputDate {
-  background-color: #ffffff;
-  width: 320px;
-  height: 123px;
-}
-.container .inputDate input {
-  margin-top: 0.7rem;
-  margin-left: 1.5rem;
-}
-
-.container .inputDate b {
+.search-filter-container .input b {
   font-weight: normal;
   font-size: 15px;
   line-height: 21px;
@@ -115,52 +68,23 @@ hr {
 
 /* minimum evaluation */
 
-.container .minimum {
-  background-color: #ffffff;
+.search-filter-container .minimum {
   width: 320px;
   height: 53px;
   margin-top: 0rem;
 }
 
-.container h4 {
-  margin-top: 0.7rem;
-  margin-left: 1.5rem;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 21px;
-  color: rgb(0, 0, 0);
-  width: 340px;
-  height: 40px;
-  background-color: #ffffff;
-  padding-top: 0.5rem;
-  padding-left: 2.5rem;
-  position: relative;
-  right: 2.1rem;
-  border-style: solid;
-  border-width: 0.1rem;
-  border-color: #c4c4c4;
-}
-
-.container h4 img {
-  position: relative;
-  bottom: 0rem;
-  width: 10px;
-  left: 5rem;
-}
-
-.container .inputMinimum {
-  background-color: #ffffff;
+.search-filter-container .inputMinimum {
   width: 320px;
   height: 163px;
 }
 
-.container .inputMinimum input {
+.search-filter-container .inputMinimum input {
   margin-top: 0.7rem;
   margin-left: 1.5rem;
 }
 
-.container .inputMinimum b {
+.search-filter-container .inputMinimum b {
   font-weight: normal;
   font-size: 15px;
   line-height: 21px;
@@ -168,7 +92,7 @@ hr {
   margin-left: 0.2rem;
 }
 
-.container .inputMinimum b img {
+.search-filter-container .inputMinimum b img {
   position: relative;
   bottom: 0.1rem;
   width: 10px;
@@ -176,24 +100,17 @@ hr {
 }
 /* number of reviews */
 
-.container .review {
-  background-color: #ffffff;
+.search-filter-container .review {
   width: 320px;
   height: 53px;
   margin-top: 1.5rem;
 }
 
-.container h5 {
+.search-filter-container .review h1 {
+  border-color: #fdfbfb;
   margin-top: 0.7rem;
   margin-left: 1.5rem;
-  font-style: normal;
-  font-weight: bold;
   font-size: 20px;
-  line-height: 21px;
-  color: rgb(0, 0, 0);
-  width: 340px;
-  height: 40px;
-  background-color: #ffffff;
   padding-top: 0.5rem;
   padding-left: 2.5rem;
   position: relative;
@@ -201,95 +118,69 @@ hr {
 }
 
 .slidecontainer {
-  width: 370px;
-  background-color: #fdfffd;
+  width: 350px;
   position: relative;
-  left: 0.9rem;
+  right: 0.5rem;
 }
 
-.slidecontainer input {
-  width: 360px;
+.slidecontainer #volume {
+  height: 15px;
+  width: 350px;
+  position: relative;
+  left: -0.1rem;
 }
 
 .range {
   width: 350px;
-  background-color: #fcfcfc;
   display: flex;
   margin-top: 0.5rem;
+  position: relative;
+  right: 0.5rem;
 }
 
 .range .cero {
   position: relative;
-  left: 0.5rem;
+  left: 0rem;
   padding-left: 0rem;
-  font-weight: normal;
   font-size: 18px;
-  line-height: 21px;
 }
 
 .range .hundred {
   position: relative;
-  left: 3.7rem;
+  left: 2.7rem;
   padding-left: 15.7rem;
-  font-weight: normal;
   font-size: 18px;
-  line-height: 21px;
 }
 
 @media screen and (max-width: 1200px) {
-  .container {
-    background-color: #ffffff;
+  .search-filter-container {
     display: flex;
     flex-direction: column;
-    width: 375px;
+    width: 387px;
     padding: 1rem;
     height: 1002px;
     border-radius: 1.2rem;
   }
 
-  .container h2 {
+  .search-filter-container h1 {
     margin-top: 0.7rem;
     margin-left: 1.5rem;
-    font-style: normal;
-    font-weight: bold;
     font-size: 20px;
     line-height: 21px;
-    color: rgb(0, 0, 0);
     width: 340px;
     height: 40px;
-    background-color: #ffffff;
     padding-top: 0.5rem;
-    padding-right: 15rem;
+    padding-left: 2.5rem;
     position: relative;
     right: 2.1rem;
     border-style: solid;
     border-width: 0.1rem;
     border-color: #c4c4c4;
   }
-
-  .container h2 img {
-    position: relative;
-    bottom: 0rem;
-    width: 10px;
-    left: 14rem;
-  }
-
-  .range .hundred {
-    padding-left: 17.7rem;
-    position: relative;
-    left: 2.1rem;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
-  }
-  .range .cero {
-    position: relative;
-    left: 1.1rem;
-  }
 }
 
 @media screen and (max-width: 750px) {
-  .container {
+  .search-filter-container {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -300,8 +191,12 @@ hr {
   }
 
   hr {
-    width: 18rem;
+    width: 22rem;
     color: #c9bcbc;
+  }
+  .slidecontainer {
+    width: 350px;
+    margin-right: 3rem;
   }
 
   .range .hundred {

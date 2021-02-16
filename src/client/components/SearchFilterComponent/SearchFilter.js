@@ -15,11 +15,11 @@ export default function SearchFilter() {
   ];
 
   return (
-    <div className="container">
+    <div className="search-filter-container">
       <div className="title">
-        <h2>
-          Title <img src={triangle} alt="triangle icon" />
-        </h2>
+        <h1>
+          Title <img src={triangle} id="a" alt="triangle icon" />
+        </h1>
       </div>
       <div className="input">
         {title.map((result) => (
@@ -31,12 +31,12 @@ export default function SearchFilter() {
       </div>
       <hr />
 
-      <div className="posted">
-        <h3>
-          Date posted <img src={triangle} alt="triangle icon" />
-        </h3>{' '}
+      <div className="title">
+        <h1>
+          Date posted <img src={triangle} id="b" alt="triangle icon" />
+        </h1>
       </div>
-      <div className="inputDate">
+      <div className="input">
         {datePosted.map((result) => (
           <div>
             <input type="radio" values={result} name="radioposted" />
@@ -46,10 +46,10 @@ export default function SearchFilter() {
       </div>
       <hr />
 
-      <div className="minimum">
-        <h4>
-          Minimum evaluation <img src={triangle} alt="triangle icon" />
-        </h4>{' '}
+      <div className="title">
+        <h1>
+          Minimum evaluation <img src={triangle} id="c" alt="triangle icon" />
+        </h1>
       </div>
       <div className="inputMinimum">
         {minimumEvaluation.map((result) => (
@@ -64,14 +64,14 @@ export default function SearchFilter() {
       </div>
       <hr />
       <div className="review">
-        <h5>Number of reviews</h5>
+        <h1>Number of reviews</h1>
       </div>
       <div className="range">
         <div className="cero">0</div>
         <div className="hundred"> ≥ 100</div>
       </div>
       <div className="slidecontainer">
-        <input type="range" min="1" max="100" value="0" />
+        <input type="range" id="volume" min="0" max="11" value="7" step="1" />
       </div>
     </div>
   );
