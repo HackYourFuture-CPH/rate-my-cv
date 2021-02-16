@@ -37,7 +37,7 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Application routes
 router.use('/modules', modulesRouter);
 
-router.use('/cv', cvsRouter);
+router.use('/cvs', cvsRouter);
 
 router.use('/users', usersRouter);
 
