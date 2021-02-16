@@ -50,6 +50,7 @@ export default function PostUrlComponent({
         });
         setIsLoading(false);
         if (!postCv.ok) {
+          // error would be sent conresponding component story #165
           setErrorMessage(postCv.statusText);
           throw new Error(postCv.statusText);
         } else {
