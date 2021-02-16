@@ -1,6 +1,6 @@
 .popup{
     position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 5;
@@ -10,7 +10,7 @@
     padding: 20px;
     border: 1px solid rgb(218, 214, 214);
     border-radius: 10px;
-    height: 450px;
+    height: 500px;
     width: 650px;
 }
 .close-icon{
@@ -18,7 +18,7 @@
     width: 15px;
     float: right;
 }
-h3{
+.popup-form h3 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
@@ -26,7 +26,7 @@ h3{
     margin-top:0px;
 }
 
-.title{
+.popup .title {
     padding-bottom: 10px;
 }
 .title input{
@@ -46,17 +46,33 @@ h3{
 .upload{
     padding-bottom: 10px;
 }
-.upload input{
-    width: 85%;
-    height:35px;
+#file-chosen {
+  margin-top: 5px;
+  width: 100%;
+  background-color: rgb(238, 232, 232);
+  border: 1px solid rgb(238, 232, 232);
+  border-radius: 5px;
+  height: 35px;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
 }
-.upload button{
-    width: 15%;
-   height: 35px;
-   padding: 0px;
-   border:1px solid black;
-   color: white;
-   background-color: black;
+.browse-button {
+  width: 15%;
+  height: 34px;
+  padding: 0px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .upload .support-text{
     font-size: x-small;
@@ -68,7 +84,7 @@ h3{
 label{
     font-weight: bold;
 }
-input{
+.popup input {
     margin-top:5px;
     width: 100%;
     background-color: rgb(238, 232, 232);
@@ -81,7 +97,6 @@ input{
     height: 30px;
     width: 150px;
     float: right;
-    margin-top:15px;
     padding: 0px;
     color: white;
     border: rgb(233, 86, 29);
