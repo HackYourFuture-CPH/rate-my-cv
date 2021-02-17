@@ -20,13 +20,25 @@ export const SentReviewsList = ({ reviews }) => {
 
 SentReviewsList.propTypes = {
   reviews: PropTypes.arrayOf(
-    PropTypes.shape({
-      profileImageUrl: PropTypes.string,
-      fullName: PropTypes.string.isRequired,
-      createdDate: PropTypes.instanceOf(Date).isRequired,
-      review: PropTypes.string.isRequired,
-    }),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        review: PropTypes.string.isRequired,
+        createdDate: PropTypes.instanceOf(Date).isRequired,
+        reviewer: PropTypes.shape({
+          profileImageUrl: PropTypes.string.isRequired,
+          fullName: PropTypes.string.isRequired,
+        }).isRequired,
+        cv: PropTypes.shape({
+          fileUrl: PropTypes.string.isRequired,
+          averageStars: PropTypes.number.isRequired,
+          createdDate: PropTypes.instanceOf(Date).isRequired,
+          author: PropTypes.shape({
+            profileImageUrl: PropTypes.string.isRequired,
+            fullName: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      }).isRequired,
+    ).isRequired,
   ).isRequired,
 };
-
 SentReviewsList.defaultProps = {};
