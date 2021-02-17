@@ -12,7 +12,7 @@ export default function PostUrlComponent({
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [fetchUserId, setFetchUserId] = useState(1);
+  const [fetchUserId, setFetchUserId] = useState(null);
   useEffect(() => {
     setIsLoading(true);
     (async () => {
@@ -31,7 +31,7 @@ export default function PostUrlComponent({
         setErrorMessage(error.message);
       }
     })();
-  }, [uploadedFile]);
+  }, [uploadedFile, title, description, firebaseToken]);
   useEffect(() => {
     setIsLoading(true);
     (async () => {
