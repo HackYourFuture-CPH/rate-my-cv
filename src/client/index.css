@@ -5,3 +5,16 @@
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 6em;
+}
