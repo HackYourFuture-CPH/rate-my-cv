@@ -4,7 +4,6 @@ import SignIn from '../../components/Forms/SignIn';
 import Loader from '../../components/Loader';
 import { SideBanner } from '../../components/SideBanner/SideBanner';
 import signInImg from '../../assets/images/sign-in.png';
-
 import './SignIn.css';
 
 export default function SignInContainer() {
@@ -22,7 +21,6 @@ export default function SignInContainer() {
           <SideBanner
             image={signInImg}
             style={{ backgroundColor: '#6236FF' }}
-            
           />
         </div>
       </div>
@@ -33,5 +31,4 @@ export default function SignInContainer() {
       </div>
     </div>
   );
-  
 }
