@@ -1,0 +1,69 @@
+.github-logo {
+  width: 30px;
+}
+.button-forms {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.github-container {
+  padding: 0.3em;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  margin: 5px;
+}
+.space {
+  margin-left: 80px;
+}
+.or {
+  color: #9a9a9a;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 22px;
+  margin: 10px 0px;
+  box-sizing: border-box;
+  border: 2px solid #f8f0f4;
+  display: inline-block;
+  background-color: rgba(63, 58, 58, 0.075);
+}
+
+.form {
+  padding: 2em;
+}
+.label {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 5px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.password-text {
+  font-size: 10px;
+  font-style: italic;
+  margin-left: 2px;
+}
+
+.line {
+  border: 1px solid hsl(240, 15%, 92%);
+  width: 50%;
+}
+.container-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.label-checkbox {
+  display: flex;
+  font-size: 10px;
+  justify-content: left;
+  text-align: left;
+  font-weight: normal;
+}
+.validation {
+  text-align: center;
+  color: red;
+  font-size: 12px;
+}

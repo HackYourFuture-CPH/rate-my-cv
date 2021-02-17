@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function useForm(validate) {
-  const [values, setValues] = useState({ email: '', password: '' });
+export default function useForm(validate, onSubmit, initialState) {
+  const [values, setValues] = useState({initialState});
   const [errors, setErrors] = useState({});
+  const [isSubmiting, setIsSubmiting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { 
     const { name, value } = e.target;
 
     setValues({
@@ -15,7 +16,14 @@ function useForm(validate) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
+    setIsSubmiting(true);
+    onSubmit(values);
   };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmiting) {
+      isSubmiting();
+    }
+  }, [errors, isSubmiting]);
 
   return {
     handleChange,
@@ -24,5 +32,3 @@ function useForm(validate) {
     errors,
   };
 }
-
-export default useForm;

@@ -6,7 +6,10 @@ import github from './github.png';
 import Button from '../Button/Button';
 
 function LoginForm() {
-  const { handleChange, handleSubmit, values, errors } = useForm(validate);
+  const { handleChange, handleSubmit, values, errors } = useForm(validate, {
+    email: '',
+    password: '',
+  });
 
   return (
     <div className="container">
