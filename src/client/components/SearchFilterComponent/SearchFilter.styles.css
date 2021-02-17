@@ -34,7 +34,6 @@
   width: 10px;
 }
 
-
 .search-filter-container .input {
   width: 320px;
   height: 103px;
@@ -56,7 +55,7 @@ hr {
   margin-top: 2rem;
   right: 0.9rem;
   width: 22rem;
-  color:  #D3D3D3;
+  color: #d3d3d3;
   border-radius: 5px;
 }
 
