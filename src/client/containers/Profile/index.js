@@ -1,10 +1,10 @@
 import React from 'react';
 import ProfileComponent from '../../components/MyProfile/ProfilePage/ProfileComponent';
 
-export default function Profile() {
+export default function Profile({setUserName}) {
   return (
     <div>
-      <ProfileComponent />
+      <ProfileComponent setUserName={setUserName}/>
     </div>
   );
 }

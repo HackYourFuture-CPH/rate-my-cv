@@ -7,12 +7,13 @@ import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
+// eslint-disable-next-line import/no-cycle
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
 
-export const handlerUserContext = createContext(null);
+// export const handlerUserContext = createContext(null);
 function App() {
   const [userName, setUserName] = useState('');
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -35,9 +36,9 @@ function App() {
           path="/profile"
           isAuthenticated={isAuthenticated}
         >
-          <handlerUserContext.Provider value={{ userName, setUserName }}>
-            <Profile />
-          </handlerUserContext.Provider>
+          {/* <handlerUserContext.Provider value={{ userName, setUserName }}> */}
+            <Profile setUserName={setUserName}/>
+          {/* </handlerUserContext.Provider> */}
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>

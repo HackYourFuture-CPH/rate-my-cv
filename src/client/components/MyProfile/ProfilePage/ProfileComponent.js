@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { handlerUserContext } from '../../../App';
 import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
-import TitleCvCard from '../TitleCvCard/TitleCvCard';
+import TitleDesc from '../../Title/TitleDesc';
 
-export default function ProfileComponent() {
-  const { userName,setUserName } = useContext(handlerUserContext);
+export default function ProfileComponent({ setUserName }) {
+  //const { userName,setUserName } = useContext(handlerUserContext);
   const [cvsList, setCvsList] = useState([]);
   const [userData, setUserData] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -63,7 +63,10 @@ export default function ProfileComponent() {
       <div className="right-part">
         <div className="profile-description">
           {/* Profile Title and Description - #88 */}
-          <TitleCvCard />
+          <TitleDesc
+            title="Your profile"
+            description="A resume summary or career proﬁle is a brief statement at the top of your resume. If you are a career changer or have many years of experience, craft a powerful summary to highlight your accomplishments and skills.  Show the employer, at a glance, why you’re qualiﬁed for the job!"
+          />
         </div>
         {/* Your uploaded CVs - #14 */}
         <div className="uploaded-cv">
