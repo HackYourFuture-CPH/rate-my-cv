@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { signIn } from '../../firebase/auth';
-import SignIn from '../../components/Forms/SignIn';
+import LoginForm from '../../components/LoginForm/LoginForm';
 import Loader from '../../components/Loader';
 import { SideBanner } from '../../components/SideBanner/SideBanner';
 import signInImg from '../../assets/images/sign-in.png';
@@ -26,7 +26,7 @@ export default function SignInContainer() {
       </div>
       <div className="split sign-in-right">
         <div className="centered">
-          <SignIn onSubmit={onSubmit} className="form-sign-in" />
+          <LoginForm onSubmit={onSubmit} className="form-sign-in" />
         </div>
       </div>
     </div>
