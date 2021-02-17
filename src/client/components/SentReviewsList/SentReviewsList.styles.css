@@ -1,0 +1,9 @@
+.sent-reviews-list {
+  max-width: 598px;
+}
+
+.review-wrapper {
+  margin-top: 15px;
+  border-top: 1px solid #d1d1d1;
+  padding-top: 15px;
+}
