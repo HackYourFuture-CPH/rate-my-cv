@@ -1,7 +1,7 @@
 .search-filter-container {
   display: flex;
   flex-direction: column;
-  width: 387px;
+  max-width: 387px;
   padding: 1rem;
   height: 1002px;
   border-radius: 1.2rem;
@@ -27,29 +27,14 @@
   border-color: #c4c4c4;
 }
 
-.search-filter-container h1 #a {
+.search-filter-container .triangle-position img {
   position: relative;
-  left: 14rem;
-  width: 10px;
-}
-.search-filter-container h1 #b {
-  position: relative;
-  left: 10rem;
-  width: 10px;
-}
-.search-filter-container h1 #c {
-  position: relative;
-  left: 5.5rem;
+  left: 19rem;
+  bottom: 2.8rem;
   width: 10px;
 }
 
-hr {
-  position: relative;
-  margin-top: 2rem;
-  right: 0.9rem;
-  width: 22rem;
-  color: #c4c4c4;
-}
+
 .search-filter-container .input {
   width: 320px;
   height: 103px;
@@ -64,6 +49,15 @@ hr {
   line-height: 21px;
   margin-top: 0.7rem;
   margin-left: 0.2rem;
+}
+
+hr {
+  position: relative;
+  margin-top: 2rem;
+  right: 0.9rem;
+  width: 22rem;
+  color:  #D3D3D3;
+  border-radius: 5px;
 }
 
 /* minimum evaluation */
@@ -152,36 +146,8 @@ hr {
   font-size: 18px;
 }
 
-@media screen and (max-width: 1200px) {
-  .search-filter-container {
-    display: flex;
-    flex-direction: column;
-    width: 387px;
-    padding: 1rem;
-    height: 1002px;
-    border-radius: 1.2rem;
-  }
-
-  .search-filter-container h1 {
-    margin-top: 0.7rem;
-    margin-left: 1.5rem;
-    font-size: 20px;
-    line-height: 21px;
-    width: 340px;
-    height: 40px;
-    padding-top: 0.5rem;
-    padding-left: 2.5rem;
-    position: relative;
-    right: 2.1rem;
-    border-style: solid;
-    border-width: 0.1rem;
-    border-color: #c4c4c4;
-  }
-}
-
 @media screen and (max-width: 750px) {
   .search-filter-container {
-    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     width: 360px;
@@ -189,22 +155,8 @@ hr {
     height: 1002px;
     border-radius: 1.2rem;
   }
-
-  hr {
-    width: 22rem;
-    color: #c9bcbc;
-  }
-  .slidecontainer {
-    width: 350px;
-    margin-right: 3rem;
-  }
-
-  .range .hundred {
-    position: relative;
-    left: 1.1rem;
-  }
   .range .cero {
     position: relative;
-    left: 0.6rem;
+    left: 0.3rem;
   }
 }

@@ -18,8 +18,9 @@ export default function SearchFilter() {
     <div className="search-filter-container">
       <div className="title">
         <h1>
-          Title <img src={triangle} id="a" alt="triangle icon" />
+          Title 
         </h1>
+        <div className="triangle-position"><img src={triangle}  alt="triangle icon" /></div>
       </div>
       <div className="input">
         {title.map((result) => (
@@ -28,13 +29,14 @@ export default function SearchFilter() {
             <b>{result}</b>
           </div>
         ))}
-      </div>
+      </div> 
       <hr />
 
       <div className="title">
         <h1>
-          Date posted <img src={triangle} id="b" alt="triangle icon" />
+          Date posted 
         </h1>
+        <div className="triangle-position"><img src={triangle}  alt="triangle icon" /></div>
       </div>
       <div className="input">
         {datePosted.map((result) => (
@@ -48,8 +50,9 @@ export default function SearchFilter() {
 
       <div className="title">
         <h1>
-          Minimum evaluation <img src={triangle} id="c" alt="triangle icon" />
+          Minimum evaluation 
         </h1>
+        <div className="triangle-position"><img src={triangle}  alt="triangle icon" /></div>
       </div>
       <div className="inputMinimum">
         {minimumEvaluation.map((result) => (
