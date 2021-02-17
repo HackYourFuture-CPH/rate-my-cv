@@ -7,9 +7,10 @@ export const SentReviewsList = ({ reviews }) => {
   return (
     <div className="sent-reviews-list">
       <h2>Sent reviews</h2>
-      {reviews.map((cvReviews) => {
+      {reviews.map((cvReviews, index) => {
         return (
-          <div className="review-wrapper">
+          // eslint-disable-next-line react/no-array-index-key
+          <div key={index} className="review-wrapper">
             <SentReviewsComponent reviews={cvReviews} />
           </div>
         );
