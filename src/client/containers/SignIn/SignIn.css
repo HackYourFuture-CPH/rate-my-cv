@@ -10,7 +10,7 @@
   left: 0;
   width: 35%;
   overflow: hidden;
-  background-color: #6236FF;
+  background-color: #6236ff;
 }
 
 .sign-in-right {
@@ -24,25 +24,9 @@
   padding: 5% 25%;
 }
 
-.form-sign-in {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-@media screen and (max-width: 1024px) {
-  .centered {
-    padding: 5%;
-  }
-}
-
 @media screen and (max-width: 750px) {
-  .sign-in-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .login-form input {
+    width: 100%;
   }
   .split {
     position: unset;
@@ -52,12 +36,21 @@
     width: 100%;
   }
   .sign-in-right {
-    width: 90%;
+    width: 100%;
   }
   .centered {
     display: initial;
   }
   div.space {
     margin-left: 2em;
+  }
+  .partition h3:after {
+    margin-right: -50%;
+  }
+  .partition h3:before {
+    margin-left: -50%;
+  }
+  .heading-login {
+    width: 100%;
   }
 }

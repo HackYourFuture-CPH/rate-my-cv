@@ -26,7 +26,7 @@ export default function SignInContainer() {
       </div>
       <div className="split sign-in-right">
         <div className="centered">
-          <LoginForm onSubmit={onSubmit} className="form-sign-in" />
+          <LoginForm onSubmit={onSubmit} />
         </div>
       </div>
     </div>
