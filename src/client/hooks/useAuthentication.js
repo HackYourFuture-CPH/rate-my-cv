@@ -17,19 +17,23 @@ export function useAuthentication() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   // default is loading
   const [isLoading, setIsLoading] = useState(true);
+  const [userData, setUserData] = useState(null);
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       // if user exists it means authenticated
       if (user) {
         setIsAuthenticated(true);
         setIsLoading(false);
+        setUserData(user);
         authRedirect();
       } else {
         setIsAuthenticated(false);
         setIsLoading(false);
+        setUserData(null);
       }
     });
     return () => {}; // eslint-disable-line
   }, []);
-  return { isAuthenticated, isLoading };
+  return { isAuthenticated, isLoading ,userData};
 }

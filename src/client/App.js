@@ -15,14 +15,14 @@ import Footer from './components/Footer/Footer.js';
 
 // export const handlerUserContext = createContext(null);
 function App() {
-  const [userName, setUserName] = useState('');
-  const { isAuthenticated, isLoading } = useAuthentication();
+  const { isAuthenticated, isLoading,userData } = useAuthentication();
+  console.log({userData});
   if (isLoading) return <Loader />;
   return (
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header isAuthenticated={isAuthenticated} username={userName} />
+        <Header isAuthenticated={isAuthenticated} username='Jack' />
       )}
       <Switch>
         <Route exact path="/">
@@ -36,9 +36,7 @@ function App() {
           path="/profile"
           isAuthenticated={isAuthenticated}
         >
-          {/* <handlerUserContext.Provider value={{ userName, setUserName }}> */}
-            <Profile setUserName={setUserName}/>
-          {/* </handlerUserContext.Provider> */}
+          <Profile firebaseToken={userData?.uid}/>
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
