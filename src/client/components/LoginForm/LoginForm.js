@@ -12,7 +12,7 @@ function LoginForm() {
   });
 
   return (
-    <div className="container">
+    <div className="container-login">
       <div className="heading-login">
         <h2>Signin to review resume</h2>
         <div className="button-image">
