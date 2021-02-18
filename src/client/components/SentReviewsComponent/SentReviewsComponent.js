@@ -9,7 +9,7 @@ export const SentReviewsComponent = ({ reviews }) => {
   return (
     <div className="collection-reviews">
       {reviews.map((review) => (
-        <div className="sent-review">
+        <div key={review.id} className="sent-review">
           <div className="profile-picture">
             <div className="circle-mask">
               <img
@@ -57,8 +57,26 @@ export const SentReviewsComponent = ({ reviews }) => {
   );
 };
 
-SentReviewsComponent.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
+const Person = PropTypes.shape({
+  fullName: PropTypes.string.isRequired,
+  profileImageUrl: PropTypes.string,
+});
 
-SentReviewsComponent.defaultProps = {};
+const CV = PropTypes.shape({
+  fileUrl: PropTypes.string.isRequired,
+  averageStars: PropTypes.number.isRequired,
+  createdDate: PropTypes.instanceOf(Date).isRequired,
+  author: Person.isRequired,
+});
+
+const Review = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  review: PropTypes.string.isRequired,
+  createdDate: PropTypes.instanceOf(Date).isRequired,
+  reviewer: Person.isRequired,
+  cv: CV.isRequired,
+});
+
+SentReviewsComponent.propTypes = {
+  reviews: PropTypes.arrayOf(Review).isRequired,
+};
