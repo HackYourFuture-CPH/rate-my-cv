@@ -1,4 +1,4 @@
-.container {
+.instructions-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -31,6 +31,6 @@
   padding: 15px;
 }
 
-.container h2 {
+.instructions-container h2 {
   text-align: center;
 }
