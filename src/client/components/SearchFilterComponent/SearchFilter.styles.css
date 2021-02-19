@@ -1,15 +1,19 @@
 .search-filter-container {
   display: flex;
   flex-direction: column;
-  max-width: 387px;
+  max-width: 355px;
   padding: 1rem;
   height: 1002px;
   border-radius: 1.2rem;
+  background-color: #ffffff;
+  padding-left: 0.9rem;
+  padding-right: 0rem;
 }
 .search-filter-container .title {
   width: 320px;
   height: 53px;
   margin-top: 1.5rem;
+  
 }
 .search-filter-container h1 {
   margin-top: 0.7rem;
@@ -24,7 +28,7 @@
   right: 2.1rem;
   border-style: solid;
   border-width: 0.1rem;
-  border-color: #c4c4c4;
+  border-color: #e7dfdf;
 }
 
 .search-filter-container .triangle-position img {
@@ -53,10 +57,9 @@
 hr {
   position: relative;
   margin-top: 2rem;
-  right: 0.9rem;
-  width: 22rem;
+  margin-left: -0.8rem;
+  width: 100%;
   color: #d3d3d3;
-  border-radius: 5px;
 }
 
 /* minimum evaluation */
@@ -112,15 +115,13 @@ hr {
 
 .slidecontainer {
   width: 350px;
-  position: relative;
-  right: 0.5rem;
 }
 
 .slidecontainer #volume {
   height: 15px;
   width: 350px;
   position: relative;
-  left: -0.1rem;
+  right: 0.9rem;
 }
 
 .range {
@@ -128,12 +129,10 @@ hr {
   display: flex;
   margin-top: 0.5rem;
   position: relative;
-  right: 0.5rem;
+  right: 0.8rem;
 }
 
 .range .cero {
-  position: relative;
-  left: 0rem;
   padding-left: 0rem;
   font-size: 18px;
 }
