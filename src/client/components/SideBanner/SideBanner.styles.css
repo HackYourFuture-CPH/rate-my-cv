@@ -36,9 +36,6 @@
 }
 
 @media screen and (max-width: 1160px) {
-  .container-sign-up {
-    padding: 25vh 1vw 42vh 4vw;
-  }
   .review, .resume {
     font-size: xx-large;
   }
