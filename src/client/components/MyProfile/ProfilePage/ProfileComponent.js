@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { handlerUserContext } from '../../../App';
 import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
 
-export default function ProfileComponent({ setUserName }) {
-  //const { userName,setUserName } = useContext(handlerUserContext);
+export default function ProfileComponent({ firebaseToken, setUserName }) {
   const [cvsList, setCvsList] = useState([]);
-  const [userData, setUserData] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  const userId = 2;
+  const [userIdentified, setUserIdentified] = useState([]);
+  // const userId = 6;
   useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('/api/users');
-        if (response.status !== 200) {
-          throw new Error('fail to connect to the Api');
+    if (firebaseToken) {
+      (async () => {
+        try {
+          const response = await fetch('/api/users');
+          if (response.status !== 200) {
+            throw new Error('fail to connect to the Api');
+          }
+          const users = await response.json();
+          const data = users.find(
+            (user) => user.firebase_token === firebaseToken,
+          );
+          // userId
+          // firebase_token === firebaseToken
+          // data.linkedin = data.linkedin.substring(28);
+          // data.github = data.github.substring(19);
+          setUserName(data.full_name);
+          setUserInfo(data);
+          setUserIdentified(data.id);
+        } catch (error) {
+          setErrorMessage(error.message);
         }
-        const users = await response.json();
-        const data = users.find((user) => user.id === userId);
-        data.linkedin = data.linkedin.substring(28);
-        data.github = data.github.substring(19);
-        setUserName(data.full_name);
-        setUserData(data);
-      } catch (error) {
-        setErrorMessage(error.message);
-      }
-    })();
-  }, [setUserName]);
+      })();
+    }
+  }, [firebaseToken]);
   // here we are getting related cvs for the current user
   useEffect(() => {
     (async () => {
@@ -38,13 +44,13 @@ export default function ProfileComponent({ setUserName }) {
           throw new Error('fail to connect to the Api');
         }
         const cvs = await response.json();
-        const userCvs = cvs.filter((cv) => cv.fk_user_id === userId);
+        const userCvs = cvs.filter((cv) => cv.fk_user_id === userInfo.id);
         setCvsList(userCvs);
       } catch (error) {
         setErrorMessage(error.message);
       }
     })();
-  }, []);
+  }, [userIdentified]);
 
   return (
     <div className="middle">
@@ -52,12 +58,12 @@ export default function ProfileComponent({ setUserName }) {
         {/* here is Profile Card - #12
          */}
         <ProfileCardComponent
-          profileImageUrl={userData.profile_image_url}
-          fullName={userData.full_name}
-          position={userData.position}
-          linkedin={userData.linkedin}
-          website={userData.website}
-          github={userData.github}
+          profileImageUrl={userInfo.profile_image_url}
+          fullName={userInfo.full_name}
+          position={userInfo.position}
+          linkedin={userInfo.linkedin}
+          website={userInfo.website}
+          github={userInfo.github}
         />
       </div>
       <div className="right-part">

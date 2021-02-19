@@ -1,10 +1,13 @@
 import React from 'react';
 import ProfileComponent from '../../components/MyProfile/ProfilePage/ProfileComponent';
 
-export default function Profile({setUserName}) {
+export default function Profile({ firebaseToken, setUserName }) {
   return (
     <div>
-      <ProfileComponent setUserName={setUserName}/>
+      <ProfileComponent
+        firebaseToken={firebaseToken}
+        setUserName={setUserName}
+      />
     </div>
   );
 }
