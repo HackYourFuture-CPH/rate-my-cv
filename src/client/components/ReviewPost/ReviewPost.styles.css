@@ -2,17 +2,13 @@
   max-width: 600px;
   display: flex;
   padding: 1.5em;
+  
 }
-.profile-image {
-  width: 140px;
-  height: 100px;
-}
-.profile-image img {
-  display: inline;
-  width: 100px;
-  height: 100px;
-  justify-content: flex-start;
-  border-radius: 50%;
+
+.profile-image>img {
+  margin-top: 0px;
+  height: 150px;
+  clip-path: circle();
 }
 
 #description {
@@ -22,14 +18,17 @@
 }
 .name-date {
   display: flex;
+  margin-left: 10px;
 }
 .name {
   font-weight: bold;
   margin-right: 15px;
 }
 .date-time {
-  color: gray;
+  color:#9A9A9A;
 }
 .title-text{
+  display: block;
   margin-left: 25px;
-}
+  }
+  
