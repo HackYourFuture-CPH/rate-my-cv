@@ -17,17 +17,10 @@ export default function SignInContainer() {
   return (
     <div>
       <div className="split sign-in-left">
-        <div>
-          <SideBanner
-            image={signInImg}
-            style={{ backgroundColor: '#6236FF' }}
-          />
-        </div>
+        <SideBanner image={signInImg} />
       </div>
-      <div className="split sign-in-right">
-        <div className="centered">
-          <LoginForm onSubmit={onSubmit} />
-        </div>
+      <div className="centered split sign-in-right">
+        <LoginForm onSubmit={onSubmit} />
       </div>
     </div>
   );
