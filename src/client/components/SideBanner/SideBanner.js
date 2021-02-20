@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SideBanner.styles.css';
 
-export const SideBanner = ({ image, style }) => {
+export const SideBanner = ({ image }) => {
   return (
-    <div className="container-sign-up" style={style}>
+    <div className="container-sign-up">
       <div className="text-sign-up">
         <div>
           <span className="review">Review</span>
@@ -21,5 +21,4 @@ export const SideBanner = ({ image, style }) => {
 
 SideBanner.propTypes = {
   image: PropTypes.string.isRequired,
-  style: PropTypes.shape({ backgroundColor: PropTypes.string }).isRequired,
 };

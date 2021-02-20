@@ -5,10 +5,6 @@ import { SideBanner } from './SideBanner';
 
 export default { title: 'Side Banner for Sign up-Sign in' };
 
-export const SignUp = () => (
-  <SideBanner image={signUp} style={{ backgroundColor: '#F1C644' }} />
-);
+export const SignUp = () => <SideBanner image={signUp} />;
 
-export const SignIn = () => (
-  <SideBanner image={signIn} style={{ backgroundColor: '#6236FF' }} />
-);
+export const SignIn = () => <SideBanner image={signIn} />;
