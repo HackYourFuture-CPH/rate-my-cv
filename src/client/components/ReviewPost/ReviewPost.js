@@ -16,7 +16,7 @@ export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
       </div>
 
       <div />
-      <span className="description">{description}</span>
+      <span >{description}</span>
     </div>
   );
 };
