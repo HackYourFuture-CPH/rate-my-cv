@@ -15,7 +15,7 @@ export const ReviewCV = () => (
 );
 export const ReviewCV1 = () => (
   <ReviewPost
-  profileImageUrl = {profileImage}
+    profileImageUrl={profileImage}
     name="Arlene McCoy"
     description="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
     date={new Date()}

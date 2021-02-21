@@ -3,29 +3,25 @@
   display: grid;
   grid-template-columns: 60px auto;
   column-gap: 10px;
-  }
-
-.profile-image>img {
-  margin-top: 0px;
-  width : 50px;
-  clip-path: circle();
 }
 
+.profile-image > img {
+  margin-top: 0px;
+  width: 50px;
+  clip-path: circle();
+}
 
 .name-date {
   display: flex;
   align-items: center;
-  
 }
 .name {
   font-weight: bold;
   margin-right: 15px;
 }
 .date-time {
-  color:#9A9A9A;
+  color: #9a9a9a;
 }
-.title-text{
+.title-text {
   display: block;
- 
-  }
-  
+}
