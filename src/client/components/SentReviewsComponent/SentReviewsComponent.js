@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './SentReviewsComponent.styles.css';
 import unknownUser from '../../assets/images/portraits/unknown-black.png';
 import { RatingStars } from '../RatingStars/RatingStars';
-import { ReviewerPreviewComponent } from '../ReviewerPreviewComponent/ReviewerPreviewComponent';
+import { ReviewPost } from '../ReviewPost/ReviewPost';
 
 export const SentReviewsComponent = ({ reviews }) => {
   return (
@@ -44,7 +44,7 @@ export const SentReviewsComponent = ({ reviews }) => {
           </div>
           <hr />
           <div>
-            <ReviewerPreviewComponent
+            <ReviewPost
               profileImageUrl={review.reviewer.profileImageUrl}
               fullName={review.reviewer.fullName}
               createdDate={review.createdDate}
