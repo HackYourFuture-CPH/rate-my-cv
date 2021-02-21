@@ -5,7 +5,7 @@ import './LoginForm.css';
 import github from './github.png';
 import Button from '../Button/Button';
 
-function LoginForm() {
+function LoginForm({ onSubmit }) {
   const { handleChange, handleSubmit, values, errors } = useForm(validate, {
     email: '',
     password: '',
@@ -60,7 +60,7 @@ function LoginForm() {
         <div className="signin-btn">
           <Button
             buttonName="Sign in"
-            type="submit"
+            type={onSubmit}
             style={{ backgroundColor: '#DA532C' }}
           />
         </div>
