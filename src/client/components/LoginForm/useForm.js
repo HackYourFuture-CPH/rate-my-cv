@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export default function useForm(validate, onSubmit, initialState) {
-  const [values, setValues] = useState({initialState});
+  const [values, setValues] = useState({ initialState });
   const [errors, setErrors] = useState({});
   const [isSubmiting, setIsSubmiting] = useState(false);
 
-  const handleChange = (e) => { 
+  const handleChange = (e) => {
     const { name, value } = e.target;
 
     setValues({
