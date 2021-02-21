@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import profileImage from '../../assets/images/portraits/unknown-black.png';
 import './ReviewPost.styles.css';
 
-export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
+export const ReviewPost = ({
+  fullname,
+  review,
+  createdDate,
+  profileImageUrl,
+}) => {
   return (
     <div className="review-section">
       <div className="profile-image">
@@ -11,24 +16,24 @@ export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
       </div>
 
       <div className="name-date">
-        <span className="name">{name} </span>
-        <span className="date-time">{date.toLocaleString()}</span>
+        <span className="name">{fullname} </span>
+        <span className="date-time">{createdDate.toLocaleString()}</span>
       </div>
 
       <div />
-      <span className="review-text">{description}</span>
+      <span className="review-text">{review}</span>
     </div>
   );
 };
 ReviewPost.propTypes = {
   profileImageUrl: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  date: PropTypes.instanceOf(Date),
+  fullname: PropTypes.string,
+  review: PropTypes.string,
+  createdDate: PropTypes.instanceOf(Date),
 };
 ReviewPost.defaultProps = {
   profileImageUrl: '',
-  name: '',
-  description: '',
-  date: '',
+  fullname: '',
+  review: '',
+  createdDate: '',
 };

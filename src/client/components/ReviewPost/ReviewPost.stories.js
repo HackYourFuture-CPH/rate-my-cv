@@ -8,16 +8,16 @@ export default {
 
 export const ReviewCV = () => (
   <ReviewPost
-    name="Arlene McCoy"
-    description="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
-    date={new Date()}
+    fullname="Arlene McCoy"
+    review="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
+    createdDate={new Date()}
   />
 );
 export const ReviewCV1 = () => (
   <ReviewPost
     profileImageUrl={profileImage}
-    name="Arlene McCoy"
-    description="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
-    date={new Date()}
+    fullname="Arlene McCoy"
+    review="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
+    createdDate={new Date()}
   />
 );
