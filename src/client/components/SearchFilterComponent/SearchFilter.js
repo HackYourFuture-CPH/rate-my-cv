@@ -16,13 +16,13 @@ export default function SearchFilter() {
 
   return (
     <div className="search-filter-container">
-      <div className="title">
+      <div className="title-filter">
         <h1>Title</h1>
         <div className="triangle-position">
           <img src={triangle} alt="triangle icon" />
         </div>
       </div>
-      <div className="input">
+      <div className="input-filter">
         {title.map((result) => (
           <div>
             <input type="radio" values={result} name="radiovalues" />
@@ -30,15 +30,15 @@ export default function SearchFilter() {
           </div>
         ))}
       </div>
-      <hr />
+      <hr className="line-title"/>
 
-      <div className="title">
+      <div className="title-filter">
         <h1>Date posted</h1>
         <div className="triangle-position">
           <img src={triangle} alt="triangle icon" />
         </div>
       </div>
-      <div className="input">
+      <div className="input-filter">
         {datePosted.map((result) => (
           <div>
             <input type="radio" values={result} name="radioposted" />
@@ -46,9 +46,9 @@ export default function SearchFilter() {
           </div>
         ))}
       </div>
-      <hr />
+      <hr className="line-title"/>
 
-      <div className="title">
+      <div className="title-filter">
         <h1>Minimum evaluation</h1>
         <div className="triangle-position">
           <img src={triangle} alt="triangle icon" />
@@ -65,8 +65,8 @@ export default function SearchFilter() {
           </div>
         ))}
       </div>
-      <hr />
-      <div className="review">
+      <hr className="line-title"/>
+      <div className="review-filter">
         <h1>Number of reviews</h1>
       </div>
       <div className="range">
