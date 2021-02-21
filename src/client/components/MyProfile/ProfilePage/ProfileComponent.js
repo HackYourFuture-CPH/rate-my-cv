@@ -1,3 +1,4 @@
+import { useAuthentication } from '../../../hooks/useAuthentication';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ProfileComponent.styles.css';
@@ -5,38 +6,32 @@ import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComp
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
 
-export default function ProfileComponent({ firebaseToken, setUserName }) {
+export default function ProfileComponent() {
+  const { userData } = useAuthentication();
   const history = useHistory();
   const [cvsList, setCvsList] = useState([]);
-  const [userInfo, setUserInfo] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    if (firebaseToken && !isLoaded) {
+    if (userData) {
       (async () => {
         try {
           const response = await fetch('/api/usercv');
           if (response.status !== 200) {
             throw new Error('fail to connect to the Api');
           }
-          const allData = await response.json();
-          const userCvs = allData.filter(
-            (user) => user.firebase_token === firebaseToken,
-          );
+          const userCvs = await response.json();
           setIsLoaded(true);
-          setCvsList(userCvs);
-          const dataUser = userCvs.find(
-            (user) => user.firebase_token === firebaseToken,
+          setCvsList(() =>
+            userCvs.filter((cv) => cv.fk_user_id === userData.id),
           );
-          setUserInfo(dataUser);
-          setUserName(dataUser.full_name);
         } catch (error) {
-          // if data not found in api/usercv 
+          // if data not found in api/usercv
           history.push('/sign-in');
           throw new Error('Data not found');
         }
       })();
     }
-  }, [firebaseToken, history, isLoaded, setUserName]);
+  }, [setCvsList, history, isLoaded, userData]);
 
   return (
     <div className="middle-part">
@@ -44,12 +39,12 @@ export default function ProfileComponent({ firebaseToken, setUserName }) {
         {/* here is Profile Card - #12
          */}
         <ProfileCardComponent
-          profileImageUrl={userInfo.profile_image_url}
-          fullName={userInfo.full_name}
-          position={userInfo.position}
-          linkedin={userInfo.linkedin}
-          website={userInfo.website}
-          github={userInfo.github}
+          profileImageUrl={userData.profile_image_url}
+          fullName={userData.full_name}
+          position={userData.position}
+          linkedin={userData.linkedin}
+          website={userData.website}
+          github={userData.github}
         />
       </div>
       <div className="right-part">
