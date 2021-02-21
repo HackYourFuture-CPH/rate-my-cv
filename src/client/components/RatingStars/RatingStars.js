@@ -17,11 +17,11 @@ export function RatingStars({ averageStars }) {
     <div style={{ display: 'flex', direction: 'row' }}>
       {stars.map((x, i) => {
         return i < filledStar ? (
-          <div style={{ marginLeft: '8px' }}>
+          <div key={i} style={{ marginLeft: '8px' }}>
             <Star averageRatingInPercent="100%" />
           </div>
         ) : (
-          <div style={{ marginLeft: '8px' }}>
+          <div key={i} style={{ marginLeft: '8px' }}>
             <Star
               averageRatingInPercent={
                 i < filledStar + 1 ? reminder.toString() : '0'

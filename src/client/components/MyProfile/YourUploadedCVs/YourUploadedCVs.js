@@ -23,7 +23,7 @@ export function YourUploadedCVs({ CVsList }) {
       <ul>
         {CVsList.map((cv, i) => {
           return i < 3 ? (
-            <li>
+            <li key={cv.id}>
               <CVList title={cv.title} date={cv.created_date} />
               <RatingStars averageStars={(cv.averageStars * 100) / 5} />
               <div className="download">
@@ -49,5 +49,5 @@ export function YourUploadedCVs({ CVsList }) {
 }
 
 YourUploadedCVs.propTypes = {
-  CVsList: PropTypes.string.isRequired,
+  CVsList: PropTypes.array.isRequired,
 };
