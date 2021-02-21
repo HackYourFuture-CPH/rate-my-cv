@@ -20,7 +20,6 @@ export default function SignInContainer() {
       <div className="split sign-in-left">
         <SideBanner image={signInImg} />
       </div>
-
       <div className="centered split sign-in-right">
         <div className="not-member">
           Not a member ? <NavLink to={'/sign-up/'}>Sign up now </NavLink>
