@@ -4,7 +4,6 @@ import validate from './Validation';
 import './LoginForm.css';
 import github from './github.png';
 import Button from '../Button/Button';
-import { NavLink } from 'react-router-dom';
 
 function LoginForm({ onSubmit }) {
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -19,9 +18,6 @@ function LoginForm({ onSubmit }) {
   return (
     <div className="container-login">
       <div className="heading-login">
-        <div>
-          Not a member <NavLink to={'/sign-up/'}>Signup Now </NavLink>
-        </div>
         <h2>Signin to review resume</h2>
         <div className="button-image">
           <Button
