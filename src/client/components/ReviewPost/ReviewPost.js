@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import profileImage from '../../assets/images/portraits/man2.jpg';
+import profileImage from '../../assets/images/portraits/unknown-black.png';
 import './ReviewPost.styles.css';
 
 export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
@@ -10,17 +10,17 @@ export const ReviewPost = ({ name, description, date, profileImageUrl }) => {
       <div className="profile-image">
         <img src={profileImageUrl || profileImage} alt="Userimage" />
       </div>
-      <div className="title-text">
+      
         <div className="name-date">
-          <p className="name">{name} </p>
-          <p className="date-time">{date.toLocaleString()}</p>
+          <span className="name">{name} </span>
+          <span className="date-time">{date.toLocaleString()}</span>
         </div>
-        <p>
-          <textarea id="description" cols="70" rows="3">
+      
+      <div/>
+      <span className= "description">
             {description}
-          </textarea>
-        </p>
-      </div>
+         
+        </span>
     </div>
   );
 };

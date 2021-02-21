@@ -1,24 +1,21 @@
 .review-section {
   max-width: 600px;
-  display: flex;
-  padding: 1.5em;
-  
-}
+  display: grid;
+  grid-template-columns: 60px auto;
+  column-gap: 10px;
+  }
 
 .profile-image>img {
   margin-top: 0px;
-  height: 150px;
+  width : 50px;
   clip-path: circle();
 }
 
-#description {
-  border: none;
-  text-align: justify;
-  text-justify: inter-word;
-}
+
 .name-date {
   display: flex;
-  margin-left: 10px;
+  align-items: center;
+  
 }
 .name {
   font-weight: bold;
@@ -29,6 +26,6 @@
 }
 .title-text{
   display: block;
-  margin-left: 25px;
+ 
   }
   
