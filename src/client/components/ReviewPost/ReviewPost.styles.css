@@ -19,7 +19,8 @@
   font-weight: bold;
   margin-right: 15px;
 }
-.date-time {
+.date-time,
+.review-text {
   color: #9a9a9a;
 }
 .title-text {
