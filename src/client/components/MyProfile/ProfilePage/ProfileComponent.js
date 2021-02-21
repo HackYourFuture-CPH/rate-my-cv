@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
 
 export default function ProfileComponent({ firebaseToken, setUserName }) {
+  const history = useHistory();
   const [cvsList, setCvsList] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,11 +30,13 @@ export default function ProfileComponent({ firebaseToken, setUserName }) {
           setUserInfo(dataUser);
           setUserName(dataUser.full_name);
         } catch (error) {
-          throw new Error('No found data in Api');
+          // if data not found in api/usercv 
+          history.push('/sign-in');
+          throw new Error('Data not found');
         }
       })();
     }
-  }, [firebaseToken, isLoaded, setUserName]);
+  }, [firebaseToken, history, isLoaded, setUserName]);
 
   return (
     <div className="middle-part">

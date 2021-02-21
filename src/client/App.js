@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './containers/Home/Home';
 import SignIn from './containers/SignIn';
@@ -13,7 +13,6 @@ import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer.js';
 
-// export const handlerUserContext = createContext(null);
 function App() {
   const { isAuthenticated, isLoading, userData } = useAuthentication();
   const [userName, setUserName] = useState(null);
