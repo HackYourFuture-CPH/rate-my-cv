@@ -134,4 +134,6 @@ const cvs = [
     created_date: new Date(),
   },
 ];
-export const CvcardListSearch = () => <CvcardList cvs={cvs} />;
+export const CvcardListSearch = () => (
+  <CvcardList title="All resumes 16 results" cvs={cvs} />
+);

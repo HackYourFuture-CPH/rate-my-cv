@@ -1,6 +1,7 @@
 .usercvs {
-  display: flex;
-  column-gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
 }
 .usercv-list {
   padding: 30px;

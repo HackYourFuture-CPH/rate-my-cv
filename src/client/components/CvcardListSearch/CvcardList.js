@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import './CvcardList.styles.css';
 import { CardCvViewSearchComponent } from '../CardCvViewSearchComponent/CardCvViewSearchComponent';
 
-export function CvcardList({ cvs }) {
+export function CvcardList({ title, cvs }) {
   return (
     <div className="usercv-list">
-      <h2> Latest Uploaded Resumes</h2>
+      <h2>{title} </h2>
       <div className="usercvs">
-        {cvs.slice(-3).map((cv) => (
+        {cvs.map((cv) => (
           <div>
             <CardCvViewSearchComponent
               profileImageUrl={cv.profile_image_url}
@@ -26,5 +26,6 @@ export function CvcardList({ cvs }) {
 }
 
 CvcardList.propTypes = {
+  title: PropTypes.string.isRequired,
   cvs: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
