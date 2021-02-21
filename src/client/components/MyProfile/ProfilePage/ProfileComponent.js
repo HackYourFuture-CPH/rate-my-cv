@@ -7,53 +7,35 @@ import TitleDesc from '../../Title/TitleDesc';
 export default function ProfileComponent({ firebaseToken, setUserName }) {
   const [cvsList, setCvsList] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [userIdentified, setUserIdentified] = useState([]);
-  // const userId = 6;
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    if (firebaseToken) {
+    if (firebaseToken && !isLoaded) {
       (async () => {
         try {
-          const response = await fetch('/api/users');
+          const response = await fetch('/api/usercv');
           if (response.status !== 200) {
             throw new Error('fail to connect to the Api');
           }
-          const users = await response.json();
-          const data = users.find(
+          const allData = await response.json();
+          const userCvs = allData.filter(
             (user) => user.firebase_token === firebaseToken,
           );
-          // userId
-          // firebase_token === firebaseToken
-          // data.linkedin = data.linkedin.substring(28);
-          // data.github = data.github.substring(19);
-          setUserName(data.full_name);
-          setUserInfo(data);
-          setUserIdentified(data.id);
+          setIsLoaded(true);
+          setCvsList(userCvs);
+          const dataUser = userCvs.find(
+            (user) => user.firebase_token === firebaseToken,
+          );
+          setUserInfo(dataUser);
+          setUserName(dataUser.full_name);
         } catch (error) {
-          setErrorMessage(error.message);
+          throw new Error('No found data in Api');
         }
       })();
     }
-  }, [firebaseToken]);
-  // here we are getting related cvs for the current user
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('/api/cv');
-        if (response.status !== 200) {
-          throw new Error('fail to connect to the Api');
-        }
-        const cvs = await response.json();
-        const userCvs = cvs.filter((cv) => cv.fk_user_id === userInfo.id);
-        setCvsList(userCvs);
-      } catch (error) {
-        setErrorMessage(error.message);
-      }
-    })();
-  }, [userIdentified]);
+  }, [firebaseToken, isLoaded, setUserName]);
 
   return (
-    <div className="middle">
+    <div className="middle-part">
       <div className="left-part">
         {/* here is Profile Card - #12
          */}
@@ -80,7 +62,15 @@ export default function ProfileComponent({ firebaseToken, setUserName }) {
         </div>
         <div className="sent-reviews">
           {/* Sent Reviews - #92 */}
-          Sent Reviews (on the way) - #92
+          Instance of Sent Reviews #92
+        </div>
+        <div className="sent-reviews">
+          {/* Sent Reviews - #92 */}
+          Instance of Sent Reviews #92
+        </div>
+        <div className="sent-reviews">
+          {/* Sent Reviews - #92 */}
+          Instance of Sent Reviews #92
         </div>
       </div>
     </div>
