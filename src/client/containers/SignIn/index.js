@@ -22,7 +22,7 @@ export default function SignInContainer() {
       </div>
       <div className="centered split sign-in-right">
         <div className="not-member">
-          Not a member ? <NavLink to={'/sign-up/'}>Sign up now </NavLink>
+          Not a member ? <NavLink to="/sign-up/">Sign up now </NavLink>
         </div>
         <LoginForm onSubmit={onSubmit} />
       </div>
