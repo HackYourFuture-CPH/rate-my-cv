@@ -5,6 +5,8 @@ import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
+//  here import story #92 which not ready yet
+//import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
 
 export default function ProfileComponent() {
   const { userData } = useAuthentication();
@@ -61,7 +63,7 @@ export default function ProfileComponent() {
         </div>
         <div className="sent-reviews">
           {/* Sent Reviews - #92 */}
-          Instance of Sent Reviews #92
+          {/* <SentReviewsComponent review={reviews/> */}
         </div>
         <div className="sent-reviews">
           {/* Sent Reviews - #92 */}
