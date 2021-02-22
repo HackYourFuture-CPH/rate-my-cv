@@ -11,6 +11,7 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import SearchFilter from './components/SearchFilterComponent/SearchFilter.js';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -38,6 +39,7 @@ function App() {
         <Route path="*" component={NotFoundPage} />
       </Switch>
       <SearchFilter/>
+      <Footer/>
     </Router>
   );
 }
