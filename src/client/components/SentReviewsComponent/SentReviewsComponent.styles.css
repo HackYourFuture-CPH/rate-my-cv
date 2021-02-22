@@ -50,6 +50,31 @@ hr {
   border: 1px solid #D1D1D1;
 }
 
-.profile-picture {
+.collection-reviews .sent-review .profile-picture {
   margin-right: 0;
+}
+
+.reviewer-name {
+  font-weight: bold;
+}
+
+.review-date {
+  color: #9a9a9a;
+}
+
+.sent-review div .review-section {
+  grid-template-rows: 50px;
+}
+
+.sent-review div .profile-image>img {
+  width: 40px;
+}
+
+.sent-review div .review-section {
+  font-size: smaller;
+  max-width: none;
+}
+
+.sent-review div .review-section {
+  grid-template-columns: 40px auto;
 }
