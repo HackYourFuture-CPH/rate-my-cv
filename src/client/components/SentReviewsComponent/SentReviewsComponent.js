@@ -8,49 +8,41 @@ import { ReviewPost } from '../ReviewPost/ReviewPost';
 export const SentReviewsComponent = ({ reviews }) => {
   return (
     <div className="collection-reviews">
-      {reviews.map((review) => (
-        <div key={review.id} className="sent-review">
+      {reviews.map(({ id, cv, reviewer, createdDate, review }) => (
+        <div key={id} className="sent-review">
           <div className="profile-picture">
             <div className="circle-mask">
               <img
-                src={review.cv.author.profileImageUrl || unknownUser}
+                src={cv.author.profileImageUrl || unknownUser}
                 alt="Portrait of user"
                 className="user-photo"
               />
             </div>
           </div>
           <div className="container-reviewee">
-            <div className="content">
-              <div className="reviewee-name-date">
-                <span className="reviewer-name">
-                  {review.cv.author.fullName}
-                </span>
-                <span className="review-date">
-                  {review.cv.createdDate.toLocaleString()}
-                </span>
-              </div>
-              <div className="stars-rating">
-                <RatingStars averageStars={review.cv.averageStars} />
-              </div>
-              <a
-                href={review.cv.fileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button-orange"
-              >
-                See resume
-              </a>
+            <div className="reviewee-name-date">
+              <span className="reviewer-name">{cv.author.fullName}</span>
+              <span className="review-date">
+                {cv.createdDate.toLocaleString()}
+              </span>
             </div>
+            <RatingStars averageStars={cv.averageStars} />
+            <a
+              href={cv.fileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-orange"
+            >
+              See resume
+            </a>
           </div>
-          <hr />
-          <div>
-            <ReviewPost
-              profileImageUrl={review.reviewer.profileImageUrl}
-              fullName={review.reviewer.fullName}
-              createdDate={review.createdDate}
-              review={review.review}
-            />
-          </div>
+          <div className="divider-line" />
+          <ReviewPost
+            profileImageUrl={reviewer.profileImageUrl}
+            fullName={reviewer.fullName}
+            createdDate={createdDate}
+            review={review}
+          />
         </div>
       ))}
     </div>

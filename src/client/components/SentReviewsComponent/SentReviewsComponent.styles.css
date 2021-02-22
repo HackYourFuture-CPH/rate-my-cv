@@ -5,6 +5,8 @@
 
 .container-reviewee {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .container-reviewee .profile-picture .circle-mask {
@@ -19,22 +21,11 @@
 .reviewee-name-date {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-}
-
-.stars-rating {
-  flex: 3 1 auto;
 }
 
 .button-orange {
   background-color: #F25B06;
   height: max-content;
-}
-
-.container-reviewee .content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .sent-review {
@@ -46,8 +37,13 @@
   padding: 1em 1.5em;
 }
 
-hr {
-  border: 1px solid #D1D1D1;
+.sent-review .profile-picture {
+  justify-self: center;
+}
+
+.divider-line {
+  border-left: 2px solid #D1D1D1;
+  margin: 0 50%;
 }
 
 .collection-reviews .sent-review .profile-picture {
@@ -62,19 +58,19 @@ hr {
   color: #9a9a9a;
 }
 
-.sent-review div .review-section {
+.sent-review .review-section {
   grid-template-rows: 50px;
 }
 
-.sent-review div .profile-image>img {
+.sent-review .profile-image>img {
   width: 40px;
 }
 
-.sent-review div .review-section {
+.sent-review .review-section {
   font-size: smaller;
   max-width: none;
 }
 
-.sent-review div .review-section {
+.sent-review .review-section {
   grid-template-columns: 40px auto;
 }
