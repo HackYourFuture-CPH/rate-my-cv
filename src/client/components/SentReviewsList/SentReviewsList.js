@@ -23,6 +23,7 @@ SentReviewsList.propTypes = {
   reviews: PropTypes.arrayOf(
     PropTypes.arrayOf(
       PropTypes.shape({
+        id: PropTypes.number.isRequired,
         review: PropTypes.string.isRequired,
         createdDate: PropTypes.instanceOf(Date).isRequired,
         reviewer: PropTypes.shape({
