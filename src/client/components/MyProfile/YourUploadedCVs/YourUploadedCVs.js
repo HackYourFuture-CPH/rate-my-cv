@@ -23,8 +23,8 @@ export function YourUploadedCVs({ CVsList }) {
       <ul>
         {CVsList.map((cv, i) => {
           return i < 3 ? (
-            <li>
-              <CVList title={cv.title} date={cv.created_date} />
+            <li key={cv.id}>
+              <CVList title={cv.title} date={cv.createdDate.toLocaleString()} />
               <RatingStars averageStars={(cv.averageStars * 100) / 5} />
               <div className="download">
                 <Button
@@ -48,6 +48,13 @@ export function YourUploadedCVs({ CVsList }) {
   );
 }
 
+const Cvs = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  createdDate: PropTypes.instanceOf(Date).isRequired,
+  averageStars: PropTypes.number.isRequired,
+});
+
 YourUploadedCVs.propTypes = {
-  CVsList: PropTypes.string.isRequired,
+  CVsList: PropTypes.arrayOf(Cvs).isRequired,
 };
