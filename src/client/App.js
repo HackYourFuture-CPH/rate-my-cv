@@ -6,11 +6,10 @@ import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
-import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
-import SearchFilter from './components/SearchFilterComponent/SearchFilter.js';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuthentication();
@@ -19,7 +18,7 @@ function App() {
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header isAuthenticated={isAuthenticated} username="William Henry Gates" />
+        <Footer />
       )}
       <Switch>
         <Route exact path="/">
@@ -37,7 +36,6 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
-      <SearchFilter/>
     </Router>
   );
 }
