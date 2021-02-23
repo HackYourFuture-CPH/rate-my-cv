@@ -4,12 +4,13 @@ import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 import { useStorage } from '../../hooks/fileUploader';
+import PostUrlComponent from '../PostUrl/PostUrlComponent';
 
 export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
-  const [uploadedFile, setUploadedFile] = useState('');
+  const [uploadedMyFile, setUploadedMyFile] = useState('');
 
   const types = [
     'application/pdf',
@@ -22,20 +23,24 @@ export const AddResume = () => {
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
 
-    setUploadedFile(selectedFile);
+    setUploadedMyFile(selectedFile);
 
     if (selectedFile) {
       if (types.includes(selectedFile.type)) {
         setError(null);
-        setUploadedFile(selectedFile);
+        setUploadedMyFile(selectedFile);
       } else {
-        setUploadedFile(null);
+        setUploadedMyFile(null);
         setError('Please select a pdf file');
       }
     }
   };
 
-  useStorage(uploadedFile);
+  const {url} = useStorage(uploadedMyFile);
+
+  const clickHandler = () => {    
+        PostUrlComponent({uploadedFile:url, title, description})
+      };
 
   return ReactDom.createPortal(
     <div className="popup">
@@ -81,7 +86,7 @@ export const AddResume = () => {
               <label htmlFor="file-grabber" className="browse-button">
                 Browse
               </label>
-              <span>{uploadedFile ? uploadedFile.name : ''}</span>
+              <span>{uploadedMyFile ? uploadedMyFile.name : ''}</span>
             </form>
           </div>
         </div>
@@ -95,9 +100,11 @@ export const AddResume = () => {
           {error && (
             <p style={{ color: 'red', marginRight: '50px' }}>{error}</p>
           )}
-          <div className="add-btn"> 
-                <Button buttonName="Add resume" />
-          </div>
+          {uploadedMyFile? <div className="add-btn"> 
+            <Button buttonName="Add resume" onClick={clickHandler} />
+          </div> : <div className="add-btn"> 
+            <Button buttonName="Add resume" />
+          </div>} 
         </div>
       </div>
     </div>,
