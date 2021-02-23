@@ -6,6 +6,7 @@ import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
+import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
@@ -18,7 +19,10 @@ function App() {
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Footer />
+        <Header
+          isAuthenticated={isAuthenticated}
+          username="William Henry Gates"
+        />
       )}
       <Switch>
         <Route exact path="/">
@@ -36,6 +40,10 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
+      {location.pathname === '/sign-in' ||
+      location.pathname === '/sign-up' ? null : (
+        <Footer />
+      )}
     </Router>
   );
 }
