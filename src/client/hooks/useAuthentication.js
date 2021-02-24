@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { auth } from '../firebase';
-import { useHistory } from 'react-router-dom';
 
 async function fetchUser(firebaseUser) {
   const response = await fetch('/api/users');
@@ -26,7 +25,6 @@ function authRedirect() {
  * Docs: https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data
  */
 export function useAuthentication() {
-  const history = useHistory();
   // default not authenticated
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   // default is loading
@@ -44,7 +42,7 @@ export function useAuthentication() {
             setUserData(allUser);
           } catch (error) {
             // if data not found in api/user
-            history.push('/sign-in');
+            // history.push('/sign-in');
             throw new Error('Data not found');
           }
         })();
