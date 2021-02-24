@@ -42,7 +42,7 @@ export function useAuthentication() {
             setUserData(allUser);
           } catch (error) {
             // if data not found in api/user
-            history.push('/sign-in');
+            // history.push('/sign-in');
             throw new Error('Data not found');
           }
         })();
