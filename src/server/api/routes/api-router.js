@@ -41,6 +41,6 @@ router.use('/cvs', cvsRouter);
 
 router.use('/users', usersRouter);
 
-router.use('/usercv', usercvRouter);
+router.use('/usercv', usercvRouter); 
 
 module.exports = router;
