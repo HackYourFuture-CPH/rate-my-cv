@@ -56,7 +56,7 @@ export function useAuthentication() {
       }
     });
     return () => {}; // eslint-disable-line
-  }, []);
+  }, [history]);
 
   return { isAuthenticated, isLoading, userData };
 }
