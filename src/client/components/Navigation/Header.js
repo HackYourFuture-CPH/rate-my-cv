@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import UserIcon from '../../assets/images/icons/user-icon.png';
 
-export default function Header({ isAuthenticated = false, username }) {
+export default function Header({ isAuthenticated , userName }) {
   const handler = async () => {
     await signOut();
   };
@@ -19,7 +19,7 @@ export default function Header({ isAuthenticated = false, username }) {
           </Link>
         </div>
         <ul className="right-section">
-          <li className="user-name">{username}</li>
+          <li className="user-name">{userName}</li>
           <li className="menu">
             <form>
               <input
@@ -82,8 +82,8 @@ export default function Header({ isAuthenticated = false, username }) {
 
 Header.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  username: PropTypes.string,
+  userName: PropTypes.string,
 };
 Header.defaultProps = {
-  username: '',
+  userName: '',
 };
