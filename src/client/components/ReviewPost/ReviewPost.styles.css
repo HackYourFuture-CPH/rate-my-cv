@@ -1,0 +1,28 @@
+.review-section {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 60px auto;
+  column-gap: 10px;
+}
+
+.profile-image > img {
+  margin-top: 0px;
+  width: 50px;
+  clip-path: circle();
+}
+
+.name-date {
+  display: flex;
+  align-items: center;
+}
+.name {
+  font-weight: bold;
+  margin-right: 15px;
+}
+.date-time,
+.review-text {
+  color: #9a9a9a;
+}
+.title-text {
+  display: block;
+}

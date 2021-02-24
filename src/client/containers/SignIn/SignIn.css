@@ -1,0 +1,55 @@
+.split {
+  height: 100%;
+  position: fixed;
+}
+
+.sign-in-left {
+  left: 0;
+  width: 35%;
+  overflow: hidden;
+  background-color: #6236ff;
+}
+
+.sign-in-right {
+  flex-direction: column;
+  right: 0;
+  width: 75%;
+}
+
+.not-member {
+  margin-top: 0;
+  margin-left: 150px;
+  font-size: small;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+  .login-form input {
+    width: 100%;
+  }
+  .split {
+    position: unset;
+    overflow-x: initial;
+  }
+  .sign-in-left {
+    width: 100%;
+  }
+  .sign-in-right {
+    width: 100%;
+  }
+  .centered {
+    display: initial;
+  }
+  div.space {
+    margin-left: 2em;
+  }
+  .partition h3:after {
+    margin-right: -50%;
+  }
+  .partition h3:before {
+    margin-left: -50%;
+  }
+  .heading-login {
+    width: 100%;
+  }
+}

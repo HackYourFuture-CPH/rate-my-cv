@@ -6,7 +6,7 @@ import './InstructionsComponent.css';
 
 export const InstructionsComponent = () => {
   return (
-    <div className="container">
+    <div className="instructions-container">
       <h2>How it Works</h2>
       <div className="all-images">
         <div className="image-block">

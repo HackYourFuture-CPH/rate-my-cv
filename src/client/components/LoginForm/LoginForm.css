@@ -1,4 +1,4 @@
-.container {
+.container-login {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11,7 +11,6 @@
 .button-image {
   display: flex;
   justify-content: flex-start;
-  
 }
 
 .button-image button {
@@ -25,8 +24,7 @@
   overflow: hidden;
   text-align: center;
 }
-.partition 
-h3:before,
+.partition h3:before,
 h3:after {
   background-color: rgb(223, 215, 215);
   content: '';
@@ -64,7 +62,6 @@ h3:after {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  width: 400px;
 }
 .input-label {
   color: #333;
