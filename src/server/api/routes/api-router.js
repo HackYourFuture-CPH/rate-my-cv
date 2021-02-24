@@ -11,6 +11,8 @@ const usersRouter = require('./users.router');
 
 const usercvRouter = require('./usercv.router');
 
+const reviewsRouter = require('./reviews.router');
+
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
@@ -37,10 +39,12 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Application routes
 router.use('/modules', modulesRouter);
 
-router.use('/cv', cvsRouter);
+router.use('/cvs', cvsRouter);
 
 router.use('/users', usersRouter);
 
-router.use('/usercv', usercvRouter);
+router.use('/usercv', usercvRouter); 
+
+router.use('/reviews', reviewsRouter);
 
 module.exports = router;

@@ -11,14 +11,16 @@
 }
 
 .sign-in-right {
+  flex-direction: column;
   right: 0;
   width: 75%;
 }
 
-.centered {
-  display: flex;
-  align-items: center;
-  padding: 5% 25%;
+.not-member {
+  margin-top: 0;
+  margin-left: 150px;
+  font-size: small;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 750px) {

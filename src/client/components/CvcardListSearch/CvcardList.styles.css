@@ -1,20 +1,8 @@
-.card-list {
-  background-color: whitesmoke;
-}
-.cards {
+.usercvs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
-  padding: 10px;
 }
-.card-list h2 {
-  margin: 20px;
-}
-@media (min-width: 700px) {
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
-    padding: 10px;
-  }
+.usercv-list {
+  padding: 30px;
 }

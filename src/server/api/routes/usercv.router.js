@@ -9,11 +9,11 @@ const usercvController = require('../controllers/usercv.controller');
 
 /**
  * @swagger
- * /modules:
+ * /usercv:
  *  get:
- *    summary: Get 20 user-cvs.
+ *    summary: Get up to 20 users' Cvs.
  *    description:
- *      Will return 20 user-cvs.
+ *      Will return 20 users' Cvs.
  *    produces: application/json
  *    responses:
  *      200:
@@ -23,7 +23,7 @@ const usercvController = require('../controllers/usercv.controller');
  */
 router.get('/', (req, res, next) => {
   usercvController
-    .getUserCvs()
+    .getUserCvs(req.query.limit)
     .then((result) => res.json(result))
     .catch(next);
 });

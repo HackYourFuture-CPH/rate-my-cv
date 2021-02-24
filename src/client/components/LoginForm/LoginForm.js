@@ -5,11 +5,15 @@ import './LoginForm.css';
 import github from './github.png';
 import Button from '../Button/Button';
 
-function LoginForm() {
-  const { handleChange, handleSubmit, values, errors } = useForm(validate, {
-    email: '',
-    password: '',
-  });
+function LoginForm({ onSubmit }) {
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    validate,
+    onSubmit,
+    {
+      email: '',
+      password: '',
+    },
+  );
 
   return (
     <div className="container-login">

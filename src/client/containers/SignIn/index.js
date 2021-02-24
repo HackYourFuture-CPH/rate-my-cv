@@ -5,6 +5,7 @@ import Loader from '../../components/Loader';
 import { SideBanner } from '../../components/SideBanner/SideBanner';
 import signInImg from '../../assets/images/sign-in.png';
 import './SignIn.css';
+import { NavLink } from 'react-router-dom';
 
 export default function SignInContainer() {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,6 +21,9 @@ export default function SignInContainer() {
         <SideBanner image={signInImg} />
       </div>
       <div className="centered split sign-in-right">
+        <div className="not-member">
+          Not a member ? <NavLink to="/sign-up/">Sign up now </NavLink>
+        </div>
         <LoginForm onSubmit={onSubmit} />
       </div>
     </div>
