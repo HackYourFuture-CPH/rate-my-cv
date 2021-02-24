@@ -5,15 +5,10 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import UserIcon from '../../assets/images/icons/user-icon.png';
 
-export default function Header({ isAuthenticated = false, username}) {
+export default function Header({ isAuthenticated = false, username }) {
   const handler = async () => {
     await signOut();
-
   };
-  // const Signout = () => {
-  //   signOut();
-  //   // history.pushState('/')
-  // };
   if (isAuthenticated) {
     return (
       <div className="header">
