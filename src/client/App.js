@@ -13,7 +13,7 @@ import NotFoundPage from './containers/NotFound/notFoundPage.component';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  const { isAuthenticated, isLoading } = useAuthentication();
+  const { isAuthenticated, isLoading, userData } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
     <Router>
@@ -21,7 +21,8 @@ function App() {
       location.pathname === '/sign-up' ? null : (
         <Header
           isAuthenticated={isAuthenticated}
-          username="William Henry Gates"
+          // eslint-disable-next-line camelcase
+          userName={userData?.full_name}
         />
       )}
       <Switch>
