@@ -14,7 +14,7 @@ export default function ProfileComponent() {
   const [cvsList, setCvsList] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const[reviewsLoaded,setReviewsLoaded]=useState
+   const[reviewsLoaded,setReviewsLoaded]=useState(false)
   useEffect(() => {
     if (userData) {
       (async () => {
@@ -32,12 +32,15 @@ export default function ProfileComponent() {
                 return { ...cv, createdDate: cv.createdAt };
               }),
           );
-          const responseRew = await fetch(`api/reviews/${userData.id}`);
+          //${userData.id}
+          const responseRew = await fetch(`api/reviews/2`);
           if(responseRew.status!==200){
             throw new Error('fail to connect to the api/reviews');
           }
           const reviewCvs= await responseRew.json();
-
+          setReviewsLoaded(true)
+          console.log({reviewCvs});
+          // setReviews(()=>reviewsCvs.)
         } catch (error) {
           // if data not found in api/usercv
           history.push('/sign-in');
@@ -45,7 +48,7 @@ export default function ProfileComponent() {
         }
       })();
     }
-  }, [setCvsList, history, isLoaded, userData]);
+  }, [setCvsList, history, isLoaded, userData,setReviewsLoaded]);
 
   return (
     <div className="middle-part">
@@ -77,7 +80,7 @@ export default function ProfileComponent() {
         </div>
         <div className="sent-reviews">
           {/* Sent Reviews - #92 */}
-          {reviews && <SentReviewsComponent review={reviews} />}
+          {/* {reviews && <SentReviewsComponent review={reviews} />} */}
         </div>
       </div>
     </div>
