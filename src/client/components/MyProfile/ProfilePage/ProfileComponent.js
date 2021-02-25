@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useAuthentication } from '../../../hooks/useAuthentication';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -5,8 +6,7 @@ import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
-//  here import story #92 which not ready yet
-//import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
+// import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
 
 export default function ProfileComponent() {
   const { userData } = useAuthentication();
@@ -17,14 +17,18 @@ export default function ProfileComponent() {
     if (userData) {
       (async () => {
         try {
-          const response = await fetch('/api/usercv');
+          const response = await fetch('/api/cvs');
           if (response.status !== 200) {
             throw new Error('fail to connect to the Api');
           }
           const userCvs = await response.json();
           setIsLoaded(true);
           setCvsList(() =>
-            userCvs.filter((cv) => cv.fk_user_id === userData.id),
+            userCvs
+              .filter((cv) => cv.fk_user_id === userData.id)
+              .map((cv) => {
+                return { ...cv, createdDate: cv.createdAt };
+              }),
           );
         } catch (error) {
           // if data not found in api/usercv
@@ -40,14 +44,16 @@ export default function ProfileComponent() {
       <div className="left-part">
         {/* here is Profile Card - #12
          */}
-        <ProfileCardComponent
-          profileImageUrl={userData.profile_image_url}
-          fullName={userData.full_name}
-          position={userData.position}
-          linkedin={userData.linkedin}
-          website={userData.website}
-          github={userData.github}
-        />
+        {userData && (
+          <ProfileCardComponent
+            profileImageUrl={userData?.profile_image_url}
+            fullName={userData?.full_name}
+            position={userData?.position}
+            linkedin={userData?.linkedin}
+            website={userData?.website}
+            github={userData?.github}
+          />
+        )}
       </div>
       <div className="right-part">
         <div className="profile-description">
@@ -59,19 +65,12 @@ export default function ProfileComponent() {
         </div>
         {/* Your uploaded CVs - #14 */}
         <div className="uploaded-cv">
-          <YourUploadedCVs CVsList={cvsList} />{' '}
+          {cvsList && <YourUploadedCVs CVsList={cvsList} />}
         </div>
         <div className="sent-reviews">
           {/* Sent Reviews - #92 */}
-          {/* <SentReviewsComponent review={reviews/> */}
-        </div>
-        <div className="sent-reviews">
-          {/* Sent Reviews - #92 */}
-          Instance of Sent Reviews #92
-        </div>
-        <div className="sent-reviews">
-          {/* Sent Reviews - #92 */}
-          Instance of Sent Reviews #92
+          {/* {reviews &&
+          <SentReviewsComponent review={reviews} />} */}
         </div>
       </div>
     </div>

@@ -22,7 +22,8 @@ function App() {
       location.pathname === '/sign-up' ? null : (
         <Header
           isAuthenticated={isAuthenticated}
-          username={userData.full_name}
+          // eslint-disable-next-line camelcase
+          username={userData?.full_name}
         />
       )}
       <Switch>
