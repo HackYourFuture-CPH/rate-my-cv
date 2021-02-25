@@ -6,20 +6,22 @@ import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
-// import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
+import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
 
 export default function ProfileComponent() {
   const { userData } = useAuthentication();
   const history = useHistory();
   const [cvsList, setCvsList] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const[reviewsLoaded,setReviewsLoaded]=useState
   useEffect(() => {
     if (userData) {
       (async () => {
         try {
           const response = await fetch('/api/cvs');
           if (response.status !== 200) {
-            throw new Error('fail to connect to the Api');
+            throw new Error('fail to connect to the api/cvs');
           }
           const userCvs = await response.json();
           setIsLoaded(true);
@@ -30,6 +32,12 @@ export default function ProfileComponent() {
                 return { ...cv, createdDate: cv.createdAt };
               }),
           );
+          const responseRew = await fetch(`api/reviews/${userData.id}`);
+          if(responseRew.status!==200){
+            throw new Error('fail to connect to the api/reviews');
+          }
+          const reviewCvs= await responseRew.json();
+
         } catch (error) {
           // if data not found in api/usercv
           history.push('/sign-in');
@@ -69,8 +77,7 @@ export default function ProfileComponent() {
         </div>
         <div className="sent-reviews">
           {/* Sent Reviews - #92 */}
-          {/* {reviews &&
-          <SentReviewsComponent review={reviews} />} */}
+          {reviews && <SentReviewsComponent review={reviews} />}
         </div>
       </div>
     </div>
