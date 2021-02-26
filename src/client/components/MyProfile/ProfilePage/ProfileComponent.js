@@ -33,8 +33,7 @@ export default function ProfileComponent() {
                 return { ...cv, createdDate: cv.createdAt };
               }),
           );
-          // ${userData.id}
-          const responseRew = await fetch(`api/reviews/2`);
+          const responseRew = await fetch(`api/reviews/${userData.id}`);
           if (responseRew.status !== 200) {
             throw new Error('fail to connect to the api/reviews');
           }
