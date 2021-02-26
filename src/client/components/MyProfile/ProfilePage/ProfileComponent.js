@@ -14,7 +14,7 @@ export default function ProfileComponent() {
   const [cvsList, setCvsList] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-   const[reviewsLoaded,setReviewsLoaded]=useState(false)
+  const [reviewsLoaded, setReviewsLoaded] = useState(false);
   useEffect(() => {
     if (userData) {
       (async () => {
@@ -32,15 +32,35 @@ export default function ProfileComponent() {
                 return { ...cv, createdDate: cv.createdAt };
               }),
           );
-          //${userData.id}
+          // ${userData.id}
           const responseRew = await fetch(`api/reviews/2`);
-          if(responseRew.status!==200){
+          if (responseRew.status !== 200) {
             throw new Error('fail to connect to the api/reviews');
           }
-          const reviewCvs= await responseRew.json();
-          setReviewsLoaded(true)
-          console.log({reviewCvs});
-          // setReviews(()=>reviewsCvs.)
+          const reviewsCv = await responseRew.json();
+          setReviewsLoaded(true);
+          console.log(reviewsCv);
+          // setReviews(() =>
+          //   reviewsCv.map((review) => {
+          //     return {
+          //       id: review.id,
+          //       review: review.content,
+          //       createdDate: review.created_date,
+          //       reviewer: {
+          //         fullName: review.full_name,
+          //         profileImageUrl: review.profile_image_url,
+          //       },
+          //       cv: {
+          //         fileUrl: review.file_url,
+          //         averageStars: review.stars,
+          //         createdDate: review.file_url,
+          //         author: {
+          //           fullName: review.file_url,
+          //           profileImageUrl: review.file_url,
+          //         },
+          //     };
+          //   }),
+          // );
         } catch (error) {
           // if data not found in api/usercv
           history.push('/sign-in');
@@ -48,7 +68,7 @@ export default function ProfileComponent() {
         }
       })();
     }
-  }, [setCvsList, history, isLoaded, userData,setReviewsLoaded]);
+  }, [setCvsList, history, isLoaded, userData, setReviewsLoaded]);
 
   return (
     <div className="middle-part">
