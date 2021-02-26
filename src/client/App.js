@@ -23,7 +23,7 @@ function App() {
         <Header
           isAuthenticated={isAuthenticated}
           // eslint-disable-next-line camelcase
-          username={userData?.full_name}
+          userName={userData?.full_name}
         />
       )}
       <Switch>

@@ -6,12 +6,13 @@ import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
-import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
+// import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
 
 export default function ProfileComponent() {
   const { userData } = useAuthentication();
   const history = useHistory();
   const [cvsList, setCvsList] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [reviews, setReviews] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [reviewsLoaded, setReviewsLoaded] = useState(false);
@@ -39,28 +40,7 @@ export default function ProfileComponent() {
           }
           const reviewsCv = await responseRew.json();
           setReviewsLoaded(true);
-          console.log(reviewsCv);
-          // setReviews(() =>
-          //   reviewsCv.map((review) => {
-          //     return {
-          //       id: review.id,
-          //       review: review.content,
-          //       createdDate: review.created_date,
-          //       reviewer: {
-          //         fullName: review.full_name,
-          //         profileImageUrl: review.profile_image_url,
-          //       },
-          //       cv: {
-          //         fileUrl: review.file_url,
-          //         averageStars: review.stars,
-          //         createdDate: review.file_url,
-          //         author: {
-          //           fullName: review.file_url,
-          //           profileImageUrl: review.file_url,
-          //         },
-          //     };
-          //   }),
-          // );
+          setReviews(reviewsCv);
         } catch (error) {
           // if data not found in api/usercv
           history.push('/sign-in');
@@ -68,7 +48,7 @@ export default function ProfileComponent() {
         }
       })();
     }
-  }, [setCvsList, history, isLoaded, userData, setReviewsLoaded]);
+  }, [setCvsList, history, isLoaded, userData, reviewsLoaded, setReviews]);
 
   return (
     <div className="middle-part">
