@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import Loader from '../Loader';
 import { useAuthentication } from '../../hooks/useAuthentication';
+import { useStorage } from '../../hooks/fileUploader';
 
 export default function PostUrlComponent({ uploadedFile, title, description }) {
   const { userData } = useAuthentication();
@@ -21,7 +22,7 @@ export default function PostUrlComponent({ uploadedFile, title, description }) {
             body: JSON.stringify({
               title,
               description,
-              file_url: uploadedFile,
+              file_url: useStorage(uploadedFile),
               fk_user_id: userData.id,
             }),
           });
@@ -43,7 +44,7 @@ export default function PostUrlComponent({ uploadedFile, title, description }) {
 }
 
 PostUrlComponent.propTypes = {
-  uploadedFile: PropTypes.string.isRequired,
+  uploadedFile: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };

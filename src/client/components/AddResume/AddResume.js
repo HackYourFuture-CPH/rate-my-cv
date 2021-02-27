@@ -3,14 +3,13 @@ import ReactDom from 'react-dom';
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
-import { useStorage } from '../../hooks/fileUploader';
 import PostUrlComponent from '../PostUrl/PostUrlComponent';
 
 export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
-  const [uploadedMyFile, setUploadedMyFile] = useState('');
+  const [uploadedFile, setUploadedFile] = useState('');
 
   const types = [
     'application/pdf',
@@ -23,24 +22,23 @@ export const AddResume = () => {
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
 
-    setUploadedMyFile(selectedFile);
+    setUploadedFile(selectedFile);
 
     if (selectedFile) {
       if (types.includes(selectedFile.type)) {
         setError(null);
-        setUploadedMyFile(selectedFile);
+        setUploadedFile(selectedFile);
       } else {
-        setUploadedMyFile(null);
-        setError('Please select a pdf file');
+        setUploadedFile(null);
+        setError('Please select a suitable file format');
       }
     }
   };
 
-  const {url} = useStorage(uploadedMyFile);
 
-  const clickHandler = () => {    
-        PostUrlComponent({uploadedFile:url, title, description})
-      };
+  const clickHandler = () => {
+    PostUrlComponent({ uploadedFile, title, description });
+  };
 
   return ReactDom.createPortal(
     <div className="popup">
@@ -86,7 +84,7 @@ export const AddResume = () => {
               <label htmlFor="file-grabber" className="browse-button">
                 Browse
               </label>
-              <span>{uploadedMyFile ? uploadedMyFile.name : ''}</span>
+              <span>{uploadedFile ? uploadedFile.name : ''}</span>
             </form>
           </div>
         </div>
@@ -100,11 +98,15 @@ export const AddResume = () => {
           {error && (
             <p style={{ color: 'red', marginRight: '50px' }}>{error}</p>
           )}
-          {uploadedMyFile? <div className="add-btn"> 
-            <Button buttonName="Add resume" onClick={clickHandler} />
-          </div> : <div className="add-btn"> 
-            <Button buttonName="Add resume" />
-          </div>} 
+          {uploadedFile ? (
+            <div className="add-btn">
+              <Button buttonName="Add resume" onClick={clickHandler} />
+            </div>
+          ) : (
+            <div className="add-btn">
+              <Button buttonName="Add resume" />
+            </div>
+          )}
         </div>
       </div>
     </div>,
