@@ -19,6 +19,7 @@ export const Home = () => {
       setCvs(result);
     })();
   }, []);
+
   const history = useHistory();
   const allResumes = () => {
     return <Router history={history.push('/dashboard')} />;
