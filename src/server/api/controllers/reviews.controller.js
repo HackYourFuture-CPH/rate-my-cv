@@ -1,4 +1,3 @@
-const { auth } = require('firebase-admin');
 const knex = require('../../config/db');
 
 const getReviewsByCvId = async (id) => {
@@ -26,37 +25,43 @@ const getReviewsByUserId = async (id) => {
       .where('review.fk_user_id', '=', `${id}`);
     
     let reviewer = {};
-    reviewedByUser.map((e) => reviewer = {
-      fullName: e.fullName,
-      profileImageUrl: e.profileImageUrl
+    reviewedByUser.map((e) => {
+      reviewer = {
+        fullName: e.fullName,
+        profileImageUrl: e.profileImageUrl
+      }
     });
     
     let author = {};
-    reviewedCv.map((e) => author = {
-      fullName: e.receiverName,
-      profileImageUrl: e.receiverImage
-    })
-
-    var cv = reviewedCv.reduce(function(acc, e) {
-      acc = {
+    reviewedCv.map((e) => {
+      author = {
+        fullName: e.receiverName,
+        profileImageUrl: e.receiverImage
+      }
+    });
+    
+    let cv = {};
+    reviewedCv.map((e)=> {
+      cv = {
         fileUrl: e.cv,
         createdDate: e.Profilecreateddate,
         averageStars: e.stars,
         author
-  }
-  return acc;
-    }, {});
+      }
+      return cv;
+    });
 
-    var reviews = reviewedByUser.reduce(function(acc, e) {
-      acc = {
+    let reviews = {};
+     reviewedByUser.map((e)=> {
+      reviews = {
         id : id,
         review: e.review,
         createdDate: e.reviewedDate,
         reviewer,
         cv
-  }
-  return acc;
-    }, {});
+      }
+      return reviews;
+    });
 
     let result = [];
     result.push(reviews);
