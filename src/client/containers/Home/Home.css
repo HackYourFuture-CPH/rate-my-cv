@@ -26,9 +26,9 @@
   grid-template-columns: 6fr 6fr 6fr;
   grid-gap: 50px;
 }
-.homepage-slogan:nth-of-type(1) {
+/* .homepage-slogan:nth-of-type(1) {
   width: 100%;
-}
+} */
 @media (max-width: 700px) {
   .write-resume {
     display: flex;
