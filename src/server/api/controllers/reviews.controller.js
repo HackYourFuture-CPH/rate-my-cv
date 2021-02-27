@@ -30,6 +30,7 @@ const getReviewsByUserId = async (id) => {
         fullName: e.fullName,
         profileImageUrl: e.profileImageUrl
       }
+      return reviewer;
     });
     
     let author = {};
@@ -38,8 +39,9 @@ const getReviewsByUserId = async (id) => {
         fullName: e.receiverName,
         profileImageUrl: e.receiverImage
       }
+      return author;
     });
-    
+
     let cv = {};
     reviewedCv.map((e)=> {
       cv = {
@@ -54,7 +56,7 @@ const getReviewsByUserId = async (id) => {
     let reviews = {};
      reviewedByUser.map((e)=> {
       reviews = {
-        id : id,
+        id : e.id,
         review: e.review,
         createdDate: e.reviewedDate,
         reviewer,
@@ -63,7 +65,7 @@ const getReviewsByUserId = async (id) => {
       return reviews;
     });
 
-    let result = [];
+    const result = [];
     result.push(reviews);
     return result;
   } catch (error) {
