@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { useAuthentication } from '../../../hooks/useAuthentication';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -6,13 +5,12 @@ import './ProfileComponent.styles.css';
 import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComponent';
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
-// import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
+import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
 
 export default function ProfileComponent() {
   const { userData } = useAuthentication();
   const history = useHistory();
   const [cvsList, setCvsList] = useState([]);
-  // eslint-disable-next-line no-unused-vars
   const [reviews, setReviews] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [reviewsLoaded, setReviewsLoaded] = useState(false);
@@ -26,20 +24,24 @@ export default function ProfileComponent() {
           }
           const userCvs = await response.json();
           setIsLoaded(true);
-          setCvsList(() =>
-            userCvs
-              .filter((cv) => cv.fk_user_id === userData.id)
-              .map((cv) => {
-                return { ...cv, createdDate: cv.createdAt };
-              }),
-          );
+          if (userCvs) {
+            setCvsList(() =>
+              userCvs
+                .filter((cv) => cv.fk_user_id === userData.id)
+                .map((cv) => {
+                  return { ...cv, createdDate: cv.createdAt };
+                }),
+            );
+          }
           const responseRew = await fetch(`api/reviews/${userData.id}`);
           if (responseRew.status !== 200) {
             throw new Error('fail to connect to the api/reviews');
           }
           const reviewsCv = await responseRew.json();
           setReviewsLoaded(true);
-          setReviews(reviewsCv);
+          if (reviewsCv) {
+            setReviews(reviewsCv);
+          }
         } catch (error) {
           // if data not found in api/usercv
           history.push('/sign-in');
@@ -52,34 +54,20 @@ export default function ProfileComponent() {
   return (
     <div className="middle-part">
       <div className="left-part">
-        {/* here is Profile Card - #12
-         */}
-        {userData && (
-          <ProfileCardComponent
-            profileImageUrl={userData?.profile_image_url}
-            fullName={userData?.full_name}
-            position={userData?.position}
-            linkedin={userData?.linkedin}
-            website={userData?.website}
-            github={userData?.github}
-          />
-        )}
+        {userData.length !== 0 && <ProfileCardComponent />}
       </div>
       <div className="right-part">
         <div className="profile-description">
-          {/* Profile Title and Description - #88 */}
           <TitleDesc
             title="Your profile"
             description="A resume summary or career proﬁle is a brief statement at the top of your resume. If you are a career changer or have many years of experience, craft a powerful summary to highlight your accomplishments and skills.  Show the employer, at a glance, why you’re qualiﬁed for the job!"
           />
         </div>
-        {/* Your uploaded CVs - #14 */}
         <div className="uploaded-cv">
-          {cvsList && <YourUploadedCVs CVsList={cvsList} />}
+          {cvsList.length !== 0 && <YourUploadedCVs CVsList={cvsList} />}
         </div>
         <div className="sent-reviews">
-          {/* Sent Reviews - #92 */}
-          {/* {reviews && <SentReviewsComponent review={reviews} />} */}
+          {reviews.length !== 0 && <SentReviewsComponent reviews={reviews} />}
         </div>
       </div>
     </div>
