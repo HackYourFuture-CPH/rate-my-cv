@@ -7,7 +7,6 @@ import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
-// eslint-disable-next-line import/no-cycle
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
