@@ -6,7 +6,7 @@ import image1 from '../../assets/images/img-1.png';
 import image2 from '../../assets/images/img-2.png';
 import Button from '../../components/Button/Button';
 import { CvcardList } from '../../components/CvcardListSearch/CvcardList';
-import { useHistory, Router } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Home.css';
 
 export const Home = () => {
@@ -22,7 +22,7 @@ export const Home = () => {
 
   const history = useHistory();
   const allResumes = () => {
-    history.push('/sign-in');
+    history.push('/dashboard');
   };
 
   return (
