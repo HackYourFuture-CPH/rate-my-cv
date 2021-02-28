@@ -66,6 +66,4 @@ const Cvs = PropTypes.shape({
 
 YourUploadedCVs.propTypes = {
   CVsList: PropTypes.arrayOf(Cvs).isRequired,
-  isShown: propTypes.bool.isRequired,
-  setIsShown: propTypes.bool.isRequired
 };

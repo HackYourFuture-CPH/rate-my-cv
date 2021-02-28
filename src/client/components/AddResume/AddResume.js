@@ -46,7 +46,13 @@ export const AddResume = ({isShown,setIsShown}) => {
   return ReactDom.createPortal(isShown ? (
     <div className="popup">
       <div className="popup-form">
-        <img className="close-icon" src={close} alt="close Icon" onClick={closeModel} onKeyDown={closeModel}/>
+        <img className="close-icon"
+          src={close} alt="close Icon"
+          onClick={closeModel}
+          onKeyDown={closeModel}
+          role="button"
+          tabIndex="0"
+        />
         <h3 className="text">Upload new CV</h3>
         <div className="uploadform">
           <div className="title">
