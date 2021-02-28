@@ -6,12 +6,75 @@ import { ProfileCardComponent } from '../../ProfileCardComponent/ProfileCardComp
 import { YourUploadedCVs } from '../YourUploadedCVs/YourUploadedCVs';
 import TitleDesc from '../../Title/TitleDesc';
 import { SentReviewsComponent } from '../../SentReviewsComponent/SentReviewsComponent.js';
+import man from '../../../assets/images/portraits/man2.jpg';
+import woman from '../../../assets/images/portraits/woman3.jpg';
+import womanTwo from '../../../assets/images/portraits/woman1.jpg';
 
 export default function ProfileComponent() {
   const { userData } = useAuthentication();
   const history = useHistory();
   const [cvsList, setCvsList] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([
+    {
+      id: 1,
+      review:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      createdDate: new Date(),
+      reviewer: {
+        fullName: 'Ghofrane Ben Hmaid',
+        profileImageUrl: man,
+      },
+      cv: {
+        fileUrl: 'http://www.africau.edu/images/default/sample.pdf',
+        averageStars: 4,
+        createdDate: new Date(),
+        author: {
+          fullName: 'Stephanie Hicks',
+          profileImageUrl: woman,
+        },
+      },
+    },
+  
+    {
+      id: 2,
+      review:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      createdDate: new Date(),
+      reviewer: {
+        fullName: 'Ghofrane Ben Hmaid',
+        profileImageUrl: man,
+      },
+      cv: {
+        fileUrl: 'http://www.africau.edu/images/default/sample.pdf',
+        averageStars: 4,
+        createdDate: new Date(),
+        author: {
+          fullName: 'Stephanie Mendrala',
+          profileImageUrl: womanTwo,
+        },
+      },
+    },
+  
+    {
+      id: 3,
+      review:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      createdDate: new Date(),
+      reviewer: {
+        fullName: 'Ghofrane Ben Hmaid',
+        profileImageUrl: man,
+      },
+      cv: {
+        fileUrl: 'http://www.africau.edu/images/default/sample.pdf',
+        averageStars: 4,
+        createdDate: new Date(),
+        author: {
+          fullName: 'Valentina Méndez',
+          profileImageUrl: '',
+        },
+      },
+    },
+  ]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [reviewsLoaded, setReviewsLoaded] = useState(false);
   useEffect(() => {
@@ -33,15 +96,15 @@ export default function ProfileComponent() {
                 }),
             );
           }
-          const responseRew = await fetch(`api/reviews/${userData.id}`);
-          if (responseRew.status !== 200) {
-            throw new Error('fail to connect to the api/reviews');
-          }
-          const reviewsCv = await responseRew.json();
-          setReviewsLoaded(true);
-          if (reviewsCv) {
-            setReviews(reviewsCv);
-          }
+          // const responseRew = await fetch(`api/reviews/${userData.id}`);
+          // if (responseRew.status !== 200) {
+          //   throw new Error('fail to connect to the api/reviews');
+          // }
+          // const reviewsCv = await responseRew.json();
+          // setReviewsLoaded(true);
+          // if (reviewsCv) {
+          //   setReviews(reviewsCv);
+          // }
         } catch (error) {
           // if data not found in api/usercv
           history.push('/sign-in');
