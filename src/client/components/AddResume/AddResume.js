@@ -10,7 +10,6 @@ export const AddResume = ({isShown,setIsShown}) => {
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
   const [uploadedFile, setUploadedFile] = useState('');
-  // const [isShown, setIsShown] = useState(false);
   
   
   const types = [

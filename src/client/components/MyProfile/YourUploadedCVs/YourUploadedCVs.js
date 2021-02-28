@@ -25,7 +25,6 @@ export function YourUploadedCVs({ CVsList}) {
           <AddResume isShown={isShown} setIsShown={ setIsShown}/>
         </div>
       </div>
-      {/* CVsList is an array comes as a resault of fetching API GET CVs  */}
       <ul>
         {CVsList.map((cv, i) => {
           return i < 3 ? (
