@@ -11,7 +11,10 @@ export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
-  const { uploadedFile, setUploadedFile, uploadFile } = useStorage();
+  const { uploadedFile, setUploadedFile, uploadFile, url } = useStorage();
+  const { userData } = useAuthentication();
+  const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
 
   const types = [
     'application/pdf',
@@ -38,15 +41,9 @@ export const AddResume = () => {
   };
 
   const clickHandler = () => {
-    const { userData } = useAuthentication();
-    const history = useHistory();
-    const [isLoading, setIsLoading] = useState(false);
-    //PostUrlComponent({ uploadedFile, title, description });
-    if (userData) {
       setIsLoading(true);
-      uploadFile(title, description, useStorage(uploadedFile), userData.id);
+      uploadFile(title, description, url, userData.id);
       history.push('/profile');
-    }
   };
 
   return ReactDom.createPortal(
