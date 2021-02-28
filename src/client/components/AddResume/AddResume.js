@@ -15,9 +15,6 @@ export const AddResume = () => {
   const { uploadedFile, setUploadedFile, uploadFile, uploadToStorage, url } = useStorage();
   const { userData } = useAuthentication();
   const history = useHistory();
-
-  // console.log(url);
-  // console.log(uploadedFile)
   
 
   const types = [
@@ -35,10 +32,9 @@ export const AddResume = () => {
     if (selectedFile) {
       if (types.includes(selectedFile.type)) {
         setError(null);
-        setUploadedFile(selectedFile);
         uploadToStorage(selectedFile);
       } else {
-        setUploadedFile(null);
+        // setUploadedFile(null);
         setError('Please select a suitable file format');
       }
     }
@@ -54,7 +50,6 @@ export const AddResume = () => {
       <div className="popup-form">
         <img className="close-icon" src={close} alt="close Icon" />
         <h3>Upload new CV</h3>
-        <p>{ url}</p>
         <div className="form">
           <div className="title">
             <label>Add Title</label>

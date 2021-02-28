@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { storage } from '../firebase/configure';
 
 const uploadFile = async (title, description, userId, fileUrl ) => {
@@ -26,7 +26,7 @@ const uploadFile = async (title, description, userId, fileUrl ) => {
   }
 };
 
-export const useStorage = (file) => {
+export const useStorage = () => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
