@@ -7,24 +7,24 @@ import unknownUser from '../../assets/images/portraits/unknown-black.png';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
 export const ProfileCardComponent = () => {
-  const { userData } = useAuthentication();
+  const { userData:{ profileImageUrl, fullName, position, linkedIn, github, website }  } = useAuthentication();
 
   return (
     <div className="profile-card-whole">
       <div className="top">
         <div className="circle">
           <img
-            src={userData.profileImageUrl || unknownUser}
+            src={profileImageUrl || unknownUser}
             alt="Portrait of user"
           />
         </div>
-        <h2 className="user-full-name">{userData.fullName}</h2>
-        <p className="user-position">{userData.position}</p>
+        <h2 className="user-full-name">{fullName}</h2>
+        <p className="user-position">{position}</p>
       </div>
 
       <hr />
       <div className="profile-card-social-links">
-        {userData.linkedin && (
+        {linkedIn && (
           <div className="social-link">
             <img
               src={iconLinkedin}
@@ -32,14 +32,14 @@ export const ProfileCardComponent = () => {
               alt="Social media icon"
             />
             <a
-              href={`https://www.linkedin.com/in/${userData.linkedin}`}
+              href={`https://www.linkedin.com/in/${linkedIn}`}
               className="social-link-text"
             >
-              {userData.linkedin}
+              {linkedIn}
             </a>
           </div>
         )}
-        {userData.github && (
+        {github && (
           <div className="social-link">
             <img
               src={iconGithub}
@@ -47,17 +47,17 @@ export const ProfileCardComponent = () => {
               alt="Social media icon"
             />
             <a
-              href={`https://github.com/${userData.github}`}
+              href={`https://github.com/${github}`}
               className="social-link-text"
             >
-              {userData.github}
+              {github}
             </a>
           </div>
         )}
-        {userData.website && (
+        {website && (
           <div className="social-link">
             <img src={iconWebsite} className="social-icon" alt="icon" />
-            <a href={`${userData.website}`} className="social-link-text">
+            <a href={`${website}`} className="social-link-text">
               website
             </a>
           </div>
