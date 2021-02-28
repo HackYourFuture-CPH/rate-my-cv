@@ -6,6 +6,7 @@
   display: flex;
   padding: 1.5em;
   flex-direction: column;
+  text-align: left;
 }
 
 .card-cv-top {
@@ -38,12 +39,13 @@
   align-items: flex-start
 }
 
-.user-name {
+.user-fullname {
   font-weight: bold;
   font-size: medium;
   overflow: hidden;
   min-height: 1em;
   max-height: 2.5em;
+  text-transform: capitalize;
 }
 
 .user-position {
@@ -54,10 +56,10 @@
 .card-cv-middle {
   margin-top: 0.5em;
   align-items: flex-start;
-  height: 60px;
+  height: 5em;
 }
 
-.cv-title {
+.cv-name {
   font-weight: bold;
   font-size: larger;
   color: black;
@@ -83,4 +85,16 @@
   text-decoration: none;
   color: white;
   border-radius: 4px;
+}
+
+@media screen and (max-width: 1080px) {
+  .card-cv-top {
+    height: 5em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card-cv-top {
+    height: 4em;
+  }
 }
