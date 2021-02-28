@@ -39,8 +39,8 @@ export const AddResume = ({isShown,setIsShown}) => {
   useStorage(uploadedFile);
 
   return ReactDom.createPortal(isShown ? (
-    <div className="popup">
-      <div className="popup-form">
+    <div className="modal">
+      <div className="modal-form">
         <div className="close-icon"
           onClick={() => { setIsShown(false) }}
           onKeyPress={() => { setIsShown(false) }}
