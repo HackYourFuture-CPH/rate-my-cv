@@ -20,7 +20,7 @@ const reviewsController = require('../controllers/reviews.controller');
  *      5XX:
  *        description: Unexpected error.
  */
-router.get('/:id', (req, res, next) => {
+router.get('/cv/:id', (req, res, next) => {
   reviewsController
     .getReviewsByCvId(req.params.id)
     .then((result) => res.json(result))
