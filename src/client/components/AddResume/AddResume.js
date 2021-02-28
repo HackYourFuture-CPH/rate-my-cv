@@ -5,12 +5,18 @@ import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 import { useStorage } from '../../hooks/fileUploader';
 
-export const AddResume = () => {
+export const AddResume = ({isShown,setIsShown}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
   const [uploadedFile, setUploadedFile] = useState('');
 
+
+  const closeModel = () => {
+    setIsShown(false);
+};
+  
+  
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -37,12 +43,12 @@ export const AddResume = () => {
 
   useStorage(uploadedFile);
 
-  return ReactDom.createPortal(
+  return ReactDom.createPortal(isShown ? (
     <div className="popup">
       <div className="popup-form">
-        <img className="close-icon" src={close} alt="close Icon" />
-        <h3>Upload new CV</h3>
-        <div className="form">
+        <img className="close-icon" src={close} alt="close Icon" onClick={closeModel}/>
+        <h3 className="text">Upload new CV</h3>
+        <div className="uploadform">
           <div className="title">
             <label>Add Title</label>
             <div>
@@ -100,7 +106,8 @@ export const AddResume = () => {
           </div>
         </div>
       </div>
-    </div>,
+    </div>)
+    : null,
     document.querySelector('#portal'),
   );
 };
