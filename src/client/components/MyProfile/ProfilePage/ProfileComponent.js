@@ -78,40 +78,37 @@ export default function ProfileComponent() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [reviewsLoaded, setReviewsLoaded] = useState(false);
   useEffect(() => {
-    if (userData) {
-      (async () => {
-        try {
-          const response = await fetch('/api/cvs');
-          if (response.status !== 200) {
-            throw new Error('fail to connect to the api/cvs');
-          }
-          const userCvs = await response.json();
-          setIsLoaded(true);
-          if (userCvs) {
-            setCvsList(() =>
-              userCvs
-                .filter((cv) => cv.fk_user_id === userData.id)
-                .map((cv) => {
-                  return { ...cv, createdDate: cv.createdAt };
-                }),
-            );
-          }
-          // const responseRew = await fetch(`api/reviews/${userData.id}`);
-          // if (responseRew.status !== 200) {
-          //   throw new Error('fail to connect to the api/reviews');
-          // }
-          // const reviewsCv = await responseRew.json();
-          // setReviewsLoaded(true);
-          // if (reviewsCv) {
-          //   setReviews(reviewsCv);
-          // }
-        } catch (error) {
-          // if data not found in api/usercv
-          history.push('/sign-in');
-          throw new Error('Data not found');
+    (async () => {
+      try {
+        const response = await fetch('/api/cvs');
+        if (response.status !== 200) {
+          throw new Error('fail to connect to the api/cvs');
         }
-      })();
-    }
+        const userCvs = await response.json();
+        setIsLoaded(true);
+        if (userCvs) {
+          setCvsList(() =>
+            userCvs
+              .filter((cv) => cv.fk_user_id === userData.id)
+              .map((cv) => {
+                return { ...cv, createdDate: cv.createdAt };
+              }),
+          );
+        }
+        // const responseRew = await fetch(`api/reviews/${userData.id}`);
+        // if (responseRew.status !== 200) {
+        //   throw new Error('fail to connect to the api/reviews');
+        // }
+        // const reviewsCv = await responseRew.json();
+        // setReviewsLoaded(true);
+        // if (reviewsCv) {
+        //   setReviews(reviewsCv);
+        // }
+      } catch (error) {
+        // if data not found in api/usercv
+        throw new Error('Data not found');
+      }
+    })();
   }, [setCvsList, history, isLoaded, userData, reviewsLoaded, setReviews]);
 
   return (
@@ -129,12 +126,12 @@ export default function ProfileComponent() {
         <div className="uploaded-cv">
           {cvsList.length !== 0 && <YourUploadedCVs CVsList={cvsList} />}
         </div>
-        <div className="sent-reviews2">
-        <span>
-          <h2>Sent reviews</h2>
-        </span>
-        <div className='sent-reviews2-body'>
-          {reviews.length !== 0 && <SentReviewsComponent reviews={reviews} />}
+        <div className="sent-reviews">
+          <span>
+            <h2>Sent reviews</h2>
+          </span>
+          <div className="sent-reviews-body">
+            {reviews.length !== 0 && <SentReviewsComponent reviews={reviews} />}
           </div>
         </div>
       </div>
