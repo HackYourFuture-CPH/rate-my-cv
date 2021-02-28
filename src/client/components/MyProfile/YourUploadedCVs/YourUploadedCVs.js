@@ -6,13 +6,10 @@ import Button from '../../Button/Button';
 import PropTypes from 'prop-types';
 import { AddResume } from '../../AddResume/AddResume';
 
-export function YourUploadedCVs({ CVsList }) {
+export function YourUploadedCVs({ CVsList}) {
   const [isShown, setIsShown] = useState(false);
 
-   const openModel =  () => {
-      setIsShown(true)
-  }
-
+  
   return (
     <section className="your-uploaded-cvs">
       <div className="header-your-uploaded-cv">
@@ -23,9 +20,9 @@ export function YourUploadedCVs({ CVsList }) {
           <Button
             buttonName="Upload new CV"
             style={{ backgroundColor: 'black' }} 
-            onClick = {openModel}
+            onClick = {()=>{setIsShown(true)}}
           />
-          <AddResume isShown={isShown} setIsShown={setIsShown}/>
+          <AddResume isShown={isShown} setIsShown={ setIsShown}/>
         </div>
       </div>
       {/* CVsList is an array comes as a resault of fetching API GET CVs  */}

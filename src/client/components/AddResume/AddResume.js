@@ -10,6 +10,7 @@ export const AddResume = ({isShown,setIsShown}) => {
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
   const [uploadedFile, setUploadedFile] = useState('');
+  // const [isShown, setIsShown] = useState(false);
   
   
   const types = [
@@ -43,7 +44,9 @@ export const AddResume = ({isShown,setIsShown}) => {
       <div className="popup-form">
         <img className="close-icon"
           src={close} alt="close Icon"
-          onClick={()=>{setIsShown(false)}}
+          onClick={() => { setIsShown(false) }}
+          onKeyPress={() => { setIsShown(false) }}
+          draggable={false}
           role="button"
           tabIndex="0"
         />
