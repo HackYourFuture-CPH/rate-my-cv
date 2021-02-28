@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../firebase/configure';
 
-const uploadFile = async ({ title, description, userId, fileUrl }) => {
+const uploadFile = async (title, description, userId, fileUrl ) => {
   try {
     const postCv = await fetch('/api/cvs', {
       method: 'POST',
@@ -31,30 +31,31 @@ export const useStorage = (file) => {
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
   const [uploadedFile, setUploadedFile] = useState('');
+  
 
-  useEffect(() => {
-    if (file) {
-      const storageRef = storage.ref(`/CVs/${file.name}`);
-      storageRef.put(file).on(
-        'state_changed',
-        (snap) => {
-          // upload progress
-          const percentage = Math.round(
-            (snap.bytesTransferred / snap.totalBytes) * 100,
-          );
-          setProgress(percentage);
-        },
-        (err) => {
-          setError(err);
-        },
-        async () => {
-          const downloadedUrl = await storageRef.getDownloadURL();
-          // save the url to local state
-          setUrl(downloadedUrl);
-        },
-      );
-    }
-  }, [file]);
+  const uploadToStorage = (file) => {
+    const storageRef = storage.ref(`/CVs/${file.name}`);
+    storageRef.put(file).on(
+      'state_changed',
+      (snap) => {
+        // upload progress
+        const percentage = Math.round(
+          (snap.bytesTransferred / snap.totalBytes) * 100,
+        );
+        setProgress(percentage);
+      },
+      (err) => {
+        setError(err);
+      },
+      async () => {
+        const downloadedUrl = await storageRef.getDownloadURL();
+        // save the url to local state
+        setUrl(downloadedUrl);
+      },
+    );
+  }
 
-  return { progress, url, error, uploadedFile, setUploadedFile, uploadFile };
+ return { progress, url, error, uploadedFile, setUploadedFile, uploadFile, uploadToStorage };
 };
+
+

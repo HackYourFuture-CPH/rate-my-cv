@@ -12,9 +12,13 @@ export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
-  const { uploadedFile, setUploadedFile, uploadFile, url } = useStorage();
+  const { uploadedFile, setUploadedFile, uploadFile, uploadToStorage, url } = useStorage();
   const { userData } = useAuthentication();
   const history = useHistory();
+
+  // console.log(url);
+  // console.log(uploadedFile)
+  
 
   const types = [
     'application/pdf',
@@ -26,22 +30,22 @@ export const AddResume = () => {
 
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
-
     setUploadedFile(selectedFile);
 
     if (selectedFile) {
       if (types.includes(selectedFile.type)) {
         setError(null);
         setUploadedFile(selectedFile);
+        uploadToStorage(selectedFile);
       } else {
         setUploadedFile(null);
         setError('Please select a suitable file format');
       }
     }
   };
-
+  
   const clickHandler = () => {
-      uploadFile(title, description, url, userData.id);
+      uploadFile(title, description, userData.id, url);
       history.push('/profile');
   };
 
@@ -50,6 +54,7 @@ export const AddResume = () => {
       <div className="popup-form">
         <img className="close-icon" src={close} alt="close Icon" />
         <h3>Upload new CV</h3>
+        <p>{ url}</p>
         <div className="form">
           <div className="title">
             <label>Add Title</label>
