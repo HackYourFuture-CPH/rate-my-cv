@@ -9,12 +9,12 @@
   width: 100%;
 }
 
-.container-reviewee .profile-picture .circle-mask {
+.circle-cut {
   width: 50px;
   height: 50px;
 }
 
-.container-reviewee .profile-picture .circle-mask .user-photo {
+.user-pic {
   width: 50px;
 }
 
@@ -44,10 +44,6 @@
 .divider-line {
   border-left: 2px solid #D1D1D1;
   margin: 0 50%;
-}
-
-.collection-reviews .sent-review .profile-picture {
-  margin-right: 0;
 }
 
 .reviewer-name {
