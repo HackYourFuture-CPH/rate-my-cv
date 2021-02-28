@@ -8,12 +8,20 @@
 .uploaded-cv {
   padding-top: 20px;
 }
-.sent-reviews {
-  width: 100%;
+.sent-reviews2-body {
+  width: 30%;
   height: 100px;
 }
 .profile-description {
   background-color: white;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
+}
+.sent-reviews2 h2 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+  margin-top: 0;
 }
