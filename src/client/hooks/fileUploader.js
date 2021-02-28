@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../firebase/configure';
 
-const uploadFile = async ({ title, description, fk_user_id, file_url }) => {
+const uploadFile = async ({ title, description, userId, fileUrl }) => {
   try {
     const postCv = await fetch('/api/cvs', {
       method: 'POST',
@@ -11,8 +11,10 @@ const uploadFile = async ({ title, description, fk_user_id, file_url }) => {
       body: JSON.stringify({
         title,
         description,
-        file_url,
-        fk_user_id,
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        file_url: fileUrl,
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        fk_user_id: userId,
       }),
     });
     if (!postCv.ok) {

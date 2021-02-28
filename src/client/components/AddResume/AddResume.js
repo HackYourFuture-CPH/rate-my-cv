@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
+import {useHistory} from 'react-router-dom';
+
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
-import PostUrlComponent from '../PostUrl/PostUrlComponent';
 import { useStorage } from '../../hooks/fileUploader';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
@@ -14,7 +15,6 @@ export const AddResume = () => {
   const { uploadedFile, setUploadedFile, uploadFile, url } = useStorage();
   const { userData } = useAuthentication();
   const history = useHistory();
-  const [isLoading, setIsLoading] = useState(false);
 
   const types = [
     'application/pdf',
@@ -41,7 +41,6 @@ export const AddResume = () => {
   };
 
   const clickHandler = () => {
-      setIsLoading(true);
       uploadFile(title, description, url, userData.id);
       history.push('/profile');
   };
