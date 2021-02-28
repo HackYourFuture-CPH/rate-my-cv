@@ -36,9 +36,9 @@ export const Home = () => {
       <div className="write-resume gray-background">
         <TitleDesc
           title="Write your Resume"
-          description="Amet minim mollit non deserunt ullamco est sit allque 
+          description={`Amet minim mollit non deserunt ullamco est sit allque
           dolor do amet sint. Velit officia consequat duls enim 
-          velit mollit. Exercitation veniam consequat sunt nostrud amet"
+          velit mollit. Exercitation veniam consequat sunt nostrud amet`}
         />
         <img src={image1} alt="right" />
       </div>
@@ -46,9 +46,9 @@ export const Home = () => {
         <img src={image2} alt="left" />
         <TitleDesc
           title="Review Resumes"
-          description="Amet minim mollit non deserunt ullamco est sit allque 
+          description={`Amet minim mollit non deserunt ullamco est sit allque  
           dolor do amet sint. Velit officia consequat duls enim 
-          velit mollit. Exercitation veniam consequat sunt nostrud amet"
+          velit mollit. Exercitation veniam consequat sunt nostrud amet`}
         />
       </div>
       <div className="uploaded-cvs">
