@@ -29,7 +29,7 @@ export function useAuthentication() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   // default is loading
   const [isLoading, setIsLoading] = useState(true);
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState({});
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       // if user exists it means authenticated
