@@ -11,11 +11,11 @@ export const SentReviewsComponent = ({ reviews }) => {
       {reviews.map(({ id, cv, reviewer, createdDate, review }) => (
         <div key={id} className="sent-review">
           <div className="profile-picture">
-            <div className="circle-mask">
+            <div className="circle circle-cut">
               <img
                 src={cv.author.profileImageUrl || unknownUser}
                 alt="Portrait of user"
-                className="user-photo"
+                className="user-pic"
               />
             </div>
           </div>
