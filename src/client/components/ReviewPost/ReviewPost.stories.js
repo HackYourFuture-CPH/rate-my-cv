@@ -8,7 +8,7 @@ export default {
 
 export const ReviewCV = () => (
   <ReviewPost
-    fullname="Arlene McCoy"
+    fullName="Arlene McCoy"
     review="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
     createdDate={new Date()}
   />
@@ -16,7 +16,7 @@ export const ReviewCV = () => (
 export const ReviewCV1 = () => (
   <ReviewPost
     profileImageUrl={profileImage}
-    fullname="Arlene McCoy"
+    fullName="Arlene McCoy"
     review="Lorem ipsum dolor sit amet,onsectetur adipiscing elit. Praesent commodo sapien lacus,sit amet tristique lorem placerat at. Integer dolor mi, viverra pellentesque nisl quis,egestas dapibus magna."
     createdDate={new Date()}
   />

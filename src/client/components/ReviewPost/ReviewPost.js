@@ -4,7 +4,7 @@ import profileImage from '../../assets/images/portraits/unknown-black.png';
 import './ReviewPost.styles.css';
 
 export const ReviewPost = ({
-  fullname,
+  fullName,
   review,
   createdDate,
   profileImageUrl,
@@ -16,7 +16,7 @@ export const ReviewPost = ({
       </div>
 
       <div className="name-date">
-        <span className="name">{fullname} </span>
+        <span className="name">{fullName} </span>
         <span className="date-time">{createdDate.toLocaleString()}</span>
       </div>
 
@@ -27,13 +27,13 @@ export const ReviewPost = ({
 };
 ReviewPost.propTypes = {
   profileImageUrl: PropTypes.string,
-  fullname: PropTypes.string,
+  fullName: PropTypes.string,
   review: PropTypes.string,
   createdDate: PropTypes.instanceOf(Date),
 };
 ReviewPost.defaultProps = {
   profileImageUrl: '',
-  fullname: '',
+  fullName: '',
   review: '',
   createdDate: '',
 };

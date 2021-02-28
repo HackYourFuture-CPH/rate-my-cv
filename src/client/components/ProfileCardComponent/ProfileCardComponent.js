@@ -1,24 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './ProfileCardComponent.styles.css';
 import iconLinkedin from '../../assets/images/icons/linkedin.svg';
 import iconWebsite from '../../assets/images/icons/website.svg';
 import iconGithub from '../../assets/images/icons/github.svg';
 import unknownUser from '../../assets/images/portraits/unknown-black.png';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
-export const ProfileCardComponent = ({
-  profileImageUrl,
-  fullName,
-  position,
-  linkedin,
-  website,
-  github,
-}) => {
+export const ProfileCardComponent = () => {
+  const { userData:{ profileImageUrl, fullName, position, linkedIn, github, website }  } = useAuthentication();
+
   return (
     <div className="profile-card-whole">
       <div className="top">
         <div className="circle">
-          <img src={profileImageUrl || unknownUser} alt="Portrait of user" />
+          <img
+            src={profileImageUrl || unknownUser}
+            alt="Portrait of user"
+          />
         </div>
         <h2 className="user-full-name">{fullName}</h2>
         <p className="user-position">{position}</p>
@@ -26,7 +24,7 @@ export const ProfileCardComponent = ({
 
       <hr />
       <div className="profile-card-social-links">
-        {linkedin && (
+        {linkedIn && (
           <div className="social-link">
             <img
               src={iconLinkedin}
@@ -34,10 +32,10 @@ export const ProfileCardComponent = ({
               alt="Social media icon"
             />
             <a
-              href={`https://www.linkedin.com/in/${linkedin}`}
+              href={`https://www.linkedin.com/in/${linkedIn}`}
               className="social-link-text"
             >
-              {linkedin}
+              {linkedIn}
             </a>
           </div>
         )}
@@ -67,20 +65,4 @@ export const ProfileCardComponent = ({
       </div>
     </div>
   );
-};
-
-ProfileCardComponent.propTypes = {
-  profileImageUrl: PropTypes.string,
-  fullName: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
-  linkedin: PropTypes.string,
-  website: PropTypes.string,
-  github: PropTypes.string,
-};
-
-ProfileCardComponent.defaultProps = {
-  profileImageUrl: unknownUser,
-  linkedin: undefined,
-  website: undefined,
-  github: undefined,
 };

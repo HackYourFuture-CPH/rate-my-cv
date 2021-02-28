@@ -10,16 +10,20 @@ import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import NotFoundPage from './containers/NotFound/notFoundPage.component';
-import SearchFilter from './components/SearchFilterComponent/SearchFilter.js';
+import Footer from './components/Footer/Footer';
 
 function App() {
-  const { isAuthenticated, isLoading } = useAuthentication();
+  const { isAuthenticated, isLoading, userData } = useAuthentication();
   if (isLoading) return <Loader />;
   return (
     <Router>
       {location.pathname === '/sign-in' ||
       location.pathname === '/sign-up' ? null : (
-        <Header isAuthenticated={isAuthenticated} username="William Henry Gates" />
+        <Header
+          isAuthenticated={isAuthenticated}
+          // eslint-disable-next-line camelcase
+          userName={userData?.full_name}
+        />
       )}
       <Switch>
         <Route exact path="/">
@@ -37,7 +41,10 @@ function App() {
         </AuthenticatedRoute>
         <Route path="*" component={NotFoundPage} />
       </Switch>
-      <SearchFilter/>
+      {location.pathname === '/sign-in' ||
+      location.pathname === '/sign-up' ? null : (
+        <Footer />
+      )}
     </Router>
   );
 }
