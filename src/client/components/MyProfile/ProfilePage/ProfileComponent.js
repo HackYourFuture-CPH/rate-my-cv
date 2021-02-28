@@ -129,8 +129,13 @@ export default function ProfileComponent() {
         <div className="uploaded-cv">
           {cvsList.length !== 0 && <YourUploadedCVs CVsList={cvsList} />}
         </div>
-        <div className="sent-reviews">
+        <div className="sent-reviews2">
+        <span>
+          <h2>Sent reviews</h2>
+        </span>
+        <div className='sent-reviews2-body'>
           {reviews.length !== 0 && <SentReviewsComponent reviews={reviews} />}
+          </div>
         </div>
       </div>
     </div>
