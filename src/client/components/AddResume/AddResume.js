@@ -1,22 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 import PostUrlComponent from '../PostUrl/PostUrlComponent';
+import { useStorage } from '../../hooks/fileUploader';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
-  const [uploadedFile, setUploadedFile] = useState('');
+  const { uploadedFile, setUploadedFile, uploadFile } = useStorage();
 
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     'application/msword',
     'text/plain',
-    'text/rtf'
+    'text/rtf',
   ];
 
   const handleChange = (e) => {
@@ -35,9 +37,16 @@ export const AddResume = () => {
     }
   };
 
-
   const clickHandler = () => {
-    PostUrlComponent({ uploadedFile, title, description });
+    const { userData } = useAuthentication();
+    const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false);
+    //PostUrlComponent({ uploadedFile, title, description });
+    if (userData) {
+      setIsLoading(true);
+      uploadFile(title, description, useStorage(uploadedFile), userData.id);
+      history.push('/profile');
+    }
   };
 
   return ReactDom.createPortal(

@@ -1,10 +1,34 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../firebase/configure';
 
+const uploadFile = async ({ title, description, fk_user_id, file_url }) => {
+  try {
+    const postCv = await fetch('/api/cvs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title,
+        description,
+        file_url,
+        fk_user_id,
+      }),
+    });
+    if (!postCv.ok) {
+      throw new Error(postCv.statusText);
+      // directing to the #165 component (Hasn't merge yet)
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
+  const [uploadedFile, setUploadedFile] = useState('');
 
   useEffect(() => {
     if (file) {
@@ -30,5 +54,5 @@ export const useStorage = (file) => {
     }
   }, [file]);
 
-  return { progress, url, error };
+  return { progress, url, error, uploadedFile, setUploadedFile, uploadFile };
 };
