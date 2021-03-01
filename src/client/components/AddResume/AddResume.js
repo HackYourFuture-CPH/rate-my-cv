@@ -15,7 +15,6 @@ export const AddResume = ({isShown,setIsShown}) => {
   const { userData } = useAuthentication();
   const history = useHistory();
   
-
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -85,7 +84,6 @@ export const AddResume = ({isShown,setIsShown}) => {
                 * File supported DOC,DOCX,PDF,RTF,TXT, 5MB Max
               </span>
             </label>
-
             <form id="file-chosen">
               <input
                 type="file"
