@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 import {useHistory} from 'react-router-dom';
-
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 import { useStorage } from '../../hooks/fileUploader';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
-export const AddResume = () => {
+export const AddResume = ({isShown,setIsShown}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
@@ -16,7 +15,6 @@ export const AddResume = () => {
   const { userData } = useAuthentication();
   const history = useHistory();
   
-
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -45,12 +43,20 @@ export const AddResume = () => {
       history.push('/profile');
   };
 
-  return ReactDom.createPortal(
-    <div className="popup">
-      <div className="popup-form">
-        <img className="close-icon" src={close} alt="close Icon" />
-        <h3>Upload new CV</h3>
-        <div className="form">
+  return ReactDom.createPortal(isShown ? (
+    <div className="modal">
+      <div className="modal-form">
+        <div className="close-icon"
+          onClick={() => setIsShown(false)}
+          onKeyPress={() =>setIsShown(false)}
+          draggable={false}
+          role="button"
+          tabIndex="0"
+        >
+        <img src={close} alt="close Icon" />
+        </div>
+        <h3 className="text">Upload new CV</h3>
+        <div className="uploadform">
           <div className="title">
             <label>Add Title</label>
             <div>
@@ -78,7 +84,6 @@ export const AddResume = () => {
                 * File supported DOC,DOCX,PDF,RTF,TXT, 5MB Max
               </span>
             </label>
-
             <form id="file-chosen">
               <input
                 type="file"
@@ -114,7 +119,8 @@ export const AddResume = () => {
           )}
         </div>
       </div>
-    </div>,
+    </div>)
+    : null,
     document.querySelector('#portal'),
   );
 };
