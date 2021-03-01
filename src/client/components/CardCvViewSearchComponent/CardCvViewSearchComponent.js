@@ -24,12 +24,12 @@ export const CardCvViewSearchComponent = ({
           </div>
         </div>
         <div className="user-info">
-          <div className="user-name">{fullName}</div>
+          <div className="user-fullname">{fullName}</div>
           <div className="user-position">{position}</div>
         </div>
       </div>
       <div className="card-cv-middle">
-        <div className="cv-title">{cvTitle}</div>
+        <div className="cv-name">{cvTitle}</div>
         <div className="created-date">{createdDate.toLocaleString()}</div>
       </div>
       <div className="card-cv-bottom">
