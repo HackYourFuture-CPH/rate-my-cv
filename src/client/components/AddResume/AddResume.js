@@ -1,41 +1,49 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDom from 'react-dom';
+import {useHistory} from 'react-router-dom';
+
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
 import { useStorage } from '../../hooks/fileUploader';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 export const AddResume = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(null);
-  const [uploadedFile, setUploadedFile] = useState('');
+  const { uploadedFile, setUploadedFile, uploadFile, uploadToStorage, url } = useStorage();
+  const { userData } = useAuthentication();
+  const history = useHistory();
+  
 
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     'application/msword',
     'text/plain',
-    'text/rtf'
+    'text/rtf',
   ];
 
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
-
     setUploadedFile(selectedFile);
 
     if (selectedFile) {
       if (types.includes(selectedFile.type)) {
         setError(null);
-        setUploadedFile(selectedFile);
+        uploadToStorage(selectedFile);
       } else {
-        setUploadedFile(null);
-        setError('Please select a pdf file');
+        // setUploadedFile(null);
+        setError('Please select a suitable file format');
       }
     }
   };
-
-  useStorage(uploadedFile);
+  
+  const clickHandler = () => {
+      uploadFile(title, description, userData.id, url);
+      history.push('/profile');
+  };
 
   return ReactDom.createPortal(
     <div className="popup">
@@ -95,9 +103,15 @@ export const AddResume = () => {
           {error && (
             <p style={{ color: 'red', marginRight: '50px' }}>{error}</p>
           )}
-          <div className="add-btn"> 
-                <Button buttonName="Add resume" />
-          </div>
+          {uploadedFile ? (
+            <div className="add-btn">
+              <Button buttonName="Add resume" onClick={clickHandler} />
+            </div>
+          ) : (
+            <div className="add-btn">
+              <Button buttonName="Add resume" />
+            </div>
+          )}
         </div>
       </div>
     </div>,
