@@ -1,0 +1,62 @@
+.container-sign-up {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15vh 1vw 15vh 4vw;
+}
+
+.img-sign-up {
+  padding-top: 2em;
+  max-width: 80%;
+}
+
+.review {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: xxx-large;
+}
+
+.resume {
+  font-family: 'Jost';
+  font-size: xxx-large;
+}
+
+.description-sign-up {
+  padding: 1em 0;
+  font-size: large;
+  font-weight: 300;
+}
+
+.text-sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 1160px) {
+  .review, .resume {
+    font-size: xx-large;
+  }
+  .img-sign-up {
+    padding-top: 1em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container-sign-up {
+    padding: 0.5em;
+    align-items: center;
+    flex-direction: inherit;
+  }
+  .review, .resume {
+    font-size: x-large;
+  }
+  .description-sign-up {
+    font-size: medium;
+  }
+  .img-sign-up {
+    max-width: 40%;
+  }
+}

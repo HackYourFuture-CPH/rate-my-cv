@@ -1,0 +1,52 @@
+.homepage-slogan {
+  position: relative;
+  width: 100%;
+}
+
+.homepage-slogan img {
+  width: 100%;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.homepage-slogan h2 {
+  font-size: xx-large;
+}
+
+.homepage-slogan p {
+  font-size: x-large;
+}
+
+.homepage-slogan button {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .text-overlay {
+    position: absolute;
+    top: 30%;
+  }
+  .homepage-slogan h2 {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text-overlay {
+    position: absolute;
+    top: 20%;
+    padding: 0 5%;
+  }
+  .homepage-slogan h2 {
+    font-size: large;
+  }
+  .homepage-slogan p {
+    font-size: medium;
+  }
+}

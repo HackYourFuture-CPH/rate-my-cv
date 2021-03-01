@@ -1,0 +1,83 @@
+.profile-card-whole {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  justify-content: center;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em 2em 1em 2em;
+  text-align: center;
+}
+
+.circle {
+  width: 150px;
+  max-height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+}
+
+.circle>img {
+  display: inline;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
+.profile-card-social-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 2em 2em 2em;
+}
+
+hr {
+  border: solid 1px #ebebeb;
+}
+
+.social-link-text {
+  line-height: 2.5em;
+  text-decoration: none;
+  font-size: 14px;
+  color: #000000;
+}
+
+.user-position {
+  margin-top: 0;
+  color: #818181;
+  font-size: 14px;
+}
+
+.user-full-name {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  width: 23px;
+  margin-right: 1em;
+}
+
+@media screen and (max-width: 750px) {
+  .profile-card-social-links {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 2em 2em 2em;
+  }
+  .circle>img {
+    max-width: 100px;
+  }
+  .circle {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}

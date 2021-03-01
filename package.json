@@ -16,6 +16,7 @@
     "db:clean": "cd ./src/server/ && knex migrate:rollback",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
     "storybook": "cd ./src/client/ && start-storybook -p 3007",
+    "build-storybook": "build-storybook --no-dll -s public -c ./src/client/.storybook --quiet",
     "test": "jest",
     "test:watch": "jest --watch",
     "code:check": "npm run code:lint && npm run code:format -- --check",
@@ -23,11 +24,13 @@
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
     "code:format": "prettier \"./src/**/**.{js,jsx,ts,tsx}\"",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "knex": "knex --cwd ./src/server"
+    "knex": "knex --cwd ./src/server",
+    "heroku-postbuild": "npm run db:setup"
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
@@ -42,6 +45,7 @@
     "circular-json": "^0.5.9",
     "clean-webpack-plugin": "^3.0.0",
     "cookie-parser": "^1.4.4",
+    "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "cross-fetch": "^3.0.4",
     "debug": "^4.1.1",
@@ -70,6 +74,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
     "react-social-login-buttons": "^3.0.0",
+    "regenerator-runtime": "^0.13.7",
     "sass-loader": "^7.1.0",
     "serve-favicon": "^2.5.0",
     "sqlite3": "^4.1.1",
@@ -87,7 +92,7 @@
     "express-form-data": "^2.0.10",
     "husky": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.9.0",
+    "jest": "^27.0.0-next.2",
     "mock-knex": "^0.4.7",
     "nodemon": "^1.12.1",
     "poetic": "^1.2.6",
@@ -98,7 +103,11 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
-    }
+    },
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "<rootDir>/setupTests.js"
+    ]
   },
   "browserslist": [
     ">0.2%",

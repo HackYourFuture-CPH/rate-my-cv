@@ -1,0 +1,26 @@
+.middle-part {
+  display: grid;
+  padding: 2% 5%;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 40px;
+  row-gap: 0px;
+}
+.uploaded-cv {
+  padding-top: 20px;
+}
+.sent-reviews {
+  width: 100%;
+}
+.profile-description {
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+.sent-reviews h2 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+  margin-top: 0;
+}

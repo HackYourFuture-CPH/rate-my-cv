@@ -1,0 +1,48 @@
+.write-resume {
+  display: grid;
+  padding: 7% 10%;
+  grid-template-columns: 50% 50%;
+  column-gap: 10px;
+  align-items: center;
+}
+.write-resume img {
+  width: 83%;
+}
+.gray-background {
+  background-color: #f8f8f8;
+}
+.instruction {
+  padding: 5% 0%;
+}
+.uploaded-cvs {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 5% 0%;
+  background-color: #f8f8f8;
+}
+.usercvs {
+  padding: 5% 15%;
+  grid-template-columns: 6fr 6fr 6fr;
+  grid-gap: 50px;
+}
+.homepage-slogan:nth-of-type(1) {
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .write-resume {
+    display: flex;
+    flex-direction: column;
+  }
+  .usercvs {
+    display: flex;
+    flex-direction: column;
+  }
+  .all-images {
+    display: flex;
+    flex-direction: column;
+  }
+  .instructions-container {
+    height: auto;
+  }
+}

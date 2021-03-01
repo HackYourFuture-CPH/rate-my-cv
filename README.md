@@ -14,10 +14,10 @@
 - [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
 - [📅 Project's Calendar](#-projects-calendar)
 - [👩🏻‍💼💡👨🏽‍💼 The Customer](#-the-customer)
-    - [💼 Business Glossary](#-business-glossary)
-    - [🗄️ Database Model Diagram](#️-database-model-diagram)
-    - [🖼 Mockup](#-mockup)
-    - [🖼 Features](#-features)
+  - [💼 Business Glossary](#-business-glossary)
+  - [🗄️ Database Model Diagram](#️-database-model-diagram)
+  - [🖼 Mockup](#-mockup)
+  - [🖼 Features](#-features)
 - [📈 Process 📉📈](#-process-)
   - [💻 Working with code](#-working-with-code)
   - [🧱 Guidelines for building components](#-guidelines-for-building-components)
@@ -43,9 +43,9 @@
     - [What is it?](#what-is-it)
     - [Usage](#usage)
 - [🏁 Getting Started](#-getting-started)
-    - [💾 Installations](#-installations)
-      - [Errors](#errors)
-    - [Code linting](#code-linting)
+  - [💾 Installations](#-installations)
+    - [Errors](#errors)
+  - [Code linting](#code-linting)
 - [📜 Getting the HackYourFuture certificate](#-getting-the-hackyourfuture-certificate)
 - [👨🏾‍💻 Authors](#-authors)
 - [📝 License](#-license)
@@ -85,7 +85,7 @@ _Class Dates_
         - Fix things yourself (to a certain degree)
         - If you see something that could be improved then improve it!
       - No more teacing topics (you figure out how things work yourself)
-        - Or maybe someone from the class studies a topic and teaches the rest of the class 
+        - Or maybe someone from the class studies a topic and teaches the rest of the class
       - Work together
   - How will the classes be run?
   - It is okay to make mistakes. But you have to learn from them
@@ -103,8 +103,36 @@ _Class Dates_
   - Communication
     - Very important
   - Getting the certificate: https://github.com/HackYourFuture-CPH/chattie/blob/develop/certificate.md
-
-Graduation Wednesday 7th of March
+- Week 2 —> 24-Jan-2021
+  - Overview of project (where is develop)
+  - Version 1.0 should be everybodies focus
+    - The different milestones: https://github.com/HackYourFuture-CPH/rate-my-cv/milestones
+  - Talk about the checklist (linking story in PR, updating story in project board, checking files changed, testing etc)
+  - Remember the focus. One story at a time. And the responsibility what do i need to worry about and what do i not need to worry about
+  - How to remove something from files changed
+    - If you want to remove whole file: `git checkout origin/master src/index.js`, then `add`, `commit` and `push` the change
+    - If you want to remove specific line either change it back to the original or maybe try [this](https://stackoverflow.com/questions/6963129/is-it-possible-to-git-checkout-a-single-line-instead-of-the-entire-file)
+  - Get latest changes into your branch:
+    - Using an example of a branch called `user-login` with no files changes (remember to do `git status` and add changes to your branch before doing the changes below)
+    - First checkout develop: `git checkout develop`
+    - Then pull the latest changes on develop: `git pull`
+    - Then checkout the branch you were working in: `git checkout user-login`
+    - Then merge the latest changes from `develop` into your branch: `git merge develop`
+- Week 3 —> 31-Jan-2021
+  - Status of develop
+  - Be respoctful of mentors time! Try figure it out yourself first (i definitely know you do that) If that is not working, reach out to a classmate, then maybe the support channels. Then if you still cannot figure it out the reach out to mentors. Study group
+  - Restate the focus on Files changed and why it is so important
+  - Start giving reviews to each other as classmates
+  - Really good to see how you are working as a team! It makes me super happy and proud!
+  
+- Week 4 —> 7-Feb-2021
+  - Knex Migrations && Seeding
+  - PR Flow
+  - Milestones
+- Week 5 —> 14-Feb-2021
+- Week 6 —> 21-Feb-2021
+- Week 7 —> 28-Feb-2021
+  Graduation Wednesday 3rd of March
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
@@ -117,13 +145,15 @@ _Add here information about the Business Glossary_
 
 #### 🗄️ Database Model Diagram
 
-Check the DB Model Diagram [here](https://dbdiagram.io/d/5ffc249780d742080a35cb4a)
+Check the DB Model Diagram [here](https://dbdiagram.io/d/6009d76480d742080a375e16)
 
 - [How to make changes on the diagram](/diagram.md)
 
 #### 🖼 Mockup
 
 Check the mockup [here](https://www.figma.com/file/0ST4EGb45fiNtMqFl4WgBc/Review-Resume)
+
+Design style guide here: https://github.com/ghofranebenhmaid/review-resume/
 
 #### 🖼 Features
 

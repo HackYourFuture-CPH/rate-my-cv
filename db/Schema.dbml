@@ -1,0 +1,35 @@
+Table users{
+ id int
+ full_name varchar
+ position varchar
+ linkedin varchar
+ github varchar
+ website varchar
+ profile_image_url varchar
+ created_date date
+ firebase_token varchar
+}
+
+Table cv{
+ id int
+ title varchar
+ description varchar
+ file_url varchar
+ fk_user_id int
+ created_date date
+}
+
+Table review{
+ id int
+ title varchar
+ content text
+ stars int
+ fk_cv_id int
+ fk_user_id int
+ created_date date
+}
+
+
+Ref: "cv"."fk_user_id" > "users"."id"
+Ref: "review"."fk_user_id" > "users"."id"
+Ref: "review"."fk_cv_id" > "cv"."id"

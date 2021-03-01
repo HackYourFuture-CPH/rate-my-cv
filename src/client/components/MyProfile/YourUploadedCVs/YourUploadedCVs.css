@@ -1,0 +1,115 @@
+/* body background color should be defined */
+
+.your-uploaded-cvs {
+  display: flex;
+  flex-direction: column;
+  width: 59vw;
+}
+
+.header-your-uploaded-cv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 13px;
+}
+
+.your-uploaded-cvs li {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto 15vw 12vw 12vw;
+  gap: 7px;
+  align-items: baseline;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  height: 60px;
+  margin: 14px 0 14px 0;
+  padding: 12px 30px 0 30px;
+  background-color: #ffffff;
+}
+.your-uploaded-cvs ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.your-uploaded-cvs h2 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+  margin-top: 0;
+}
+
+.cv-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.cv-date {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #9a9a9a;
+}
+
+.see-review button,
+.download button {
+  border: 1px solid #f25b06;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 12vw;
+  height: 38px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.upload-cv-botton button {
+  width: 17vw;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.mobile-version-cv-star-holder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .your-uploaded-cvs {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding-top: 5vh;
+  }
+  .header-your-uploaded-cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 13px;
+  }
+  .upload-cv-botton button {
+    width: 60vw;
+  }
+  .your-uploaded-cvs li {
+    justify-content: center;
+    grid-template-columns: 40vw 40vw;
+    height: 20vh;
+  }
+  .see-review button,
+  .download button {
+    width: 40vw;
+  }
+}

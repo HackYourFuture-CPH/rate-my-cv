@@ -1,0 +1,100 @@
+.card-cv-whole {
+  max-width: 300px;
+  background: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  display: flex;
+  padding: 1.5em;
+  flex-direction: column;
+  text-align: left;
+}
+
+.card-cv-top {
+  display: flex;
+  align-items: flex-start;
+  height: 4em;
+}
+
+.profile-picture {
+  margin-right: 1em;
+}
+
+.user-photo {
+  display: inline;
+  margin: 0 auto;
+  width: 40px;
+  justify-content: flex-start;
+}
+
+.circle-mask {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.user-info {
+  align-items: flex-start
+}
+
+.user-fullname {
+  font-weight: bold;
+  font-size: medium;
+  overflow: hidden;
+  min-height: 1em;
+  max-height: 2.5em;
+  text-transform: capitalize;
+}
+
+.user-position {
+  font-size: smaller;
+  color: #818181;
+}
+
+.card-cv-middle {
+  margin-top: 0.5em;
+  align-items: flex-start;
+  height: 5em;
+}
+
+.cv-name {
+  font-weight: bold;
+  font-size: larger;
+  color: black;
+  overflow: hidden;
+  max-height: 2.5em;
+}
+
+.created-date {
+  font-size: x-small;
+  color: #9A9A9A;
+}
+
+.card-cv-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5em;
+}
+
+.button-blue {
+  padding: 11px 20px;
+  background: #0676F2;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1080px) {
+  .card-cv-top {
+    height: 5em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card-cv-top {
+    height: 4em;
+  }
+}
