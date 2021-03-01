@@ -9,7 +9,6 @@ import { AddResume } from '../../AddResume/AddResume';
 export function YourUploadedCVs({ CVsList}) {
   const [isShown, setIsShown] = useState(false);
 
-  
   return (
     <section className="your-uploaded-cvs">
       <div className="header-your-uploaded-cv">
@@ -20,9 +19,9 @@ export function YourUploadedCVs({ CVsList}) {
           <Button
             buttonName="Upload new CV"
             style={{ backgroundColor: 'black' }} 
-            onClick = {()=>{setIsShown(true)}}
+            onClick = {()=> setIsShown(true) }
           />
-          <AddResume isShown={isShown} setIsShown={ setIsShown}/>
+          <AddResume isShown={isShown} setIsShown={setIsShown}/>
         </div>
       </div>
       <ul>

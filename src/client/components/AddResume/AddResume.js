@@ -11,7 +11,6 @@ export const AddResume = ({isShown,setIsShown}) => {
   const [error, setError] = useState(null);
   const [uploadedFile, setUploadedFile] = useState('');
   
-  
   const types = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -42,8 +41,8 @@ export const AddResume = ({isShown,setIsShown}) => {
     <div className="modal">
       <div className="modal-form">
         <div className="close-icon"
-          onClick={() => { setIsShown(false) }}
-          onKeyPress={() => { setIsShown(false) }}
+          onClick={() => setIsShown(false)}
+          onKeyPress={() =>setIsShown(false)}
           draggable={false}
           role="button"
           tabIndex="0"
