@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 import {useHistory} from 'react-router-dom';
-
 import Button from '../Button/Button';
 import './AddResume.css';
 import close from '../../assets/images/closeIcon.svg';
