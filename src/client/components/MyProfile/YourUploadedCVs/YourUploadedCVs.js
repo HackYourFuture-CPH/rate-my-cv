@@ -6,7 +6,7 @@ import Button from '../../Button/Button';
 import PropTypes from 'prop-types';
 import { AddResume } from '../../AddResume/AddResume';
 
-export function YourUploadedCVs({ CVsList}) {
+export function YourUploadedCVs({ CVsList, setIsLoaded }) {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -18,10 +18,14 @@ export function YourUploadedCVs({ CVsList}) {
         <div className="upload-cv-botton">
           <Button
             buttonName="Upload new CV"
-            style={{ backgroundColor: 'black' }} 
-            onClick = {()=> setIsShown(true) }
+            style={{ backgroundColor: 'black' }}
+            onClick={() => setIsShown(true)}
           />
-          <AddResume isShown={isShown} setIsShown={setIsShown}/>
+          <AddResume
+            isShown={isShown}
+            setIsShown={setIsShown}
+            setIsLoaded={setIsLoaded}
+          />
         </div>
       </div>
       <ul>
@@ -61,4 +65,5 @@ const Cvs = PropTypes.shape({
 
 YourUploadedCVs.propTypes = {
   CVsList: PropTypes.arrayOf(Cvs).isRequired,
+  setIsLoaded: PropTypes.func.isRequired,
 };
