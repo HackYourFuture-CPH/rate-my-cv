@@ -60,15 +60,20 @@
   color: #9a9a9a;
 }
 
-.see-review button,
-.download button {
-  border: 1px solid #f25b06;
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 12vw;
-  height: 38px;
-  text-align: center;
-  font-size: 14px;
+.see-review .button {
+  background-color: #F25B06;
+  color: white;
+}
+
+.download .button {
+  background-color: white;
+  color: #F25B06;
+  border: 2px solid #F25B06;
+}
+
+.upload-cv-botton .button {
+  background-color: black;
+  color: white;
 }
 
 .upload-cv-botton button {

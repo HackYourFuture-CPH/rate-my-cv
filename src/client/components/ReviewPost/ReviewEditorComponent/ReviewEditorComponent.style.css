@@ -45,7 +45,7 @@
 .user-name {
   font-weight: bold;
   font-size: medium;
- align-items: flex-start;
+  align-items: flex-start;
 }
 .input-part {
   margin-top: 0.5em;
@@ -64,4 +64,9 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 0.5em;
+}
+
+.button-part .button {
+  background-color: #0676f2;
+  color: white;
 }

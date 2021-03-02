@@ -16,11 +16,7 @@ export function YourUploadedCVs({ CVsList, setIsLoaded }) {
           <h2>Your Uploaded CVs</h2>
         </span>
         <div className="upload-cv-botton">
-          <Button
-            buttonName="Upload new CV"
-            style={{ backgroundColor: 'black' }}
-            onClick={() => setIsShown(true)}
-          />
+          <Button buttonName="Upload new CV" onClick={() => setIsShown(true)} />
           <AddResume
             isShown={isShown}
             setIsShown={setIsShown}
@@ -35,16 +31,10 @@ export function YourUploadedCVs({ CVsList, setIsLoaded }) {
               <CVList title={cv.title} date={cv.createdDate.toLocaleString()} />
               <RatingStars averageStars={(cv.averageStars * 100) / 5} />
               <div className="download">
-                <Button
-                  buttonName="Download"
-                  style={{ backgroundColor: '#FFFFFF', color: '#f25b06' }}
-                />
+                <Button buttonName="Download" />
               </div>
               <div className="see-review">
-                <Button
-                  buttonName="See reviews"
-                  style={{ backgroundColor: '#F25B06', color: '#FFFFFF' }}
-                />
+                <Button buttonName="See reviews" />
               </div>
             </li>
           ) : (

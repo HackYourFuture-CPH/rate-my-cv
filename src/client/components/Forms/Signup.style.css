@@ -67,3 +67,13 @@
   color: red;
   font-size: 12px;
 }
+
+.button-forms .button {
+  background-color: #0676f2;
+  color: white;
+}
+
+.form>.button {
+  background-color: #F25B06;
+  color: white;
+}

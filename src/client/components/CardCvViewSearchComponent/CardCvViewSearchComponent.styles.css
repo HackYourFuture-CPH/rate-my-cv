@@ -78,9 +78,9 @@
   margin-top: 0.5em;
 }
 
-.button-blue {
+.card-cv-bottom .button {
   padding: 11px 20px;
-  background: #0676F2;
+  background-color: #0676F2;
   font-weight: 500;
   text-decoration: none;
   color: white;

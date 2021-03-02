@@ -39,9 +39,8 @@ export default function ReviewEditorComponent({
         />
       </div>
       <div className="button-part">
-        <Button className='blue-button'
+        <Button
           buttonName="Send review"
-          style={{ backgroundColor: 'blue', fontWeight: 'bold' }}
           type="submit"
           onClick={() =>
             console.log(

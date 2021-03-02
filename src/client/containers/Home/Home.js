@@ -55,8 +55,8 @@ export const Home = () => {
         <CvcardList title="Latest uploaded resumes" cvs={cvs.slice(-3)} />
         <Button
           buttonName="See all uploaded resumes"
-          style={{ backgroundColor: '#F25B06' }}
           onClick={allResumes}
+          className="orange-button"
         />
       </div>
     </div>

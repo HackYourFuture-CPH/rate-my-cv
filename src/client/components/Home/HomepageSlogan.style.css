@@ -25,6 +25,8 @@
 
 .homepage-slogan button {
   margin-top: 10px;
+  background-color: #F25B06;
+  color: white;
 }
 
 @media screen and (max-width: 750px) {
