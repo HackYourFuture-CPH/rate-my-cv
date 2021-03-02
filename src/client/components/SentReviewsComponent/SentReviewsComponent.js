@@ -31,7 +31,7 @@ export const SentReviewsComponent = ({ reviews }) => {
               href={cv.fileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="button button-orange"
+              className="button"
             >
               See resume
             </a>

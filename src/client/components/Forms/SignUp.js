@@ -27,10 +27,7 @@ export default function SignUp({ onSubmit }) {
     <form className="form" onSubmit={handleSubmit}>
       <h2>Signup to Review Resume</h2>
       <div className="button-forms">
-        <Button
-          buttonName="Signup With Linkedin"
-          style={{ backgroundColor: '#0676f2' }}
-        />
+        <Button buttonName="Signup With Linkedin" />
         <div className="space">
           <div className="github-container">
             <img className="github-logo" src={iconGithub} alt="github icon" />
@@ -165,11 +162,7 @@ export default function SignUp({ onSubmit }) {
         default notifications settings
       </label>
       <br />
-      <Button
-        buttonName="Create Account"
-        type="submit"
-        style={{ backgroundColor: '#da532c' }}
-      />
+      <Button buttonName="Create Account" type="submit" />
     </form>
   );
 }

@@ -16,11 +16,7 @@ function HomepageSlogan() {
       <div className="text-overlay">
         <h2>Improve Your Resume To Present Your Best Self</h2>
         <p>Upload your Resume to get an evaluation</p>
-        <Button
-          buttonName="Register"
-          style={{ backgroundColor: '#F25B06' }}
-          onClick={redirect}
-        />
+        <Button buttonName="Register" onClick={redirect} />
       </div>
     </section>
   );

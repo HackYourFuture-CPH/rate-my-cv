@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.cv-button .button {
+  background-color: black;
+  color: white;
+}
 
 .search-button {
   margin-left: 130px;
@@ -15,7 +19,7 @@
 }
 
 @media(max-width: 450px){
-  .cv-btn button{
+  .cv-button button{
     font-size: 10px;
   } 
   .search-button {

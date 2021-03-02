@@ -20,10 +20,7 @@ function LoginForm({ onSubmit }) {
       <div className="heading-login">
         <h2>Signin to review resume</h2>
         <div className="button-image">
-          <Button
-            buttonName="Log in with Linkedin"
-            style={{ backgroundColor: '#0388fc' }}
-          />
+          <Button buttonName="Log in with Linkedin" />
           <div className="github-logo">
             <img src={github} alt="github-icon" />
           </div>
@@ -62,11 +59,7 @@ function LoginForm({ onSubmit }) {
           {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="signin-btn">
-          <Button
-            buttonName="Sign in"
-            type="submit"
-            style={{ backgroundColor: '#DA532C' }}
-          />
+          <Button buttonName="Sign in" type="submit" />
         </div>
       </form>
     </div>

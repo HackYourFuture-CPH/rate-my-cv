@@ -21,6 +21,17 @@
   padding: 5% 0%;
   background-color: #f8f8f8;
 }
+
+.usercv-list .button {
+  background-color: #0676F2;
+  color: white;
+}
+
+.uploaded-cvs button {
+  background-color: #F25B06;
+  color: white;
+}
+
 .usercvs {
   padding: 5% 15%;
   grid-template-columns: 6fr 6fr 6fr;
