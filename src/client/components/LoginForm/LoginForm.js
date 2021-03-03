@@ -2,7 +2,7 @@ import React from 'react';
 import useForm from './useForm';
 import validate from './Validation';
 import './LoginForm.css';
-import github from './github.png';
+import iconGithub from '../../assets/images/icons/github.svg';
 import Button from '../Button/Button';
 
 function LoginForm({ onSubmit }) {
@@ -24,8 +24,8 @@ function LoginForm({ onSubmit }) {
             buttonName="Log in with Linkedin"
             style={{ backgroundColor: '#0388fc' }}
           />
-          <div className="github-logo">
-            <img src={github} alt="github-icon" />
+          <div className="github-container">
+            <img className="github-logo" src={iconGithub} alt="github icon" />
           </div>
         </div>
         <div className="partition">
