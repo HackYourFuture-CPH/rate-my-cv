@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './YourUploadedCVs.css';
 import { RatingStars } from '../../RatingStars/RatingStars';
 import { CVList } from './CVList';
 import Button from '../../Button/Button';
 import PropTypes from 'prop-types';
+import { AddResume } from '../../AddResume/AddResume';
 
-export function YourUploadedCVs({ CVsList }) {
+export function YourUploadedCVs({ CVsList, setIsLoaded }) {
+  const [isShown, setIsShown] = useState(false);
+
   return (
     <section className="your-uploaded-cvs">
       <div className="header-your-uploaded-cv">
@@ -16,10 +19,15 @@ export function YourUploadedCVs({ CVsList }) {
           <Button
             buttonName="Upload new CV"
             style={{ backgroundColor: 'black' }}
+            onClick={() => setIsShown(true)}
+          />
+          <AddResume
+            isShown={isShown}
+            setIsShown={setIsShown}
+            setIsLoaded={setIsLoaded}
           />
         </div>
       </div>
-      {/* CVsList is an array comes as a resault of fetching API GET CVs  */}
       <ul>
         {CVsList.map((cv, i) => {
           return i < 3 ? (
@@ -57,4 +65,5 @@ const Cvs = PropTypes.shape({
 
 YourUploadedCVs.propTypes = {
   CVsList: PropTypes.arrayOf(Cvs).isRequired,
+  setIsLoaded: PropTypes.func.isRequired,
 };

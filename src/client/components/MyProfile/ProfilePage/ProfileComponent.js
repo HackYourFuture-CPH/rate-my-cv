@@ -61,7 +61,7 @@ export default function ProfileComponent() {
           />
         </div>
         <div className="uploaded-cv">
-          {cvsList.length !== 0 && <YourUploadedCVs CVsList={cvsList} />}
+           <YourUploadedCVs CVsList={cvsList} setIsLoaded={setIsLoaded}/>
         </div>
         <div className="sent-reviews">
           <span>

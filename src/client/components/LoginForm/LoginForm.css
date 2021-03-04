@@ -42,15 +42,6 @@ h3:after {
   left: 0.5em;
   margin-right: -50%;
 }
-.github-logo {
-  display: block;
-  border: 1px solid gray;
-  background-color: rgb(241, 241, 241);
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  margin-left: 15px;
-}
 
 .partition {
   color: lightgray;
