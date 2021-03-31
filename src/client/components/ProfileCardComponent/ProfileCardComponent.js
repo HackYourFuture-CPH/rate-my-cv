@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import './ProfileCardComponent.styles.css';
 import iconLinkedin from '../../assets/images/icons/linkedin.svg';
@@ -9,14 +10,17 @@ import { useAuthentication } from '../../hooks/useAuthentication';
 export const ProfileCardComponent = () => {
   const {
     userData: {
-      profileImageUrl,
-      fullName,
+      profile_image_url,
+      full_name,
       position,
-      linkedIn,
+      linkedin,
       github,
       website,
     },
   } = useAuthentication();
+  const linkedIn = linkedin;
+  const profileImageUrl = profile_image_url;
+  const fullName = full_name;
 
   return (
     <div className="profile-card-whole">
