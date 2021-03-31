@@ -7,14 +7,27 @@ import unknownUser from '../../assets/images/portraits/unknown-black.png';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
 export const ProfileCardComponent = () => {
-  const { userData:{ profileImageUrl, fullName, position, linkedIn, github, website }  } = useAuthentication();
+  const {
+    userData: {
+      profileImageUrl,
+      fullName,
+      position,
+      linkedIn,
+      github,
+      website,
+    },
+  } = useAuthentication();
 
   return (
     <div className="profile-card-whole">
       <div className="top">
         <div className="circle">
           <img
-            src={profileImageUrl || unknownUser}
+            src={profileImageUrl}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = unknownUser;
+            }}
             alt="Portrait of user"
           />
         </div>

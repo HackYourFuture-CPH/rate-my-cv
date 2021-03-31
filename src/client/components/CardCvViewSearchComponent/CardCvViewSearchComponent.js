@@ -17,7 +17,11 @@ export const CardCvViewSearchComponent = ({
         <div className="profile-picture">
           <div className="circle-mask">
             <img
-              src={profileImageUrl.match(/^http[^\\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) != null ? profileImageUrl : unknownUser}
+              src={profileImageUrl}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = unknownUser;
+              }}
               alt="Portrait of user"
               className="user-photo"
             />
