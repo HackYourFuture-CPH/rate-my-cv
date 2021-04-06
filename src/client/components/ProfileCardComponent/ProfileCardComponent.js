@@ -27,7 +27,11 @@ export const ProfileCardComponent = () => {
       <div className="top">
         <div className="circle">
           <img
-            src={profileImageUrl || unknownUser}
+            src={profileImageUrl}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = unknownUser;
+            }}
             alt="Portrait of user"
           />
         </div>
