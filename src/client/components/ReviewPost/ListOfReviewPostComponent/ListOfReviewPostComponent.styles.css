@@ -1,0 +1,5 @@
+.posted-reviews-list li{
+    list-style-type:none;
+    border-bottom:1px solid #D1D1D1;
+    padding-bottom: 20px;
+}
