@@ -17,7 +17,7 @@ function App() {
   if (isLoading) return <Loader />;
   return (
     <Router>
-      {location.pathname === '/sign-in' ||
+      {location.pathname === '/sign-in' || 
       location.pathname === '/sign-up' ? null : (
         <Header
           isAuthenticated={isAuthenticated}
